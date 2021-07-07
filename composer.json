@@ -1,0 +1,6 @@
+{
+    "require": {
+        "studio-42/elfinder": "^2.1",
+        "pusher/pusher-php-server": "^7.0"
+    }
+}
