@@ -24,7 +24,6 @@ class M_dashboard extends CI_Model {
                 ->like('sys_menu.link', $searchtxt)
                 ->get()
                 ->result();
-        log_message('error', $this->db->last_query());
         return $exec;
     }
 
