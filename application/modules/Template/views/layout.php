@@ -80,6 +80,32 @@ $fullname = $this->session->userdata('fullname');
                                 <div id="kt_header_menu" class="header-menu header-menu-mobile header-menu-layout-default"><ul class="menu-nav"></ul></div>
                             </div>
                             <div class="topbar">
+                                <div class="dropdown">
+                                    <div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px" aria-expanded="false">
+                                        <div class="btn btn-icon btn-clean btn-lg btn-dropdown mr-1">
+                                            <span class="svg-icon svg-icon-xl svg-icon-primary">
+                                                <i class="fas fa-search"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim-up dropdown-menu-lg">
+                                        <div class="quick-search quick-search-dropdown" id="kt_quick_search_dropdown">
+                                            <form class="quick-search-form" action="<?php echo base_url('Applications/Dashboard/Search/'); ?>" method="post">
+                                                <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">
+                                                            <span class="svg-icon svg-icon-lg">
+                                                                <i class="fas fa-search"></i>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                    <input class="form-control" type="text" name="searchtxt" placeholder="Search..." autocomplete="off"/>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="topbar-item">
                                     <div class="btn btn-icon w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
                                         <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">
@@ -132,7 +158,7 @@ $fullname = $this->session->userdata('fullname');
                         </div>
                         <script src="https://cdn.maspriyambodo.com/Metronic/assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
                         <script src="https://cdn.maspriyambodo.com/Metronic/assets/plugins/custom/prismjs/prismjs.bundle.js" type="text/javascript"></script>
-                        <script src="https://cdn.maspriyambodo.com/Metronic/assets/js/scripts.bundle.js" type="text/javascript"></script>
+                        <script src="<?php echo base_url('assets/js/scripts.bundle.js'); ?>" type="text/javascript"></script>
                         <script src="https://cdn.maspriyambodo.com/Metronic/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js" type="text/javascript"></script>
                         <script src="https://cdn.maspriyambodo.com/Metronic/assets/js/pages/widgets.js" type="text/javascript"></script>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js" type="text/javascript"></script>
@@ -269,7 +295,7 @@ $fullname = $this->session->userdata('fullname');
                     "hideMethod": "fadeOut"
                 };
                 toastr.success(JSON.stringify(data));
-                
+
             });
         </script>
     </body>
