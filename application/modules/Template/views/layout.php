@@ -100,7 +100,7 @@ $fullname = $this->session->userdata('fullname');
                                                             </span>
                                                         </span>
                                                     </div>
-                                                    <input class="form-control" type="text" name="searchtxt" placeholder="Search..."/>
+                                                    <input class="form-control" type="text" name="searchtxt" placeholder="Search..." autocomplete="off"/>
                                                 </div>
                                             </form>
                                         </div>
