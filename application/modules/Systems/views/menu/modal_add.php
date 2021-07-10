@@ -24,20 +24,6 @@
                         </div>
                         <div class="col-md">
                             <div class="form-group">
-                                <label for="link_menu">Location:</label>
-                                <input id="link_menu" type="text" name="link_menu" class="form-control" autocomplete="off" required="" placeholder="Systems/Order/index/"/>
-                            </div>
-                        </div>
-                        <div class="col-md">
-                            <div class="form-group">
-                                <label for="nama_menu">Menu:</label>
-                                <input id="nama_menu" type="text" name="nama_menu" class="form-control" autocomplete="off" required="" placeholder="Order history"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md">
-                            <div class="form-group">
                                 <label for="gr_menu">Group:</label>
                                 <select id="gr_menu" class="form-control custom-select" required="" name="gr_menu" onchange="Get_order(this.value)">
                                     <option value="">Choose Group</option>
@@ -53,6 +39,20 @@
                             <div class="form-group">
                                 <label for="order_no">Order:</label>
                                 <select id="order_no" name="order_no" required="" class="form-control custom-select"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label for="link_menu">Location:</label>
+                                <input id="link_menu" type="text" name="link_menu" class="form-control" autocomplete="off" required="" placeholder="Systems/Order/index/"/>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label for="nama_menu">Menu:</label>
+                                <input id="nama_menu" type="text" name="nama_menu" class="form-control" autocomplete="off" required="" placeholder="Order history"/>
                             </div>
                         </div>
                         <div class="col-md">
