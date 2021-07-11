@@ -191,6 +191,7 @@ END$$
 
 DROP PROCEDURE IF EXISTS `sys_auth`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_auth` (IN `usernama` VARCHAR(100))  BEGIN
+
 	SELECT
 	`sys_auth`.`id_user`,
 	`sys_auth`.`uname`,
@@ -207,7 +208,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_auth` (IN `usernama` VARCHAR(10
 	FROM sys_auth
 	WHERE sys_auth.uname = usernama 
 	AND sys_auth.stat_aktif = 1
+	AND sys_auth.role_stat = 1
+	OR sys_auth.mail = usernama
+	AND sys_auth.stat_aktif = 1
 	AND sys_auth.role_stat = 1;
+	
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_active`$$
