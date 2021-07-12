@@ -29,4 +29,19 @@ class Contoh_controller extends CI_Controller {
         return $this->parser->parse('Template/layout', $data);
     }
 
+    public function Print_pdf() {
+        //function untuk print to pdf
+        $mpdf = new \Mpdf\Mpdf(['tempDir' => 'assets/tmp/', 'mode' => 'utf-8']);
+        $mpdf->SetAuthor($this->bodo->Sys('company_name'));
+        $mpdf->SetKeywords($this->bodo->Sys('company_name') . ' - ' . $this->bodo->Sys('app_name'));
+        $mpdf->SetCreator(base_url());
+        $mpdf->setFooter('{PAGENO}');
+        $mpdf->SetWatermarkText('DRAFT');
+        $mpdf->SetSubject('My Subject');
+        $mpdf->SetTitle('My Title');
+        $mpdf->pdf_version = '1.7';
+        $mpdf->WriteHTML($this->parser->parse('v_print', []));
+        $mpdf->Output();
+    }
+
 }
