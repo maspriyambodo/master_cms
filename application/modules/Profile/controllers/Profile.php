@@ -29,6 +29,7 @@ class Profile extends CI_Controller {
             'siteTitle' => $this->bodo->Sys('company_name'),
             'description' => 'AU+ Production'
         ];
+        $data['content'] = $this->parser->parse('index', $data, true);
         return $this->parser->parse('layout', $data);
     }
 

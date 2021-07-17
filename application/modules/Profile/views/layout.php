@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="<?php echo base_url('assets/css/cookie-notice.css'); ?>" />
         <link rel="stylesheet" href="<?php echo base_url('assets/css/default.css'); ?>" />
         <link rel="stylesheet" href="<?php echo base_url('assets/css/theme-light-blue.css'); ?>" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
         <header id="header">
@@ -78,7 +79,6 @@
                                         Digital Agency
                                     </h1>
                                     <p data-aos="zoom-out-up" data-aos-delay="800" class="description ml-auto mr-auto aos-init aos-animate">We work with a focus on creativity, combining design and results.</p>
-                                    <a href="#contact" data-aos="zoom-out-up" data-aos-delay="1200" class="smooth-anchor ml-auto mr-auto mt-5 btn primary-button aos-init aos-animate"><i class="icon-cup"></i>GET STARTED</a>
                                 </div>
                             </div>
                         </div>
@@ -88,253 +88,22 @@
                 <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
         </section>
-        <section id="skills" class="section-1 counter skills">
-            <div class="container">
-                <div class="row text-center intro">
-                    <div class="col-12">
-                        <h2 class="super effect-static-text">AU+ Production</h2>
-                        <p class="text-max-800">
-                            Dengan tim dari AU+ Production, anda tidak perlu lagi mengintegrasikan konsep branding anda ke dua pihak (fotografer dan graphic designer).
-                            Anda cukup mengkomunikasikan konsep branding anda kepada kami, tim kami dapat membuatkan seluruh promotion material yang anda butuhkan mulai dari jasa fotografi di Jakarta hingga Graphic & Web Design.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-        <section id="services" class="section-2 odd offers featured custom">
-            <div class="container">
-                <div class="row intro">
-                    <div class="col-12 col-md-9 align-self-center text-center text-md-left">
-                        <h2 class="super effect-static-text">Our Services</h2>
-                        <p>Focused on results we seek to raise the level of our customers.</p>
-                    </div>
-                    <div class="col-12 col-md-3 align-self-end">
-
-                    </div>
-                </div>
-                <div class="row justify-content-center text-center items">
-                    <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card featured">
-                            <i class="icon icon-globe"></i>
-                            <h4>Website Pro</h4>
-                            <p>We build professional responsive websites optimized for the most popular search engines.</p>
-                            <a href="#"><i class="btn-icon icon-arrow-right-circle"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card">
-                            <i class="icon icon-basket"></i>
-                            <h4>E-Commerce</h4>
-                            <p>Increase your sales with an incredible online store, full of features and functionality.</p>
-                            <a href="#"><i class="btn-icon icon-arrow-right-circle"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card">
-                            <i class="icon icon-screen-smartphone"></i>
-                            <h4>Mobile Apps</h4>
-                            <p>Follow the global trend and create your revolutionary mobile app built with the best technologies.</p>
-                            <a href="#"><i class="btn-icon icon-arrow-right-circle"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card">
-                            <i class="icon icon-layers"></i>
-                            <h4>Web Application</h4>
-                            <p>We build applications for different purposes using technologies that allow you more security.</p>
-                            <a href="#"><i class="btn-icon icon-arrow-right-circle"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card">
-                            <i class="icon icon-chart"></i>
-                            <h4>Digital Marketing</h4>
-                            <p>We work to promote your brand in partnership with the best marketing platforms today.</p>
-                            <a href="#"><i class="btn-icon icon-arrow-right-circle"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 item">
-                        <div class="card featured">
-                            <i class="icon icon-bulb"></i>
-                            <h4>Brand Creation</h4>
-                            <p>We create your brand thinking about your target audience using design techniques.</p>
-                            <a href="#"><i class="btn-icon icon-arrow-right-circle"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="get" class="section-3 hero odd p-0">
-            <div class="swiper-container no-slider animation slider-h-75 swiper-container-initialized swiper-container-horizontal">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide slide-center swiper-slide-active" style="width: 1354px;">
-                        <video class="full-image" data-mask="90" playsinline="" autoplay="autoplay" muted="muted" loop="">
-                            <source src="<?php echo base_url('assets/images/project.mp4'); ?>" type="video/mp4" />
-                        </video>
-                        <div class="slide-content row">
-                            <div class="col-12 d-flex inner">
-                                <div class="center align-self-center text-center">
-                                    <h2 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text aos-init aos-animate">ARE YOU READY?</h2>
-                                    <p data-aos="zoom-out-up" data-aos-delay="800" class="description ml-auto mr-auto aos-init aos-animate">
-                                        We are driven by creativity. We create innovative things to help you achieve better results and consolidate yourself in the market.
-                                    </p>
-                                    <a href="#contact" data-aos="zoom-out-up" data-aos-delay="1200" class="smooth-anchor ml-auto mr-auto mt-5 btn primary-button aos-init aos-animate"><i class="icon-rocket"></i>CONTACT US</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
-            </div>
-        </section>
-        <section id="subscribe" class="section-5 subscribe">
-            <div class="container smaller">
-                <div class="row text-center intro">
-                    <div class="col-12">
-                        <h2 class="super effect-static-text">Newsletter</h2>
-                        <p class="text-max-800">Subscribe to our newsletter and follow our content closely. Receive news based on what has to do with you. We promise not to send promotions you don't like.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 p-0">
-                        <form action="php/form.php" id="leverage-subscribe" class="row m-auto items">
-                            <div class="col-12 col-lg-5 m-lg-0 input-group align-self-center item"><input type="text" name="name" class="form-control field-name" placeholder="Name" /></div>
-                            <div class="col-12 col-lg-5 m-lg-0 input-group align-self-center item"><input type="email" name="email" class="form-control field-email" placeholder="Email" /></div>
-                            <div class="col-12 col-lg-2 m-lg-0 input-group align-self-center item"><a class="btn primary-button w-100">SUBSCRIBE</a></div>
-                            <div class="col-12 text-center"><span class="form-alert mt-5 mb-0" style="display: none;"></span></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="section-6 odd form featured">
-            <div class="container">
-                <form action="php/form.php" id="leverage-form" class="multi-step-form" data-steps="3">
-                    <input type="hidden" name="section" value="leverage_form" />
-                    <input
-                        type="hidden"
-                        name="reCAPTCHA"
-                        data-key="6Lf-NwEVAAAAAPo_wwOYxFW18D9_EKvwxJxeyUx7"
-                        value="03AGdBq26hlG9pV8Lh6y3iV0TBIL7gaBXcJYEQQ8pSrL-cLSg7UACaZYPlAM0JYl_369kHMAHTcmEQ3kQpbtN40awJ62Ft_r_hWCT7TYb9C0LLKm-p22m6PCBw3UbLntDqJ_cxoJXWpndcoTDX4sOAk2I2KLmo6__8jLALptQroZzXInr4BbaFMP4ygsku44fN9xaRofJtIulLinCoM5amnkPB1xO8PtU10NNKCL6diLmTaZH0OdGKWsCUHNryWZhsv7XQBbErW5MTUbCyah5IKrws7m1EKHwvgt5hXL1lbzOwHR5kS8QfYSWXr0mroRj6v9OVDXevNSejj7T3ycHZ3-q97R_lH-Cp-dpS8jOqB61PCdF34siQzUj6uPY3pL_eYbwPPrJ8qsQTS4uHZ2LanXxuF64aS0WncR0y_DN0ON_Zv6vpEin2mZrX4ggOGGe8AvQLBi7olUB4SB1CXTKEUh_y9xnOWQ6p1Q"
-                        />
-                    <div class="row">
-                        <div class="col-12 col-md-6 align-self-start text-center text-md-left">
-                            <div class="row success message">
-                                <div class="col-12 p-0">
-                                    <div class="wait">
-                                        <div class="spinner-grow" role="status"><span class="sr-only">Loading</span></div>
-                                        <h3 class="sending">SENDING</h3>
-                                    </div>
-                                    <div class="done">
-                                        <i class="icon bigger icon-check"></i>
-                                        <h3>Your message was sent successful. Thanks.</h3>
-                                        <a href="" class="btn mx-auto primary-button"> <i class="icon-refresh"></i> REFRESH </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row intro form-content">
-                                <div class="col-12 p-0">
-                                    <div class="step-title" id="step-title-1">
-                                        <h2 class="super effect-static-text">Let's Talk?</h2>
-                                        <p>Don't wait until tomorrow. Talk to one of our consultants today and learn how to start leveraging your business.</p>
-                                    </div>
-                                    <div class="step-title" id="step-title-2" style="display: none;">
-                                        <h2 class="super effect-static-text">Almost There</h2>
-                                        <p>We need some more important information to better understand how we can help you in the best possible way.</p>
-                                    </div>
-                                    <div class="step-title" id="step-title-3" style="display: none;">
-                                        <h2 class="super effect-static-text">Are you Ready?</h2>
-                                        <p>Tell us a little about the project you need to create. This is valuable so that we can direct you to the ideal team.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row text-center form-content">
-                                <div class="col-12 p-0">
-                                    <ul class="progressbar">
-                                        <li class="active">Personal Details</li>
-                                        <li>Company Budget</li>
-                                        <li>Service Setup</li>
-                                    </ul>
-                                    <fieldset class="step-group" id="step-group-1">
-                                        <div class="row">
-                                            <div class="col-12 input-group p-0"><input type="email" name="email" data-minlength="3" class="form-control field-email" placeholder="Email" /></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 input-group p-0"><input type="text" name="name" data-minlength="3" class="form-control field-name" placeholder="Name" /></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 input-group p-0"><input type="text" name="phone" data-minlength="3" class="form-control field-phone" placeholder="Phone" /></div>
-                                        </div>
-                                        <div class="col-12 input-group p-0">
-                                            <a class="step-next btn primary-button" id="step-next-1">NEXT<i class="icon-arrow-right-circle left"></i></a>
-                                        </div>
-                                    </fieldset>
-                                    <fieldset class="step-group" id="step-group-2">
-                                        <div class="row">
-                                            <div class="col-12 input-group p-0"><input type="text" name="company" data-minlength="3" class="form-control field-company" placeholder="Company" /></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 input-group p-0"><input type="text" name="manager" data-minlength="3" class="form-control field-manager" placeholder="Manager" /></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 input-group p-0">
-                                                <i class="icon-arrow-down"></i>
-                                                <select name="budget" data-minlength="1" class="form-control field-budget">
-                                                    <option value="" selected="selected" disabled="disabled">What's your budget range?</option>
-                                                    <option>Less than $2.000</option>
-                                                    <option>$2.000 — $5.000</option>
-                                                    <option>$5.000 — $10.000</option>
-                                                    <option>$10,000+</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 input-group p-0 d-flex justify-content-between justify-content-md-start">
-                                            <a class="step-prev btn primary-button mr-4" id="step-prev-2"><i class="icon-arrow-left-circle"></i>PREV</a>
-                                            <a class="step-next btn primary-button" id="step-next-2">NEXT<i class="icon-arrow-right-circle left"></i></a>
-                                        </div>
-                                    </fieldset>
-                                    <fieldset class="step-group" id="step-group-3">
-                                        <div class="row">
-                                            <div class="col-12 input-group p-0"><textarea name="message" data-minlength="3" class="form-control field-message" placeholder="Message" required=""></textarea></div>
-                                        </div>
-                                        <div class="col-12 input-group p-0 d-flex justify-content-between justify-content-md-start">
-                                            <a class="step-prev btn primary-button mr-4" id="step-prev-3"><i class="icon-arrow-left-circle"></i>PREV</a>
-                                            <a class="step-next btn primary-button" id="step-next-3">SEND<i class="icon-arrow-right-circle left"></i></a>
-                                        </div>
-                                    </fieldset>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content-images col-12 col-md-6 pl-md-5 d-none d-md-block">
-                            <div class="gallery">
-                                <a class="step-image" data-poster="<?php echo base_url('assets/images/about-8.jpg'); ?>" href="https://www.youtube.com/watch?v=7e90gBu4pas" id="step-image-1">
-                                    <i class="play-video icon-control-play"></i>
-                                    <div class="mask-radius"></div>
-                                    <img src="<?php echo base_url('assets/images/about-8.jpg'); ?>" class="fit-image" alt="Contact Us" />
-                                </a>
-                            </div>
-                            <div class="gallery">
-                                <a class="step-image" href="https://leverage-html.codings.dev/assets/images/about-6.jpg" id="step-image-2" style="display: none;">
-                                    <img src="assets/about-6.jpg" class="fit-image" alt="Contact Us" />
-                                </a>
-                            </div>
-                            <div class="gallery">
-                                <a class="step-image" href="https://leverage-html.codings.dev/assets/images/about-7.jpg" id="step-image-3" style="display: none;">
-                                    <img src="assets/about-7.jpg" class="fit-image" alt="Contact Us" />
-                                </a>
-                            </div>
-                            <div class="gallery">
-                                <a class="step-image" href="https://leverage-html.codings.dev/assets/images/about-leverage.jpg" id="step-image-4" style="display: none;">
-                                    <img src="assets/about-leverage.jpg" class="fit-image" alt="Contact Us" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
+        <script src="<?php echo base_url('assets/js/jquery_002.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/jquery_003.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/popper.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/bootstrap.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/ponyfill.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/slider.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/animation.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/progress-radial.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/bricklayer.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/gallery.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/shuffle.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/cookie-notice.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/particles.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
+        {content}
         <footer class="odd">
             <section id="footer" class="footer">
                 <div class="container">
@@ -349,20 +118,6 @@
                                         with a focus on usability<br />
                                         and performance.
                                     </p>
-                                    <ul class="navbar-nav social share-list mt-0 ml-auto">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link"><i class="icon-social-instagram ml-0"></i></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link"><i class="icon-social-facebook"></i></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link"><i class="icon-social-linkedin"></i></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link"><i class="icon-social-twitter"></i></a>
-                                        </li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -372,33 +127,38 @@
                                     <h4 class="title">Get in Touch</h4>
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link"> <i class="icon-phone mr-2"></i> +1 123 98765 4321 </a>
+                                            <a href="#" class="nav-link"> <i class="icon-phone mr-2"></i> +62 813-8237-6140</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link"> <i class="icon-envelope mr-2"></i> hello@business.com </a>
+                                            <a href="mailto:info@auplus.com" class="nav-link"> <i class="icon-envelope mr-2"></i> info@auplus.com </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link"> <i class="icon-location-pin mr-2"></i> Office Street, 123 </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#contact" class="mt-4 mr-auto ml-auto ml-lg-0 btn dark-button smooth-anchor"><i class="icon-speech"></i>SEND A MESSAGE</a>
+                                            <a href="https://goo.gl/maps/diQfY6DqJunpM9t46" title="click for direction" target="new" class="nav-link"> <i class="icon-location-pin mr-2"></i> Jalan Kavling PGRI XIII No. 133 </a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-12 col-lg-4 p-3 text-center text-lg-left item">
                                     <h4 class="title">Our Services</h4>
                                     <ul class="navbar-nav">
-                                        <li class="nav-item"><a href="#" class="nav-link">Website Development</a></li>
-                                        <li class="nav-item"><a href="#" class="nav-link">Building Applications</a></li>
-                                        <li class="nav-item"><a href="#" class="nav-link">SEO &amp; Digital Marketing</a></li>
-                                        <li class="nav-item"><a href="#" class="nav-link">Branding and Identity</a></li>
-                                        <li class="nav-item"><a href="#" class="nav-link">Digital Images &amp; Videos</a></li>
+                                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link">Photo Product</a></li>
+                                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link">Photo & Video Product</a></li>
+                                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link">Photo & Video Dokumentasi</a></li>
+                                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link">Photobooth</a></li>
+                                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link">Photobooth Matrix</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-12 col-lg-4 p-3 text-center text-lg-left item">
-                                    <h4 class="title">Popular Tags</h4>
-                                    <a href="#" class="badge tag">Mobile</a> <a href="#" class="badge tag">Development</a> <a href="#" class="badge tag">Technology</a> <a href="#" class="badge tag">App</a>
-                                    <a href="#" class="badge tag">Education</a> <a href="#" class="badge tag">Business</a> <a href="#" class="badge tag">Health</a> <a href="#" class="badge tag">Industry</a>
+                                    <ul class="navbar-nav social share-list mt-0 ml-auto text-center">
+                                        <li class="nav-item">
+                                            <a href="https://www.instagram.com/auplusproduction/" class="nav-link"><i class="icon-social-instagram ml-0"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="https://www.facebook.com/auplusproduction" target="new" class="nav-link"><i class="icon-social-facebook"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="https://www.youtube.com/channel/UC6nO-RBVbQcTR4R6f8v-kTQ" class="nav-link"><i class="icon-social-youtube"></i></a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -408,7 +168,9 @@
             <section id="copyright" class="p-3 copyright">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-md-6 p-3 text-center text-lg-left"><p>Enjoy the low price. We are tracking any intention of piracy.</p></div>
+                        <div class="col-12 col-md-6 p-3 text-center text-lg-left">
+                            
+                        </div>
                         <div class="col-12 col-md-6 p-3 text-center text-lg-right">
                             <p>© 2021 AU+ Production.</p>
                         </div>
@@ -477,20 +239,5 @@
         <div id="scroll-to-top" class="scroll-to-top" style="display: none;">
             <a href="#header" class="smooth-anchor"> <i class="icon-arrow-up"></i> </a>
         </div>
-        <script src="<?php echo base_url('assets/js/jquery_002.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/jquery_003.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/popper.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/bootstrap.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/ponyfill.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/slider.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/animation.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/progress-radial.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/bricklayer.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/gallery.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/shuffle.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/cookie-notice.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/particles.js'); ?>"></script>
-        <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
     </body>
 </html>
