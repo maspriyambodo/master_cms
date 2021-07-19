@@ -20,7 +20,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_compro extends CI_Model {
 
     public function Portfolio($paginate) {
-        $exec = $this->db->select('id,lowres,highres,title,desc')
+        $exec = $this->db->select('id,lowres,highres,tipe,title,desc')
                 ->from('dt_portfolio')
                 ->where('`dt_portfolio`.`stat`', 1, false)
                 ->limit($paginate['config']['per_page'], $paginate['from'])
