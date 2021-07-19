@@ -38,13 +38,13 @@
                     <div class="ml-auto"></div>
                     <ul class="navbar-nav items">
                         <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">Home</a>
+                            <a href="<?php echo base_url('Profile/index/'); ?>" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a href="javascript:void(0);" class="nav-link">Service</a>
                         </li>
                         <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">Gallery</a>
+                            <a href="<?php echo base_url('Profile/Gallery/'); ?>" class="nav-link">Gallery</a>
                         </li>
                         <li class="nav-item">
                             <a href="javascript:void(0);" class="nav-link">Blog</a>
@@ -169,7 +169,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-md-6 p-3 text-center text-lg-left">
-                            
+
                         </div>
                         <div class="col-12 col-md-6 p-3 text-center text-lg-right">
                             <p>© 2021 AU+ Production.</p>

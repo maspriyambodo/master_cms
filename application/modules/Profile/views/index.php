@@ -1,4 +1,4 @@
-<section id="skills" class="section-1 counter skills">
+<section id="introduction" class="section-1 counter skills">
     <div class="container">
         <h2 class="super effect-static-text text-center">AU+ Production</h2>
         <div class="row intro">
