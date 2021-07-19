@@ -26,6 +26,7 @@ class Profile extends CI_Controller {
 
     public function index() {
         $data = [
+            'list_services'=> $this->model->List_services(),
             'siteTitle' => $this->bodo->Sys('company_name'),
             'description' => 'AU+ Production'
         ];

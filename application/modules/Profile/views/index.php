@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-6">
                 <p class="text-justify">
-                   Kami Berkarya sejak tahun 2014, meskipun terhitung masih muda, tapi kami telah membantu beberapa Perusahaan Besar dengan ide-ide Unik yang Kami Miliki. Dengan Tim yang Profesional, Kami mampu memunculkan ide yang kreatif & Inovatif.
+                    Kami Berkarya sejak tahun 2014, meskipun terhitung masih muda, tapi kami telah membantu beberapa Perusahaan Besar dengan ide-ide Unik yang Kami Miliki. Dengan Tim yang Profesional, Kami mampu memunculkan ide yang kreatif & Inovatif.
                 </p>
             </div>
         </div>
@@ -29,75 +29,17 @@
             </div>
         </div>
         <div class="row justify-content-center text-center items">
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTO PRODUCT</h4>
-                    <p class="text-justify">
-                        Hasil Foto dapat digunakan untuk memperindah Produk, Meningkatkan Penjualan / Omset, dan Memajukan Perusahaan tanpa menambah atau mengurangi keaslian Produk.
-                    </p>
+            <?php foreach ($list_services as $list_services) { ?>
+                <div class="col-12 col-md-6 col-lg-4 item">
+                    <div class="card featured">
+                        <i class="fas fa-certificate text-info"></i>
+                        <h4><?php echo $list_services->nama; ?></h4>
+                        <p class="text-justify">
+                            <?php echo $list_services->desc; ?>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTO & VIDEO PRODUCT</h4>
-                    <p class="text-justify">
-                        Hasil Foto dapat digunakan untuk memperindah Produk, Meningkatkan Penjualan / Omset, dan Memajukan Perusahaan tanpa menambah atau mengurangi keaslian Produk.
-                    </p>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTO & VIDEO DOKUMENTASI</h4>
-                    <p class="text-justify">
-                        Kami membantu Dokumentasi dalam sebuah Acara berbentuk digital berupa Foto & Video. yang dikemas dengan menarik dan Modern.s
-                    </p>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTOBOOTH</h4>
-                    <p class="text-justify">
-                        Photobooth bisa juga dijadikan souvenir untuk semua kebutuhan acara anda.
-                    </p>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTOBOOTH MATRIX</h4>
-                    <p class="text-justify">
-                        Dengan menggunakan banyak kamera yang mengambil gambar secara bersamaan dari berbagai arah.
-                    </p>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTO & VIDEO ENGAGEMENT</h4>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTO & VIDEO PREWEDDING</h4>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTO & VIDEO WEDDING</h4>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 item">
-                <div class="card featured">
-                    <i class="fas fa-certificate text-info"></i>
-                    <h4>PHOTO & VIDEO BIRTHDAY</h4>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </section>
