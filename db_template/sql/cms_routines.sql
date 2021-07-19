@@ -274,7 +274,7 @@ ELSEIF param = 'insert_baru' THEN
 	UPDATE `sys_menu_group` 
 	SET `sys_menu_group`.`order_no` = `order_no` + 1 
 	WHERE `sys_menu_group`.`order_no` >= no_order
-	AND `sys_menu_group_copy1`.`order_no` != 999;
+	AND `sys_menu_group`.`order_no` != 999;
 
 	INSERT INTO sys_menu_group (
 		`sys_menu_group`.`nama`, 
