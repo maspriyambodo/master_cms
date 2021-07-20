@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="desctxt"></label>
+                                <label for="desctxt">Description</label>
                                 <textarea id="desctxt" name="desctxt" class="form-control" rows="5"></textarea>
                             </div>
                         </div>
