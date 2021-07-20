@@ -42,7 +42,19 @@ unset($_SESSION['err_msg']);
 unset($_SESSION['succ_msg']);
 ?>
 <script>
+    function Gallery(param) {
+        var tipe;
+        if (param == 'image') {
+            tipe = 'image';
+        } else {
+            tipe = 'iframe';
+        }
+        $('.image-link').magnificPopup({
+            type: tipe
+        });
+    }
     window.onload = function () {
+
         toastr.options = {
             closeButton: true,
             debug: false,

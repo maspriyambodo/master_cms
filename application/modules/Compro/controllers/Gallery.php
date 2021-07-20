@@ -51,6 +51,18 @@ class Gallery extends CI_Controller {
         $privilege = $this->bodo->Check_previlege('Compro/Gallery/index/');
         foreach ($list as $galeri) {
             $id = Enkrip($galeri->id);
+            if ($galeri->tipe == 'image') {
+                $path_portfolio = base_url('assets/images/portfolio/highres/' . $galeri->highres);
+            } elseif ($galeri->tipe == 'video') {
+                $path_portfolio = base_url('assets/images/portfolio/highres/' . $galeri->highres);
+            } else {
+                $path_portfolio = $galeri->highres;
+            }
+            $pict = '<div class="gallery">'
+                    . '<a href="' . $path_portfolio . '" class="image-link">'
+                    . '<img src="' . base_url('assets/images/portfolio/' . $galeri->lowres) . '" alt="' . $galeri->title . '" onclick="Gallery(\'' . $galeri->tipe . '\')" style="height:50px;"/>'
+                    . '</a>'
+                    . '</div>';
             if ($galeri->stat == 1) {
                 $stat = '<span class="label label-success label-inline font-weight-lighter mr-2">active</span>';
             } else {
@@ -76,7 +88,7 @@ class Gallery extends CI_Controller {
             $row[] = $no;
             $row[] = $galeri->tipe;
             $row[] = $galeri->title;
-            $row[] = $galeri->lowres;
+            $row[] = $pict;
 //            $row[] = $galeri->highres;
             $row[] = $galeri->desc;
             $row[] = $stat;
