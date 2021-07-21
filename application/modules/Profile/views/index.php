@@ -53,10 +53,11 @@
         </div>
         <div class="row">
             <div class="col-12 p-0">
-                <form action="php/form.php" id="leverage-subscribe" class="row m-auto items">
-                    <div class="col-12 col-lg-5 m-lg-0 input-group align-self-center item"><input type="text" name="name" class="form-control field-name" placeholder="Name" /></div>
-                    <div class="col-12 col-lg-5 m-lg-0 input-group align-self-center item"><input type="email" name="email" class="form-control field-email" placeholder="Email" /></div>
-                    <div class="col-12 col-lg-2 m-lg-0 input-group align-self-center item"><a class="btn primary-button w-100">SUBSCRIBE</a></div>
+                <form action="<?php echo base_url('Profile/Newsletter/'); ?>" method="post" id="leverage-subscribe" class="row m-auto items">
+                    <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
+                    <div class="col-12 col-lg-5 m-lg-0 input-group align-self-center item"><input type="text" name="nametxt" class="form-control field-name" placeholder="Name" required="" autocomplete="off" maxlength="100"/></div>
+                    <div class="col-12 col-lg-5 m-lg-0 input-group align-self-center item"><input type="email" name="emailtxt" class="form-control field-email" placeholder="Email" required="" autocomplete="off"/></div>
+                    <div class="col-12 col-lg-2 m-lg-0 input-group align-self-center item"><button type="submit" class="btn primary-button w-100">SUBSCRIBE</button></div>
                     <div class="col-12 text-center"><span class="form-alert mt-5 mb-0" style="display: none;"></span></div>
                 </form>
             </div>

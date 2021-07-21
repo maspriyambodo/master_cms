@@ -47,4 +47,17 @@ class M_compro extends CI_Model {
         return $exec;
     }
 
+    public function Newsletter($data) {
+        $this->db->trans_begin();
+        $this->db->insert('dt_subscriber', $data);
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $result = redirect(base_url('Profile/index/'), $this->session->set_flashdata('err_msg', 'failed, error while saving data'));
+        } else {
+            $this->db->trans_commit();
+            $result = redirect(base_url('Profile/index/'), $this->session->set_flashdata('succ_msg', 'success, thank you for subscribing'));
+        }
+        return $result;
+    }
+
 }

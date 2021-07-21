@@ -26,7 +26,8 @@ class Profile extends CI_Controller {
 
     public function index() {
         $data = [
-            'list_services'=> $this->model->List_services(),
+            'csrf' => $this->bodo->Csrf(),
+            'list_services' => $this->model->List_services(),
             'siteTitle' => $this->bodo->Sys('company_name'),
             'description' => 'AU+ Production'
         ];
@@ -77,6 +78,16 @@ class Profile extends CI_Controller {
         ];
         $this->pagination->initialize($config);
         return $data;
+    }
+
+    public function Newsletter() {
+        $this->load->library('user_agent');
+        $data = [
+            'mail' => Post_input('emailtxt'),
+            'nama' => Post_input('nametxt'),
+            'platform' => $this->agent->platform()
+        ];
+        $this->model->Newsletter($data);
     }
 
 }
