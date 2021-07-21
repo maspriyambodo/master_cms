@@ -13,20 +13,21 @@
                             <div class="gallery">
                                 <?php
                                 if ($portfolio->tipe == 1) {
-                                    $btn_portfolio = '';
-                                    $path_portfolio = base_url('assets/images/portfolio/highres/' . $portfolio->highres);
+                                    echo '<a href="' . base_url('assets/images/portfolio/highres/' . $portfolio->highres) . '" class="image-over">'
+                                    . '<img src="' . base_url('assets/images/portfolio/' . $portfolio->lowres) . '" alt="' . $portfolio->title . '" style="height:193px;"/>'
+                                    . '</a>';
                                 } elseif ($portfolio->tipe == 2) {
-                                    $btn_portfolio = '<i class="play-video-full icon-control-play"></i><div class="mask-radius-full"></div>';
-                                    $path_portfolio = base_url('assets/images/portfolio/highres/' . $portfolio->highres);
+                                    echo '<a href="' . base_url('assets/images/portfolio/highres/' . $portfolio->highres) . '" class="image-over">'
+                                    . '<i class="play-video-full icon-control-play"></i><div class="mask-radius-full"></div>'
+                                    . '<img src="' . base_url('assets/images/portfolio/' . $portfolio->lowres) . '" alt="' . $portfolio->title . '" style="height:193px;"/>'
+                                    . '</a>';
                                 } else {
-                                    $btn_portfolio = '<i class="play-video-full icon-control-play"></i><div class="mask-radius-full"></div>';
-                                    $path_portfolio = $portfolio->highres;
+                                    echo '<a href="' . $portfolio->highres . '" class="image-over">'
+                                    . '<i class="play-video-full icon-control-play"></i><div class="mask-radius-full"></div>'
+                                    . '<img src="' . base_url('assets/images/portfolio/' . $portfolio->lowres) . '" alt="' . $portfolio->title . '" style="height:193px;"/>'
+                                    . '</a>';
                                 }
                                 ?>
-                                <a href="<?php echo $path_portfolio; ?>" class="image-over">
-                                    <?php echo $btn_portfolio; ?>
-                                    <img src="<?php echo base_url('assets/images/portfolio/' . $portfolio->lowres); ?>" alt="<?php echo $portfolio->title; ?>" style="height:193px;"/>
-                                </a>
                             </div>
                             <div class="card-caption col-12 p-0">
                                 <div class="card-body">
