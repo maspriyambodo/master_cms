@@ -30,7 +30,7 @@
                             </div>
                             <div class="card-caption col-12 p-0">
                                 <div class="card-body">
-                                    <a href="<?php echo $path_portfolio; ?>">
+                                    <a href="javascript:void(0);" style="cursor: default;">
                                         <h4 class="m-0"><?php echo $portfolio->title; ?></h4>
                                     </a>
                                 </div>
