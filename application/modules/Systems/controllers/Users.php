@@ -119,7 +119,8 @@ class Users extends CI_Controller {
         $param = [
             'upload_path' => 'assets/images/users/',
             'file_name' => 'users' . date('d_His'),
-            'input_name' => "profile_avatar"
+            'input_name' => "profile_avatar",
+            'allowed_types' => 'gif|jpg|png|gif|ico'
         ];
         $pict = _Upload($param);
         $role_user = $this->bodo->Dec(Post_input('role_user'));
@@ -230,7 +231,8 @@ class Users extends CI_Controller {
         $param = [
             'upload_path' => 'assets/images/users/',
             'file_name' => 'users' . date('d_His'),
-            'input_name' => "profile_avatar"
+            'input_name' => "profile_avatar",
+            'allowed_types' => 'gif|jpg|png|gif|ico'
         ];
         $pict = _Upload($param);
         $role_user = $this->bodo->Dec(Post_input('role_user'));
