@@ -138,7 +138,8 @@ class Country extends CI_Controller {
             $param = [
                 'upload_path' => 'assets/images/systems/flags/',
                 'file_name' => Post_input('code_country'),
-                'input_name' => "flag_country"
+                'input_name' => "flag_country",
+                'allowed_types' => 'gif|jpg|png|gif|ico'
             ];
             $bendera = _Upload($param);
         } else {
@@ -171,7 +172,8 @@ class Country extends CI_Controller {
             $param = [
                 'upload_path' => 'assets/images/systems/flags/',
                 'file_name' => Post_input('e_code_country'),
-                'input_name' => "e_flag_country"
+                'input_name' => "e_flag_country",
+                'allowed_types' => 'gif|jpg|png|gif|ico'
             ];
             $bendera = _Upload($param);
         } else {
