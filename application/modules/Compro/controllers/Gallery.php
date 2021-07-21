@@ -117,4 +117,105 @@ class Gallery extends CI_Controller {
         ToJson($output);
     }
 
+    public function Add() {
+        $data = [
+            'csrf' => $this->bodo->Csrf(),
+            'item_active' => 'Compro/Gallery/index/',
+            'privilege' => $this->bodo->Check_previlege('Compro/Gallery/index/'),
+            'siteTitle' => 'Add new | Company Profile',
+            'pagetitle' => 'Add new gallery',
+            'breadcrumb' => [
+                0 => [
+                    'nama' => 'index',
+                    'link' => base_url('Compro/Gallery/index/'),
+                    'status' => false
+                ],
+                1 => [
+                    'nama' => 'add',
+                    'link' => null,
+                    'status' => true
+                ]
+            ]
+        ];
+        $data['content'] = $this->parser->parse('galeri/add', $data, true);
+        return $this->parser->parse('Template/layout', $data);
+    }
+
+    public function Upload_image($inputtxt) {
+        if ($inputtxt == 'thmbtxt' or $inputtxt == 'thmbvidtxt' or $inputtxt == 'thmbyttxt') {
+            $upload_path = 'assets/images/portfolio/';
+            $input_name = $inputtxt;
+        } else {
+            $upload_path = 'assets/images/portfolio/highres/';
+            $input_name = $inputtxt;
+        }
+        $param = [
+            'upload_path' => $upload_path,
+            'file_name' => date('Y_m_d_H_i_s'),
+            'input_name' => $input_name,
+            'allowed_types' => 'jpg|png|jpeg|mp4|mkv|avi'
+        ];
+        $upload = _Upload($param);
+        $response = [
+            'stat' => $upload['status'],
+            'file_name' => $upload['file_name']
+        ];
+        ToJson($response);
+    }
+
+    public function Save() {
+        if (!Post_input('tipetxt')) {
+            redirect(base_url('Compro/Gallery/index/'), $this->session->set_flashdata('err_msg', 'error, while adding new gallery!'));
+        } elseif (Post_input('tipetxt') == 1) {
+            $result = $this->Galeri_img();
+        } elseif (Post_input('tipetxt') == 2) {
+            $result = $this->Galeri_img();
+        } elseif (Post_input('tipetxt') == 3) {
+            $result = $this->Gallery_yt();
+        }
+        return $result;
+    }
+
+    private function Galeri_img() {
+        $lowres = FCPATH . 'assets/images/portfolio/' . Post_input('thumbnail_txt');
+        $highres = FCPATH . 'assets/images/portfolio/highres/' . Post_input('highres_txt');
+        if (file_exists($lowres) and file_exists($highres)) {
+            $data = [
+                'lowres' => Post_input('thumbnail_txt'),
+                'highres' => Post_input('highres_txt'),
+                'title' => Post_input('titletxt'),
+                '`desc`' => Post_input('desctxt'),
+                '`tipe`' => Post_input('tipetxt') + false,
+                'syscreateuser' => $this->user + false,
+                'syscreatedate' => date('Y-m-d H:i:s')
+            ];
+            $result = $this->model->Galeri_img($data);
+        } else {
+            unlink($lowres);
+            unlink($highres);
+            $result = redirect('Compro/Gallery/Add/', $this->session->set_flashdata('err_msg', 'error, while adding new gallery!'));
+        }
+        return $result;
+    }
+
+    private function Gallery_yt() {
+        $lowres = FCPATH . 'assets/images/portfolio/' . Post_input('thumbnail_txt');
+        if (file_exists($lowres)) {
+            $data = [
+                'lowres' => Post_input('thumbnail_txt'),
+                'highres' => Post_input('linktxt'),
+                'title' => Post_input('titletxt'),
+                '`desc`' => Post_input('desctxt'),
+                '`tipe`' => Post_input('tipetxt') + false,
+                'syscreateuser' => $this->user + false,
+                'syscreatedate' => date('Y-m-d H:i:s')
+            ];
+            $result = $this->model->Galeri_img($data);
+        } else {
+            unlink($lowres);
+            $result = redirect('Compro/Gallery/Add/', $this->session->set_flashdata('err_msg', 'error, while adding new gallery!'));
+        }
+        return $result;
+    }
+
 }

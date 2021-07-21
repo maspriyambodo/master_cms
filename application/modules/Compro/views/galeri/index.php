@@ -4,7 +4,7 @@
         if ($privilege['create']) { // jika memiliki privilege tambah data / create
             echo '<div class="text-right">'
             . '<div class="form-group">'
-            . '<button type="button" class="btn btn-primary mr-2"><i class="far fa-plus-square"></i> Add new</button>'
+            . '<a href="'. base_url('Compro/Gallery/Add/') .'" class="btn btn-primary mr-2"><i class="far fa-plus-square"></i> Add new</a>'
             . '</div>'
             . '</div>';
         } else {
