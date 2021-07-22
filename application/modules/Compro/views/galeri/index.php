@@ -4,7 +4,7 @@
         if ($privilege['create']) { // jika memiliki privilege tambah data / create
             echo '<div class="text-right">'
             . '<div class="form-group">'
-            . '<a href="'. base_url('Compro/Gallery/Add/') .'" class="btn btn-primary mr-2"><i class="far fa-plus-square"></i> Add new</a>'
+            . '<a href="' . base_url('Compro/Gallery/Add/') . '" class="btn btn-primary mr-2"><i class="far fa-plus-square"></i> Add new</a>'
             . '</div>'
             . '</div>';
         } else {
@@ -52,6 +52,9 @@ unset($_SESSION['succ_msg']);
         $('.image-link').magnificPopup({
             type: tipe
         });
+    }
+    function Edit(id) {
+        window.location.href = '<?php echo base_url('Compro/Gallery/Edit?token='); ?>' + id;
     }
     window.onload = function () {
 

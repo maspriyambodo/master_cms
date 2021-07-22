@@ -84,4 +84,33 @@ class M_Gallery extends CI_Model {
         return $result;
     }
 
+    public function _GetDetail($id) {
+        $exec = $this->db->select('id,lowres,highres,title,desc,tipe')
+                ->from('dt_portfolio')
+                ->where('`dt_portfolio`.`id`', $id, false)
+                ->limit(1)
+                ->get();
+        if (!$exec) {
+            $result = redirect(base_url('Compro/Gallery/index/'), $this->session->set_flashdata('err_msg', 'error, invalid data token!'));
+        } else {
+            $result = $exec->result();
+        }
+        return $result;
+    }
+
+    public function Delete($data, $id) {
+        $this->db->trans_begin();
+        $this->db->set($data)
+                ->where('`dt_portfolio`.`id`', $id, false)
+                ->update('dt_portfolio');
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $result = redirect(base_url('Compro/Gallery/index/'), $this->session->set_flashdata('err_msg', 'failed, error while deleting gallelry'));
+        } else {
+            $this->db->trans_commit();
+            $result = redirect(base_url('Compro/Gallery/index/'), $this->session->set_flashdata('succ_msg', 'success, gallery lists has been deleted'));
+        }
+        return $result;
+    }
+
 }

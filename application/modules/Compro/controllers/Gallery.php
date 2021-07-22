@@ -69,7 +69,7 @@ class Gallery extends CI_Controller {
                 $stat = '<span class="label label-danger label-inline font-weight-lighter mr-2">nonactive</span>';
             }
             if ($privilege['update']) {
-                $editbtn = '<button id="edit_user" type="button" class="btn btn-icon btn-default btn-xs" title="Edit" value="' . $id . '" data-toggle="modal" onclick="Edit(this.value)"><i class="far fa-edit"></i></button>';
+                $editbtn = '<button id="edit_user" type="button" class="btn btn-icon btn-default btn-xs" title="Edit" value="' . $id . '" onclick="Edit(this.value)"><i class="far fa-edit"></i></button>';
             } else {
                 $editbtn = null;
             }
@@ -216,6 +216,48 @@ class Gallery extends CI_Controller {
             $result = redirect('Compro/Gallery/Add/', $this->session->set_flashdata('err_msg', 'error, while adding new gallery!'));
         }
         return $result;
+    }
+
+    public function Edit() {
+        $id = $this->bodo->Dec(Post_get('token'));
+        $data = [
+            'data' => $this->model->_GetDetail($id),
+            'csrf' => $this->bodo->Csrf(),
+            'item_active' => 'Compro/Gallery/index/',
+            'privilege' => $this->bodo->Check_previlege('Compro/Gallery/index/'),
+            'siteTitle' => 'Edit gallery | Company Profile',
+            'pagetitle' => 'Edit gallery',
+            'breadcrumb' => [
+                0 => [
+                    'nama' => 'index',
+                    'link' => base_url('Compro/Gallery/index/'),
+                    'status' => false
+                ],
+                1 => [
+                    'nama' => 'edit',
+                    'link' => null,
+                    'status' => true
+                ]
+            ]
+        ];
+        $data['content'] = $this->parser->parse('galeri/edit', $data, true);
+        return $this->parser->parse('Template/layout', $data);
+    }
+
+    public function Detail() {
+        $id = $this->bodo->Dec(Post_get('token'));
+        $exec = $this->model->_GetDetail($id);
+        ToJson($exec);
+    }
+
+    public function Delete() {
+        $id = $this->bodo->Dec(Post_input('d_id'));
+        $data = [
+            'stat' => 0 + false,
+            'sysdeleteuser' => $this->user + false,
+            'sysdeletedate' => date('Y-m-d H:i:s')
+        ];
+        $this->model->Delete($data, $id);
     }
 
 }
