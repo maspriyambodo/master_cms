@@ -50,7 +50,7 @@
                             <a href="javascript:void(0);" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">Contact</a>
+                            <a href="<?php echo base_url('Profile/Contact/'); ?>" class="nav-link">Contact</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav icons">

@@ -90,4 +90,15 @@ class Profile extends CI_Controller {
         $this->model->Newsletter($data);
     }
 
+    public function Contact() {
+        $data = [
+            'csrf' => $this->bodo->Csrf(),
+            'list_services' => $this->model->List_services(),
+            'siteTitle' => $this->bodo->Sys('company_name'),
+            'description' => 'AU+ Production'
+        ];
+        $data['content'] = $this->parser->parse('contact', $data, true);
+        return $this->parser->parse('layout', $data);
+    }
+
 }
