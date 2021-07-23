@@ -266,9 +266,10 @@ $fullname = $this->session->userdata('fullname');
             </div>
         </div>
         <div id="kt_scrolltop" class="scrolltop"><span class="svg-icon"><i class="fas fa-arrow-up"></i></span></div>
-        <!--        <ul class="sticky-toolbar nav flex-column pl-2 pr-2 pt-3 pb-3 mt-4">
-                    
-                </ul>-->        
+        <!--        <ul id="sticky_toolbar" class="sticky-toolbar nav flex-column pl-2 pr-2 pt-3 pb-3 mt-4">
+        
+                </ul>   -->
+        <ul id="sticky_toolbar"></ul>
         <script>
             var KTAppSettings = {};
             var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
