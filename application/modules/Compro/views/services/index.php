@@ -93,6 +93,10 @@ unset($_SESSION['succ_msg']);
 ?>
 <script>
     window.onload = function () {
+        $('#sticky_toolbar').attr('class', 'sticky-toolbar nav flex-column pl-2 pr-2 pt-3 pb-3 mt-4');
+        $('#sticky_toolbar').append(
+                '<li class="nav-item mb-2" data-bs-toggle="tooltip" data-bs-placement="left" title="view website"> <a class="btn btn-sm btn-icon btn-bg-light btn-icon-success btn-hover-success" href="<?php echo base_url('Profile/index/');?>" target="new"> <i class="fas fa-globe"></i> </a> </li>'
+                );
         toastr.options = {
             closeButton: true,
             debug: false,
