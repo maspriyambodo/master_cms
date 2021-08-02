@@ -75,10 +75,20 @@
                             <div class="col-12 d-flex inner">
                                 <div class="center align-self-center text-center">
                                     <h1 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text aos-init aos-animate">
-                                        # A Different<br />
-                                        Digital Agency
+                                        <?php
+                                        $compro = $this->bodo->Compro();
+                                        foreach ($compro as $slider_text) {
+                                            if ($slider_text->option_name == 'slider text') {
+                                                echo $slider_text->option_value;
+                                            } else {
+                                                null;
+                                            }
+                                        }
+                                        ?>
                                     </h1>
-                                    <p data-aos="zoom-out-up" data-aos-delay="800" class="description ml-auto mr-auto aos-init aos-animate">We work with a focus on creativity, combining design and results.</p>
+                                    <p data-aos="zoom-out-up" data-aos-delay="800" class="description ml-auto mr-auto aos-init aos-animate">
+                                        We work with a focus on creativity, combining design and results.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -111,12 +121,21 @@
                         <div class="col-12 col-lg-3 p-0">
                             <div class="row">
                                 <div class="branding col-12 p-3 text-center text-lg-left item">
-                                    <div class="brand"><a href="javascript:void(0);" class="logo"><img src="<?php echo base_url('assets/images/systems/' . $this->bodo->Sys('logo')); ?>"/></a></div>
+                                    <div class="brand">
+                                        <a href="javascript:void(0);" class="logo">
+                                            <img src="<?php echo base_url('assets/images/systems/' . $this->bodo->Sys('logo')); ?>"/>
+                                        </a>
+                                    </div>
                                     <p>
-                                        Authentic and innovative.<br />
-                                        Built to the smallest detail<br />
-                                        with a focus on usability<br />
-                                        and performance.
+                                        <?php
+                                        foreach ($compro as $phone_compro) {
+                                            if ($phone_compro->option_name == 'tagline company') {
+                                                echo $phone_compro->option_value;
+                                            } else {
+                                                null;
+                                            }
+                                        }
+                                        ?>
                                     </p>
                                 </div>
                             </div>
@@ -127,13 +146,45 @@
                                     <h4 class="title">Get in Touch</h4>
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link"> <i class="icon-phone mr-2"></i> +62 813-8237-6140</a>
+                                            <a href="#" class="nav-link"> <i class="icon-phone mr-2"></i> 
+                                                <?php
+                                                foreach ($compro as $phone_compro) {
+                                                    if ($phone_compro->option_name == 'phone company') {
+                                                        echo $phone_compro->option_value;
+                                                    } else {
+                                                        null;
+                                                    }
+                                                }
+                                                ?>
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="mailto:info@auplus.com" class="nav-link"> <i class="icon-envelope mr-2"></i> info@auplus.com </a>
+                                            <a href="mailto:info@auplus.com" class="nav-link">
+                                                <i class="icon-envelope mr-2"></i> 
+                                                <?php
+                                                foreach ($compro as $phone_compro) {
+                                                    if ($phone_compro->option_name == 'mail company') {
+                                                        echo $phone_compro->option_value;
+                                                    } else {
+                                                        null;
+                                                    }
+                                                }
+                                                ?>
+                                            </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="https://goo.gl/maps/diQfY6DqJunpM9t46" title="click for direction" target="new" class="nav-link"> <i class="icon-location-pin mr-2"></i> Jalan Kavling PGRI XIII No. 133 </a>
+                                            <a href="javascript:void();" class="nav-link">
+                                                <i class="icon-location-pin mr-2"></i> 
+                                                <?php
+                                                foreach ($compro as $phone_compro) {
+                                                    if ($phone_compro->option_name == 'alamat company') {
+                                                        echo $phone_compro->option_value;
+                                                    } else {
+                                                        null;
+                                                    }
+                                                }
+                                                ?>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
