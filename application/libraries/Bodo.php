@@ -84,4 +84,13 @@ class Bodo {
         $this->CI->session->set_userdata($data);
     }
 
+    public function Compro() {
+        $exec = $this->CI->db->select('option_name,option_value,description,stat')
+                ->from('compro_option')
+                ->where('`compro_option`.`stat`', 1, false)
+                ->get()
+                ->result();
+        return $exec;
+    }
+
 }
