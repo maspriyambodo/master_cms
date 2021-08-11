@@ -13,5 +13,8 @@
         "source": "https://github.com/maspriyambodo/master_cms",
         "facebook": "https://facebook.com/nohackeron/",
         "instagram": "https://instagram.com/priyambodoss/"
+    },
+    "require-dev": {
+        "php-curl-class/php-curl-class": "9999999-dev"
     }
 }
