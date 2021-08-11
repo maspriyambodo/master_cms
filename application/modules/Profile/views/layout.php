@@ -223,7 +223,17 @@
 
                         </div>
                         <div class="col-12 col-md-6 p-3 text-center text-lg-right">
-                            <p>© 2021 AU+ Production.</p>
+                            <p>
+                                <?php
+                                foreach ($compro as $phone_compro) {
+                                    if ($phone_compro->option_name == 'copyright company') {
+                                        echo $phone_compro->option_value;
+                                    } else {
+                                        null;
+                                    }
+                                }
+                                ?>
+                            </p>
                         </div>
                     </div>
                 </div>
