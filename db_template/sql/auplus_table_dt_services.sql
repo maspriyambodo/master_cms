@@ -20,11 +20,6 @@ CREATE TABLE `dt_services` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='table untuk company profile halaman services';
 
 --
--- Truncate table before insert `dt_services`
---
-
-TRUNCATE TABLE `dt_services`;
---
 -- Dumping data for table `dt_services`
 --
 

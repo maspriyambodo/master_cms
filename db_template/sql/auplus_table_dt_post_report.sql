@@ -16,9 +16,3 @@ CREATE TABLE `dt_post_report` (
   `ip_address` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `syscreatedate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='table untuk report / laporkan post atau komentar di aplikasi blog';
-
---
--- Truncate table before insert `dt_post_report`
---
-
-TRUNCATE TABLE `dt_post_report`;

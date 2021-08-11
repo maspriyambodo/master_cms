@@ -21,11 +21,6 @@ CREATE TABLE `sys_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 --
--- Truncate table before insert `sys_roles`
---
-
-TRUNCATE TABLE `sys_roles`;
---
 -- Dumping data for table `sys_roles`
 --
 

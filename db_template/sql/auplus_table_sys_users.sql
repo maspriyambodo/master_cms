@@ -25,13 +25,8 @@ CREATE TABLE `sys_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 --
--- Truncate table before insert `sys_users`
---
-
-TRUNCATE TABLE `sys_users`;
---
 -- Dumping data for table `sys_users`
 --
 
 INSERT INTO `sys_users` (`id`, `uname`, `pwd`, `role_id`, `pict`, `stat`, `last_login`, `ip_address`, `login_attempt`, `syscreateuser`, `syscreatedate`, `sysupdateuser`, `sysupdatedate`, `sysdeleteuser`, `sysdeletedate`) VALUES
-(1, 'bod', '$2y$10$n0NAevlNKOHXCTcwocF/C.sjYmVbzg3E.01q6cUiKbSP6EJ6pP/ie', 1, 'blank.png', 1, '2021-08-02 11:49:23', '127.0.0.1', 0, 1, '2021-03-07 23:06:13', 1, '2021-06-08 21:01:58', 0, '2021-07-08 00:09:25');
+(1, 'bod', '$2y$10$n0NAevlNKOHXCTcwocF/C.sjYmVbzg3E.01q6cUiKbSP6EJ6pP/ie', 1, 'blank.png', 1, '2021-08-11 16:23:28', '127.0.0.1', 0, 1, '2021-03-07 23:06:13', 1, '2021-06-08 21:01:58', 0, '2021-07-08 00:09:25');

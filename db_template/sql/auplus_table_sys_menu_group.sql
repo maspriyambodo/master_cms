@@ -21,11 +21,6 @@ CREATE TABLE `sys_menu_group` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 --
--- Truncate table before insert `sys_menu_group`
---
-
-TRUNCATE TABLE `sys_menu_group`;
---
 -- Dumping data for table `sys_menu_group`
 --
 

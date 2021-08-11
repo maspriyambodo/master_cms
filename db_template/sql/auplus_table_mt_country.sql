@@ -21,11 +21,6 @@ CREATE TABLE `mt_country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Truncate table before insert `mt_country`
---
-
-TRUNCATE TABLE `mt_country`;
---
 -- Dumping data for table `mt_country`
 --
 

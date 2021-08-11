@@ -15,11 +15,6 @@ CREATE TABLE `dt_subscriber` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Truncate table before insert `dt_subscriber`
---
-
-TRUNCATE TABLE `dt_subscriber`;
---
 -- Dumping data for table `dt_subscriber`
 --
 

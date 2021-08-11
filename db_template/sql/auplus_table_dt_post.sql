@@ -22,9 +22,3 @@ CREATE TABLE `dt_post` (
   `sysdeleteuser` int DEFAULT NULL COMMENT 'di dapat dari session login user',
   `sysdeletedate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Truncate table before insert `dt_post`
---
-
-TRUNCATE TABLE `dt_post`;

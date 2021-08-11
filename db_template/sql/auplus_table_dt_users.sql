@@ -32,11 +32,6 @@ CREATE TABLE `dt_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 --
--- Truncate table before insert `dt_users`
---
-
-TRUNCATE TABLE `dt_users`;
---
 -- Dumping data for table `dt_users`
 --
 

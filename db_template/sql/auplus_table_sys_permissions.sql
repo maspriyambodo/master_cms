@@ -24,11 +24,6 @@ CREATE TABLE `sys_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 --
--- Truncate table before insert `sys_permissions`
---
-
-TRUNCATE TABLE `sys_permissions`;
---
 -- Dumping data for table `sys_permissions`
 --
 

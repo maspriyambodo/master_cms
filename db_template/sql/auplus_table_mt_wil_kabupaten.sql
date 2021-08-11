@@ -24,11 +24,6 @@ CREATE TABLE `mt_wil_kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
--- Truncate table before insert `mt_wil_kabupaten`
---
-
-TRUNCATE TABLE `mt_wil_kabupaten`;
---
 -- Dumping data for table `mt_wil_kabupaten`
 --
 

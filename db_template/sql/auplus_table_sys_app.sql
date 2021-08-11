@@ -15,11 +15,6 @@ CREATE TABLE `sys_app` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 --
--- Truncate table before insert `sys_app`
---
-
-TRUNCATE TABLE `sys_app`;
---
 -- Dumping data for table `sys_app`
 --
 

@@ -7,7 +7,8 @@
 -- Indexes for table `compro_option`
 --
 ALTER TABLE `compro_option`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`) USING BTREE;
 
 --
 -- Indexes for table `dt_portfolio`
@@ -165,7 +166,7 @@ ALTER TABLE `sys_users`
 -- AUTO_INCREMENT for table `compro_option`
 --
 ALTER TABLE `compro_option`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `dt_portfolio`

@@ -18,9 +18,3 @@ CREATE TABLE `dt_post_category` (
   `sysdeleteuser` int DEFAULT NULL COMMENT 'di dapat dari session login user',
   `sysdeletedate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Truncate table before insert `dt_post_category`
---
-
-TRUNCATE TABLE `dt_post_category`;

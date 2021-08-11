@@ -21,11 +21,6 @@ CREATE TABLE `compro_option` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Truncate table before insert `compro_option`
---
-
-TRUNCATE TABLE `compro_option`;
---
 -- Dumping data for table `compro_option`
 --
 
@@ -35,4 +30,7 @@ INSERT INTO `compro_option` (`id`, `option_name`, `option_value`, `description`,
 (3, 'sub slider', 'We work with a focus on creativity, combining design and results.', 'text dibawah slider text ', 1, 1, '2021-07-23 20:16:09', NULL, NULL, NULL, NULL),
 (4, 'mail company', 'info@auplus.com', 'email untuk company profile', 1, 1, '2021-07-23 21:31:00', NULL, NULL, NULL, NULL),
 (5, 'alamat company', 'Jalan Kavling PGRI XIII No. 133', 'alamat company profile', 1, 1, '2021-07-23 22:25:18', NULL, NULL, NULL, NULL),
-(6, 'tagline company', 'Authentic and innovative.<br>\r\nBuilt to the smallest detail<br>\r\n with a focus on usability<br>\r\nand performance.', '-', 1, 1, '2021-07-23 22:30:19', 1, '2021-07-23 22:31:27', NULL, NULL);
+(6, 'tagline company', 'Authentic and innovative.<br>\r\nBuilt to the smallest detail<br>\r\n with a focus on usability<br>\r\nand performance.', '-', 1, 1, '2021-07-23 22:30:19', 1, '2021-07-23 22:31:27', NULL, NULL),
+(7, 'sosial media', 'http://facebook.com', 'link facebook company', 1, 1, '2021-08-03 15:56:40', NULL, NULL, NULL, NULL),
+(8, 'sosial media', 'https://twitter.com', 'link twitter company', 1, 1, '2021-08-03 15:57:07', NULL, NULL, NULL, NULL),
+(9, 'copyright company', '© 2021 AU+ Production', 'teks untuk copyright company', 1, 1, '2021-08-03 16:20:46', 1, '2021-08-03 16:21:34', NULL, NULL);

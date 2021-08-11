@@ -23,11 +23,6 @@ CREATE TABLE `dt_portfolio` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Truncate table before insert `dt_portfolio`
---
-
-TRUNCATE TABLE `dt_portfolio`;
---
 -- Dumping data for table `dt_portfolio`
 --
 

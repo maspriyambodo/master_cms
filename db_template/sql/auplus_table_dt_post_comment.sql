@@ -23,9 +23,3 @@ CREATE TABLE `dt_post_comment` (
   `sysdeleteuser` int DEFAULT NULL,
   `sysdeletedate` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Truncate table before insert `dt_post_comment`
---
-
-TRUNCATE TABLE `dt_post_comment`;
