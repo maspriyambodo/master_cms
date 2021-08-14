@@ -3,7 +3,7 @@ Options +FollowSymLinks
 Options -Indexes
 DirectoryIndex index.php
 RewriteEngine on
-RewriteBase /master_cms/
+RewriteBase /auplus/
 RewriteCond $1 !^(index\.php|images|robots\.txt)
 
 RewriteCond %{REQUEST_FILENAME} !-f
