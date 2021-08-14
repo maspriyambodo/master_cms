@@ -96,7 +96,6 @@ class Profile extends CI_Controller {
     public function Contact() {
         $data = [
             'csrf' => $this->bodo->Csrf(),
-            'list_services' => $this->model->List_services(),
             'siteTitle' => 'Contact ' . $this->bodo->Sys('company_name'),
             'pageTitle' => 'Contact Us',
             'description' => 'AU+ Production'
