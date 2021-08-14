@@ -31,6 +31,7 @@ class Profile extends CI_Controller {
             'siteTitle' => $this->bodo->Sys('company_name'),
             'description' => 'AU+ Production'
         ];
+        $data['slider'] = $this->parser->parse('section_slider', $data, true);
         $data['content'] = $this->parser->parse('index', $data, true);
         return $this->parser->parse('layout', $data);
     }
@@ -39,9 +40,11 @@ class Profile extends CI_Controller {
         $paginate = $this->Paginate();
         $data = [
             'siteTitle' => 'Gallery | ' . $this->bodo->Sys('company_name'),
+            'pageTitle' => 'Our Portfolio',
             'description' => 'AU+ Production',
             'portfolio' => $this->model->Portfolio($paginate)
         ];
+        $data['slider'] = $this->parser->parse('section_slider2', $data, true);
         $data['content'] = $this->parser->parse('gallery', $data, true);
         return $this->parser->parse('layout', $data);
     }
@@ -94,9 +97,11 @@ class Profile extends CI_Controller {
         $data = [
             'csrf' => $this->bodo->Csrf(),
             'list_services' => $this->model->List_services(),
-            'siteTitle' => $this->bodo->Sys('company_name'),
+            'siteTitle' => 'Contact ' . $this->bodo->Sys('company_name'),
+            'pageTitle' => 'Contact Us',
             'description' => 'AU+ Production'
         ];
+        $data['slider'] = $this->parser->parse('section_slider2', $data, true);
         $data['content'] = $this->parser->parse('contact', $data, true);
         return $this->parser->parse('layout', $data);
     }
