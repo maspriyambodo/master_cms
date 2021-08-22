@@ -100,7 +100,7 @@ class M_post extends CI_Model {
     }
 
     public function Post($id) {
-        $exec = $this->db->select('`dt_post`.`id` AS `id`,`dt_post`.`post_tags`,`dt_post`.`post_content`, `dt_post`.`post_title`, `dt_post`.`post_status`, `dt_post`.`viewers`, `dt_post`.`comment_status`, `dt_post`.`syscreateuser`, `dt_post`.`syscreatedate`, `sys_users`.`uname`, `sys_users`.`id` AS `id_user`, `dt_post_category`.`id` AS `id_category`, `dt_post_category`.`category`')
+        $exec = $this->db->select('`dt_post`.`id` AS `id`,`dt_post`.`post_tags`,`dt_post`.`post_content`, `dt_post`.`post_title`, `dt_post`.`post_status`, `dt_post`.`viewers`, `dt_post`.`comment_status`, `dt_post`.`syscreateuser`, `dt_post`.`syscreatedate`,`dt_post`.`post_thumbnail`, `sys_users`.`uname`, `sys_users`.`id` AS `id_user`, `dt_post_category`.`id` AS `id_category`, `dt_post_category`.`category`')
                 ->from('dt_post')
                 ->join('sys_users', '`dt_post`.`syscreateuser` = `sys_users`.`id`', 'LEFT')
                 ->join('dt_post_category', '`dt_post`.`post_category` = `dt_post_category`.`id`', 'LEFT')

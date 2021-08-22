@@ -46,8 +46,13 @@
                     </div>
                     <div class="form-group">
                         <label for="post_tags">tags:</label>
-                        <input type="text" id="post_tags" name="post_tags" class="form-control" required="" autocomplete="off"/>
+                        <input type="text" id="post_tags" name="post_tags" class="form-control" required="" autocomplete="off" placeholder="tags1, tags2"/>
                         <small>separate with coma</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="post_tags">Thumbnail:</label>
+                        <div id="thmbtxt" class="dropzone"></div>
+                        <input type="hidden" name="thumbnail_txt" required=""/>
                     </div>
                 </div>
             </div>
@@ -64,7 +69,6 @@
 </div>
 <script>
     function Save() {
-        
         var a, b, c, d, e;
         a = $('input[name="post_title"]').val();
         b = $('select[name="stat_post"]').val();
@@ -107,6 +111,18 @@
             filebrowserImageBrowseUrl: '<?php echo base_url('Elfinder_lib/manager/'); ?>'
         });
         $('.custom-select').select2();
+        Dropzone.autoDiscover = false;
+        var Thmbtxt = new Dropzone("#thmbtxt", {
+            url: '<?php echo base_url('Blog/Post/Upload_image'); ?>',
+            paramName: "thmbtxt",
+            maxFilesize: 1,
+            uploadMultiple: false,
+            maxFiles: 1,
+            acceptedFiles: "image/jpeg,image/png,image/gif",
+            success: function (data, response) {
+                $('input[name="thumbnail_txt"]').val(response.file_name);
+            }
+        });
     };
     function Batal() {
         window.location.href = 'Blog/Post/index/';

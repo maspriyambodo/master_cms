@@ -48,7 +48,7 @@
                             <a href="<?php echo base_url('Profile/Gallery/'); ?>" class="nav-link">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">Blog</a>
+                            <a href="<?php echo base_url('Blog/index/'); ?>" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="<?php echo base_url('Profile/Contact/'); ?>" class="nav-link">Contact</a>
@@ -98,12 +98,10 @@
                                     </div>
                                     <p>
                                         <?php
-                                        foreach ($compro as $phone_compro) {
-                                            if ($phone_compro->option_name == 'tagline company') {
-                                                echo $phone_compro->option_value;
-                                            } else {
-                                                null;
-                                            }
+                                        if (!empty($compro['tagline_company'])) {
+                                            echo $compro['tagline_company'];
+                                        } else {
+                                            null;
                                         }
                                         ?>
                                     </p>
@@ -118,41 +116,35 @@
                                         <li class="nav-item">
                                             <a href="#" class="nav-link"> <i class="icon-phone mr-2"></i> 
                                                 <?php
-                                                foreach ($compro as $phone_compro) {
-                                                    if ($phone_compro->option_name == 'phone company') {
-                                                        echo $phone_compro->option_value;
-                                                    } else {
-                                                        null;
-                                                    }
+                                                if (!empty($compro['phone_company'])) {
+                                                    echo $compro['phone_company'];
+                                                } else {
+                                                    null;
                                                 }
                                                 ?>
                                             </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="mailto:info@auplus.com" class="nav-link">
-                                                <i class="icon-envelope mr-2"></i> 
-                                                <?php
-                                                foreach ($compro as $phone_compro) {
-                                                    if ($phone_compro->option_name == 'mail company') {
-                                                        echo $phone_compro->option_value;
-                                                    } else {
-                                                        null;
-                                                    }
-                                                }
-                                                ?>
-                                            </a>
-                                        </li>
+                                        <?php
+                                        if (!empty($compro['mail_company'])) {
+                                            echo '<li class="nav-item">'
+                                            . '<a href="mailto:' . $compro['mail_company'] . '" class="nav-link">'
+                                            . '<i class="icon-envelope mr-2"></i> '
+                                            . $compro['mail_company']
+                                            . '</a>'
+                                            . '</li>';
+                                        } else {
+                                            null;
+                                        }
+                                        ?>
                                         <li class="nav-item">
                                             <a href="javascript:void();" class="nav-link">
                                                 <i class="icon-location-pin mr-2"></i> 
                                                 <?php
-                                                foreach ($compro as $phone_compro) {
-                                                    if ($phone_compro->option_name == 'alamat company') {
-                                                        echo $phone_compro->option_value;
+                                                if (!empty($compro['alamat_company'])) {
+                                                        echo $compro['alamat_company'];
                                                     } else {
                                                         null;
                                                     }
-                                                }
                                                 ?>
                                             </a>
                                         </li>
@@ -195,13 +187,11 @@
                         <div class="col-12 col-md-6 p-3 text-center text-lg-right">
                             <p>
                                 <?php
-                                foreach ($compro as $phone_compro) {
-                                    if ($phone_compro->option_name == 'copyright company') {
-                                        echo $phone_compro->option_value;
+                                if (!empty($compro['copyright_company'])) {
+                                        echo $compro['copyright_company'];
                                     } else {
                                         null;
                                     }
-                                }
                                 ?>
                             </p>
                         </div>

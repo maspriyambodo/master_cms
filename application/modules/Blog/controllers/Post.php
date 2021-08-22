@@ -134,6 +134,7 @@ class Post extends CI_Controller {
             'comment_status' => Post_input('post_comment'),
             'post_category' => $post_category,
             'post_tags' => Post_input('post_tags'),
+            'post_thumbnail' => Post_input('thumbnail_txt'),
             'syscreateuser' => $this->user,
             'syscreatedate' => date('Y-m-d H:i:s')
         ];
@@ -202,6 +203,21 @@ class Post extends CI_Controller {
             'sysupdatedate' => date('Y-m-d H:i:s')
         ];
         $this->M_post->Activated($data, $id_post);
+    }
+
+    public function Upload_image() {
+        $param = [
+            'upload_path' => 'assets/images/blog/thumb/',
+            'file_name' => date('Y_m_d_H_i_s'),
+            'input_name' => 'thmbtxt',
+            'allowed_types' => 'jpg|png|jpeg'
+        ];
+        $upload = _Upload($param);
+        $response = [
+            'stat' => $upload['status'],
+            'file_name' => $upload['file_name']
+        ];
+        ToJson($response);
     }
 
 }

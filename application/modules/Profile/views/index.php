@@ -1,18 +1,32 @@
+<?php $compro = $this->bodo->Compro(); ?>
 <section id="introduction" class="section-1 counter skills">
     <div class="container">
-        <h2 class="super effect-static-text text-center">AU+ Production</h2>
+        <h2 class="super effect-static-text text-center"><?php echo $this->bodo->Sys('company_name'); ?></h2>
         <div class="row intro">
+
             <div class="col-md-6">
                 <p class="text-justify">
-                    AU+ Production adalah Sekumpulan anak muda yang Kreatif & Penuh dengan ide-ide yang Unik.
-                    Kami bergerak dalam bidang media kreatif khususnya di bidang Desain, Videography, dan Photography.
+                    <?php
+                    if (!empty($compro['company_introduction'])) {
+                        echo $compro['company_introduction'];
+                    } else {
+                        null;
+                    }
+                    ?>
                 </p>
             </div>
             <div class="col-md-6">
                 <p class="text-justify">
-                    Kami Berkarya sejak tahun 2014, meskipun terhitung masih muda, tapi kami telah membantu beberapa Perusahaan Besar dengan ide-ide Unik yang Kami Miliki. Dengan Tim yang Profesional, Kami mampu memunculkan ide yang kreatif & Inovatif.
+                    <?php
+                    if (!empty($compro['company_introduction2'])) {
+                        echo $compro['company_introduction2'];
+                    } else {
+                        null;
+                    }
+                    ?>
                 </p>
             </div>
+
         </div>
 
     </div>

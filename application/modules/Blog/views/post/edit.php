@@ -73,6 +73,20 @@
                         <input type="text" id="post_tags" name="post_tags" class="form-control" required="" autocomplete="off" value="<?php echo $post['post_tags']; ?>"/>
                         <small>separate with coma</small>
                     </div>
+                    <?php
+                    if (!empty($post['post_thumbnail'])) {
+                        echo '<div class="form-group">'
+                        . '<img src="' . base_url('assets/images/blog/thumb/' . $post['post_thumbnail']) . '" alt="' . $post['post_title'] . '" class="img-fluid"/>'
+                        . '</div>';
+                    } else {
+                        null;
+                    }
+                    ?>
+                    <div class="form-group">
+                        <label for="post_tags">Thumbnail:</label>
+                        <div id="thmbtxt" class="dropzone"></div>
+                        <input type="hidden" name="thumbnail_txt" required=""/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,6 +123,18 @@
             filebrowserImageBrowseUrl: '<?= base_url('Elfinder_lib/manager/'); ?>'
         });
         $('.custom-select').select2();
+        Dropzone.autoDiscover = false;
+        var Thmbtxt = new Dropzone("#thmbtxt", {
+            url: '<?php echo base_url('Blog/Post/Upload_image'); ?>',
+            paramName: "thmbtxt",
+            maxFilesize: 1,
+            uploadMultiple: false,
+            maxFiles: 1,
+            acceptedFiles: "image/jpeg,image/png,image/gif",
+            success: function (data, response) {
+                $('input[name="thumbnail_txt"]').val(response.file_name);
+            }
+        });
     };
     function Batal() {
         window.location.href = 'Blog/Post/index/';
@@ -131,7 +157,7 @@
         } else if (!e) {
             toastr.warning('Please fill Post tags');
         } else {
-            
+
             $('#post_form').submit();
         }
     }

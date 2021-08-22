@@ -106,8 +106,9 @@ class General extends CI_Controller {
     }
 
     public function Save() {
+        $option_name = str_replace(' ', '_', Post_input('nametxt'));
         $data = [
-            'option_name' => Post_input('nametxt'),
+            'option_name' => $option_name,
             'option_value' => Post_input('valuetxt'),
             'description' => Post_input('desctxt'),
             'syscreateuser' => $this->user,
