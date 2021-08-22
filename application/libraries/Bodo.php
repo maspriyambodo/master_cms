@@ -90,7 +90,11 @@ class Bodo {
                 ->where('`compro_option`.`stat`', 1, false)
                 ->get()
                 ->result();
-        return $exec;
+        $data = [];
+        foreach ($exec as $value) {
+            $data[$value->option_name] = $value->option_value;
+        }
+        return $data;
     }
 
 }
