@@ -1,0 +1,8 @@
+#git rm -r --cached .
+#git add .
+#git commit -m "fixed untracked files"
+/nbproject
+/application/logs
+/application/sessions
+/application/config
+/index.php
