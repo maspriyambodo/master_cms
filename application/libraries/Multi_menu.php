@@ -58,7 +58,7 @@ class Multi_menu {
      * 
      * @var string
      */
-    private $parent_anchor = '<a href="%s" class="menu-link menu-toggle"><span class="menu-text">%s</span><i class="menu-arrow"></i></a>';
+    private $parent_anchor = '<a href="%s" class="menu-link menu-toggle">%s<i class="menu-arrow"></i></a>';
 
     /**
      * Opening tag of the menu item level one that has children
@@ -82,7 +82,7 @@ class Multi_menu {
      * 
      * @var string
      */
-    private $parentl1_anchor = '<a href="%s" class="menu-link menu-toggle"><span class="menu-text">%s</span><i class="menu-arrow"></i></a>';
+    private $parentl1_anchor = '<a href="%s" class="menu-link menu-toggle">%s<i class="menu-arrow"></i></a>';
 
     /**
      * Opening tag of the children menu / sub menu.
@@ -122,7 +122,7 @@ class Multi_menu {
      * 
      * @var string
      */
-    private $item_anchor = '<a href="%s" class="menu-link"><span class="menu-text">%s</span></a>';
+    private $item_anchor = '<a href="%s" class="menu-link">%s</a>';
 
     /**
      * The list of menu items that has divider
@@ -369,7 +369,7 @@ class Multi_menu {
 
                 if ($icon) {
                     $icon = "<span class='svg-icon menu-icon'><i class='{$icon}'></i></span>";
-                    $label = trim($this->icon_position == 'right' ? ($label . " " . $icon ) : ($icon . " " . $label));
+                    $label = trim($this->icon_position == 'right' ? ("<span class='menu-text'>" . $label . "</span> " . $icon ) : ($icon . " <span class='menu-text'>" . $label . '</span>'));
                 }
                 // menu slug
                 $slug = $item[$this->menu_key];
