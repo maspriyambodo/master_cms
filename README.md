@@ -51,10 +51,15 @@ give RW access folder sessions in application folder
 
     $ chmod 777 ./application/sessions/
 
-update composer
----
 ### Requirements
 ---
-php version 7.4 or above
-PHP Curl Class works with PHP 7.0, 7.1, 7.2, 7.3, 7.4, and 8.0
-composer
+1. php version 7.4 or above
+1. PHP Curl Class works with PHP 7.0, 7.1, 7.2, 7.3, 7.4, and 8.0
+1. studio-42/elfinder 2.1
+1. pusher/pusher-php-server 7.0
+1. mpdf/mpdf 8.0
+
+### Requirements
+---
+- [Facebook](https://facebook.com/nohackeron)
+- [Instagram](https://instagram.com/priyambodoss)
