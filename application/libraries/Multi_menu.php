@@ -90,7 +90,7 @@ class Multi_menu {
      * 
      * @var string
      */
-    private $children_tag_open = '<div class="menu-submenu menu-item-open"><i class="menu-arrow"></i><ul class="menu-subnav">';
+    private $children_tag_open = '<div class="menu-submenu menu-item-open"><ul class="menu-subnav">';
 
     /**
      * Closing tag of the children menu / sub menu.
@@ -370,6 +370,8 @@ class Multi_menu {
                 if ($icon) {
                     $icon = "<span class='svg-icon menu-icon'><i class='{$icon}'></i></span>";
                     $label = trim($this->icon_position == 'right' ? ("<span class='menu-text'>" . $label . "</span> " . $icon ) : ($icon . " <span class='menu-text'>" . $label . '</span>'));
+                } else {
+                    $label = trim("<i class='menu-bullet menu-bullet-dot'><span></span></i><span class='menu-text'>" . $label . "</span> ");
                 }
                 // menu slug
                 $slug = $item[$this->menu_key];
@@ -393,7 +395,8 @@ class Multi_menu {
                     $tag_open = $this->item_tag_open;
                     $href = site_url($slug);
                     $item_anchor = $this->item_anchor;
-                }$html .= $this->set_active($tag_open, $slug);
+                }
+                $html .= $this->set_active($tag_open, $slug);
                 if (substr_count($item_anchor, '%s') == 2) {
                     $html .= sprintf($item_anchor, $href, $label);
                 } else {
