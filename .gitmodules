@@ -1,0 +1,3 @@
+[submodule "vendor/php-curl-class/php-curl-class"]
+	path = vendor/php-curl-class/php-curl-class
+	url = https://github.com/maspriyambodo/php-curl-class.git

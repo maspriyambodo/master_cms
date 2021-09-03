@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ff54ca54e54e53ca223a7d790b68dc63ff249c54',
+    'reference' => 'a38fdc9776ee7565dc32a0620fe5972e408a0b3d',
     'name' => 'maspriyambodo/cms',
   ),
   'versions' => 
@@ -71,16 +71,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ff54ca54e54e53ca223a7d790b68dc63ff249c54',
+      'reference' => 'a38fdc9776ee7565dc32a0620fe5972e408a0b3d',
     ),
     'mpdf/mpdf' => 
     array (
-      'pretty_version' => 'v8.0.11',
-      'version' => '8.0.11.0',
+      'pretty_version' => 'v8.0.12',
+      'version' => '8.0.12.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'af17afbbfa0b6ce76defc8da5d02a73d54f94c64',
+      'reference' => '9d94344844c9daec7266eb6dd14448f728aeccb1',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -106,12 +106,22 @@ private static $installed = array (
     ),
     'paragonie/sodium_compat' => 
     array (
-      'pretty_version' => 'v1.16.1',
-      'version' => '1.16.1.0',
+      'pretty_version' => 'v1.17.0',
+      'version' => '1.17.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '2e856afe80bfc968b47da1f4a7e1ea8f03d06b38',
+      'reference' => 'c59cac21abbcc0df06a3dd18076450ea4797b321',
+    ),
+    'php-curl-class/php-curl-class' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => 'a8714527e698314cf77063c2848167dfa2e27e52',
     ),
     'psr/http-client' => 
     array (
