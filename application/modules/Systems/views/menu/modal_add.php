@@ -62,6 +62,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="desc_txt">Description:</label>
+                        <textarea name="desc_txt" id="desc_txt" class="form-control" required="" maxlength="250"></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal"><i class="far fa-times-circle"></i> Close</button>

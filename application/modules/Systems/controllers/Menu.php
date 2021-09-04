@@ -45,6 +45,7 @@ class Menu extends CI_Controller {
         }
         $data = [
             'parent' => $parent,
+            'description' => Post_input('desc_txt'),
             'nama_menu' => Post_input('nama_menu'),
             'link_menu' => Post_input('link_menu'),
             'gr_menu' => $this->bodo->Dec(Post_input('gr_menu')),
@@ -125,6 +126,7 @@ class Menu extends CI_Controller {
         }
         $data = [
             'parent' => $id_parent,
+            'description' => Post_input('desc_txt'),
             'menu' => Post_input("nama_menu"),
             'location' => Post_input("link_menu"),
             'nomor_order' => Post_input("order_no"),

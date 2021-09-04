@@ -26,7 +26,7 @@ class M_menu extends CI_Model {
     }
 
     public function Save($data) {
-        $exec = $this->db->query('CALL sys_menu_insert(' . $data['parent'] . ',"' . $data['nama_menu'] . '","' . $data['link_menu'] . '",' . $data['order_no'] . ',' . $data['gr_menu'] . ',"' . $data['ico_menu'] . '",' . $data['user_login'] . ');');
+        $exec = $this->db->query('CALL sys_menu_insert(' . $data['parent'] . ',"' . $data['nama_menu'] . '","' . $data['link_menu'] . '",' . $data['order_no'] . ',' . $data['gr_menu'] . ',"' . $data['ico_menu'] . '","' . $data['description'] . '",' . $data['user_login'] . ');');
         if (empty($exec->conn_id->affected_rows) or $exec->conn_id->affected_rows == 0) {
             log_message('error', APPPATH . 'modules/Systems/models/M_menu -> function Save ' . 'error ketika insert_menu');
             $result = [
@@ -68,7 +68,7 @@ class M_menu extends CI_Model {
     }
 
     public function Update($data) {
-        $exec = $this->db->query('CALL sys_menu_update(' . $data['parent'] . ',"' . $data['menu'] . '","' . $data['location'] . '",' . $data['nomor_order'] . ',' . $data['grup'] . ',"' . $data['icon_menu'] . '",' . $data['user_login'] . ',' . $data['id_menu'] . ',@menu_nama);');
+        $exec = $this->db->query('CALL sys_menu_update(' . $data['parent'] . ',"' . $data['menu'] . '","' . $data['location'] . '",' . $data['nomor_order'] . ',' . $data['grup'] . ',"' . $data['icon_menu'] . '",' . $data['user_login'] . ',' . $data['id_menu'] . ',"' . $data['description'] . '",@menu_nama);');
         if (empty($exec->conn_id->affected_rows) or $exec->conn_id->affected_rows == 0) {
             log_message('error', APPPATH . 'modules/Systems/models/M_menu -> function Save ' . 'error ketika insert_menu');
             $result = [

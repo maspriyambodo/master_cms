@@ -52,7 +52,8 @@ class Systems extends CI_Controller {
         $param = [
             'upload_path' => 'assets/images/systems/',
             'file_name' => "favicon",
-            'input_name' => "favico"
+            'input_name' => "favico",
+            'allowed_types' => 'gif|jpg|png|gif|ico'
         ];
         $fav = _Upload($param);
         if (!$fav) {
@@ -81,7 +82,8 @@ class Systems extends CI_Controller {
         $param = [
             'upload_path' => 'assets/images/systems/',
             'file_name' => "logo",
-            'input_name' => "logo_comp"
+            'input_name' => "logo_comp",
+            'allowed_types' => 'gif|jpg|png|gif|ico'
         ];
         $fav = _Upload($param);
         if (!$fav) {
@@ -195,7 +197,8 @@ class Systems extends CI_Controller {
         $param = [
             'upload_path' => 'assets/images/users/',
             'file_name' => 'users' . date('d_His'),
-            'input_name' => "profile_avatar"
+            'input_name' => "profile_avatar",
+            'allowed_types' => 'gif|jpg|png|gif|ico'
         ];
         $pict = [];
         $old_ava = Post_input("old_ava");

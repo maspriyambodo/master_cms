@@ -77,6 +77,10 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <label for='desc_txt'>Description:</label>
+                <textarea id="desc_txt" name="desc_txt" class="form-control" required="" maxlength="250"><?php echo $data[0]->description; ?></textarea>
+            </div>
             <hr>
             <div class="btn-group">
                 <a href="<?php echo site_url('Systems/Menu/index/'); ?>" class="btn btn-danger" title="Cancel Update"><i class="fas fa-times"></i> Cancel</a>

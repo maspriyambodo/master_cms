@@ -48,6 +48,7 @@
                                 } else {
                                     echo $menu->parent_name;
                                 }
+                                echo '<p class="d-none">'. $menu->description .'</p>';
                                 ?>
                             </td>
                             <td><?php echo '<span id="nama_menu' . $menu->id_menu . '">' . $menu->nama_menu . '</span>'; ?></td>
