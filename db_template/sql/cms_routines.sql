@@ -274,7 +274,7 @@ ELSEIF param = 'insert_baru' THEN
 	UPDATE `sys_menu_group` 
 	SET `sys_menu_group`.`order_no` = `order_no` + 1 
 	WHERE `sys_menu_group`.`order_no` >= no_order
-	AND `sys_menu_group_copy1`.`order_no` != 999;
+	AND `sys_menu_group`.`order_no` != 999;
 
 	INSERT INTO sys_menu_group (
 		`sys_menu_group`.`nama`, 
@@ -349,7 +349,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_group_select` ()  BEGIN
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_insert`$$
-CREATE DEFINER=`admin`@`%` PROCEDURE `sys_menu_insert` (IN `parent` INT, IN `nama_menu` VARCHAR(50), IN `link_menu` VARCHAR(255), IN `no_order` INT, IN `gr_menu` INT, IN `ico_menu` VARCHAR(50), IN `user_login` INT)  BEGIN
+CREATE DEFINER=`admin`@`%` PROCEDURE `sys_menu_insert` (IN `parent` INT, IN `nama_menu` VARCHAR(50), IN `link_menu` VARCHAR(255), IN `no_order` INT, IN `gr_menu` INT, IN `ico_menu` VARCHAR(50), IN `desc_txt` VARCHAR(255), IN `user_login` INT)  BEGIN
 	DECLARE
 		new_id_menu INT DEFAULT 0;
 	DECLARE
@@ -380,12 +380,13 @@ CREATE DEFINER=`admin`@`%` PROCEDURE `sys_menu_insert` (IN `parent` INT, IN `nam
 		sys_menu.order_no,
 		sys_menu.group_menu,
 		sys_menu.icon,
+		sys_menu.description,
 		sys_menu.stat,
 		sys_menu.syscreateuser,
 		sys_menu.syscreatedate 
 	)
 	VALUES
-		( parent, nama_menu, link_menu, no_order, gr_menu, ico_menu, 1, user_login, NOW() );
+		( parent, nama_menu, link_menu, no_order, gr_menu, ico_menu, desc_txt, 1, user_login, NOW() );
 	
 	SET new_id_menu = LAST_INSERT_ID();
 	SELECT
@@ -401,6 +402,16 @@ CREATE DEFINER=`admin`@`%` PROCEDURE `sys_menu_insert` (IN `parent` INT, IN `nam
 		SET i = i + 1;
 		
 	END WHILE;
+	
+	UPDATE sys_permissions 
+	SET sys_permissions.v = 1,
+	sys_permissions.c = 1,
+	sys_permissions.r = 1,
+	sys_permissions.u = 1,
+	sys_permissions.d = 1 
+	WHERE
+		sys_permissions.id_menu = new_id_menu 
+		AND sys_permissions.role_id = 1;
 	
 END$$
 
@@ -430,7 +441,7 @@ sys_menu_select.order_no ASC;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_update`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_update` (IN `parent` INT, IN `menu` VARCHAR(50), IN `location` VARCHAR(255), IN `nomor_order` INT, IN `grup` INT, IN `icon_menu` VARCHAR(50), IN `user_login` INT, IN `id_menu` INT, OUT `menu_nama` VARCHAR(50))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_update` (IN `parent` INT, IN `menu` VARCHAR(50), IN `location` VARCHAR(255), IN `nomor_order` INT, IN `grup` INT, IN `icon_menu` VARCHAR(50), IN `user_login` INT, IN `id_menu` INT, IN `desc_txt` VARCHAR(255), OUT `menu_nama` VARCHAR(50))  BEGIN
 SELECT sys_menu.nama INTO menu_nama FROM sys_menu WHERE sys_menu.id = id_menu;
 UPDATE sys_menu
 SET sys_menu.menu_parent = parent, 
@@ -440,7 +451,8 @@ SET sys_menu.menu_parent = parent,
 	sys_menu.group_menu = grup, 
 	sys_menu.icon = icon_menu, 
 	sys_menu.sysupdateuser = user_login, 
-	sys_menu.sysupdatedate = NOW()
+	sys_menu.sysupdatedate = NOW(),
+	sys_menu.description = desc_txt
 WHERE sys_menu.id = id_menu;
 SELECT menu_nama;
 END$$

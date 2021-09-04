@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2021 at 06:24 AM
--- Server version: 8.0.25-0ubuntu0.20.04.1
--- PHP Version: 7.4.21
+-- Generation Time: Sep 04, 2021 at 12:32 PM
+-- Server version: 8.0.26-0ubuntu0.20.04.2
+-- PHP Version: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
