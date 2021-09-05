@@ -35,6 +35,8 @@ $db['default'] = ['dsn' => '',
 
 rename file `index.production` to `index.php`
 
+rename file `htaccess.production` to `.htaccess`
+
 create directory with name logs in `/application/`
 
     $ mkdir ./application/logs
