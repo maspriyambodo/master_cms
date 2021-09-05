@@ -61,7 +61,7 @@ give RW access folder sessions in application folder
 1. php extensions `zlib`
 1. php extensions `bcmath`
 
-###libraries
+### libraries
 ---
 1. PHP Curl Class works with PHP 7.0, 7.1, 7.2, 7.3, 7.4, and 8.0
 1. studio-42/elfinder 2.1
