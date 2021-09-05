@@ -2,6 +2,7 @@
 #git add .
 #git commit -m "fixed untracked files"
 /nbproject
+/vendor
 /application/logs
 /application/sessions
 /application/config
