@@ -1,8 +1,8 @@
 ### Instalation
 ---
-rename folder /application/config.production to config
+rename folder `/application/config.production` to `config`
 
-customize file database.php in config folder with your own.
+customize file `database.php` in config folder with your own.
 
 ```php
 <?php
@@ -33,9 +33,9 @@ $db['default'] = ['dsn' => '',
 
 ```
 
-rename file index.production to index.php
+rename file `index.production` to `index.php`
 
-create directory with name logs in /application/
+create directory with name logs in `/application/`
 
     $ mkdir ./application/logs
 
@@ -43,7 +43,7 @@ give RW access folder logs in application folder
 
     $ chmod 777 ./application/logs/
 
-create directory with name sessions in /application/
+create directory with name sessions in `/application/`
 
     $ mkdir ./application/sessions
 
@@ -59,7 +59,7 @@ give RW access folder sessions in application folder
 1. pusher/pusher-php-server 7.0
 1. mpdf/mpdf 8.0
 
-### Requirements
+### contributors
 ---
 - [Facebook](https://facebook.com/nohackeron)
 - [Instagram](https://instagram.com/priyambodoss)
