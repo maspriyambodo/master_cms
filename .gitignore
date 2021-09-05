@@ -7,3 +7,4 @@
 /application/sessions
 /application/config
 /index.php
+/.htaccess
