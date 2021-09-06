@@ -4,6 +4,12 @@
     "description": "cms of maspriyambodo",
     "homepage": "https://maspriyambodo.co.id",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "maspriyambodo",
+            "email": "info@mycapturer.com"
+        }
+    ],
     "require": {
         "studio-42/elfinder": "^2.1",
         "pusher/pusher-php-server": "^7.0",
