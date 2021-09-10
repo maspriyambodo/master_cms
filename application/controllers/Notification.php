@@ -10,6 +10,7 @@ class Notification extends CI_Controller {
         $this->role_id = Dekrip($this->session->userdata('role_id'));
         $this->load->library('App_notification');
         $this->load->model('M_notification', 'model');
+        $this->bodo->Check_login();
     }
 
     public function index() {
@@ -57,19 +58,6 @@ class Notification extends CI_Controller {
             ];
         }
         return ToJson($result);
-    }
-
-    private function date_dif($param) {
-        $d2 = new DateTime(date('Y-m-d H:i:s'));
-        $d1 = new DateTime($param);
-        $interval = $d1->diff($d2);
-        $diffInSeconds = $interval->s; //45
-        $diffInMinutes = $interval->i; //23
-        $diffInHours = $interval->h; //8
-        $diffInDays = $interval->d; //21
-        $diffInMonths = $interval->m; //4
-        $diffInYears = $interval->y; //1
-        return $diffInSeconds;
     }
 
 }
