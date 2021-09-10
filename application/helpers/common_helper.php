@@ -34,6 +34,13 @@ function Enkrip($param) {
     return $result;
 }
 
+function Dekrip($enc) {//sama saja dengan libraries Bodo $this->bodo->Dec();
+    $ci = & get_instance();
+    $encrypt = str_replace(['-', '_', '~'], ['+', '/', '='], $enc);
+    $dec = $ci->encryption->decrypt($encrypt);
+    return $dec;
+}
+
 function _Upload($param) {
     $ci = & get_instance();
     $result = [];
