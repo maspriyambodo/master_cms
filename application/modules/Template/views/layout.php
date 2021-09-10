@@ -3,6 +3,7 @@
 $this->bodo->Check_login();
 $uname = $this->session->userdata('uname');
 $fullname = $this->session->userdata('fullname');
+$tot_notif = $this->bodo->Count_notif();
 ?>
 <html lang="en">
     <head>
@@ -84,6 +85,20 @@ $fullname = $this->session->userdata('fullname');
                                         <div class="btn btn-icon btn-clean btn-lg btn-dropdown mr-1">
                                             <span class="svg-icon svg-icon-xl svg-icon-primary">
                                                 <i class="fas fa-search"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="topbar-item" onclick="dir_notif()">
+                                        <div class="btn btn-icon btn-clean btn-lg mr-1" id="kt_quick_panel_toggle">
+                                            <span class="svg-icon">
+                                                <?php
+                                                if ($tot_notif == 0) {
+                                                    null;
+                                                } else {
+                                                    echo '<span id="notif_count" class="label label-sm label-danger label-inline text-center" style="margin: -10px 0px 0px 0px;position: absolute;">' . $tot_notif . '</span>';
+                                                }
+                                                ?>
+                                                <i class="fas fa-bell"></i>
                                             </span>
                                         </div>
                                     </div>
@@ -193,6 +208,25 @@ $fullname = $this->session->userdata('fullname');
                 </div>
             </div>
         </div>
+        <div id="kt_quick_panel" class="offcanvas offcanvas-right pt-5 pb-10">
+            <div class="offcanvas-header offcanvas-header-navs d-flex align-items-center justify-content-between mb-5">
+                <ul class="nav nav-bold nav-tabs nav-tabs-line nav-tabs-line-3x nav-tabs-primary flex-grow-1 px-10" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#kt_quick_panel_logs" >Notification</a>
+                    </li>
+                </ul>
+                <div class="offcanvas-close mt-n1 pr-5">
+                    <a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_quick_panel_close">
+                        <i class="ki ki-close icon-xs text-muted"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="offcanvas-content px-10">
+                <div class="tab-content" id="notif_body">
+                    <div class="tab-pane fade show pt-3 pr-5 mr-n5 active" id="kt_quick_panel_logs" role="tabpanel"></div>
+                </div>
+            </div>
+        </div>
         <div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
             <div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
                 <h3 class="font-weight-bold m-0">
@@ -262,40 +296,13 @@ $fullname = $this->session->userdata('fullname');
             </div>
         </div>
         <div id="kt_scrolltop" class="scrolltop"><span class="svg-icon"><i class="fas fa-arrow-up"></i></span></div>
-        <!--        <ul class="sticky-toolbar nav flex-column pl-2 pr-2 pt-3 pb-3 mt-4">
-                    
-                </ul>-->        
+        <ul id="sticky_toolbar"></ul>
+
         <script>
-            var KTAppSettings = {};
-            var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
-            menu.addClass('menu-item-active menu-item-open');
-
-            var pusher = new Pusher('4587e4cb86b14bb98e69', {
-                cluster: 'ap1'
-            });
-
-            var channel = pusher.subscribe('my-channel');
-            channel.bind('my-event', function (data) {
-                toastr.options = {
-                    "closeButton": false,
-                    "debug": false,
-                    "newestOnTop": true,
-                    "progressBar": false,
-                    "positionClass": "toast-top-right",
-                    "preventDuplicates": true,
-                    "onclick": null,
-                    "showDuration": "300",
-                    "hideDuration": "0",
-                    "timeOut": "0",
-                    "extendedTimeOut": "1000",
-                    "showEasing": "swing",
-                    "hideEasing": "linear",
-                    "showMethod": "fadeIn",
-                    "hideMethod": "fadeOut"
-                };
-                toastr.success(JSON.stringify(data));
-
-            });
+                                        var KTAppSettings = {};
+                                        var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
+                                        menu.addClass('menu-item-active menu-item-open');
         </script>
+        <script src="<?php echo base_url('assets/js/app_notification.js'); ?>"></script>
     </body>
 </html>
