@@ -4,6 +4,7 @@ $this->bodo->Check_login();
 $uname = $this->session->userdata('uname');
 $fullname = $this->session->userdata('fullname');
 $tot_notif = $this->bodo->Count_notif();
+$menu_dir = $this->M_default->Menu()->result_array();
 $group_menu = $this->M_default->Group_menu();
 ?>
 <html lang="en">
@@ -65,8 +66,8 @@ $group_menu = $this->M_default->Group_menu();
                     <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
                         <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
                             <?php
-                            $this->multi_menu->set_items($this->M_default->Menu()->result_array());
-                            echo $this->multi_menu->render($item_active, $group_menu, $group_menu);
+                            $this->multi_menu->set_items($menu_dir);
+                            echo $this->multi_menu->render($item_active, $group_menu);
                             ?>
                         </div>
                     </div>
@@ -299,9 +300,9 @@ $group_menu = $this->M_default->Group_menu();
         <ul id="sticky_toolbar"></ul>
 
         <script>
-                                        var KTAppSettings = {};
-                                        var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
-                                        menu.addClass('menu-item-active menu-item-open');
+            var KTAppSettings = {};
+            var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
+            menu.addClass('menu-item-active menu-item-open');
         </script>
         <script src="<?php echo base_url('assets/js/app_notification.js'); ?>"></script>
     </body>
