@@ -8,3 +8,4 @@
 /application/config
 /index.php
 /.htaccess
+/applications/libraries/Multi_menu.php
