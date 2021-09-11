@@ -41,9 +41,6 @@ $tot_notif = $this->bodo->Count_notif();
                 <button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">
                     <span></span>
                 </button>
-                <button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
-                    <span></span>
-                </button>
                 <button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
                     <span class="svg-icon svg-icon-xl">
                         <i class="fas fa-user"></i>
@@ -90,10 +87,12 @@ $tot_notif = $this->bodo->Count_notif();
                                     </div>
                                     <div class="topbar-item" onclick="dir_notif()">
                                         <div class="btn btn-icon btn-clean btn-lg mr-1" id="kt_quick_panel_toggle">
-                                            <span class="svg-icon">
+                                            <span id="append_notif" class="svg-icon">
                                                 <?php
                                                 if ($tot_notif == 0) {
                                                     null;
+                                                } elseif ($tot_notif > 999) {
+                                                    echo '<span id="notif_count" class="label label-sm label-danger label-inline text-center" style="margin: -10px 0px 0px 0px;position: absolute;">999+</span>';
                                                 } else {
                                                     echo '<span id="notif_count" class="label label-sm label-danger label-inline text-center" style="margin: -10px 0px 0px 0px;position: absolute;">' . $tot_notif . '</span>';
                                                 }
@@ -212,7 +211,7 @@ $tot_notif = $this->bodo->Count_notif();
             <div class="offcanvas-header offcanvas-header-navs d-flex align-items-center justify-content-between mb-5">
                 <ul class="nav nav-bold nav-tabs nav-tabs-line nav-tabs-line-3x nav-tabs-primary flex-grow-1 px-10" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#kt_quick_panel_logs" >Notification</a>
+                        <a class="nav-link active" data-toggle="tab" href="#kt_quick_panel_logs">Notification</a>
                     </li>
                 </ul>
                 <div class="offcanvas-close mt-n1 pr-5">
@@ -299,9 +298,9 @@ $tot_notif = $this->bodo->Count_notif();
         <ul id="sticky_toolbar"></ul>
 
         <script>
-                                        var KTAppSettings = {};
-                                        var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
-                                        menu.addClass('menu-item-active menu-item-open');
+            var KTAppSettings = {};
+            var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
+            menu.addClass('menu-item-active menu-item-open');
         </script>
         <script src="<?php echo base_url('assets/js/app_notification.js'); ?>"></script>
     </body>
