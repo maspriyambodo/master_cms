@@ -55,7 +55,7 @@ $tot_notif = $this->bodo->Count_notif();
                         <a href="javascript:void(0);" class="brand-logo">
                             <img alt="company_logo" src="<?php echo base_url('assets/images/systems/' . $this->bodo->Sys('logo')); ?>" class="img-fluid" style="margin: 15px 0px;width:40px;"/>
                         </a>
-                        <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
+                        <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle" aria-label="brand-toggle">
                             <span class="svg-icon svg-icon svg-icon-xl">
                                 <i class="fas fa-angle-double-left"></i>
                             </span>
@@ -209,8 +209,8 @@ $tot_notif = $this->bodo->Count_notif();
         </div>
         <div id="kt_quick_panel" class="offcanvas offcanvas-right pt-5 pb-10">
             <div class="offcanvas-header offcanvas-header-navs d-flex align-items-center justify-content-between mb-5">
-                <ul class="nav nav-bold nav-tabs nav-tabs-line nav-tabs-line-3x nav-tabs-primary flex-grow-1 px-10" role="tablist">
-                    <li class="nav-item">
+                <ul class="nav nav-bold nav-tabs nav-tabs-line nav-tabs-line-3x nav-tabs-primary flex-grow-1 px-10" role="tablist" aria-owns="notif-1">
+                    <li id="notif-1" class="nav-item" role="tab" aria-selected="true" aria-controls="notif-1" active>
                         <a class="nav-link active" data-toggle="tab" href="#kt_quick_panel_logs">Notification</a>
                     </li>
                 </ul>
@@ -298,9 +298,9 @@ $tot_notif = $this->bodo->Count_notif();
         <ul id="sticky_toolbar"></ul>
 
         <script>
-            var KTAppSettings = {};
-            var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
-            menu.addClass('menu-item-active menu-item-open');
+                                        var KTAppSettings = {};
+                                        var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
+                                        menu.addClass('menu-item-active menu-item-open');
         </script>
         <script src="<?php echo base_url('assets/js/app_notification.js'); ?>"></script>
     </body>
