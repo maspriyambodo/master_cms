@@ -33,7 +33,7 @@ function dir_notif() {
                 var i;
                 for (i = 0; i < data.length; i++) {
                     $('#kt_quick_panel_logs').append(
-                            '<div class="d-flex align-items-center flex-wrap mb-5 bg-light-primary py-4 px-4">'
+                            '<div class="d-flex align-items-center flex-wrap mb-5 bg-light-primary py-4 px-4 rounded-xl">'
                             + '<div class="d-flex flex-column flex-grow-1 mr-2">'
                             + '<a href="' + data[i].url_link + '" class="font-weight-bolder text-dark-75 text-hover-primary font-size-lg mb-1">'
                             + data[i].title_notif
