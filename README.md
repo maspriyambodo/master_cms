@@ -35,6 +35,8 @@ $db['default'] = ['dsn' => '',
 
 rename file `index.production` to `index.php`
 
+rename file `./application/libraries/Multi_menu.production` to `Multi_menu.php`
+
 rename file `htaccess.production` to `.htaccess`
 
 create directory with name logs in `/application/`
