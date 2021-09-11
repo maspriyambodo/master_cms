@@ -30,8 +30,8 @@ CREATE TABLE `sys_menu` (
 
 INSERT INTO `sys_menu` (`id`, `menu_parent`, `nama`, `link`, `order_no`, `group_menu`, `icon`, `description`, `stat`, `syscreateuser`, `syscreatedate`, `sysupdateuser`, `sysupdatedate`, `sysdeleteuser`, `sysdeletedate`) VALUES
 (1, NULL, 'Dashboard', 'Applications/Dashboard/index/', 100, 1, 'fas fa-tachometer-alt', NULL, 1, 1, '2021-03-11 04:07:27', 1, '2021-06-22 15:56:16', 0, '2021-07-07 23:54:26'),
-(2, NULL, 'Master Wilayah', 'javascrip:;', 101, 1, 'fas fa-globe-asia', NULL, 1, 1, '2021-03-13 12:29:43', 1, '2021-03-13 12:31:06', 0, '0000-00-00 00:00:00'),
-(3, NULL, 'Master Country', 'Master/Country/index/', 102, 1, 'fas fa-globe', NULL, 1, 1, '2021-03-13 19:35:02', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
+(2, NULL, 'Master Wilayah', 'javascrip:;', 102, 1, 'fas fa-globe-asia', NULL, 1, 1, '2021-03-13 12:29:43', 1, '2021-03-13 12:31:06', 0, '0000-00-00 00:00:00'),
+(3, NULL, 'Master Country', 'Master/Country/index/', 101, 1, 'fas fa-globe', NULL, 1, 1, '2021-03-13 19:35:02', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 (4, 2, 'Provinsi', 'Master/Wilayah/Provinsi/index/', 103, 1, '', NULL, 1, 1, '2021-03-13 12:31:34', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 (5, 2, 'Kabupaten', 'Master/Wilayah/Kabupaten/index/', 104, 1, '', NULL, 1, 1, '2021-03-13 19:21:17', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 (6, 2, 'Kecamatan', 'Master/Wilayah/Kecamatan/index/', 105, 1, '', NULL, 1, 1, '2021-03-13 19:22:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
