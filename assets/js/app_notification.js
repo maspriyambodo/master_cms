@@ -9,6 +9,11 @@ var audio = {};
 audio["walk"] = new Audio();
 audio["walk"].src = "assets/media/sound/notification_sound.mp3";
 channel.bind('app_notification-event', function (data) {
+    if ($('#notif_count').length === 0) {
+        $('#append_notif').append('<span id="notif_count" class="label label-sm label-danger label-inline text-center" style="margin: -10px 0px 0px 0px;position: absolute;"></span>');
+    } else {
+        null;
+    }
     $('#notif_count').show();
     $('#notif_count').text(data.tot_notif);
     $('#kt_quick_panel_logs').empty();
