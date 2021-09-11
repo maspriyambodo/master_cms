@@ -51,4 +51,10 @@ class M_notification extends CI_Model {
         return $exec;
     }
 
+    public function Mark_all_read() {
+        $this->db->set('`dt_notif`.`stat`', 0, false)
+                ->where('`dt_notif`.`stat`', 1, false)
+                ->update('dt_notif');
+    }
+
 }

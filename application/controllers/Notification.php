@@ -34,6 +34,27 @@ class Notification extends CI_Controller {
         return $result;
     }
 
+    public function Save_($param) {
+        $data = [
+            'title_notif' => $param['title_notif'],
+            'url' => $param['url'],
+            'icon_text' => $param['icon_text'],
+            'role_id' => $this->role_id,
+            'syscreateuser' => $this->user_id,
+            'syscreatedate' => date('Y-m-d H:i:s')
+        ];
+        $exec = $this->model->_Save($data);
+        if (!$exec) {
+            $this->db->trans_rollback();
+            log_message('error', 'error while saving notification!');
+            $result = null;
+        } else {
+            $this->db->trans_commit();
+            $result = $this->app_notification->Count_notif();
+        }
+        return $result;
+    }
+
     public function Get_notif() {
         if ($this->role_id == 1) {
             $exec = $this->model->Get_notif_su();
@@ -53,11 +74,14 @@ class Notification extends CI_Controller {
         } else {
             $result[] = (object) [
                         'title_notif' => 'kosong',
-                        'syscreatedate' => null,
-                        'url_link' => null
+                        'tot_notif' => $this->bodo->Count_notif()
             ];
         }
         return ToJson($result);
+    }
+
+    public function Mark_all_read() {
+        $this->model->Mark_all_read();
     }
 
 }
