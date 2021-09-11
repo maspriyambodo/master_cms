@@ -19,4 +19,4 @@ CREATE TABLE `sys_app` (
 --
 
 INSERT INTO `sys_app` (`favico`, `logo`, `company_name`, `app_name`, `app_year`) VALUES
-('favicon.ico', 'logo.png', 'AU+ Production', 'CMS', 2020);
+('favicon.png', 'logo.png', 'Bank Negara Indonesia', 'CMS', 2020);

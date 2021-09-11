@@ -4,6 +4,15 @@
 --
 
 --
+-- Indexes for table `dt_notif`
+--
+ALTER TABLE `dt_notif`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`) USING BTREE,
+  ADD KEY `role_id` (`role_id`),
+  ADD KEY `syscreateuser` (`syscreateuser`);
+
+--
 -- Indexes for table `dt_users`
 --
 ALTER TABLE `dt_users`
@@ -106,6 +115,12 @@ ALTER TABLE `sys_users`
 --
 
 --
+-- AUTO_INCREMENT for table `dt_notif`
+--
+ALTER TABLE `dt_notif`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `dt_users`
 --
 ALTER TABLE `dt_users`
@@ -150,6 +165,13 @@ ALTER TABLE `sys_users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `dt_notif`
+--
+ALTER TABLE `dt_notif`
+  ADD CONSTRAINT `dt_notif_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `sys_roles` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `dt_notif_ibfk_2` FOREIGN KEY (`syscreateuser`) REFERENCES `dt_users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `dt_users`
