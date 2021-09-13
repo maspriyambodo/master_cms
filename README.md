@@ -18,7 +18,7 @@ $db['default'] = ['dsn' => '',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => false,
-    'db_debug' => (ENVIRONMENT !== 'production'),
+    'db_debug' => false,
     'cache_on' => false,
     'cachedir' => '',
     'char_set' => 'utf8mb4',
@@ -54,6 +54,16 @@ create directory with name sessions in `/application/`
 give RW access folder sessions in application folder
 
     $ chmod 777 ./application/sessions/
+
+### Database
+---
+follow these steps for import database, database files in folder `./db_template/sql/`
+
+1. `cms_database.sql`
+1. `cms_table_*.sql`
+1. `cms_view_*.sql`
+1. `cms_routines.sql`
+1. `cms_extra.sql`
 
 ### Requirements
 ---
