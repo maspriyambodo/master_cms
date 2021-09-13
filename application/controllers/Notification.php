@@ -61,6 +61,10 @@ class Notification extends CI_Controller {
         } else {
             $exec = $this->model->Get_notif();
         }
+        return $this->_Get_notif($exec);
+    }
+
+    private function _Get_notif($exec) {
         if (!empty($exec)) {
             foreach ($exec as $value) {
                 $syscreatedate = new DateTime($value->syscreatedate);
