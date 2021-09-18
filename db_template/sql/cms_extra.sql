@@ -136,7 +136,7 @@ ALTER TABLE `mt_country`
 -- AUTO_INCREMENT for table `sys_menu`
 --
 ALTER TABLE `sys_menu`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `sys_menu_group`
@@ -148,7 +148,7 @@ ALTER TABLE `sys_menu_group`
 -- AUTO_INCREMENT for table `sys_permissions`
 --
 ALTER TABLE `sys_permissions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `sys_roles`

@@ -29,7 +29,7 @@ CREATE TABLE `sys_menu` (
 --
 
 INSERT INTO `sys_menu` (`id`, `menu_parent`, `nama`, `link`, `order_no`, `group_menu`, `icon`, `description`, `stat`, `syscreateuser`, `syscreatedate`, `sysupdateuser`, `sysupdatedate`, `sysdeleteuser`, `sysdeletedate`) VALUES
-(1, NULL, 'Dashboard', 'Applications/Dashboard/index/', 100, 1, 'fas fa-tachometer-alt', NULL, 1, 1, '2021-03-11 04:07:27', 1, '2021-06-22 15:56:16', 0, '2021-07-07 23:54:26'),
+(1, NULL, 'Dashboard', 'Applications/Dashboard/index/', 100, 1, 'fas fa-tachometer-alt', 'menu default systems', 1, 1, '2021-03-11 04:07:27', 1, '2021-09-12 05:22:21', 0, '2021-07-07 23:54:26'),
 (2, NULL, 'Master Wilayah', 'javascrip:;', 102, 1, 'fas fa-globe-asia', NULL, 1, 1, '2021-03-13 12:29:43', 1, '2021-03-13 12:31:06', 0, '0000-00-00 00:00:00'),
 (3, NULL, 'Master Country', 'Master/Country/index/', 101, 1, 'fas fa-globe', NULL, 1, 1, '2021-03-13 19:35:02', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 (4, 2, 'Provinsi', 'Master/Wilayah/Provinsi/index/', 103, 1, '', NULL, 1, 1, '2021-03-13 12:31:34', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
@@ -41,4 +41,5 @@ INSERT INTO `sys_menu` (`id`, `menu_parent`, `nama`, `link`, `order_no`, `group_
 (10, NULL, 'Systems', 'Systems/index/', 302, 2, 'fas fa-cogs', NULL, 1, 1, '2021-03-11 16:05:08', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 (11, NULL, 'User Management', 'Systems/Users/index/', 303, 2, 'fas fa-user-cog', NULL, 1, 1, '2021-03-11 15:59:24', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 (12, NULL, 'Permissions', 'Systems/Permissions/index/', 304, 2, 'fas fa-key', NULL, 1, 1, '2021-03-11 16:00:24', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
-(13, NULL, 'Blocked Account', 'Systems/Locked/index/', 305, 2, 'fas fa-lock', NULL, 1, 1, '2021-06-07 11:33:39', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
+(13, NULL, 'Blocked Account', 'Systems/Locked/index/', 305, 2, 'fas fa-lock', NULL, 1, 1, '2021-06-07 11:33:39', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
+(14, NULL, 'Password Management', 'Applications/Password_management/index/', 107, 1, 'fas fa-key', 'menu untuk aplikasi penyimpanan password', 1, 1, '2021-09-15 14:46:08', NULL, NULL, NULL, NULL);
