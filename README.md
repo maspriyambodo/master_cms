@@ -74,6 +74,7 @@ follow these steps for import database, database files in folder `./db_template/
 1. php extensions `gd`
 1. php extensions `zlib`
 1. php extensions `bcmath`
+1. php extensions `zip`
 
 ### libraries
 ---
