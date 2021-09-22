@@ -125,17 +125,21 @@ class Kabupaten extends CI_Controller {
 
     public function Get_prov() {
         $exec = $this->model->Get_prov();
+        $prov = [];
         if ($exec) {
-            $response = [
-                'stat' => true,
-                'results' => $exec
-            ];
+            foreach ($exec as $key => $value) {
+                $prov[$key] = (object) [
+                            'id' => Enkrip($value->id),
+                            'text' => $value->text
+                ];
+            }
         } else {
-            $response = [
-                'stat' => false
+            $prov[0] = (object) [
+                        'id' => '',
+                        'text' => 'not found'
             ];
         }
-        ToJson($exec);
+        ToJson($prov);
     }
 
     public function Get_detail() {
@@ -145,9 +149,10 @@ class Kabupaten extends CI_Controller {
     }
 
     public function Update() {
-        $id_kab = $this->bodo->Dec(Post_input('e_id'));
+        $id_kab = Dekrip(Post_input('e_id'));
+        $id_prov = Dekrip(Post_input('edit_prov'));
         $data = [
-            'id_provinsi' => Post_input('edit_prov'),
+            'id_provinsi' => $id_prov,
             'nama' => Post_input('edit_namakab'),
             'latitude' => Post_input('edit_lat'),
             'longitude' => Post_input('edit_longt'),
