@@ -1,4 +1,7 @@
 ### Instalation
+login:
+username: bod
+password: password
 ---
 rename folder `/application/config.production` to `config`
 
