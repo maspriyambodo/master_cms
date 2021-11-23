@@ -1,6 +1,11 @@
 #git rm -r --cached .
 #git add .
 #git commit -m "fixed untracked files"
+#========================================================
+#To recursively give directories read&execute privileges:
+#chmod 755 $(find /path/to/base/dir -type d)
+#To recursively give files read privileges: 
+#chmod 644 $(find /path/to/base/dir -type f)
 /nbproject
 /vendor
 /application/logs
