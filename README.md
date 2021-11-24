@@ -57,6 +57,14 @@ create directory with name sessions in `/application/`
 give RW access folder sessions in application folder
 
     $ chmod 777 ./application/sessions/
+    
+create directory with name flags in `/assets/images/systems/`
+
+    $ mkdir ./assets/images/systems/flags
+
+give RW access folder sessions in application folder
+
+    $ chmod 777 ./assets/images/systems/flags/
 
 ### Database
 ---
