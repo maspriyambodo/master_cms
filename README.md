@@ -62,7 +62,7 @@ create directory with name flags in `/assets/images/systems/`
 
     $ mkdir ./assets/images/systems/flags
 
-give RW access folder sessions in application folder
+give RW access folder flags in application folder
 
     $ chmod 777 ./assets/images/systems/flags/
 
