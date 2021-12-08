@@ -14,7 +14,7 @@ CREATE TABLE `sys_menu` (
   `order_no` int DEFAULT NULL,
   `group_menu` int DEFAULT NULL COMMENT '1. applications\r\n2. report\r\n3. systems',
   `icon` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `description` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `stat` int DEFAULT NULL,
   `syscreateuser` int DEFAULT NULL,
   `syscreatedate` datetime DEFAULT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE `sys_menu` (
   `sysupdatedate` datetime DEFAULT NULL,
   `sysdeleteuser` int DEFAULT NULL,
   `sysdeletedate` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `sys_menu`
@@ -38,8 +38,9 @@ INSERT INTO `sys_menu` (`id`, `menu_parent`, `nama`, `link`, `order_no`, `group_
 (7, 2, 'Kelurahan', 'Master/Wilayah/Kelurahan/index/', 106, 1, '', NULL, 1, 1, '2021-03-13 19:22:30', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 (8, NULL, 'Menu Management', 'Systems/Menu/index/', 300, 2, 'fas fa-bars', NULL, 1, 1, '2021-03-11 04:10:12', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
 (9, NULL, 'Menu Group', 'Systems/Menu_group/index/', 301, 2, 'fas fa-th-list', NULL, 1, 1, '2021-03-13 20:23:14', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
-(10, NULL, 'Systems', 'Systems/index/', 302, 2, 'fas fa-cogs', NULL, 1, 1, '2021-03-11 16:05:08', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
-(11, NULL, 'User Management', 'Systems/Users/index/', 303, 2, 'fas fa-user-cog', NULL, 1, 1, '2021-03-11 15:59:24', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
-(12, NULL, 'Permissions', 'Systems/Permissions/index/', 304, 2, 'fas fa-key', NULL, 1, 1, '2021-03-11 16:00:24', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
-(13, NULL, 'Blocked Account', 'Systems/Locked/index/', 305, 2, 'fas fa-lock', NULL, 1, 1, '2021-06-07 11:33:39', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
-(14, NULL, 'Password Management', 'Applications/Password_management/index/', 107, 1, 'fas fa-key', 'menu untuk aplikasi penyimpanan password', 1, 1, '2021-09-15 14:46:08', NULL, NULL, NULL, NULL);
+(10, NULL, 'Systems', 'Systems/index/', 303, 2, 'fas fa-cogs', NULL, 1, 1, '2021-03-11 16:05:08', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
+(11, NULL, 'User Management', 'Systems/Users/index/', 304, 2, 'fas fa-user-cog', NULL, 1, 1, '2021-03-11 15:59:24', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
+(12, NULL, 'Permissions', 'Systems/Permissions/index/', 305, 2, 'fas fa-key', NULL, 1, 1, '2021-03-11 16:00:24', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
+(13, NULL, 'Blocked Account', 'Systems/Locked/index/', 306, 2, 'fas fa-lock', NULL, 1, 1, '2021-06-07 11:33:39', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00'),
+(14, NULL, 'Password Management', 'Applications/Password_management/index/', 107, 1, 'fas fa-key', 'menu untuk aplikasi penyimpanan password', 1, 1, '2021-09-15 14:46:08', NULL, NULL, NULL, NULL),
+(15, NULL, 'Parameter', 'Systems/Parameter/index/', 302, 2, 'fas fa-code-branch', 'menu untuk paramete sistem', 1, 1, '2021-11-29 20:11:57', NULL, NULL, NULL, NULL);

@@ -8,8 +8,8 @@
 DROP TABLE IF EXISTS `test_impor`;
 CREATE TABLE `test_impor` (
   `no` int DEFAULT NULL,
-  `nama` varchar(250) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `nama2` varchar(200) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `nama` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `nama2` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
