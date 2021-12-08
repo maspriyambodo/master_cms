@@ -82,6 +82,27 @@ class Parameter extends CI_Controller {
         return $result;
     }
 
+    public function delete() {
+        $old_param = Dekrip(Post_input('param_id3'));
+        if (!empty($old_param)) {
+            $nama_param = Post_input('nama_param');
+            $data = [
+                '`stat`' => 0 + false,
+                '`sysdeleteuser`' => $this->user + false,
+                'sysdeletedate' => date('Y-m-d H:i:s')
+            ];
+            $exec = $this->model->_update($old_param, $data);
+            if ($exec) {
+                $result = redirect(base_url('Systems/Parameter/index/'), $this->session->set_flashdata('succ_msg', '<b>' . $nama_param . '</b> has beed changed'));
+            } else {
+                $result = redirect(base_url('Systems/Parameter/index/'), $this->session->set_flashdata('err_msg', 'error while updating data!'));
+            }
+        } else {
+            $result = redirect(base_url('Systems/Parameter/index/'), $this->session->set_flashdata('err_msg', 'error while updating data!'));
+        }
+        return $result;
+    }
+
     public function get_detail() {
         $id = Dekrip(Post_get('token'));
         $exec = $this->model->_detail($id);
