@@ -63,4 +63,44 @@ class Parameter extends CI_Controller {
         return $result;
     }
 
+    public function update() {
+        $old_param = Post_input('param_stat2');
+        $data = [
+            'id' => str_replace(' ', '_', strtoupper(Post_input('param_id2'))),
+            'param_group' => str_replace(' ', '_', strtoupper(Post_input('grouptxt2'))),
+            'param_value' => Post_input('valtxt2'),
+            'param_desc' => Post_input('desctxt2'),
+            '`sysupdateuser`' => $this->user + false,
+            'sysupdatedate' => date('Y-m-d H:i:s')
+        ];
+        $exec = $this->model->_update($old_param, $data);
+        if ($exec) {
+            $result = redirect(base_url('Systems/Parameter/index/'), $this->session->set_flashdata('succ_msg', '<b>' . $data['id'] . '</b> has beed changed'));
+        } else {
+            $result = redirect(base_url('Systems/Parameter/index/'), $this->session->set_flashdata('err_msg', 'error while updating data!'));
+        }
+        return $result;
+    }
+
+    public function get_detail() {
+        $id = Dekrip(Post_get('token'));
+        $exec = $this->model->_detail($id);
+        if (!empty($exec)) {
+            foreach ($exec as $value) {
+                $response = [
+                    'stat' => true,
+                    'id' => $value->id,
+                    'param_group' => $value->param_group,
+                    'param_value' => $value->param_value,
+                    'param_desc' => $value->param_desc
+                ];
+            }
+        } else {
+            $response = [
+                'stats' => false
+            ];
+        }
+        return ToJson($response);
+    }
+
 }

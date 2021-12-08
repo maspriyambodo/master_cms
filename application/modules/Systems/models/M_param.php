@@ -33,5 +33,30 @@ class M_param extends CI_Model {
         }
         return $result;
     }
+    
+    public function _update($old_param, $data) {
+        $this->db->trans_begin();
+        $this->db->set($data)
+                ->where('sys_param.id', $old_param)
+                ->update('sys_param');
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $result = false;
+        } else {
+            $this->db->trans_commit();
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function _detail($id) {
+        $exec = $this->db->select('sys_param.id,sys_param.param_group,sys_param.param_value,sys_param.param_desc')
+                ->from('sys_param')
+                ->where('sys_param.id', $id)
+                ->limit(1)
+                ->get()
+                ->result();
+        return $exec;
+    }
 
 }
