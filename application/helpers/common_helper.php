@@ -18,6 +18,24 @@ function ToJson($response) {
     exit;
 }
 
+function sys_parameter($param) {
+    $ci = & get_instance();
+    $exec = $ci->db->select('sys_param.id,sys_param.param_group,sys_param.param_value')
+            ->from('sys_param')
+            ->where('sys_param.id', $param)
+            ->limit(1)
+            ->get()
+            ->result();
+    foreach ($exec as $value) {
+        $data = [
+            'id' => $value->id,
+            'param_group' => $value->param_group,
+            'param_value' => $value->param_value
+        ];
+    }
+    return $data;
+}
+
 function Post_input($param) {
     $ci = & get_instance();
     return $ci->input->post($param, true);
