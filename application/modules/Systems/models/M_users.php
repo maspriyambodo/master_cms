@@ -16,9 +16,9 @@ class M_users extends CI_Model {
     }
 
     private function _filter() {
-        $role_id = $this->bodo->Dec($this->session->userdata('role_id'));
-        $id_user = $this->bodo->Dec($this->session->userdata('id_user'));
-        if ($role_id == 1) {
+        $role_id = Dekrip($this->session->userdata('role_id'));
+        $id_user = Dekrip($this->session->userdata('id_user'));
+        if ($role_id == sys_parameter('SUPER_USER')['param_value']) {
             $exec = $this->db->select('sys_users.id,sys_users.uname,sys_users.pwd,sys_users.role_id,sys_users.pict,sys_users.stat,sys_roles.name');
             $this->db->from($this->table)
                     ->join('sys_roles', '`sys_users`.`role_id` = `sys_roles`.`id`');
