@@ -141,7 +141,7 @@ class Users extends CI_Controller {
     }
 
     private function _Save($data) {
-        if ($data['role_id'] == 1 and $this->bodo->Dec($this->session->userdata('role_id')) != 1) {
+        if ($data['role_id'] == sys_parameter('SUPER_USER')['param_value'] and Dekrip($this->session->userdata('role_id')) != sys_parameter('SUPER_USER')['param_value']) {
             redirect(base_url('Systems/Users/Add/'), $this->session->set_flashdata('err_msg', 'failed, error while processing user data!'));
         } else {
             $this->M_users->Save($data);
