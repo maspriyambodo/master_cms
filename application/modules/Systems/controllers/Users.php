@@ -255,14 +255,14 @@ class Users extends CI_Controller {
     }
 
     public function Reset() {
-        $id = $this->bodo->Dec(Post_input('reset_id'));
+        $id = Dekrip(Post_input('reset_id'));
         if ($id == 1) {
             $result = redirect(base_url('Systems/Users/index/'), $this->session->set_flashdata('err_msg', 'failed, error while processing user data'));
         } elseif (empty($id) or!$id) {
             $result = redirect(base_url('Systems/Users/index/'), $this->session->set_flashdata('err_msg', 'failed, error while processing user data'));
         } else {
             $data = [
-                'sys_users.pwd' => password_hash("a", PASSWORD_DEFAULT),
+                'sys_users.pwd' => password_hash(sys_parameter('DEFAULT_PASSWORD')['param_value'], PASSWORD_DEFAULT),
                 '`sys_users`.`login_attempt`' => 0 + false,
                 '`sys_users`.`sysupdateuser`' => $this->user + false,
                 'sys_users.sysupdatedate' => date('Y-m-d H:i:s')
