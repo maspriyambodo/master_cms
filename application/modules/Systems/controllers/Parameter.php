@@ -30,4 +30,37 @@ class Parameter extends CI_Controller {
         return $this->parser->parse('Template/layout', $data);
     }
 
+    public function check_id() {
+        $exec = $this->model->check_id(Post_get('param_id'));
+        if ($exec) {
+            $response = [
+                'stat' => false
+            ];
+        } else {
+            $response = [
+                'stat' => true
+            ];
+        }
+        return ToJson($response);
+    }
+
+    public function add() {
+        $data = [
+            'id' => str_replace(' ', '_', strtoupper(Post_input('param_id'))),
+            'param_group' => str_replace(' ', '_', strtoupper(Post_input('grouptxt'))),
+            'param_value' => Post_input('valtxt'),
+            'param_desc' => Post_input('desctxt'),
+            '`stat`' => 1 + false,
+            '`syscreateuser`' => $this->user + false,
+            'syscreatedate' => date('Y-m-d H:i:s')
+        ];
+        $exec = $this->model->_add($data);
+        if ($exec) {
+            $result = redirect(base_url('Systems/Parameter/index/'), $this->session->set_flashdata('succ_msg', '<b>' . $data['id'] . '</b> has beed added'));
+        } else {
+            $result = redirect(base_url('Systems/Parameter/index/'), $this->session->set_flashdata('err_msg', 'error while saving data!'));
+        }
+        return $result;
+    }
+
 }

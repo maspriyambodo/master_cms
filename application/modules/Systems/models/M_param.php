@@ -13,4 +13,25 @@ class M_param extends CI_Model {
         return $exec;
     }
 
+    public function check_id($param) {
+        $exec = $this->db->select('sys_param.id')
+                ->from('sys_param')
+                ->where('sys_param.id', $param)
+                ->count_all_results();
+        return $exec;
+    }
+
+    public function _add($data) {
+        $this->db->trans_begin();
+        $this->db->insert('sys_param', $data);
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $result = false;
+        } else {
+            $this->db->trans_commit();
+            $result = true;
+        }
+        return $result;
+    }
+
 }
