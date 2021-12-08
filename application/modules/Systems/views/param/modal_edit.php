@@ -54,13 +54,17 @@
             contentType: false,
             processData: false,
             success: function (data) {
-                document.getElementById('modal_editLabel').innerHTML = 'Edit: ' + data.id;
-                $('input[name="param_id2"]').val(data.id);
-                $('input[name="param_stat2"]').val(data.id);
-                $('input[name="valtxt2"]').val(data.param_value);
-                $('input[name="grouptxt2"]').val(data.param_group);
-                $('textarea[name="desctxt2"]').val(data.param_desc);
-                $('#modal_edit').modal({show: true, backdrop: 'static', keyboard: false});
+                if (data.stat) {
+                    document.getElementById('modal_editLabel').innerHTML = 'Edit: ' + data.id;
+                    $('input[name="param_id2"]').val(data.id);
+                    $('input[name="param_stat2"]').val(data.id);
+                    $('input[name="valtxt2"]').val(data.param_value);
+                    $('input[name="grouptxt2"]').val(data.param_group);
+                    $('textarea[name="desctxt2"]').val(data.param_desc);
+                    $('#modal_edit').modal({show: true, backdrop: 'static', keyboard: false});
+                } else {
+                    toastr.error('error while getting data!');
+                }
             },
             error: function (jqXHR) {
                 toastr.warning('error ' + jqXHR.status + ' ' + jqXHR.statusText);
