@@ -15,4 +15,4 @@
 /.htaccess
 /application/libraries/Multi_menu.php
 /application/modules/Systems/models/M_default.development
-/assets/images/systems/
+/assets/images/systems/*
