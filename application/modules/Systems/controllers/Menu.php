@@ -117,7 +117,26 @@ class Menu extends CI_Controller {
         return $this->parser->parse('Template/layout', $data);
     }
 
+    private function get_groupMenu($id_menu, $gr_menu) {
+        $exec = $this->M_menu->groupMenu($id_menu);
+        $old_groupmenu = $exec[0]->group_menu;
+        $order = $exec[0]->order_no;
+        $new_order = $this->M_menu->New_order($gr_menu);
+        if ($old_groupmenu == $gr_menu) {
+            $result = $order;
+        } else {
+            if (empty($new_order[0]->order_no) or ($new_order[0]->order_no == 0)) {
+                $result = $gr_menu * 100;
+            } else {
+                $result = $new_order[0]->order_no + 1;
+            }
+        }
+        return $result;
+    }
+
     public function Update() {
+        $id_menu = Dekrip(Post_input('id_menu'));
+        $nomor_order = $this->get_groupMenu($id_menu, Dekrip(Post_input("gr_menu")));
         $parent = Dekrip(Post_input("menu_parent"));
         if ($parent) {
             $id_parent = $parent;
@@ -129,11 +148,11 @@ class Menu extends CI_Controller {
             'description' => Post_input('desc_txt'),
             'menu' => Post_input("nama_menu"),
             'location' => Post_input("link_menu"),
-            'nomor_order' => Post_input("order_no"),
+            'nomor_order' => $nomor_order,
             'grup' => Dekrip(Post_input("gr_menu")),
             'icon_menu' => Post_input("ico_menu"),
             'user_login' => $this->user,
-            'id_menu' => Dekrip(Post_input("id_menu"))
+            'id_menu' => $id_menu
         ];
         $exec = $this->M_menu->Update($data);
         if ($exec['status'] == false) {
