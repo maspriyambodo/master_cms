@@ -1,0 +1,6 @@
+---
+deployment:
+      tasks:
+        - export DEPLOYPATH=/home/maspriya/shandry/cms      # Add /<app_folder> if required
+        - /bin/cp -R application $DEPLOYPATH
+        - /bin/cp -R assets $DEPLOYPATH
