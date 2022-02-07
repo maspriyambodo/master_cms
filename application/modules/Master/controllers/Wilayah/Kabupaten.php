@@ -7,7 +7,7 @@ class Kabupaten extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('M_kabupaten', 'model');
-        $this->user = $this->bodo->Dec($this->session->userdata('id_user'));
+        $this->user = Dekrip($this->session->userdata('id_user'));
     }
 
     public function index() {
@@ -33,7 +33,7 @@ class Kabupaten extends CI_Controller {
     public function Lists() {
         $list = $this->model->lists();
         $data = [];
-        $no = Post_input("start");
+        $no = Post_get("start");
         $privilege = $this->bodo->Check_previlege('Master/Wilayah/Kabupaten/index/');
         foreach ($list as $kabupaten) {
             $id_kabupaten = Enkrip($kabupaten->id_kabupaten);
@@ -75,14 +75,14 @@ class Kabupaten extends CI_Controller {
     private function _list($data, $privilege) {
         if ($privilege['read']) {
             $output = [
-                "draw" => Post_input('draw'),
+                "draw" => Post_get('draw'),
                 "recordsTotal" => $this->model->count_all(),
                 "recordsFiltered" => $this->model->count_filtered(),
                 "data" => $data
             ];
         } else {
             $output = [
-                "draw" => Post_input('draw'),
+                "draw" => Post_get('draw'),
                 "recordsTotal" => 0,
                 "recordsFiltered" => 0,
                 "data" => []
@@ -109,7 +109,7 @@ class Kabupaten extends CI_Controller {
     }
 
     public function Add() {
-        $id_provinsi = $this->bodo->Dec(Post_input('add_prov'));
+        $id_provinsi = Dekrip(Post_input('add_prov'));
         $data = [
             'id_kabupaten' => Post_input('add_idkab'),
             'id_provinsi' => $id_provinsi,
@@ -143,7 +143,7 @@ class Kabupaten extends CI_Controller {
     }
 
     public function Get_detail() {
-        $id = $this->bodo->Dec(Post_get('id'));
+        $id = Dekrip(Post_get('id'));
         $exec = $this->model->Get_detail($id);
         ToJson($exec);
     }
@@ -163,7 +163,7 @@ class Kabupaten extends CI_Controller {
     }
 
     public function Delete() {
-        $id_kab = $this->bodo->Dec(Post_input('d_id'));
+        $id_kab = Dekrip(Post_input('d_id'));
         $data = [
             '`mt_wil_kabupaten`.`is_actived`' => 0 + false,
             '`mt_wil_kabupaten`.`sysdeleteuser`' => $this->user + false,
@@ -173,7 +173,7 @@ class Kabupaten extends CI_Controller {
     }
 
     public function Active() {
-        $id_kab = $this->bodo->Dec(Post_input('act_id'));
+        $id_kab = Dekrip(Post_input('act_id'));
         $data = [
             '`mt_wil_kabupaten`.`is_actived`' => 1 + false,
             '`mt_wil_kabupaten`.`sysupdateuser`' => $this->user + false,

@@ -66,8 +66,8 @@ unset($_SESSION['succ_msg']);
                 ['10', '50', '100', '500', 'all']
             ],
             "ajax": {
-                "url": "<?php echo site_url('Systems/Users/lists') ?>",
-                "type": "POST"
+                "url": "Systems/Users/lists",
+                "type": "GET"
             },
             columnDefs: [
                 {
