@@ -36,6 +36,17 @@ $db['default'] = ['dsn' => '',
 
 ```
 
+customize file `config.php` in config folder with your own.
+
+```php
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$config['encryption_key'] = 'your_key';
+
+```
+
 rename file `index.production` to `index.php`
 
 rename file `./application/libraries/Multi_menu.production` to `Multi_menu.php`
