@@ -8,11 +8,16 @@
 #chmod 644 $(find /path/to/base/dir -type f)
 /nbproject
 /vendor
-/application/logs
-/application/sessions
+/application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+/application/sessions/*
 /application/config
 /index.php
 /.htaccess
 /application/libraries/Multi_menu.php
 /application/modules/Systems/models/M_default.development
 /assets/images/systems/*
+/update.php
+/node_modules
+/package-lock.json
