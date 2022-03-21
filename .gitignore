@@ -21,3 +21,4 @@
 /update.php
 /node_modules
 /package-lock.json
+/db_template/sql/*_dt_pwd.sql
