@@ -131,7 +131,7 @@ class Users extends CI_Controller {
         }
         $data = [
             'uname' => Post_input('uname'),
-            'pwd' => password_hash("a", PASSWORD_DEFAULT),
+            'pwd' => password_hash(sys_parameter('DEFAULT_PASSWORD')['param_value'], PASSWORD_DEFAULT),
             'role_id' => $role_user,
             'pict' => $file_name,
             'stat' => 1,
