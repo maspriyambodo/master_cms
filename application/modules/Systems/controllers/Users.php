@@ -175,6 +175,8 @@ class Users extends CI_Controller {
         ];
         if ($id_user == 1) {
             $result = redirect(base_url('Systems/Users/index/'), $this->session->set_flashdata('err_msg', 'error, users cannot be deleted!!!'));
+        } elseif ($id_user == $this->user) {
+            $result = redirect(base_url('Systems/Users/index/'), $this->session->set_flashdata('err_msg', 'error, users cannot be deleted!!!'));
         } else {
             $exec = $this->M_users->Stat($data);
             if (empty($exec->conn_id->affected_rows) or $exec->conn_id->affected_rows == 0) {
