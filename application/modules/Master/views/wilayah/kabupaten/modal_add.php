@@ -8,6 +8,7 @@
                 </button>
             </div>
             <form id="add_form" action="<?php echo site_url('Master/Wilayah/Kabupaten/Add/'); ?>" method="post">
+                <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
