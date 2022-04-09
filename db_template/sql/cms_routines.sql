@@ -429,8 +429,22 @@ sys_menu_select.order_no ASC;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_update`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_update` (IN `parent` INT, IN `menu` VARCHAR(50), IN `location` VARCHAR(255), IN `nomor_order` INT, IN `grup` INT, IN `icon_menu` VARCHAR(50), IN `user_login` INT, IN `id_menu` INT, IN `desc_txt` VARCHAR(255), OUT `menu_nama` VARCHAR(50))  BEGIN
+CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_update`(
+	IN `parent` INT, 
+	IN `menu` VARCHAR(50), 
+	IN `location` VARCHAR(255), 
+	IN `nomor_order` INT, 
+	IN `grup` INT, 
+	IN `icon_menu` VARCHAR(50), 
+	IN `user_login` INT, 
+	IN `id_menu` INT, 
+	IN `desc_txt` VARCHAR(255), 
+	OUT `menu_nama` VARCHAR(50)
+)
+BEGIN
+
 SELECT sys_menu.nama INTO menu_nama FROM sys_menu WHERE sys_menu.id = id_menu;
+
 UPDATE sys_menu
 SET sys_menu.menu_parent = parent, 
 	sys_menu.nama = menu, 
@@ -442,7 +456,19 @@ SET sys_menu.menu_parent = parent,
 	sys_menu.sysupdatedate = NOW(),
 	sys_menu.description = desc_txt
 WHERE sys_menu.id = id_menu;
+
+IF parent IS NULL THEN
+
+	UPDATE sys_menu 
+	SET sys_menu.group_menu = grup,
+		order_no = grup * 101
+	WHERE
+		sys_menu.menu_parent = id_menu;
+
+END IF;
+
 SELECT menu_nama;
+
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_mt_country`$$
