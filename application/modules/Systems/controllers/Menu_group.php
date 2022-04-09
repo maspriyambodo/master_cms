@@ -7,7 +7,7 @@ class Menu_group extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model(['M_menugrup', 'M_menu']);
-        $this->user = $this->bodo->Dec($this->session->userdata('id_user'));
+        $this->user = Dekrip($this->session->userdata('id_user'));
     }
 
     public function index() {
@@ -51,7 +51,7 @@ class Menu_group extends CI_Controller {
     }
 
     public function Save() {
-        $order_no = $this->bodo->Dec(Post_input('order_no'));
+        $order_no = Dekrip(Post_input('order_no'));
         if (empty($order_no)) {
             $result = redirect(base_url('Systems/Menu_group/index/'), $this->session->set_flashdata('err_msg', 'error while insert new group'));
         } else {
@@ -75,7 +75,7 @@ class Menu_group extends CI_Controller {
     }
 
     public function Update() {
-        $id_grup = $this->bodo->Dec(Post_input('e_id'));
+        $id_grup = Dekrip(Post_input('e_id'));
         if ($id_grup == 1 | $id_grup == 2 | $id_grup == 3) {
             $result = redirect(base_url('Systems/Menu_group/index/'), $this->session->set_flashdata('err_msg', '<b>default</b> menu group cannot be updated!'));
         } else {
@@ -99,7 +99,7 @@ class Menu_group extends CI_Controller {
     }
 
     public function Edit() {
-        $id_grup = $this->bodo->Dec(Post_get("id"));
+        $id_grup = Dekrip(Post_get("id"));
         $data = [
             'param' => 'get_detail',
             'id_grup' => $id_grup,
@@ -118,7 +118,7 @@ class Menu_group extends CI_Controller {
     }
 
     public function Delete() {
-        $id_grup = $this->bodo->Dec(Post_input('d_id'));
+        $id_grup = Dekrip(Post_input('d_id'));
         if ($id_grup == 1 | $id_grup == 2 | $id_grup == 3) {
             $result = redirect(base_url('Systems/Menu_group/index/'), $this->session->set_flashdata('err_msg', '<b>default</b> menu group cannot be deleted!'));
         } else {
