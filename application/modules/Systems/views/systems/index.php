@@ -273,7 +273,17 @@
             return true;
         }
     </script>
+<?php } else {
+    ?>
+    <div class="container d-flex flex-row-fluid flex-column justify-content-md-center p-12">
+        <p class="font-weight-boldest display-4 text-info">
+            Something went wrong here.
+        </p>
+        <p class="font-size-h3">
+            We're working on it and we'll get it fixed<br>
+            as soon possible.
+        </p>
+        <div style="height:220px;width:100%;display:block;"></div>
+    </div>
     <?php
-} else {
-    null;
 }
