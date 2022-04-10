@@ -584,24 +584,31 @@ END WHILE;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_roles_select`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_roles_select` (IN `grup_id` INT)  BEGIN
-IF grup_id = 0 THEN
-	SELECT * FROM sys_roles_select WHERE status_grup = 1;
-ELSE
-	SELECT * FROM sys_roles_select WHERE id_grup = grup_id AND status_grup = 1;
-END IF;
-END$$
+CREATE DEFINER=`root`@`%` PROCEDURE `sys_roles_select`(
+IN `grup_id` INT
+)
+BEGIN 
 
-DROP PROCEDURE IF EXISTS `sys_roles_update`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_roles_update` (IN `id_grup` INT, IN `nama_grup` VARCHAR(30), IN `des_grup` VARCHAR(255), IN `user_login` INT, IN `id_parent` INT)  BEGIN
-UPDATE sys_roles 
-SET
-	sys_roles.`name` = nama_grup, 
-	sys_roles.description = des_grup, 
-    sys_roles.parent_id = id_parent, 
-	sys_roles.sysupdateuser = user_login, 
-	sys_roles.sysupdatedate = NOW()
-WHERE sys_roles.id = id_grup;
+IF grup_id = 0 THEN 
+
+	SELECT 
+		* 
+	FROM 
+		sys_roles_select 
+	WHERE 
+		status_grup = 1
+		AND sys_roles_select.id_grup <> 1;
+		
+ELSE
+
+	SELECT 
+		* 
+	FROM 
+		sys_roles_select 
+	WHERE 
+		id_grup = grup_id 
+		AND status_grup = 1;
+END IF;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_users_insert`$$
