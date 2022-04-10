@@ -429,19 +429,7 @@ sys_menu_select.order_no ASC;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_update`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_update`(
-	IN `parent` INT, 
-	IN `menu` VARCHAR(50), 
-	IN `location` VARCHAR(255), 
-	IN `nomor_order` INT, 
-	IN `grup` INT, 
-	IN `icon_menu` VARCHAR(50), 
-	IN `user_login` INT, 
-	IN `id_menu` INT, 
-	IN `desc_txt` VARCHAR(255), 
-	OUT `menu_nama` VARCHAR(50)
-)
-BEGIN
+CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_update` (IN `parent` INT, IN `menu` VARCHAR(50), IN `location` VARCHAR(255), IN `nomor_order` INT, IN `grup` INT, IN `icon_menu` VARCHAR(50), IN `user_login` INT, IN `id_menu` INT, IN `desc_txt` VARCHAR(255), OUT `menu_nama` VARCHAR(50))  BEGIN
 
 SELECT sys_menu.nama INTO menu_nama FROM sys_menu WHERE sys_menu.id = id_menu;
 
@@ -508,8 +496,30 @@ sys_permissions.role_id = id_role AND sys_permissions.id_menu = menu_id;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_permission_select`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_permission_select` (IN `permisi_id` INT)  BEGIN 
-SELECT 
+CREATE DEFINER=`root`@`%` PROCEDURE `sys_permission_select` (IN `permisi_id` INT, IN `id_user` INT)  BEGIN 
+# id_user 1 adalah super user
+IF id_user = 1 THEN
+
+	SELECT 
+		`sys_menu_select`.`id_menu`, 
+		`sys_menu_select`.`nama_menu`,
+		`sys_menu_select`.`group_menu`,
+		`sys_menu_select`.`grup_nama`, 
+		`sys_menu_select`.`view`, 
+		`sys_menu_select`.`create`, 
+		`sys_menu_select`.`read`, 
+		`sys_menu_select`.`update`, 
+		`sys_menu_select`.`delete` 
+	FROM 
+		sys_menu_select 
+	WHERE 
+		`sys_menu_select`.`role_id` = permisi_id
+	GROUP BY 
+		sys_menu_select.id_menu;
+	
+ELSE
+	
+	SELECT 
   `sys_menu_select`.`id_menu`, 
   `sys_menu_select`.`nama_menu`,
 	`sys_menu_select`.`group_menu`,
@@ -519,12 +529,17 @@ SELECT
   `sys_menu_select`.`read`, 
   `sys_menu_select`.`update`, 
   `sys_menu_select`.`delete` 
-FROM 
-  sys_menu_select 
-WHERE 
-  `sys_menu_select`.`role_id` = permisi_id 
-GROUP BY 
-  sys_menu_select.id_menu;
+	FROM 
+		sys_menu_select 
+	WHERE 
+		`sys_menu_select`.`role_id` = permisi_id
+		AND
+		sys_menu_select.`view` = 1
+	GROUP BY 
+		sys_menu_select.id_menu;
+	
+END IF;
+	
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_roles_insert`$$

@@ -1,22 +1,23 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('Error 404');
 
 class Permissions extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         $this->load->model('M_permision');
-        $this->user = $this->bodo->Dec($this->session->userdata('id_user'));
+        $this->user = Dekrip($this->session->userdata('id_user'));
     }
 
     private function _Role($data) {
         $exec = $this->M_permision->Role_update($data);
         if ($exec['status'] == false) {
-            redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', $exec['pesan']));
+            $result = redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', $exec['pesan']));
         } else {
-            redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('succ_msg', 'Roles has been updated'));
+            $result = redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('succ_msg', 'Roles has been updated'));
         }
+        return $result;
     }
 
     public function index() {
@@ -41,7 +42,7 @@ class Permissions extends CI_Controller {
     }
 
     public function Role_update() {
-        $id = $this->bodo->Dec(Post_input("id_grup_edit"));
+        $id = Dekrip(Post_input("id_grup_edit"));
         if ($id == 1) {
             redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', 'this user cannot be edit'));
         } else {
@@ -57,7 +58,7 @@ class Permissions extends CI_Controller {
     }
 
     public function Get_role() {
-        $id = $this->bodo->Dec(Post_get("id"));
+        $id = Dekrip(Post_get("id"));
         $exec = $this->M_default->Roles($id)->row();
         if ($exec) {
             $result = [
@@ -70,12 +71,12 @@ class Permissions extends CI_Controller {
                 'msg' => 'error while getting data'
             ];
         }
-        ToJson($result);
+        return ToJson($result);
     }
 
     public function Get_permission() {
-        $id = $this->bodo->Dec(Post_get("id"));
-        $exec = $this->M_default->Permission($id)->result();
+        $id = Dekrip(Post_get("id"));
+        $exec = $this->M_default->Permission($id, $this->user)->result();
         if ($exec) {
             $result = [
                 'status' => true,
@@ -87,16 +88,16 @@ class Permissions extends CI_Controller {
                 'msg' => 'error while getting data'
             ];
         }
-        ToJson($result);
+        return ToJson($result);
     }
 
     public function Save() {
         if (Post_input('gr_parent_add') === '0') {
             $parent_id = 0;
-        } elseif ($this->bodo->Dec(Post_input('gr_parent_add')) === 1) {
+        } elseif (Dekrip(Post_input('gr_parent_add')) === 1) {
             $parent_id = 1;
         } else {
-            $parent_id = $this->bodo->Dec(Post_input('gr_parent_add'));
+            $parent_id = Dekrip(Post_input('gr_parent_add'));
         }
         $data = [
             'name' => Post_input("gr_name_add"),
@@ -109,14 +110,15 @@ class Permissions extends CI_Controller {
 
     private function _Save($data) {
         if ($data['parent_id'] == 1) {
-            redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', 'error while saving role!'));
+            $result = redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', 'error while saving role!'));
         } else {
-            $this->M_permision->Save($data);
+            $result = $this->M_permision->Save($data);
         }
+        return $result;
     }
 
     public function Save_access() {
-        $role = $this->bodo->Dec(Post_input("role_id"));
+        $role = Dekrip(Post_input("role_id"));
         $data = [
             'role_id' => $role,
             'id_menu' => Post_input("id_menu"),
@@ -129,23 +131,25 @@ class Permissions extends CI_Controller {
         ];
         $exec = $this->M_permision->Save_access($data);
         if ($exec['status'] == true) {
-            redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('succ_msg', $exec['pesan']));
+            $result = redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('succ_msg', $exec['pesan']));
         } else {
-            redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', $exec['pesan']));
+            $result = redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', $exec['pesan']));
         }
+        return $result;
     }
 
     public function Delete() {
-        $id = $this->bodo->Dec(Post_input('id_grup'));
+        $id = Dekrip(Post_input('id_grup'));
         if ($id == 1) {
-            redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', 'you cannot proceed with this request'));
+            $result = redirect(base_url('Systems/Permissions/index/'), $this->session->set_flashdata('err_msg', 'you cannot proceed with this request'));
         } else {
             $data = [
                 'id' => $id,
                 'id_user' => $this->user
             ];
-            $this->M_permision->Delete($data);
+            $result = $this->M_permision->Delete($data);
         }
+        return $result;
     }
 
 }

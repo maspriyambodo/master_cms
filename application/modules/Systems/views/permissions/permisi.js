@@ -1,6 +1,6 @@
 function Edit(id) {
     $.ajax({
-        url: "<?php echo base_url('Systems/Permissions/Get_role?id='); ?>" + id,
+        url: "Systems/Permissions/Get_permission?id=" + val,
         cache: false,
         contentType: false,
         processData: false,

@@ -53,7 +53,8 @@ class Menu_group extends CI_Controller {
     public function Save() {
         $order_no = Dekrip(Post_input('order_no'));
         if (empty($order_no)) {
-            $result = redirect(base_url('Systems/Menu_group/index/'), $this->session->set_flashdata('err_msg', 'error while insert new group'));
+            log_message('error', 'kesalahan dekrip input post order_no, error code: 10042022');
+            $result = redirect(base_url('Systems/Menu_group/index/'), $this->session->set_flashdata('err_msg', ', error code: 10042022, invalid token!'));
         } else {
             $data = [
                 'param' => 'insert_baru',
