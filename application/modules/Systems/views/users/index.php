@@ -113,7 +113,7 @@ unset($_SESSION['succ_msg']);
         }
     };
     function Add_user() {
-        window.location.href = "<?php echo base_url('Systems/Users/Add/'); ?>";
+        window.location.href = "Systems/Users/Add/";
     }
     function Delete(val) {
         $('input[name="e_id"]').val(val);
@@ -127,6 +127,6 @@ unset($_SESSION['succ_msg']);
         $('#modal_active').modal({show: true, backdrop: 'static', keyboard: false});
     }
     function Edit(id) {
-        window.location.href = "<?php echo base_url('Systems/Users/Edit?id='); ?>" + id;
+        window.location.href = "Systems/Users/Edit?id=" + id;
     }
 </script>
