@@ -599,6 +599,15 @@ IF grup_id = 0 THEN
 		status_grup = 1
 		AND sys_roles_select.id_grup <> 1;
 		
+ELSEIF grup_id = 1 THEN
+
+	SELECT 
+		* 
+	FROM 
+		sys_roles_select 
+	WHERE 
+		status_grup = 1;
+		
 ELSE
 
 	SELECT 
@@ -608,7 +617,9 @@ ELSE
 	WHERE 
 		id_grup = grup_id 
 		AND status_grup = 1;
+		
 END IF;
+
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_users_insert`$$
