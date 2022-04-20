@@ -249,7 +249,17 @@ ORDER BY sys_menu_select.order_no, sys_menu_select.id_group_menu ASC;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_group`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_group` (IN `param` VARCHAR(50), IN `id_grup` INT, IN `nama_group` VARCHAR(255), IN `deskripsi` VARCHAR(255), IN `no_order` INT, IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_group`(
+IN `param` VARCHAR(50), 
+IN `id_grup` INT,
+IN `nama_group` VARCHAR(255), 
+IN `deskripsi` VARCHAR(255), 
+IN `no_order` INT, 
+IN `user_login` INT
+)
+BEGIN
+
+DECLARE new_id INT;
 
 IF param = 'check_nama' THEN
 
@@ -262,9 +272,20 @@ ELSEIF param = 'insert_baru' THEN
 	UPDATE `sys_menu_group` 
 	SET `sys_menu_group`.`order_no` = `order_no` + 1 
 	WHERE `sys_menu_group`.`order_no` >= no_order
-	AND `sys_menu_group`.`order_no` != 999;
+	AND `sys_menu_group`.`order_no` <> 999;
+
+	IF id_grup >= 999 THEN
+		
+		SET new_id = id_grup + 1;
+		
+	ELSE
+	
+		SET new_id = id_grup;
+	
+	END IF;
 
 	INSERT INTO sys_menu_group (
+		`sys_menu_group`.`id`,
 		`sys_menu_group`.`nama`, 
 		`sys_menu_group`.`description`,
 		`sys_menu_group`.`order_no`,
@@ -273,6 +294,7 @@ ELSEIF param = 'insert_baru' THEN
 		`sys_menu_group`.`syscreatedate`
 	)
 	VALUES (
+		new_id,
 		nama_group,
 		deskripsi,
 		no_order,
