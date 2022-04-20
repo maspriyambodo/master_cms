@@ -7,6 +7,7 @@ class M_menugrup extends CI_Model {
     public function sys_menu_group($data) {
         $exec = $this->db->query('CALL sys_menu_group("' . $data['param'] . '",' . $data['id_grup'] . ',"' . $data['nama_group'] . '","' . $data['deskripsi'] . '",' . $data['order'] . ',' . $data['user_login'] . ');');
         mysqli_next_result($this->db->conn_id);
+        log_message('error', $this->db->last_query());
         return $exec;
     }
 
@@ -14,7 +15,7 @@ class M_menugrup extends CI_Model {
         $exec = $this->db->select('sys_menu_group.order_no,sys_menu_group.nama')
                 ->from('sys_menu_group')
                 ->where('`sys_menu_group`.`stat`', 1, false)
-                ->where('`sys_menu_group`.`order_no` !=', 999, false)
+                ->where('`sys_menu_group`.`order_no` <>', 999, false)
                 ->order_by('sys_menu_group.order_no ASC')
                 ->get()
                 ->result();
@@ -42,6 +43,15 @@ class M_menugrup extends CI_Model {
             $result = redirect(base_url('Systems/Menu_group/index/'), $this->session->set_flashdata('succ_msg', 'success swap number order'));
         }
         return $result;
+    }
+
+    public function mIdgrup() {
+        $exec = $this->db->select('Max( sys_menu_group.id ) AS id')
+                ->from('sys_menu_group')
+                ->where('`sys_menu_group`.`order_no` <', 999, false)
+                ->get()
+                ->row();
+        return $exec;
     }
 
 }
