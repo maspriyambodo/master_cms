@@ -38,7 +38,7 @@ class Dashboard extends CI_Controller {
             'jenis' => Post_input('jenistxt'),
             'tgl' => $new_tgl,
             'nominal' => $nominal,
-            'keterangan' => Post_input('kettxt'),
+            'keterangan' => $this->input->post('kettxt', false),
             'stat' => 1,
             'syscreateuser' => $this->user,
             'syscreatedate' => date('Y-m-d')

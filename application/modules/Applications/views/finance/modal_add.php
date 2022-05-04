@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <label for="kettxt">Keterangan:</label>
-                        <textarea name="kettxt" class="form-control" required=""></textarea>
+                        <textarea id="editor1" name="kettxt" class="form-control" required=""></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">

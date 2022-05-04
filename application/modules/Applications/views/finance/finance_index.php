@@ -1,3 +1,5 @@
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.12.1/plugins/autocomplete/skins/default.css" rel="stylesheet" type="text/css"/>
 <?php
 $credit = 0;
 $debit = 0;
@@ -93,7 +95,7 @@ $debit = 0;
                                 ?>
                             </td>
                             <td class="text-center"><?php echo $dt_masuk->tgl; ?></td>
-                            <td class="text-right"><?php echo number_format($dt_masuk->nominal); ?></td>
+                            <td class="text-right">Rp. <?php echo number_format($dt_masuk->nominal); ?></td>
                             <td class="text-center">
                                 <?php
                                 $editbtn = '<button id="editbtn" type="button" class="btn btn-icon btn-link btn-xs" title="Edit" value="' . $id_table . '" onclick="Edit(this.value)"><i class="far fa-edit"></i></button>';
@@ -108,8 +110,9 @@ $debit = 0;
                                     echo $delbtn;
                                 }
 
-                                echo '<p class="d-none">' . $dt_masuk->keterangan . '</p></div>'; //close div btn-group
+                                echo '</div>'; //close div btn-group
                                 ?>
+                                <span class="d-none d-print-block"><?php echo $dt_masuk->keterangan; ?></span>
                             </td>
                         </tr>
                     <?php } ?>
@@ -136,6 +139,8 @@ unset($_SESSION['err_msg']);
 unset($_SESSION['succ_msg']);
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ckeditor.com/docs/vendors/4.14.0/ckeditor/ckeditor.js"></script>
+<script src="<?php echo base_url('assets/plugins/custom/ckeditor/ckeditor-classic.bundle.js?v=7.0.6'); ?>"></script>
 <script>
     window.onload = function () {
         var credit = $('input[name="crtxt"]').val();
@@ -191,6 +196,7 @@ unset($_SESSION['succ_msg']);
                 {extend: 'pdfHtml5', footer: true}
             ]
         });
+        CKEDITOR.replace('kettxt', {});
     };
     function isNumber(b) {
         b = (b) ? b : window.event;
