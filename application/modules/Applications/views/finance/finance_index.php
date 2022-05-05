@@ -9,7 +9,7 @@ $debit = 0;
         <div class="card card-custom rounded-xl">
             <div class="card-body">
                 <div class="text-xl-left" style="font-size:20px;">
-                    <i class="fas fa-dollar-sign text-success"></i>
+                    <i class="fas fa-arrow-down text-success"></i>
                     <span id="crtxt"></span>
                 </div>
                 <div class="clearfix my-4"></div>
@@ -21,7 +21,7 @@ $debit = 0;
         <div class="card card-custom rounded-xl">
             <div class="card-body">
                 <div class="text-xl-left" style="font-size:20px;">
-                    <i class="fas fa-dollar-sign text-danger"></i>
+                    <i class="fas fa-arrow-up text-danger"></i>
                     <span id="dbtxt"></span>
                 </div>
                 <div class="clearfix my-4"></div>
@@ -33,7 +33,7 @@ $debit = 0;
         <div class="card card-custom rounded-xl">
             <div class="card-body">
                 <div class="text-xl-left" style="font-size:20px;">
-                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-coins"></i>
                     <span id="bltxt"></span>
                 </div>
                 <div class="clearfix my-4"></div>
@@ -45,18 +45,44 @@ $debit = 0;
 <div class="clearfix my-4"></div>
 <div class="card card-custom">
     <div class="card-body">
-        <?php
-        if ($privilege['create']) { // jika memiliki privilege tambah data / create
-            echo '<div class="text-right">'
-            . '<div class="form-group">'
-            . '<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#modal_add"><i class="far fa-plus-square"></i> Add new</button>'
-            . '</div>'
-            . '</div>';
-            require_once 'modal_add.php'; // jika bisa menambah data dengan modal, jika tidak maka button dibuat menjadi  href
-        } else {
-            null;
-        }
-        ?>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select name="filtxt" class="form-control" onchange="Bulan(this.value)">
+                        <option value="">Pilih Bulan</option>
+                        <?php
+                        foreach ($bulan as $dt_bulan) {
+                            $tgl = $dt_bulan->tgl;
+                            $new_tgl = date('F', strtotime($tgl));
+                            echo '<option value="' . Enkrip($dt_bulan->tgl) . '">' . $new_tgl . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <?php
+                if ($privilege['create']) { // jika memiliki privilege tambah data / create
+                    echo '<div class="text-right">'
+                    . '<div class="form-group">'
+                    . '<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#modal_add"><i class="far fa-plus-square"></i> Add new</button>'
+                    . '</div>'
+                    . '</div>';
+                    require_once 'modal_add.php'; // jika bisa menambah data dengan modal, jika tidak maka button dibuat menjadi  href
+                } else {
+                    null;
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix my-4"></div>
+<div class="card card-custom">
+    <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered table-hover table-striped" style="width:100%;">
                 <thead class="text-center text-uppercase">
@@ -65,6 +91,7 @@ $debit = 0;
                         <th>jenis</th>
                         <th>tanggal</th>
                         <th>nominal</th>
+                        <th>keterangan</th>
                         <th>action</th>
                     </tr>
                 </thead>
@@ -96,6 +123,7 @@ $debit = 0;
                             </td>
                             <td class="text-center"><?php echo $dt_masuk->tgl; ?></td>
                             <td class="text-right">Rp. <?php echo number_format($dt_masuk->nominal); ?></td>
+                            <td><?php echo $dt_masuk->keterangan; ?></td>
                             <td class="text-center">
                                 <?php
                                 $editbtn = '<button id="editbtn" type="button" class="btn btn-icon btn-link btn-xs" title="Edit" value="' . $id_table . '" onclick="Edit(this.value)"><i class="far fa-edit"></i></button>';
@@ -112,7 +140,6 @@ $debit = 0;
 
                                 echo '</div>'; //close div btn-group
                                 ?>
-                                <span class="d-none d-print-block"><?php echo $dt_masuk->keterangan; ?></span>
                             </td>
                         </tr>
                     <?php } ?>
@@ -205,5 +232,8 @@ unset($_SESSION['succ_msg']);
             return false;
         }
         $('.nomtxt').mask('#.##0', {reverse: true});
+    }
+    function Bulan(token){
+        window.location.href = 'Applications/Finance/Dashboard/filter?token='+token;
     }
 </script>

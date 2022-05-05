@@ -4,14 +4,40 @@ defined('BASEPATH') OR exit('404 not found');
 
 class M_finance extends CI_Model {
 
-    public function m_uang_masuk() {
+    public function m_mutasi($bulan = "MONTH ( NOW( ) )") {
         $exec = $this->db->select('dt_finance.id,dt_finance.jenis,dt_finance.tgl,dt_finance.nominal,dt_finance.stat,dt_finance.keterangan')
                 ->from('dt_finance')
-                ->where('MONTH ( dt_finance.tgl ) =', 'MONTH ( NOW( ) - INTERVAL 1 MONTH )', false)
+                ->where('MONTH ( dt_finance.tgl ) =', $bulan, false)
                 ->where('YEAR ( dt_finance.tgl ) =', 'YEAR ( NOW( ) )', false)
-                ->order_by('dt_finance.tgl', 'ASC')
+                ->where('`dt_finance`.`stat`', 1, false)
+                ->order_by('DAY ( `dt_finance`.`tgl` )', 'ASC')
                 ->get()
                 ->result();
+        log_message('error', $this->db->last_query());
+        return $exec;
+    }
+
+    public function m_bulan($bulan = null) {
+        if (empty($bulan)) {
+            $exec = $this->db->select('MIN( dt_finance.tgl ) AS tgl')
+                    ->from('dt_finance')
+                    ->where('`dt_finance`.`stat`', 1, false)
+                    ->where('MONTH ( dt_finance.tgl ) <>', date('m'), false)
+                    ->group_by('MONTH(dt_finance.tgl)')
+                    ->order_by('dt_finance.tgl', 'ASC')
+                    ->get()
+                    ->result();
+        } else {
+            $exec = $this->db->select('MIN( dt_finance.tgl ) AS tgl,MONTH(dt_finance.tgl) AS bulan')
+                    ->from('dt_finance')
+                    ->where('`dt_finance`.`stat`', 1, false)
+                    ->where('MONTH ( dt_finance.tgl ) <>', $bulan, false)
+                    ->group_by('MONTH(dt_finance.tgl)')
+                    ->order_by('dt_finance.tgl', 'ASC')
+                    ->get()
+                    ->result();
+        }
+
         return $exec;
     }
 

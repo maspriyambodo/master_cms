@@ -13,11 +13,35 @@ class Dashboard extends CI_Controller {
     public function index() {
         $data = [
             'csrf' => $this->bodo->Csrf(),
-            'uang_masuk' => $this->model->m_uang_masuk(),
+            'uang_masuk' => $this->model->m_mutasi(),
+            'bulan' => $this->model->m_bulan(),
             'item_active' => 'Applications/Finance/Dashboard/index/',
             'privilege' => $this->bodo->Check_previlege('Applications/Finance/Dashboard/index/'),
             'siteTitle' => 'Finance Dashboard | ' . $this->bodo->Sys('app_name'),
-            'pagetitle' => 'Finance Dashboard',
+            'pagetitle' => 'Finance Month ' . date('F'),
+            'breadcrumb' => [
+                0 => [
+                    'nama' => 'Dashboard',
+                    'link' => null,
+                    'status' => true
+                ]
+            ]
+        ];
+        $data['content'] = $this->parser->parse('finance/finance_index', $data, true);
+        return $this->parser->parse('Template/layout', $data);
+    }
+
+    public function filter() {
+        
+        $param = Dekrip(Post_get('token'));
+        $data = [
+            'csrf' => $this->bodo->Csrf(),
+            'uang_masuk' => $this->model->m_mutasi(date('m', strtotime($param))),
+            'bulan' => $this->model->m_bulan(date('m', strtotime($param))),
+            'item_active' => 'Applications/Finance/Dashboard/index/',
+            'privilege' => $this->bodo->Check_previlege('Applications/Finance/Dashboard/index/'),
+            'siteTitle' => 'Finance Dashboard | ' . $this->bodo->Sys('app_name'),
+            'pagetitle' => 'Finance Month ' . date('F', strtotime($param)),
             'breadcrumb' => [
                 0 => [
                     'nama' => 'Dashboard',
