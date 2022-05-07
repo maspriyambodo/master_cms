@@ -32,7 +32,6 @@ class Dashboard extends CI_Controller {
     }
 
     public function filter() {
-        
         $param = Dekrip(Post_get('token'));
         $data = [
             'csrf' => $this->bodo->Csrf(),
@@ -57,7 +56,7 @@ class Dashboard extends CI_Controller {
     public function Save() {
         $tgl = date_create(Post_input('tgltxt'));
         $new_tgl = date_format($tgl, 'Y-m-d');
-        $nominal = str_replace('.', '', Post_input('nomtxt'));
+        $nominal = str_replace(['.',','], '', Post_input('nomtxt'));
         $data = [
             'jenis' => Post_input('jenistxt'),
             'tgl' => $new_tgl,
@@ -74,6 +73,25 @@ class Dashboard extends CI_Controller {
             $result = redirect(base_url('Applications/Finance/Dashboard/index/'), $this->session->set_flashdata('err_msg', 'gagal ketika menambah data!'));
         }
         return $exec;
+    }
+
+    public function get_data() {
+        $id = Dekrip(Post_get('token'));
+        $data = [];
+        $exec = $this->model->mGetData($id);
+        if ($id) {
+            foreach ($exec as $value) {
+                $data['stat'] = true;
+                $data['id'] = $value->id;
+                $data['jenis'] = $value->jenis;
+                $data['tgl'] = $value->tgl;
+                $data['nominal'] = number_format($value->nominal);
+                $data['keterangan'] = $value->keterangan;
+            }
+        } else {
+            $data['stat'] = false;
+        }
+        return ToJson($data);
     }
 
 }

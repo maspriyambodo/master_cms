@@ -13,7 +13,6 @@ class M_finance extends CI_Model {
                 ->order_by('DAY ( `dt_finance`.`tgl` )', 'ASC')
                 ->get()
                 ->result();
-        log_message('error', $this->db->last_query());
         return $exec;
     }
 
@@ -52,6 +51,15 @@ class M_finance extends CI_Model {
             $result = true;
         }
         return $result;
+    }
+
+    public function mGetData($id) {
+        $exec = $this->db->select('dt_finance.id,dt_finance.jenis,dt_finance.tgl,dt_finance.nominal,dt_finance.stat,dt_finance.keterangan')
+                ->from('dt_finance')
+                ->where('`dt_finance`.`id`', $id, false)
+                ->get()
+                ->result();
+        return $exec;
     }
 
 }

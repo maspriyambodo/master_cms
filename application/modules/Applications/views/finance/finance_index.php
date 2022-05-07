@@ -224,6 +224,7 @@ unset($_SESSION['succ_msg']);
             ]
         });
         CKEDITOR.replace('kettxt', {});
+        CKEDITOR.replace('e_kettxt', {});
     };
     function isNumber(b) {
         b = (b) ? b : window.event;
