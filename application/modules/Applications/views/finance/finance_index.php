@@ -1,4 +1,3 @@
-
 <link href="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.12.1/plugins/autocomplete/skins/default.css" rel="stylesheet" type="text/css"/>
 <?php
 $credit = 0;
