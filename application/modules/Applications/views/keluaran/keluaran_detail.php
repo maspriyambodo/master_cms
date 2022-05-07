@@ -1,3 +1,4 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.12.1/plugins/autocomplete/skins/default.css" rel="stylesheet" type="text/css"/>
 <h3 class="text-center"><?php echo $data['exec'][0]->nama_pasar; ?></h3>
 <table class="table table-borderless table-hover" style="width:100%;">
     <tbody>
@@ -21,7 +22,7 @@
 </table>
 <div class="clearfix my-4"></div>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4" style="overflow: auto;height: 539px;">
         <div class="clearfix d-block d-xl-none my-2 border"></div>
         <div class="table-responsive bg-white">
             <div class="form-group mt-4 text-center">
@@ -134,9 +135,9 @@
         </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4" style="height:539px;">
         <div class="clearfix d-block d-xl-none my-2 border"></div>
-        <div class="table-responsive bg-white">
+        <div class="table-responsive bg-white pb-10">
             <div class="form-group mt-4 text-center">
                 <b>RESULT 2</b>
             </div>
@@ -291,7 +292,7 @@
             <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
             <input type="hidden" name="idtxt" value="<?php echo Enkrip($id_toto[0]->id); ?>"/>
             <input type="hidden" name="pasartxt2" value="<?php echo Post_get('pasar'); ?>"/>
-            <textarea name="asutxt" class="form-control" rows="12" required="">
+            <textarea id="editor1" name="asutxt" class="form-control" rows="12" required="">
                 <?php
                 foreach ($data['exec'] as $noted) {
                     if (!empty($noted->noted)) {
@@ -313,8 +314,10 @@ require_once 'modal_add2.php';
 unset($_SESSION['err_msg']);
 unset($_SESSION['succ_msg']);
 ?>
+<script src="https://ckeditor.com/docs/vendors/4.14.0/ckeditor/ckeditor.js"></script>
 <script>
     $(document).ready(function () {
+        CKEDITOR.replace('asutxt', {});
         $('#sticky_toolbar').attr('class', 'sticky-toolbar nav flex-column pl-2 pr-2 pt-3 pb-3 mt-4');
         $('#sticky_toolbar').append(
                 '<li class="nav-item mb-2" data-toggle="modal" data-target="#modal_add2" title="add new"> <a class="btn btn-sm btn-icon btn-bg-light btn-icon-success btn-hover-success"> <i class="fas fa-plus"></i> </a> </li>'
