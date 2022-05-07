@@ -43,8 +43,7 @@ class M_keluaran extends CI_Model {
     public function msingapore() {
         $exec = $this->db->select('dt_toto.satu,dt_toto.dua,dt_toto.tiga,dt_toto.empat,dt_toto.tgl_keluar')
                 ->from('dt_toto')
-                ->where('dt_toto.pasaran', 4, false)
-                ->where('( dt_toto.tgl_keluar BETWEEN CURDATE( ) - INTERVAL 20 DAY AND CURDATE( ) )', null, false)
+                ->where('`dt_toto`.`pasaran`', 4, false)
                 ->order_by('dt_toto.tgl_keluar', 'DESC')
                 ->limit(10)
                 ->get()
@@ -80,7 +79,6 @@ class M_keluaran extends CI_Model {
         $exec = $this->db->select('dt_toto.satu,dt_toto.dua,dt_toto.tiga,dt_toto.empat,dt_toto.tgl_keluar')
                 ->from('dt_toto')
                 ->where('dt_toto.pasaran', 7, false)
-                ->where('( dt_toto.tgl_keluar BETWEEN CURDATE( ) - INTERVAL 10 DAY AND CURDATE( ) )', null, false)
                 ->order_by('dt_toto.tgl_keluar', 'DESC')
                 ->limit(10)
                 ->get()
@@ -104,7 +102,6 @@ class M_keluaran extends CI_Model {
         $exec = $this->db->select('dt_toto.satu,dt_toto.dua,dt_toto.tiga,dt_toto.empat,dt_toto.tgl_keluar')
                 ->from('dt_toto')
                 ->where('dt_toto.pasaran', 9, false)
-                ->where('( dt_toto.tgl_keluar BETWEEN CURDATE( ) - INTERVAL 10 DAY AND CURDATE( ) )', null, false)
                 ->order_by('dt_toto.tgl_keluar', 'DESC')
                 ->limit(10)
                 ->get()
@@ -159,9 +156,8 @@ class M_keluaran extends CI_Model {
                 ->from('dt_toto')
                 ->join('mt_toto_pasar', 'dt_toto.pasaran = mt_toto_pasar.id')
                 ->where('`dt_toto`.`pasaran`', $id_pasar, false)
-                ->where('( dt_toto.tgl_keluar BETWEEN CURDATE( ) - INTERVAL 10 DAY AND CURDATE( ) )', null, false)
                 ->order_by('dt_toto.tgl_keluar', 'DESC')
-                ->limit(10)
+                ->limit(20)
                 ->get()
                 ->result();
         return $exec;
@@ -181,6 +177,9 @@ class M_keluaran extends CI_Model {
 
     public function m_save1($data) {
         $this->db->trans_begin();
+        $this->db->set('`dt_toto`.`noted`', null)
+                ->where('`dt_toto`.`pasaran`', $data['pasar_id'], false)
+                ->update('dt_toto');
         $this->db->set('`dt_toto`.`noted`', $data['noted'])
                 ->where('`dt_toto`.`id`', $data['id'], false)
                 ->update('dt_toto');

@@ -1,24 +1,24 @@
 <h3 class="text-center"><?php echo $data['exec'][0]->nama_pasar; ?></h3>
 <table class="table table-borderless table-hover" style="width:100%;">
-                <tbody>
-                    <tr>
-                        <td>Hari Undi</td>
-                        <td>: Setiap Hari</td>
-                    </tr>
-                    <tr>
-                        <td>Hari Libur</td>
-                        <td>: N/A</td>
-                    </tr>
-                    <tr>
-                        <td>Jam Tutup</td>
-                        <td>: 22:30</td>
-                    </tr>
-                    <tr>
-                        <td>Jam Undi</td>
-                        <td>: 23:00</td>
-                    </tr>
-                </tbody>
-            </table>
+    <tbody>
+        <tr>
+            <td>Hari Undi</td>
+            <td>: Setiap Hari</td>
+        </tr>
+        <tr>
+            <td>Hari Libur</td>
+            <td>: N/A</td>
+        </tr>
+        <tr>
+            <td>Jam Tutup</td>
+            <td>: 22:30</td>
+        </tr>
+        <tr>
+            <td>Jam Undi</td>
+            <td>: 23:00</td>
+        </tr>
+    </tbody>
+</table>
 <div class="clearfix my-4"></div>
 <div class="row">
     <div class="col-md-4">
@@ -279,6 +279,7 @@
         <form action="<?php echo site_url('Applications/Toto/Keluaran/Save_1/'); ?>" method="post">
             <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
             <input type="hidden" name="idtxt" value="<?php echo Enkrip($id_toto[0]->id); ?>"/>
+            <input type="hidden" name="pasartxt2" value="<?php echo Post_get('pasar'); ?>"/>
             <textarea name="asutxt" class="form-control" rows="12" required="">
                 <?php
                 foreach ($data['exec'] as $noted) {
@@ -294,3 +295,56 @@
         </form>
     </div>
 </div>
+<input type="hidden" name="err_msg" value="<?php echo $this->session->flashdata('err_msg'); ?>"/>
+<input type="hidden" name="succ_msg" value="<?php echo $this->session->flashdata('succ_msg'); ?>"/>
+<?php
+require_once 'modal_add2.php';
+unset($_SESSION['err_msg']);
+unset($_SESSION['succ_msg']);
+?>
+<script>
+    $(document).ready(function () {
+        $('#sticky_toolbar').attr('class', 'sticky-toolbar nav flex-column pl-2 pr-2 pt-3 pb-3 mt-4');
+        $('#sticky_toolbar').append(
+                '<li class="nav-item mb-2" data-toggle="modal" data-target="#modal_add2" title="add new"> <a class="btn btn-sm btn-icon btn-bg-light btn-icon-success btn-hover-success"> <i class="fas fa-plus"></i> </a> </li>'
+                );
+        toastr.options = {
+            closeButton: true,
+            debug: false,
+            newestOnTop: false,
+            progressBar: false,
+            positionClass: "toast-top-right",
+            preventDuplicates: true,
+            onclick: null,
+            showDuration: "300",
+            hideDuration: "2000",
+            timeOut: false,
+            extendedTimeOut: "2000",
+            showEasing: "swing",
+            hideEasing: "linear",
+            showMethod: "fadeIn",
+            hideMethod: "fadeOut"
+        };
+        var a, b;
+        a = $('input[name="err_msg"]').val();
+        b = $('input[name="succ_msg"]').val();
+        if (a) {
+            toastr.error(a);
+        } else if (b) {
+            toastr.success(b);
+        }
+    });
+    $('.angka').keyup(function (e) {
+        if (this.value.length === this.maxLength) {
+            let next = $(this).data('next');
+            $('#n' + next).focus();
+        }
+    });
+    function isNumber(b) {
+        b = (b) ? b : window.event;
+        var a = (b.which) ? b.which : b.keyCode;
+        if (a > 31 && (a < 48 || a > 57)) {
+            return false;
+        }
+    }
+</script>

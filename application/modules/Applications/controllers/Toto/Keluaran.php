@@ -270,6 +270,31 @@ class Keluaran extends CI_Controller {
         return $result;
     }
 
+    public function Save2() {
+        $pasaran = Dekrip(Post_input('pasartxt'));
+        $date = date_create(Post_input('tgltxt'));
+        $tgl_keluar = date_format($date, 'Y-m-d');
+        if (empty($pasaran)) {
+            $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('err_msg', 'error code: 03052022, id pasaran invalid!'));
+        } else {
+            $data = [
+                'satu' => Post_input('satutxt'),
+                'dua' => Post_input('duatxt'),
+                'tiga' => Post_input('tigatxt'),
+                'empat' => Post_input('empattxt'),
+                'pasaran' => $pasaran,
+                'tgl_keluar' => $tgl_keluar
+            ];
+            $exec = $this->model->M_save($data);
+            if ($exec) {
+                $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('succ_msg', 'Berhasil menambahkan data!'));
+            } else {
+                $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('err_msg', 'Gagal menambahkan data!'));
+            }
+        }
+        return $result;
+    }
+
     private function jitu($id_pasar) {
         $exec = $this->model->m_jitu($id_pasar);
         $data = [];
@@ -652,18 +677,20 @@ class Keluaran extends CI_Controller {
 
     public function Save_1() {
         $id = Dekrip(Post_input('idtxt'));
+        $pasaran = Dekrip(Post_input('pasartxt2'));
         if (empty($id)) {
-            $result = redirect(base_url('Applications/Toto/Keluaran/index/'), $this->session->set_flashdata('err_msg', 'error, invalid token!'));
+            $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('err_msg', 'error, invalid token!'));
         } else {
             $data = [
                 'id' => $id,
-                'noted' => Post_input('asutxt')
+                'noted' => Post_input('asutxt'),
+                'pasar_id' => $pasaran
             ];
             $exec = $this->model->m_save1($data);
             if ($exec) {
-                $result = redirect(base_url('Applications/Toto/Keluaran/index/'), $this->session->set_flashdata('succ_msg', 'success, berhasil menambahkan catatan!'));
+                $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('succ_msg', 'success, berhasil menambahkan catatan!'));
             } else {
-                $result = redirect(base_url('Applications/Toto/Keluaran/index/'), $this->session->set_flashdata('err_msg', 'error, gagal menambahkan catatan!'));
+                $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('err_msg', 'error, gagal menambahkan catatan!'));
             }
         }
         return $result;
