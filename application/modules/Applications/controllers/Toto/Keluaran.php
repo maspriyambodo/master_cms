@@ -359,6 +359,146 @@ class Keluaran extends CI_Controller {
         $ekor_9 = 0;
         $ekor_0 = 0;
 
+        $satu_1 = 0;
+        $dua_2 = 0;
+        $tiga_3 = 0;
+        $empat_4 = 0;
+        $lima_5 = 0;
+        $enam_6 = 0;
+        $tujuh_7 = 0;
+        $delapan_8 = 0;
+        $sembilan_9 = 0;
+        $nol_0 = 0;
+        for ($index = 0; $index < 10; $index++) {
+            switch ($exec[$index]->satu) {
+                case 1:
+                    $satu_1 += 1;
+                    break;
+                case 2:
+                    $dua_2 += 1;
+                    break;
+                case 3:
+                    $tiga_3 += 1;
+                    break;
+                case 4:
+                    $empat_4 += 1;
+                    break;
+                case 5:
+                    $lima_5 += 1;
+                    break;
+                case 6:
+                    $enam_6 += 1;
+                    break;
+                case 7:
+                    $tujuh_7 += 1;
+                    break;
+                case 8:
+                    $delapan_8 += 1;
+                    break;
+                case 9:
+                    $sembilan_9 += 1;
+                    break;
+                default :
+                    $nol_0 += 1;
+                    break;
+            }
+            switch ($exec[$index]->dua) {
+                case 1:
+                    $satu_1 += 1;
+                    break;
+                case 2:
+                    $dua_2 += 1;
+                    break;
+                case 3:
+                    $tiga_3 += 1;
+                    break;
+                case 4:
+                    $empat_4 += 1;
+                    break;
+                case 5:
+                    $lima_5 += 1;
+                    break;
+                case 6:
+                    $enam_6 += 1;
+                    break;
+                case 7:
+                    $tujuh_7 += 1;
+                    break;
+                case 8:
+                    $delapan_8 += 1;
+                    break;
+                case 9:
+                    $sembilan_9 += 1;
+                    break;
+                default :
+                    $nol_0 += 1;
+                    break;
+            }
+            switch ($exec[$index]->tiga) {
+                case 1:
+                    $satu_1 += 1;
+                    break;
+                case 2:
+                    $dua_2 += 1;
+                    break;
+                case 3:
+                    $tiga_3 += 1;
+                    break;
+                case 4:
+                    $empat_4 += 1;
+                    break;
+                case 5:
+                    $lima_5 += 1;
+                    break;
+                case 6:
+                    $enam_6 += 1;
+                    break;
+                case 7:
+                    $tujuh_7 += 1;
+                    break;
+                case 8:
+                    $delapan_8 += 1;
+                    break;
+                case 9:
+                    $sembilan_9 += 1;
+                    break;
+                default :
+                    $nol_0 += 1;
+                    break;
+            }
+            switch ($exec[$index]->empat) {
+                case 1:
+                    $satu_1 += 1;
+                    break;
+                case 2:
+                    $dua_2 += 1;
+                    break;
+                case 3:
+                    $tiga_3 += 1;
+                    break;
+                case 4:
+                    $empat_4 += 1;
+                    break;
+                case 5:
+                    $lima_5 += 1;
+                    break;
+                case 6:
+                    $enam_6 += 1;
+                    break;
+                case 7:
+                    $tujuh_7 += 1;
+                    break;
+                case 8:
+                    $delapan_8 += 1;
+                    break;
+                case 9:
+                    $sembilan_9 += 1;
+                    break;
+                default :
+                    $nol_0 += 1;
+                    break;
+            }
+        }
         foreach ($exec as $value) {
             switch ($value->satu) {
                 case 1:
@@ -581,6 +721,18 @@ class Keluaran extends CI_Controller {
             'delapan' => $delapan,
             'sembilan' => $sembilan,
             'nol' => $nol
+        ];
+        $data['angka2'] = [
+            'satu_1' => $satu_1,
+            'dua_2' => $dua_2,
+            'tiga_3' => $tiga_3,
+            'empat_4' => $empat_4,
+            'lima_5' => $lima_5,
+            'enam_6' => $enam_6,
+            'tujuh_7' => $tujuh_7,
+            'delapan_8' => $delapan_8,
+            'sembilan_9' => $sembilan_9,
+            'nol_0' => $nol_0
         ];
         $data['as'] = [
             'as_1' => $as_1,
