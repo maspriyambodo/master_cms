@@ -118,7 +118,7 @@
                             <td><input type="text" class="form-control" maxlength="2"/></td>
                         </tr>
                         <tr>
-                            <td><input type="text" class="form-control disabled text-center" value="9" disabled=""/></td>
+                            <td><input type="text" class="form-control disabled text-center" value="8" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['delapan']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['delapan_8']; ?>"/></td>
                             <td><input type="text" class="form-control" maxlength="2"/></td>
