@@ -193,4 +193,14 @@ class M_keluaran extends CI_Model {
         return $result;
     }
 
+    public function M_inpo($id_pasar) {
+        $exec = $this->db->select('hari_undi,hari_libur,jam_tutup,jam_undi')
+                ->from('mt_toto_pasar')
+                ->where('`mt_toto_pasar`.`id`', $id_pasar, false)
+                ->limit(1)
+                ->get()
+                ->result();
+        return $exec;
+    }
+
 }

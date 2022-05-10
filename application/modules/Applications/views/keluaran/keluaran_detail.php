@@ -4,29 +4,29 @@
     <tbody>
         <tr>
             <td>Hari Undi</td>
-            <td>: Setiap Hari</td>
+            <td>: <?php echo $data['inpo']['undi']; ?></td>
         </tr>
         <tr>
             <td>Hari Libur</td>
-            <td>: N/A</td>
+            <td>: <?php echo $data['inpo']['libur']; ?></td>
         </tr>
         <tr>
             <td>Jam Tutup</td>
-            <td>: 22:30</td>
+            <td>: <?php echo $data['inpo']['jam_tutup']; ?></td>
         </tr>
         <tr>
             <td>Jam Undi</td>
-            <td>: 23:00</td>
+            <td>: <?php echo $data['inpo']['jam_undi']; ?></td>
         </tr>
     </tbody>
 </table>
 <div class="clearfix my-4"></div>
 <div class="row">
-    <div class="col-md-4" style="overflow: auto;height: 539px;">
+    <div class="col-md-4" style="overflow: auto;height: 503px;">
         <div class="clearfix d-block d-xl-none my-2 border"></div>
         <div class="table-responsive bg-white">
             <div class="form-group mt-4 text-center">
-                <b>KELUARAN</b>
+                <b>RESULT 1</b>
             </div>
             <table class="table table-borderless table-hover" style="width:100%;">
                 <thead class="text-uppercase">
@@ -54,11 +54,11 @@
 
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4" style="overflow: auto;height: 503px;">
         <div class="clearfix d-block d-xl-none my-2 border"></div>
         <div class="table-responsive bg-white">
             <div class="form-group mt-4 text-center">
-                <b>RESULT 1</b>
+                <b>RESULT 2</b>
             </div>
             <table class="table table-borderless table-hover" style="width:100%;">
                 <thead class="text-uppercase">
@@ -71,75 +71,75 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td><?php echo $data['angka']['satu']; ?></td>
-                        <td><?php echo $data['angka2']['satu_1']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="1" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['satu']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['satu_1']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td><?php echo $data['angka']['dua']; ?></td>
-                        <td><?php echo $data['angka2']['dua_2']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="2" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['dua']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['dua_2']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td><?php echo $data['angka']['tiga']; ?></td>
-                        <td><?php echo $data['angka2']['tiga_3']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="3" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['tiga']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['tiga_3']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td><?php echo $data['angka']['empat']; ?></td>
-                        <td><?php echo $data['angka2']['empat_4']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="4" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['empat']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['empat_4']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td><?php echo $data['angka']['lima']; ?></td>
-                        <td><?php echo $data['angka2']['lima_5']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="5" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['lima']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['lima_5']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>6</td>
-                        <td><?php echo $data['angka']['enam']; ?></td>
-                        <td><?php echo $data['angka2']['enam_6']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="6" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['enam']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['enam_6']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>7</td>
-                        <td><?php echo $data['angka']['tujuh']; ?></td>
-                        <td><?php echo $data['angka2']['tujuh_7']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="7" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['tujuh']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['tujuh_7']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>8</td>
-                        <td><?php echo $data['angka']['delapan']; ?></td>
-                        <td><?php echo $data['angka2']['delapan_8']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="9" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['delapan']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['delapan_8']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>9</td>
-                        <td><?php echo $data['angka']['sembilan']; ?></td>
-                        <td><?php echo $data['angka2']['sembilan_9']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="9" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['sembilan']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['sembilan_9']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                     <tr>
-                        <td>0</td>
-                        <td><?php echo $data['angka']['nol']; ?></td>
-                        <td><?php echo $data['angka2']['nol_0']; ?></td>
-                        <td><input type="text" class="form-control" maxlength="2" style="height:23px;"/></td>
+                        <td><input type="text" class="form-control disabled text-center" value="0" disabled=""/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['nol']; ?>"/></td>
+                        <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['nol_0']; ?>"/></td>
+                        <td><input type="text" class="form-control" maxlength="2"/></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div class="col-md-4" style="height:539px;">
+    <div class="col-md-4">
         <div class="clearfix d-block d-xl-none my-2 border"></div>
-        <div class="table-responsive bg-white pb-10">
+        <div class="table-responsive bg-white">
             <div class="form-group mt-4 text-center">
-                <b>RESULT 2</b>
+                <b>RESULT 3</b>
             </div>
             <table class="table table-borderless table-hover" style="width:100%;">
                 <thead class="text-uppercase">
@@ -232,7 +232,7 @@
     <div class="col-md-4">
         <div class="table-responsive bg-white">
             <div class="form-group mt-4 text-center">
-                <b>RESULT 3</b>
+                <b>RESULT 4</b>
             </div>
             <table class="table table-borderless table-hover" style="width:100%;">
                 <thead class="text-uppercase">

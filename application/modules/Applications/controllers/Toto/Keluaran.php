@@ -793,6 +793,13 @@ class Keluaran extends CI_Controller {
             'kepala' => $new_pos_3,
             'ekor' => $new_pos_4
         ];
+        $inpo = $this->model->M_inpo($id_pasar);
+        $data['inpo'] = [
+            'undi' => $inpo[0]->hari_undi,
+            'libur' => $inpo[0]->hari_libur,
+            'jam_tutup' => $inpo[0]->jam_tutup,
+            'jam_undi' => $inpo[0]->jam_undi
+        ];
         return $data;
     }
 
