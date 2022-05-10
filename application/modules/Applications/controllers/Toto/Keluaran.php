@@ -13,21 +13,11 @@ class Keluaran extends CI_Controller {
     public function index() {
         $data = [
             'csrf' => $this->bodo->Csrf(),
-            'hk_siang' => $this->hk_siang(),
-            'sydney' => $this->sydney(),
-            'haipong' => $this->haipong(),
-            'singapore' => $this->singapore(),
-            'singapore_45' => $this->singapore_45(),
-            'malaysia' => $this->malaysia(),
-            'jinan' => $this->jinan(),
-            'qatar' => $this->qatar(),
-            'bogor' => $this->bogor(),
-            'hongkong' => $this->hongkong(),
-            'pasaran' => $this->pasaran(),
+            'pasaran' => $this->model->m_pasaran(),
             'item_active' => 'Applications/Toto/Keluaran/index/',
             'privilege' => $this->bodo->Check_previlege('Applications/Toto/Keluaran/index/'),
             'siteTitle' => 'Toto Keluaran | ' . $this->bodo->Sys('app_name'),
-            'pagetitle' => 'Toto Keluaran',
+            'pagetitle' => date('d F Y'),
             'breadcrumb' => [
                 0 => [
                     'nama' => 'Dashboard',
@@ -38,211 +28,6 @@ class Keluaran extends CI_Controller {
         ];
         $data['content'] = $this->parser->parse('keluaran/keluaran_index', $data, true);
         return $this->parser->parse('Template/layout', $data);
-    }
-
-    private function pasaran() {
-        $exec = $this->model->m_pasaran();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<option value="' . Enkrip($value->id) . '">' . $value->nama . '</option>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function hk_siang() {
-        $exec = $this->model->mHK_siang();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $id = Enkrip($value->id);
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function sydney() {
-        $exec = $this->model->mSydney();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function haipong() {
-        $exec = $this->model->mhaipong();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function singapore() {
-        $exec = $this->model->msingapore();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function singapore_45() {
-        $exec = $this->model->msingapore_45();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function malaysia() {
-        $exec = $this->model->mmalaysia();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function jinan() {
-        $exec = $this->model->mjinan();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function qatar() {
-        $exec = $this->model->mqatar();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function bogor() {
-        $exec = $this->model->mbogor();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
-    }
-
-    private function hongkong() {
-        $exec = $this->model->mhongkong();
-        $no = 0;
-        if (count($exec) == 0) {
-            $result[0] = '<tr>'
-                    . '</tr>';
-        } else {
-            foreach ($exec as $value) {
-                $no++;
-                $result[$no] = '<tr>'
-                        . '<td>' . $no . '</td>'
-                        . '<td>' . $value->tgl_keluar . '</td>'
-                        . '<td>' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat . '</td>'
-                        . '</tr>';
-            }
-        }
-        return implode('', $result);
     }
 
     public function Save() {
@@ -808,14 +593,15 @@ class Keluaran extends CI_Controller {
         if (empty($id_pasar)) {
             redirect(base_url('Applications/Toto/Keluaran/index/'), $this->session->set_flashdata('succ_msg', 'Berhasil menambahkan data!'));
         } else {
+            $jitu = $this->jitu($id_pasar);
             $data = [
                 'csrf' => $this->bodo->Csrf(),
-                'data' => $this->jitu($id_pasar),
+                'data' => $jitu,
                 'id_toto' => $this->model->get_toto($id_pasar),
                 'item_active' => 'Applications/Toto/Keluaran/index/',
                 'privilege' => $this->bodo->Check_previlege('Applications/Toto/Keluaran/index/'),
                 'siteTitle' => 'Detail Hasil | ' . $this->bodo->Sys('app_name'),
-                'pagetitle' => 'Detail Hasil',
+                'pagetitle' => $jitu['exec'][0]->nama_pasar . ' ' . date('d F Y'),
                 'breadcrumb' => [
                     0 => [
                         'nama' => 'Dashboard',
