@@ -29,13 +29,18 @@
                                 <?php
                                 foreach ($pasaran as $dt_pasar) {
                                     $id_pasar = Enkrip($dt_pasar->id);
+                                    if ($dt_pasar->id == Dekrip(Post_get('pasar'))) {
+                                        $keluaran_url = $dt_pasar->nama;
+                                    } else {
+                                        $keluaran_url = '<a href="' . base_url('keluaran_detail?pasar=' . $id_pasar) . '">' . $dt_pasar->nama . '</a>';
+                                    }
                                     echo '<tr>'
-                                    . '<td><a href="' . base_url('Applications/Toto/Keluaran/Detail?pasar=' . $id_pasar) . '">' . $dt_pasar->nama . '</a></td>'
-                                    . '<td>' . $dt_pasar->nama_web . '</td>'
+                                    . '<td>' . $keluaran_url . '</td>'
+                                    . '<td><a href="' . $dt_pasar->nama_web . '" target="new">buka</a></td>'
                                     . '<td>' . $dt_pasar->hari_undi . '</td>'
                                     . '<td>' . $dt_pasar->hari_libur . '</td>'
-                                    . '<td>' . $dt_pasar->jam_tutup . '</td>'
-                                    . '<td>' . $dt_pasar->jam_undi . '</td>'
+                                    . '<td class="text-center">' . $dt_pasar->jam_tutup . '</td>'
+                                    . '<td class="text-center">' . $dt_pasar->jam_undi . '</td>'
                                     . '</tr>';
                                 }
                                 ?>

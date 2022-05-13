@@ -79,55 +79,55 @@
                             <td><input type="text" class="form-control disabled text-center" value="1" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['satu']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['satu_1']; ?>"/></td>
-                            <td><input type="text" class="form-control text-center"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['satu'] + $data['angka2']['satu_1']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="2" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['dua']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['dua_2']; ?>"/></td>
-                            <td><input type="text" class="form-control"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['dua'] + $data['angka2']['dua_2']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="3" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['tiga']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['tiga_3']; ?>"/></td>
-                            <td><input type="text" class="form-control"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['tiga'] + $data['angka2']['tiga_3']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="4" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['empat']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['empat_4']; ?>"/></td>
-                            <td><input type="text" class="form-control"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['empat'] + $data['angka2']['empat_4']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="5" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['lima']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['lima_5']; ?>"/></td>
-                            <td><input type="text" class="form-control"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['lima'] + $data['angka2']['lima_5']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="6" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['enam']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['enam_6']; ?>"/></td>
-                            <td><input type="text" class="form-control"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['enam'] + $data['angka2']['enam_6']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="7" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['tujuh']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['tujuh_7']; ?>"/></td>
-                            <td><input type="text" class="form-control"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['tujuh'] + $data['angka2']['tujuh_7']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="8" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['delapan']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['delapan_8']; ?>"/></td>
-                            <td><input type="text" class="form-control"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['delapan'] + $data['angka2']['delapan_8']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="9" disabled=""/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['sembilan']; ?>"/></td>
                             <td><input type="text" class="form-control text-center" value="<?php echo $data['angka2']['sembilan_9']; ?>"/></td>
-                            <td><input type="text" class="form-control"/></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $data['angka']['sembilan'] + $data['angka2']['sembilan_9']; ?> "/></td>
                         </tr>
                         <tr>
                             <td><input type="text" class="form-control disabled text-center" value="0" disabled=""/></td>

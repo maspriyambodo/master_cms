@@ -6,7 +6,7 @@
         <div class="col-md-4 my-4">
             <div class="table-responsive bg-white">
                 <div class="form-group mt-4 text-center">
-                    <a href="<?php echo base_url('Applications/Toto/Keluaran/Detail?pasar=' . $id_pasar); ?>"><?php echo $dt_pasar->nama; ?></a>
+                    <a href="<?php echo base_url('keluaran_detail?pasar=' . $id_pasar); ?>"><?php echo $dt_pasar->nama; ?></a>
                 </div>
                 <table class="table table-borderless table-hover" style="width:100%;">
                     <tbody>
