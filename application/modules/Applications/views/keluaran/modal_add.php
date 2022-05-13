@@ -7,40 +7,42 @@
                     <i aria-hidden="true" class="fas fa-times"></i>
                 </button>
             </div>
-            <form action="<?php echo site_url('Applications/Toto/Keluaran/Save/'); ?>" method="post">
-                <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="pasartxt">Pasaran:</label>
-                        <select name="pasartxt" class="form-control" required="">
-                            <option value="">PILIH PASAR</option>
-                            <?php echo $pasaran; ?>
-                        </select>
+            <div class="modal-body">
+                <form action="<?php echo site_url('Applications/Toto/Keluaran/Save/'); ?>" method="post">
+                    <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="pasartxt">Pasaran:</label>
+                            <select name="pasartxt" class="form-control" required="">
+                                <option value="">PILIH PASAR</option>
+                                <?php echo $pasaran; ?>
+                            </select>
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-md-3">
+                                <input id="n0" type="text" name="satutxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="1"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="n1" type="text" name="duatxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="2"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="n2" type="text" name="tigatxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="3"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="n3" type="text" name="empattxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tgltxt">Tanggal:</label>
+                            <input type="date" name="tgltxt" required="" class="form-control datepicker" style="width:100%;" autocomplete="off"/>
+                        </div>
                     </div>
-                    <div class="row my-4">
-                        <div class="col-md-3">
-                            <input id="n0" type="text" name="satutxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="1"/>
-                        </div>
-                        <div class="col-md-3">
-                            <input id="n1" type="text" name="duatxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="2"/>
-                        </div>
-                        <div class="col-md-3">
-                            <input id="n2" type="text" name="tigatxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="3"/>
-                        </div>
-                        <div class="col-md-3">
-                            <input id="n3" type="text" name="empattxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off"/>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default font-weight-bold" data-dismiss="modal"><i class="far fa-times-circle"></i> Cancel</button>
+                        <button type="submit" class="btn btn-default font-weight-bold"><i class="fas fa-save text-success"></i> Save</button>
                     </div>
-                    <div class="form-group">
-                        <label for="tgltxt">Tanggal:</label>
-                        <input type="date" name="tgltxt" required="" class="form-control datepicker" style="width:100%;" autocomplete="off"/>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default font-weight-bold" data-dismiss="modal"><i class="far fa-times-circle"></i> Cancel</button>
-                    <button type="submit" class="btn btn-default font-weight-bold"><i class="fas fa-save text-success"></i> Save</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>

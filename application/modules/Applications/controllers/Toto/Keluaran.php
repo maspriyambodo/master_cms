@@ -596,6 +596,7 @@ class Keluaran extends CI_Controller {
             $jitu = $this->jitu($id_pasar);
             $data = [
                 'csrf' => $this->bodo->Csrf(),
+                'pasaran' => $this->model->m_pasaran(),
                 'data' => $jitu,
                 'id_toto' => $this->model->get_toto($id_pasar),
                 'item_active' => 'Applications/Toto/Keluaran/index/',
