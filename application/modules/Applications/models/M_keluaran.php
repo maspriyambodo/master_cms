@@ -20,6 +20,8 @@ class M_keluaran extends CI_Model {
                     '`dt_toto`.`dua`' => $data['dua'] + false,
                     '`dt_toto`.`tiga`' => $data['tiga'] + false,
                     '`dt_toto`.`empat`' => $data['empat'] + false,
+                    '`dt_toto`.`lima`' => $data['lima'] + false,
+                    '`dt_toto`.`enam`' => $data['enam'] + false,
                     '`dt_toto`.`pasaran`' => $data['pasaran'] + false,
                     '`dt_toto`.`tgl_keluar`' => $data['tgl_keluar']
                 ])
@@ -35,7 +37,7 @@ class M_keluaran extends CI_Model {
     }
 
     public function m_jitu($id_pasar) {
-        $exec = $this->db->select('dt_toto.satu,dt_toto.dua,dt_toto.tiga,dt_toto.empat,dt_toto.tgl_keluar,dt_toto.noted,mt_toto_pasar.nama AS nama_pasar')
+        $exec = $this->db->select('dt_toto.satu,dt_toto.dua,dt_toto.tiga,dt_toto.empat,dt_toto.lima AS limad,dt_toto.enam AS enamd,dt_toto.tgl_keluar,dt_toto.noted,mt_toto_pasar.nama AS nama_pasar')
                 ->from('dt_toto')
                 ->join('mt_toto_pasar', 'dt_toto.pasaran = mt_toto_pasar.id')
                 ->where('`dt_toto`.`pasaran`', $id_pasar, false)

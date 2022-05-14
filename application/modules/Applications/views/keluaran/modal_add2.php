@@ -12,16 +12,22 @@
                 <input type="hidden" name="pasartxt" value="<?php echo Post_get('pasar'); ?>"/>
                 <div class="modal-body">
                     <div class="row my-4">
-                        <div class="col-md-3">
+                        <div class="col-md-2">
+                                <input id="n4" type="text" name="limatxt" class="form-control text-center angka" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="5"/>
+                            </div>
+                            <div class="col-md-2">
+                                <input id="n5" type="text" name="enamtxt" class="form-control text-center angka" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="0"/>
+                            </div>
+                        <div class="col-md-2">
                             <input id="n0" type="text" name="satutxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="1"/>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <input id="n1" type="text" name="duatxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="2"/>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <input id="n2" type="text" name="tigatxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off" autofocus data-next="3"/>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <input id="n3" type="text" name="empattxt" class="form-control text-center angka" required="" maxlength="1" onkeypress="return isNumber(event)" autocomplete="off"/>
                         </div>
                     </div>

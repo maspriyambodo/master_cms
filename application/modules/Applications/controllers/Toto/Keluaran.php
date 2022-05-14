@@ -42,6 +42,8 @@ class Keluaran extends CI_Controller {
                 'dua' => Post_input('duatxt'),
                 'tiga' => Post_input('tigatxt'),
                 'empat' => Post_input('empattxt'),
+                'lima' => Post_input('limatxt'),
+                'enam' => Post_input('enamtxt'),
                 'pasaran' => $pasaran,
                 'tgl_keluar' => $tgl_keluar
             ];
