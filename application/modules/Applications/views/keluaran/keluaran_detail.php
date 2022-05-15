@@ -1,4 +1,5 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.12.1/plugins/autocomplete/skins/default.css" rel="stylesheet" type="text/css"/>
+<script src="https://ckeditor.com/docs/vendors/4.14.0/ckeditor/ckeditor.js"></script>
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
@@ -39,6 +40,7 @@
                         <th>no</th>
                         <th>tanggal</th>
                         <th>hasil</th>
+                        <th class="text-center">#</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,11 +48,15 @@
                     $no = 0;
                     foreach ($data['exec'] as $value) {
                         $no++;
+                        $id_angka = Enkrip($value->id);
                         ?>
                         <tr>
                             <td><?php echo $no; ?></td>
                             <td><?php echo $value->tgl_keluar; ?></td>
                             <td><?php echo $value->limad . ' ' . $value->enamd . ' ' . $value->satu . ' ' . $value->dua . ' ' . $value->tiga . ' ' . $value->empat; ?></td>
+                            <td class="text-center">
+                                <button id="editbtn" type="button" class="btn btn-icon btn-link btn-xs" title="edit hasil" value="<?php echo $id_angka; ?>" onclick="Edit(this.value)"><i class="far fa-edit"></i></button>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>
@@ -317,10 +323,10 @@
 <?php
 require_once 'modal_add2.php';
 require_once 'modal_pasar.php';
+require_once 'modal_edit.php';
 unset($_SESSION['err_msg']);
 unset($_SESSION['succ_msg']);
 ?>
-<script src="https://ckeditor.com/docs/vendors/4.14.0/ckeditor/ckeditor.js"></script>
 <script>
     $(document).ready(function () {
         CKEDITOR.replace('asutxt', {});

@@ -62,21 +62,23 @@ class Keluaran extends CI_Controller {
         $date = date_create(Post_input('tgltxt'));
         $tgl_keluar = date_format($date, 'Y-m-d');
         if (empty($pasaran)) {
-            $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('err_msg', 'error code: 03052022, id pasaran invalid!'));
+            $result = redirect(base_url('keluaran_detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('err_msg', 'error code: 03052022, id pasaran invalid!'));
         } else {
             $data = [
                 'satu' => Post_input('satutxt'),
                 'dua' => Post_input('duatxt'),
                 'tiga' => Post_input('tigatxt'),
                 'empat' => Post_input('empattxt'),
+                'lima' => Post_input('limatxt'),
+                'enam' => Post_input('enamtxt'),
                 'pasaran' => $pasaran,
                 'tgl_keluar' => $tgl_keluar
             ];
             $exec = $this->model->M_save($data);
             if ($exec) {
-                $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('succ_msg', 'Berhasil menambahkan data!'));
+                $result = redirect(base_url('keluaran_detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('succ_msg', 'Berhasil menambahkan data!'));
             } else {
-                $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('err_msg', 'Gagal menambahkan data!'));
+                $result = redirect(base_url('keluaran_detail?pasar=' . Post_input('pasartxt')), $this->session->set_flashdata('err_msg', 'Gagal menambahkan data!'));
             }
         }
         return $result;
@@ -639,6 +641,56 @@ class Keluaran extends CI_Controller {
                 $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt2')), $this->session->set_flashdata('succ_msg', 'success, berhasil menambahkan catatan!'));
             } else {
                 $result = redirect(base_url('Applications/Toto/Keluaran/Detail?pasar=' . Post_input('pasartxt2')), $this->session->set_flashdata('err_msg', 'error, gagal menambahkan catatan!'));
+            }
+        }
+        return $result;
+    }
+
+    public function get_detail() {
+        $id = Dekrip(Post_get('token'));
+        $exec = $this->model->mget($id);
+        $data = [];
+        if ($id) {
+            foreach ($exec as $value) {
+                $data['stat'] = true;
+                $data['id'] = $value->id;
+                $data['satu'] = $value->satu;
+                $data['dua'] = $value->dua;
+                $data['tiga'] = $value->tiga;
+                $data['empat'] = $value->empat;
+                $data['lima'] = $value->lima;
+                $data['enam'] = $value->enam;
+                $data['pasaran'] = $value->pasaran;
+                $data['tgl_keluar'] = $value->tgl_keluar;
+            }
+        } else {
+            $data['stat'] = false;
+        }
+        return ToJson($data);
+    }
+
+    public function Update() {
+        $id = Dekrip(Post_input('e_id'));
+        $pasaran = Dekrip(Post_input('e_pasartxt'));
+        $date = date_create(Post_input('e_tgltxt'));
+        $tgl_keluar = date_format($date, 'Y-m-d');
+        if (empty($pasaran)) {
+            $result = redirect(base_url('keluaran_detail?pasar=' . Post_input('e_pasartxt')), $this->session->set_flashdata('err_msg', 'error code: 03052022, id pasaran invalid!'));
+        } else {
+            $data = [
+                'satu' => Post_input('e_satutxt'),
+                'dua' => Post_input('e_duatxt'),
+                'tiga' => Post_input('e_tigatxt'),
+                'empat' => Post_input('e_empattxt'),
+                'lima' => Post_input('e_limatxt'),
+                'enam' => Post_input('e_enamtxt'),
+                'tgl_keluar' => $tgl_keluar
+            ];
+            $exec = $this->model->mUpdate($data,$id);
+            if ($exec) {
+                $result = redirect(base_url('keluaran_detail?pasar=' . Post_input('e_pasartxt')), $this->session->set_flashdata('succ_msg', 'Berhasil mengubah data!'));
+            } else {
+                $result = redirect(base_url('keluaran_detail?pasar=' . Post_input('e_pasartxt')), $this->session->set_flashdata('err_msg', 'Gagal mengubah data!'));
             }
         }
         return $result;
