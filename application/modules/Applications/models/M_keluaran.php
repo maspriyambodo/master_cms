@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('404 not found');
 class M_keluaran extends CI_Model {
 
     public function m_pasaran() {
-        $exec = $this->db->select('mt_toto_pasar.id,mt_toto_pasar.nama,mt_toto_pasar.nama_web,mt_toto_pasar.hari_undi,mt_toto_pasar.hari_libur,mt_toto_pasar.jam_tutup,mt_toto_pasar.jam_undi')
+        $exec = $this->db->select('mt_toto_pasar.id,mt_toto_pasar.nama,mt_toto_pasar.tipe,mt_toto_pasar.nama_web,mt_toto_pasar.hari_undi,mt_toto_pasar.hari_libur,mt_toto_pasar.jam_tutup,mt_toto_pasar.jam_undi')
                 ->from('mt_toto_pasar')
                 ->where('mt_toto_pasar.stat', 1, false)
                 ->get()

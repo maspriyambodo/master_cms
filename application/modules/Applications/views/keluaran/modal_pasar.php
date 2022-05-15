@@ -13,6 +13,7 @@
                         <thead class="text-center">
                             <tr>
                                 <th rowspan="2">PASARAN</th>
+                                <th rowspan="2">TIPE</th>
                                 <th rowspan="2">WEB</th>
                                 <th colspan="2">HARI</th>
                                 <th colspan="2">JAM</th>
@@ -36,6 +37,7 @@
                                     }
                                     echo '<tr>'
                                     . '<td>' . $keluaran_url . '</td>'
+                                    . '<td class="text-center">' . $dt_pasar->tipe . 'D</td>'
                                     . '<td><a href="' . $dt_pasar->nama_web . '" target="new">buka</a></td>'
                                     . '<td>' . $dt_pasar->hari_undi . '</td>'
                                     . '<td>' . $dt_pasar->hari_libur . '</td>'
