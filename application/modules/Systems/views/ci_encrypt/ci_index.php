@@ -43,7 +43,7 @@
                     </div>
                 </form>
             </div>
-            
+
             <div class="col-md-4">
                 <form id="enc2" action="#" method="post">
                     <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
@@ -75,7 +75,7 @@
     }
     function Copy3() {
         var cpo = document.getElementById('result3');
-        if(!cpo.value){
+        if (!cpo.value) {
             toastr.error('field cannot be empty');
             return false;
         }
@@ -107,17 +107,21 @@
             success: function (data) {
                 $('input[name="bodo_csrf_token"]').val(data.csrf);
                 $('textarea[name="result3"]').val(data.txt);
+            },
+            error: function () {
+                toastr.error('error system!');
+                location.reload();
             }
         });
     }
-    
+
     function Clear1() {
         $('input[name="txt1"]').val('');
         $('textarea[name="result1"]').val('');
     }
     function Copy1() {
         var cpo = document.getElementById('result1');
-        if(!cpo.value){
+        if (!cpo.value) {
             toastr.error('field cannot be empty');
             return false;
         }
@@ -149,17 +153,21 @@
             success: function (data) {
                 $('input[name="bodo_csrf_token"]').val(data.csrf);
                 $('textarea[name="result1"]').val(data.txt);
+            },
+            error: function () {
+                toastr.error('error system!');
+                location.reload();
             }
         });
     }
-    
+
     function Clear2() {
         $('input[name="txt2"]').val('');
         $('textarea[name="result2"]').val('');
     }
     function Copy2() {
         var cpo = document.getElementById('result2');
-        if(!cpo.value){
+        if (!cpo.value) {
             toastr.error('field cannot be empty');
             return false;
         }
@@ -191,6 +199,10 @@
             success: function (data) {
                 $('input[name="bodo_csrf_token"]').val(data.csrf);
                 $('textarea[name="result2"]').val(data.txt);
+            },
+            error: function () {
+                toastr.error('error system!');
+                location.reload();
             }
         });
     }
