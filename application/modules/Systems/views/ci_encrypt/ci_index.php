@@ -75,6 +75,10 @@
     }
     function Copy3() {
         var cpo = document.getElementById('result3');
+        if(!cpo.value){
+            toastr.error('field cannot be empty');
+            return false;
+        }
         cpo.select();
         cpo.setSelectionRange(0, 99999);
         document.execCommand("copy");
@@ -113,6 +117,10 @@
     }
     function Copy1() {
         var cpo = document.getElementById('result1');
+        if(!cpo.value){
+            toastr.error('field cannot be empty');
+            return false;
+        }
         cpo.select();
         cpo.setSelectionRange(0, 99999);
         document.execCommand("copy");
@@ -151,6 +159,10 @@
     }
     function Copy2() {
         var cpo = document.getElementById('result2');
+        if(!cpo.value){
+            toastr.error('field cannot be empty');
+            return false;
+        }
         cpo.select();
         cpo.setSelectionRange(0, 99999);
         document.execCommand("copy");
