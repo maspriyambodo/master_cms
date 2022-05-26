@@ -42,18 +42,38 @@ class Auth extends CI_Controller {
             if (password_verify($data['pwd'], $hashed)) {
                 $this->bodo->Set_session($exec);
                 $this->M_auth->Remove_penalty($data);
-                $result = redirect(base_url('Dashboard'), 'refresh');
+//                $result = redirect(base_url('Dashboard'), 'refresh');
+                $results = [
+                    'stat' => true,
+                    'href' => 'Dashboard'
+                ];
             } else {
                 $this->Attempt(1);
-                $result = redirect(base_url('Signin'), $this->session->set_flashdata('err_msg', 'Sorry, your password was incorrect. Please double-check your password.'));
+//                $result = redirect(base_url('Signin'), $this->session->set_flashdata('err_msg', 'Sorry, your password was incorrect. Please double-check your password.'));
+                $results = [
+                    'stat' => false,
+                    'msgtxt' => 'Sorry, your password was incorrect. Please double-check your password.',
+                    'csrf' => $this->bodo->Csrf()['hash'],
+                    'login_attemp' => $this->session->userdata('attempt')
+                ];
             }
         } elseif (!empty($exec) and $exec->limit_login == 3) {
-            blocked_account();
+            $results = [
+                'stat' => 'blocked',
+                'msgtxt' => 'Sorry, your password was incorrect. Please double-check your password.',
+                'login_attemp' => $this->session->userdata('attempt')
+            ];
         } else {
             $this->Attempt(2);
-            $result = redirect(base_url('Signin'), $this->session->set_flashdata('err_msg', 'username not registered!'));
+//            $result = redirect(base_url('Signin'), $this->session->set_flashdata('err_msg', 'username not registered!'));
+            $results = [
+                'stat' => false,
+                'msgtxt' => 'username not registered!',
+                'csrf' => $this->bodo->Csrf()['hash'],
+                'login_attemp' => $this->session->userdata('attempt')
+            ];
         }
-        return $result;
+        return ToJson($results);
     }
 
     private function Attempt($id) {
