@@ -22,7 +22,7 @@ $group_menu = $this->M_default->Group_menu();
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <title>{siteTitle}</title>
         <link href="<?php echo base_url('assets/images/systems/' . $this->bodo->Sys('favico')); ?>" rel="shortcut icon"/>
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"/>
+        <link href="<?php echo base_url('assets/fonts_googleapis/fonts.googleapis.css'); ?>" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
         <link href="<?php echo base_url('assets/plugins/global/plugins.bundle.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
         <link href="<?php echo base_url('assets/plugins/custom/prismjs/prismjs.bundle.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
@@ -301,9 +301,9 @@ $group_menu = $this->M_default->Group_menu();
         <ul id="sticky_toolbar"></ul>
 
         <script>
-            var KTAppSettings = {};
-            var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
-            menu.addClass('menu-item-active menu-item-open');
+                                        var KTAppSettings = {};
+                                        var menu = $('.menu-item .menu-item-active').parent('ul').parent().parent();
+                                        menu.addClass('menu-item-active menu-item-open');
         </script>
         <!--<script src="<?php echo base_url('assets/js/app_notification.js'); ?>"></script>-->
     </body>
