@@ -363,7 +363,7 @@ if ( ! function_exists('meta'))
 		$str = '';
 		foreach ($name as $meta)
 		{
-			$type		= (isset($meta['type']) && $meta['type'] !== 'name')	? 'http-equiv' : 'name';
+			$type		= (isset($meta['type']) && $meta['type'] !== 'name')	? $type : 'name';
 			$name		= isset($meta['name'])					? $meta['name'] : '';
 			$content	= isset($meta['content'])				? $meta['content'] : '';
 			$newline	= isset($meta['newline'])				? $meta['newline'] : "\n";
