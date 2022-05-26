@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<?php
-$this->bodo->Check_login();
-$uname = $this->session->userdata('uname');
-$fullname = $this->session->userdata('fullname');
-$tot_notif = $this->bodo->Count_notif();
-$menu_dir = $this->M_default->Menu()->result_array();
-$group_menu = $this->M_default->Group_menu();
-?>
 <html lang="en">
     <head>
-        <base href="<?php echo base_url(); ?>">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8;">
-        <meta property="og:image" content="<?php echo base_url('assets/images/systems/' . $this->bodo->Sys('logo')); ?>">
-        <meta property='og:title' content='{siteTitle}'>
-        <meta property='og:description' content='{description}'>
-        <meta property='og:type' content='article'>
-        <meta property='og:url' content='<?php echo base_url(); ?>'>
-        <meta property="og:locale" content="en_US">
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <meta name="description" content="{description}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>{siteTitle}</title>
-        <link href="<?php echo base_url('assets/images/systems/' . $this->bodo->Sys('favico')); ?>" rel="shortcut icon"/>
-        <link href="<?php echo base_url('assets/fonts_googleapis/fonts.googleapis.css'); ?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
-        <link href="<?php echo base_url('assets/plugins/global/plugins.bundle.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
-        <link href="<?php echo base_url('assets/plugins/custom/prismjs/prismjs.bundle.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
-        <link href="<?php echo base_url('assets/css/style.bundle.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
-        <link href="<?php echo base_url('assets/css/themes/layout/header/base/dark.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
-        <link href="<?php echo base_url('assets/css/themes/layout/header/menu/dark.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
-        <link href="<?php echo base_url('assets/css/themes/layout/brand/dark.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
-        <link href="<?php echo base_url('assets/css/themes/layout/aside/dark.css'); ?>" rel="stylesheet" type="text/css" crossorigin="anonymous"/>
-        <link href="<?php echo base_url('assets/@fortawesome/fontawesome-free/css/all.min.css'); ?>" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url('assets/datatables/datatables.min.css'); ?>" rel="stylesheet" type="text/css"/>
+        <?php
+        $this->bodo->Check_login();
+        $uname = $this->session->userdata('uname');
+        $fullname = $this->session->userdata('fullname');
+        $tot_notif = $this->bodo->Count_notif();
+        $menu_dir = $this->M_default->Menu()->result_array();
+        $group_menu = $this->M_default->Group_menu();
+        echo meta('Content-type', 'text/html; charset=utf-8', 'http-equiv', false);
+        echo meta('og:image', base_url('assets/images/systems/' . $this->bodo->Sys('logo')), 'property', false);
+        echo meta('og:title', '{siteTitle}', 'property', false);
+        echo meta('og:description', '{description}', 'property', false);
+        echo meta('og:type', '{article}', 'property', false);
+        echo meta('og:url', base_url('Signin'), 'property', false);
+        echo meta('og:locale', 'en_US', 'property', false);
+        echo meta('X-UA-Compatible', 'IE=edge', 'http-equiv', false);
+        echo meta('description', '{description}', 'name', false);
+        echo meta('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no', 'name', false);
+        echo '<base href="' . base_url('Dashboard') . '"/>';
+        echo '<title>{siteTitle}</title>';
+        echo link_tag(base_url('assets/images/systems/' . $this->bodo->Sys('favico')), 'shortcut icon', 'image/*', 'Company logo');
+        echo link_tag(base_url('assets/fonts_googleapis/fonts.googleapis.css'), 'stylesheet', 'text/css', 'fonts family from googleapis');
+        echo link_tag(base_url('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/plugins/global/plugins.bundle.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/plugins/custom/prismjs/prismjs.bundle.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/css/style.bundle.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/css/themes/layout/header/base/dark.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/css/themes/layout/header/menu/dark.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/css/themes/layout/brand/dark.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/css/themes/layout/aside/dark.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/@fortawesome/fontawesome-free/css/all.min.css'), 'stylesheet', 'text/css');
+        echo link_tag(base_url('assets/datatables/datatables.min.css'), 'stylesheet', 'text/css');
+        ?>
     </head>
     <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
         <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">

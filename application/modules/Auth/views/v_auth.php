@@ -4,7 +4,7 @@
         <?php
         echo '<base href="' . base_url('Signin') . '"/>';
         echo '<title>{siteTitle}</title>';
-        echo meta('Content-type', 'text/html; charset=utf-8', 'equiv');
+        echo meta('Content-type', 'text/html; charset=utf-8', 'http-equiv');
         echo meta('description', 'Login system ' . $this->bodo->Sys('app_name'));
         echo meta('viewport', 'width=device-width, initial-scale=1, shrink-to-fit=no');
         echo link_tag('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', 'stylesheet', 'text/css', 'fonts family from googleapis');
