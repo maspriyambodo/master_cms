@@ -54,7 +54,7 @@ class CI_Javascript {
 	 *
 	 * @var	string
 	 */
-	protected $_javascript_location = 'js';
+	protected $_javascript_location = 'assets/plugins/global/plugins.bundle.js';
 
 	// --------------------------------------------------------------------
 

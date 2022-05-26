@@ -53,7 +53,7 @@ class CI_Jquery extends CI_Javascript {
 	 *
 	 * @var	string
 	 */
-	protected $_javascript_folder = 'js';
+	protected $_javascript_folder = 'assets/plugins/global/plugins.bundle.js';
 
 	/**
 	 * JQuery code for load
