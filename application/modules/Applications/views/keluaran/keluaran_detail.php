@@ -1,39 +1,37 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.12.1/plugins/autocomplete/skins/default.css" rel="stylesheet" type="text/css"/>
 <script src="https://ckeditor.com/docs/vendors/4.14.0/ckeditor/ckeditor.js"></script>
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-        <table class="table table-borderless table-hover" style="width:100%;">
-            <tbody>
-                <tr>
-                    <td>Hari Undi</td>
-                    <td>: <?php echo $data['inpo']['undi']; ?></td>
-                </tr>
-                <tr>
-                    <td>Hari Libur</td>
-                    <td>: <?php echo $data['inpo']['libur']; ?></td>
-                </tr>
-                <tr>
-                    <td>Jam Tutup</td>
-                    <td>: <?php echo $data['inpo']['jam_tutup']; ?></td>
-                </tr>
-                <tr>
-                    <td>Jam Undi</td>
-                    <td>: <?php echo $data['inpo']['jam_undi']; ?></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="col-md-3"></div>
+
+<div class="table-responsive bg-white">
+    <table class="table table-borderless table-hover" style="width:100%;">
+        <tbody>
+            <tr>
+                <td>Web</td>
+                <td>
+                    : <?php echo '<a href="' . $data['inpo']['nama_web'] . '" target="new">' . $data['inpo']['nama_web'] . '</a>'; ?>
+                </td>
+                <td>Tipe</td>
+                <td>: <?php echo $data['inpo']['tipe'] . 'D'; ?></td>
+            </tr>
+            <tr>
+                <td>Hari Undi</td>
+                <td>: <?php echo $data['inpo']['undi']; ?></td>
+                <td>Jam Tutup</td>
+                <td>: <?php echo $data['inpo']['jam_tutup']; ?></td>
+            </tr>
+            <tr>
+                <td>Hari Libur</td>
+                <td>: <?php echo $data['inpo']['libur']; ?></td>
+                <td>Jam Undi</td>
+                <td>: <?php echo $data['inpo']['jam_undi']; ?></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <div class="clearfix my-4"></div>
 <div class="row">
     <div class="col-md-4" style="overflow: auto;height: 503px;">
         <div class="clearfix d-block d-xl-none my-2 border"></div>
         <div class="table-responsive bg-white">
-            <div class="form-group mt-4 text-center">
-                <b>RESULT 1</b>
-            </div>
             <table class="table table-borderless table-hover" style="width:100%;">
                 <thead class="text-uppercase">
                     <tr>
@@ -68,9 +66,6 @@
     <div class="col-md-4" style="overflow: auto;height: 503px;">
         <div class="clearfix d-block d-xl-none my-2 border"></div>
         <div class="table-responsive bg-white">
-            <div class="form-group mt-4 text-center">
-                <b>RESULT 2</b>
-            </div>
             <table class="table table-borderless table-hover" style="width:100%;">
                 <thead class="text-uppercase">
                     <tr>

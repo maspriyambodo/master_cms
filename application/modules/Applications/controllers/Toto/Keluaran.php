@@ -587,7 +587,9 @@ class Keluaran extends CI_Controller {
             'undi' => $inpo[0]->hari_undi,
             'libur' => $inpo[0]->hari_libur,
             'jam_tutup' => $inpo[0]->jam_tutup,
-            'jam_undi' => $inpo[0]->jam_undi
+            'jam_undi' => $inpo[0]->jam_undi,
+            'tipe' => $inpo[0]->tipe,
+            'nama_web' => $inpo[0]->nama_web
         ];
         return $data;
     }
@@ -686,7 +688,7 @@ class Keluaran extends CI_Controller {
                 'enam' => Post_input('e_enamtxt'),
                 'tgl_keluar' => $tgl_keluar
             ];
-            $exec = $this->model->mUpdate($data,$id);
+            $exec = $this->model->mUpdate($data, $id);
             if ($exec) {
                 $result = redirect(base_url('keluaran_detail?pasar=' . Post_input('e_pasartxt')), $this->session->set_flashdata('succ_msg', 'Berhasil mengubah data!'));
             } else {
