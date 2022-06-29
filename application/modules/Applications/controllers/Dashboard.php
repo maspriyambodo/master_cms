@@ -28,6 +28,25 @@ class Dashboard extends CI_Controller {
         $data['content'] = $this->parser->parse('v_dashboard', $data, true);
         return $this->parser->parse('Template/layout', $data);
     }
+    
+    public function new_template() {
+        $data = [
+            'csrf' => $this->bodo->Csrf(),
+            'item_active' => 'Applications/Dashboard/index/',
+            'privilege' => $this->bodo->Check_previlege('Applications/Dashboard/index/'),
+            'siteTitle' => 'Dashboard Application | ' . $this->bodo->Sys('app_name'),
+            'pagetitle' => 'Dashboard',
+            'breadcrumb' => [
+                0 => [
+                    'nama' => 'Dashboard',
+                    'link' => null,
+                    'status' => true
+                ]
+            ]
+        ];
+        $data['content'] = $this->parser->parse('v_dashboard2', $data, true);
+        return $this->parser->parse('Template/layout2', $data);
+    }
 
     public function Search() {
         $data = [
