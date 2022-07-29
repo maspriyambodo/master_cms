@@ -77,6 +77,7 @@ class Auth extends CI_Controller {
     }
 
     private function Attempt($id) {
+        log_message('error', $id);
         $attempt = $this->session->userdata('attempt');
         $attempt++;
         $this->session->set_userdata('attempt', $attempt);
@@ -89,14 +90,21 @@ class Auth extends CI_Controller {
                 $this->M_auth->Penalty($data);
                 if ($attempt == 3) {
                     $this->session->set_tempdata('blocked_account', true, 300);
-                    blocked_account();
+                    $result = blocked_account();
                 }
+                $result = true;
+                break;
             case 2:
-                if ($attempt == 5) {
+                if ($attempt == 5 or $attempt >= 5) {
                     $this->session->set_tempdata('auth_sekuriti', true, 360);
-                    show_404();
+                    $result = auth_sekuriti();
                 }
+                $result = true;
+                break;
+            default:
+                $result = true;
         }
+        return $result;
     }
 
     public function Logout() {
