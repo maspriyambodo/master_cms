@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('trying to signin backdoor?');
+defined('BASEPATH') or exit('trying to signin backdoor?');
 
 class Systems extends CI_Controller {
 
@@ -21,11 +21,12 @@ class Systems extends CI_Controller {
                 0 => [
                     'nama' => 'Systems',
                     'link' => null,
-                    'status' => true
-                ]
-            ]
+                    'status' => true,
+                ],
+            ],
         ];
         $data['content'] = $this->parser->parse('systems/index', $data, true);
+
         return $this->parser->parse('Template/layout', $data);
     }
 
@@ -40,11 +41,12 @@ class Systems extends CI_Controller {
                 0 => [
                     'nama' => 'Systems',
                     'link' => null,
-                    'status' => true
-                ]
-            ]
+                    'status' => true,
+                ],
+            ],
         ];
         $data['content'] = $this->parser->parse('pwd/index', $data, true);
+
         return $this->parser->parse('Template/layout', $data);
     }
 
@@ -52,31 +54,32 @@ class Systems extends CI_Controller {
         shell_exec('chmod 777 ./assets/images/systems/favicon.*');
         $param = [
             'upload_path' => 'assets/images/systems/',
-            'file_name' => "favicon",
-            'input_name' => "favico",
-            'allowed_types' => 'gif|jpg|png|gif|ico'
+            'file_name' => 'favicon',
+            'input_name' => 'favico',
+            'allowed_types' => 'gif|jpg|png|gif|ico',
         ];
         $fav = _Upload($param);
         if (!$fav) {
             $result = [
                 'status' => false,
-                'msg' => 'error while upload favicon'
+                'msg' => 'error while upload favicon',
             ];
         } else {
             $exec = $this->model->Favico(['field' => 'favico', 'file_name' => $fav['file_name']]);
             if ($exec) {
                 $result = [
                     'status' => true,
-                    'msg' => 'favicon has been changed'
+                    'msg' => 'favicon has been changed',
                 ];
             } else {
                 $result = [
                     'status' => false,
-                    'msg' => 'error while change favicon'
+                    'msg' => 'error while change favicon',
                 ];
             }
         }
         shell_exec('chmod 777 ./assets/images/systems/favicon.*');
+
         return ToJson($result);
     }
 
@@ -84,65 +87,72 @@ class Systems extends CI_Controller {
         shell_exec('chmod 777 ./assets/images/systems/logo.*');
         $param = [
             'upload_path' => 'assets/images/systems/',
-            'file_name' => "logo",
-            'input_name' => "logo_comp",
-            'allowed_types' => 'gif|jpg|png|gif|ico'
+            'file_name' => 'logo',
+            'input_name' => 'logo_comp',
+            'allowed_types' => 'gif|jpg|png|gif|ico',
         ];
         $fav = _Upload($param);
         if (!$fav) {
             $result = [
                 'status' => false,
-                'msg' => 'error while upload logo company'
+                'msg' => 'error while upload logo company',
             ];
         } else {
             $exec = $this->model->Favico(['field' => 'logo', 'file_name' => $fav['file_name']]);
             if ($exec) {
                 $result = [
                     'status' => true,
-                    'msg' => 'logo company has been changed'
+                    'msg' => 'logo company has been changed',
                 ];
             } else {
                 $result = [
                     'status' => false,
-                    'msg' => 'error while change logo company'
+                    'msg' => 'error while change logo company',
                 ];
             }
         }
         shell_exec('chmod 777 ./assets/images/systems/logo.*');
+
         return ToJson($result);
     }
 
-    public function Old_pwd($param) {
+    public function Old_pwd() {
+        $old_pwd = post_input('old_pwd');
         $id_user = $this->bodo->Dec($this->session->userdata('id_user'));
         $exec = $this->model->Old_pwd($id_user);
-        if (password_verify($param, $exec->pwd)) {
+        if (password_verify($old_pwd, $exec->pwd)) {
             $result = [
                 'status' => true,
-                'msg' => 'password accepted'
+                'msg' => 'password accepted',
+                'csrf' => $this->bodo->Csrf()['hash']
             ];
         } else {
             $result = [
                 'status' => false,
-                'msg' => 'Sorry, your password was incorrect'
+                'msg' => 'Sorry, your password was incorrect',
+                'csrf' => $this->bodo->Csrf()['hash']
             ];
         }
+
         return ToJson($result);
     }
 
     public function Update_pwd() {
         $data = [
             'id_user' => $this->bodo->Dec($this->session->userdata('id_user')),
-            'pwd' => password_hash(Post_input("cnf_pwd"), PASSWORD_DEFAULT)
+            'pwd' => password_hash(Post_input('cnf_pwd'), PASSWORD_DEFAULT),
         ];
+
         return $this->model->Update_pwd($data);
     }
 
     public function Update() {
         $data = [
-            'company_name' => Post_input("comp_name"),
-            'app_year' => Post_input("app_year"),
-            'app_name' => Post_input("app_name"),
+            'company_name' => Post_input('comp_name'),
+            'app_year' => Post_input('app_year'),
+            'app_name' => Post_input('app_name'),
         ];
+
         return $this->model->Update($data);
     }
 
@@ -189,11 +199,12 @@ class Systems extends CI_Controller {
                 0 => [
                     'nama' => 'Systems',
                     'link' => null,
-                    'status' => true
-                ]
-            ]
+                    'status' => true,
+                ],
+            ],
         ];
         $data['content'] = $this->parser->parse('profile/index', $data, true);
+
         return $this->parser->parse('Template/layout', $data);
     }
 
@@ -201,25 +212,26 @@ class Systems extends CI_Controller {
         $param = [
             'upload_path' => 'assets/images/users/',
             'file_name' => 'users' . date('d_His'),
-            'input_name' => "profile_avatar",
-            'allowed_types' => 'gif|jpg|png|gif|ico'
+            'input_name' => 'profile_avatar',
+            'allowed_types' => 'gif|jpg|png|gif|ico',
         ];
         $pict = _Upload($param);
-        $old_ava = Post_input("old_ava");
+        $old_ava = Post_input('old_ava');
         $address_provinsi = $this->bodo->Dec(Post_input('provinsi'));
         if (!$pict['status'] or empty($pict['status'])) {
             $pict['file_name'] = $old_ava;
         } elseif (!$old_ava or empty($old_ava)) {
             $pict['file_name'] = 'blank.png';
         } else {
-            if ($old_ava <> 'blank.png') {
+            if ($old_ava != 'blank.png') {
                 unlink('assets/images/users/' . $old_ava);
             }
         }
         $data = [
             'pict' => $pict['file_name'],
-            'provinsi' => $address_provinsi
+            'provinsi' => $address_provinsi,
         ];
+
         return $this->Save_profile($data);
     }
 
@@ -230,7 +242,7 @@ class Systems extends CI_Controller {
                 'uname' => Post_input('uname'),
                 'pict' => $param['pict'],
                 'sysupdateuser' => $this->user,
-                'sysupdatedate' => date('Y-m-d H:i:s')
+                'sysupdatedate' => date('Y-m-d H:i:s'),
             ],
             'dt_users' => [
                 'nama' => Post_input('nama_lengkap'),
@@ -246,9 +258,10 @@ class Systems extends CI_Controller {
                 'mail' => Post_input('mail_user'),
                 'telp' => Post_input('tlepon'),
                 'sysupdateuser' => $this->user,
-                'sysupdatedate' => date('Y-m-d H:i:s')
-            ]
+                'sysupdatedate' => date('Y-m-d H:i:s'),
+            ],
         ];
+
         return $this->model->Profile_save($data);
     }
 
@@ -258,14 +271,15 @@ class Systems extends CI_Controller {
         if ($exec) {
             $response = [
                 'stat' => false,
-                'msg' => 'Username already exist, please use another username!'
+                'msg' => 'Username already exist, please use another username!',
             ];
         } else {
             $response = [
                 'stat' => true,
-                'msg' => 'Username available to use!'
+                'msg' => 'Username available to use!',
             ];
         }
+
         return ToJson($response);
     }
 
