@@ -37,7 +37,7 @@ class Kabupaten extends CI_Controller {
         $privilege = $this->bodo->Check_previlege('Master/Wilayah/Kabupaten/index/');
         foreach ($list as $kabupaten) {
             $id_kabupaten = Enkrip($kabupaten->id_kabupaten);
-            if ($kabupaten->is_actived == 1) {
+            if ($kabupaten->stat == 1) {
                 $stat = '<span class="label label-success label-inline font-weight-lighter mr-2">active</span>';
             } else {
                 $stat = '<span class="label label-danger label-inline font-weight-lighter mr-2">nonactive</span>';
@@ -47,10 +47,10 @@ class Kabupaten extends CI_Controller {
             } else {
                 $editbtn = null;
             }
-            if ($privilege['delete'] and $kabupaten->is_actived) {
+            if ($privilege['delete'] and $kabupaten->stat) {
                 $activebtn = null;
                 $delbtn = '<button id="del_user" type="button" class="btn btn-icon btn-danger btn-xs" title="Delete ' . $kabupaten->nama . '" value="' . $id_kabupaten . '" data-toggle="modal" data-target="#modal_delete" onclick="Delete(this.value)"><i class="far fa-trash-alt"></i></button>';
-            } elseif ($privilege['delete'] and!$kabupaten->is_actived) {
+            } elseif ($privilege['delete'] and!$kabupaten->stat) {
                 $delbtn = null;
                 $activebtn = '<button id="act_user" type="button" class="btn btn-icon btn-success btn-xs" title="Activate ' . $kabupaten->nama . '" value="' . $id_kabupaten . '" data-toggle="modal" data-target="#modal_active" onclick="Active(this.value)"><i class="fas fa-unlock"></i></button>';
             } else {
@@ -114,7 +114,7 @@ class Kabupaten extends CI_Controller {
             'id_kabupaten' => Post_input('add_idkab'),
             'id_provinsi' => $id_provinsi,
             'nama' => Post_input('add_namakab'),
-            'is_actived' => 1,
+            'stat' => 1,
             'latitude' => Post_input('add_lat'),
             'longitude' => Post_input('add_longt'),
             'syscreateuser' => $this->user,
@@ -165,7 +165,7 @@ class Kabupaten extends CI_Controller {
     public function Delete() {
         $id_kab = Dekrip(Post_input('d_id'));
         $data = [
-            '`mt_wil_kabupaten`.`is_actived`' => 0 + false,
+            '`mt_wil_kabupaten`.`stat`' => 0 + false,
             '`mt_wil_kabupaten`.`sysdeleteuser`' => $this->user + false,
             'mt_wil_kabupaten.sysdeletedate' => date("Y-m-d H:i:s")
         ];
@@ -175,7 +175,7 @@ class Kabupaten extends CI_Controller {
     public function Active() {
         $id_kab = Dekrip(Post_input('act_id'));
         $data = [
-            '`mt_wil_kabupaten`.`is_actived`' => 1 + false,
+            '`mt_wil_kabupaten`.`stat`' => 1 + false,
             '`mt_wil_kabupaten`.`sysupdateuser`' => $this->user + false,
             'mt_wil_kabupaten.sysupdatedate' => date("Y-m-d H:i:s")
         ];

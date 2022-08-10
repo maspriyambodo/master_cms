@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_kabupaten extends CI_Model {
 
-    var $table = 'mt_wil_kabupaten';
-    var $column_order = ['mt_wil_kabupaten.id_kabupaten','mt_wil_kabupaten.id_kabupaten', 'mt_wil_kabupaten.nama', 'mt_wil_kabupaten.is_actived', 'mt_wil_kabupaten.longitude', 'mt_wil_kabupaten.latitude', 'mt_wil_kabupaten.id_kabupaten', 'mt_wil_kabupaten.id_kabupaten']; //set column field database for datatable orderable
-    var $column_search = ['mt_wil_kabupaten.id_kabupaten', 'mt_wil_kabupaten.nama', 'mt_wil_kabupaten.longitude', 'mt_wil_kabupaten.latitude']; //set column field database for datatable searchable 
+    var $table = 'mt_kabupaten';
+    var $column_order = ['mt_kabupaten.id_kabupaten','mt_kabupaten.id_kabupaten', 'mt_kabupaten.nama', 'mt_kabupaten.stat', 'mt_kabupaten.longitude', 'mt_kabupaten.latitude', 'mt_kabupaten.id_kabupaten', 'mt_kabupaten.id_kabupaten']; //set column field database for datatable orderable
+    var $column_search = ['mt_kabupaten.id_kabupaten', 'mt_kabupaten.nama', 'mt_kabupaten.longitude', 'mt_kabupaten.latitude']; //set column field database for datatable searchable 
     var $order = ['id_kabupaten' => 'asc']; // default order
 
     private function _get_datatables_query() {
@@ -55,17 +55,17 @@ class M_kabupaten extends CI_Model {
     }
 
     public function Get_id($id) {
-        $exec = $this->db->select('mt_wil_kabupaten.id_kabupaten')
-                ->from('mt_wil_kabupaten')
-                ->where('mt_wil_kabupaten.id_kabupaten', $id, false)
+        $exec = $this->db->select('mt_kabupaten.id_kabupaten')
+                ->from('mt_kabupaten')
+                ->where('mt_kabupaten.id_kabupaten', $id, false)
                 ->get()
                 ->row();
         return $exec;
     }
 
     public function Provinsi() {
-        $exec = $this->db->select('mt_wil_provinsi.id_provinsi, mt_wil_provinsi.nama')
-                ->from('mt_wil_provinsi')
+        $exec = $this->db->select('mt_provinsi.id_provinsi, mt_provinsi.nama')
+                ->from('mt_provinsi')
                 ->get()
                 ->result();
         return $exec;
@@ -73,7 +73,7 @@ class M_kabupaten extends CI_Model {
 
     public function Add($data) {
         $this->db->trans_begin();
-        $this->db->insert('mt_wil_kabupaten', $data);
+        $this->db->insert('mt_kabupaten', $data);
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url(), $this->session->set_flashdata('err_msg', 'error while inserting new kabupaten'));
@@ -86,8 +86,8 @@ class M_kabupaten extends CI_Model {
     public function Get_prov() {
         if (Post_get('q')) {
             $exec = $this->db->select('id_provinsi AS id, nama AS text')
-                    ->from('mt_wil_provinsi')
-                    ->like('mt_wil_provinsi.nama', Post_get('term'))
+                    ->from('mt_provinsi')
+                    ->like('mt_provinsi.nama', Post_get('term'))
                     ->get()
                     ->result();
         } else {
@@ -97,10 +97,10 @@ class M_kabupaten extends CI_Model {
     }
 
     public function Get_detail($id) {
-        $exec = $this->db->select('mt_wil_kabupaten.id_kabupaten, mt_wil_kabupaten.id_provinsi, mt_wil_kabupaten.nama, mt_wil_kabupaten.latitude, mt_wil_kabupaten.longitude,mt_wil_provinsi.nama AS provinsi')
-                ->from('mt_wil_kabupaten')
-                ->join('mt_wil_provinsi', 'mt_wil_kabupaten.id_provinsi = mt_wil_provinsi.id_provinsi', 'LEFT')
-                ->where('`mt_wil_kabupaten`.`id_kabupaten`', $id, false)
+        $exec = $this->db->select('mt_kabupaten.id_kabupaten, mt_kabupaten.id_provinsi, mt_kabupaten.nama, mt_kabupaten.latitude, mt_kabupaten.longitude,mt_provinsi.nama AS provinsi')
+                ->from('mt_kabupaten')
+                ->join('mt_provinsi', 'mt_kabupaten.id_provinsi = mt_provinsi.id_provinsi', 'LEFT')
+                ->where('`mt_kabupaten`.`id_kabupaten`', $id, false)
                 ->get()
                 ->row();
         return $exec;
@@ -109,8 +109,8 @@ class M_kabupaten extends CI_Model {
     public function Update($data, $id_kab) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('`mt_wil_kabupaten`.`id_kabupaten`', $id_kab, false)
-                ->update('mt_wil_kabupaten');
+                ->where('`mt_kabupaten`.`id_kabupaten`', $id_kab, false)
+                ->update('mt_kabupaten');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kabupaten/index/'), $this->session->set_flashdata('err_msg', 'error while updating data kabupaten'));
@@ -123,8 +123,8 @@ class M_kabupaten extends CI_Model {
     public function Delete($data, $id_kab) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('`mt_wil_kabupaten`.`id_kabupaten`', $id_kab, false)
-                ->update('mt_wil_kabupaten');
+                ->where('`mt_kabupaten`.`id_kabupaten`', $id_kab, false)
+                ->update('mt_kabupaten');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kabupaten/index/'), $this->session->set_flashdata('err_msg', 'error while deleting data kabupaten'));
@@ -137,8 +137,8 @@ class M_kabupaten extends CI_Model {
     public function Active($data, $id_kab) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('`mt_wil_kabupaten`.`id_kabupaten`', $id_kab, false)
-                ->update('mt_wil_kabupaten');
+                ->where('`mt_kabupaten`.`id_kabupaten`', $id_kab, false)
+                ->update('mt_kabupaten');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kabupaten/index/'), $this->session->set_flashdata('err_msg', 'error while activating data kabupaten'));

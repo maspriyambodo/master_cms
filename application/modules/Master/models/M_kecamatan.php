@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_kecamatan extends CI_Model {
 
-    var $table = 'mt_wil_kecamatan';
-    var $column_order = ['mt_wil_kecamatan.id_kecamatan', 'mt_wil_kecamatan.id_kecamatan', 'mt_wil_kecamatan.nama', 'mt_wil_kecamatan.is_actived', 'mt_wil_kecamatan.longitude', 'mt_wil_kecamatan.latitude', 'mt_wil_kecamatan.id_kecamatan', 'mt_wil_kecamatan.id_kecamatan']; //set column field database for datatable orderable
-    var $column_search = ['mt_wil_kecamatan.id_kecamatan', 'mt_wil_kecamatan.nama', 'mt_wil_kecamatan.longitude', 'mt_wil_kecamatan.latitude']; //set column field database for datatable searchable 
-    var $order = ['mt_wil_kecamatan.id_kecamatan' => 'asc']; // default order
+    var $table = 'mt_kecamatan';
+    var $column_order = ['mt_kecamatan.id_kecamatan', 'mt_kecamatan.id_kecamatan', 'mt_kecamatan.nama', 'mt_kecamatan.stat', 'mt_kecamatan.longitude', 'mt_kecamatan.latitude', 'mt_kecamatan.id_kecamatan', 'mt_kecamatan.id_kecamatan']; //set column field database for datatable orderable
+    var $column_search = ['mt_kecamatan.id_kecamatan', 'mt_kecamatan.nama', 'mt_kecamatan.longitude', 'mt_kecamatan.latitude']; //set column field database for datatable searchable 
+    var $order = ['mt_kecamatan.id_kecamatan' => 'asc']; // default order
 
     private function _get_datatables_query() {
         $this->db->from($this->table);
@@ -68,8 +68,8 @@ class M_kecamatan extends CI_Model {
 
     public function Get_id($id) {
         $exec = $this->db->select()
-                ->from('mt_wil_kecamatan')
-                ->where('mt_wil_kecamatan.id_kecamatan', $id, false)
+                ->from('mt_kecamatan')
+                ->where('mt_kecamatan.id_kecamatan', $id, false)
                 ->get()
                 ->row();
         return $exec;
@@ -77,7 +77,7 @@ class M_kecamatan extends CI_Model {
 
     public function Add($data) {
         $this->db->trans_begin();
-        $this->db->insert('mt_wil_kecamatan', $data);
+        $this->db->insert('mt_kecamatan', $data);
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kecamatan/index/'), $this->session->set_flashdata('err_msg', 'error while inserting new kecamatan'));
@@ -88,10 +88,10 @@ class M_kecamatan extends CI_Model {
     }
 
     public function Detail($id) {
-        $exec = $this->db->select('mt_wil_kabupaten.nama AS kabupaten,mt_wil_kecamatan.id_kecamatan, mt_wil_kecamatan.id_kabupaten, mt_wil_kecamatan.nama, mt_wil_kecamatan.latitude, mt_wil_kecamatan.longitude')
-                ->from('mt_wil_kecamatan')
-                ->join('mt_wil_kabupaten', 'mt_wil_kecamatan.id_kabupaten = mt_wil_kabupaten.id_kabupaten')
-                ->where('mt_wil_kecamatan.id_kecamatan', $id, false)
+        $exec = $this->db->select('mt_wil_kabupaten.nama AS kabupaten,mt_kecamatan.id_kecamatan, mt_kecamatan.id_kabupaten, mt_kecamatan.nama, mt_kecamatan.latitude, mt_kecamatan.longitude')
+                ->from('mt_kecamatan')
+                ->join('mt_wil_kabupaten', 'mt_kecamatan.id_kabupaten = mt_wil_kabupaten.id_kabupaten')
+                ->where('mt_kecamatan.id_kecamatan', $id, false)
                 ->get()
                 ->row();
         return $exec;
@@ -100,8 +100,8 @@ class M_kecamatan extends CI_Model {
     public function Update($data, $id) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('mt_wil_kecamatan.id_kecamatan', $id)
-                ->update('mt_wil_kecamatan');
+                ->where('mt_kecamatan.id_kecamatan', $id)
+                ->update('mt_kecamatan');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kecamatan/index/'), $this->session->set_flashdata('err_msg', 'error while updating data kecamatan'));
@@ -114,8 +114,8 @@ class M_kecamatan extends CI_Model {
     public function Delete($data, $id) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('mt_wil_kecamatan.id_kecamatan', $id)
-                ->update('mt_wil_kecamatan');
+                ->where('mt_kecamatan.id_kecamatan', $id)
+                ->update('mt_kecamatan');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kecamatan/index/'), $this->session->set_flashdata('err_msg', 'error while delete kecamatan'));
@@ -128,8 +128,8 @@ class M_kecamatan extends CI_Model {
     public function Activate($data, $id) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('mt_wil_kecamatan.id_kecamatan', $id)
-                ->update('mt_wil_kecamatan');
+                ->where('mt_kecamatan.id_kecamatan', $id)
+                ->update('mt_kecamatan');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kecamatan/index/'), $this->session->set_flashdata('err_msg', 'error while activate kecamatan'));

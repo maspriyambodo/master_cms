@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_kelurahan extends CI_Model {
 
-    var $table = 'mt_wil_kelurahan';
-    var $column_order = ['mt_wil_kelurahan.id_kelurahan', 'mt_wil_kelurahan.id_kelurahan', 'mt_wil_kelurahan.nama', 'mt_wil_kelurahan.is_actived', 'mt_wil_kelurahan.longitude', 'mt_wil_kelurahan.latitude', 'mt_wil_kelurahan.id_kelurahan', 'mt_wil_kelurahan.id_kelurahan']; //set column field database for datatable orderable
-    var $column_search = ['mt_wil_kelurahan.id_kelurahan', 'mt_wil_kelurahan.nama', 'mt_wil_kelurahan.latitude', 'mt_wil_kelurahan.longitude']; //set column field database for datatable searchable 
-    var $order = ['mt_wil_kelurahan.id_kelurahan' => 'asc']; // default order
+    var $table = 'mt_kelurahan';
+    var $column_order = ['mt_kelurahan.id_kelurahan', 'mt_kelurahan.id_kelurahan', 'mt_kelurahan.nama', 'mt_kelurahan.stat', 'mt_kelurahan.longitude', 'mt_kelurahan.latitude', 'mt_kelurahan.id_kelurahan', 'mt_kelurahan.id_kelurahan']; //set column field database for datatable orderable
+    var $column_search = ['mt_kelurahan.id_kelurahan', 'mt_kelurahan.nama', 'mt_kelurahan.latitude', 'mt_kelurahan.longitude']; //set column field database for datatable searchable 
+    var $order = ['mt_kelurahan.id_kelurahan' => 'asc']; // default order
 
     private function _get_datatables_query() {
         $this->db->from($this->table);
@@ -55,8 +55,8 @@ class M_kelurahan extends CI_Model {
 
     public function Get_id($id) {
         $exec = $this->db->select()
-                ->from('mt_wil_kelurahan')
-                ->where('mt_wil_kelurahan.id_kelurahan', $id, false)
+                ->from('mt_kelurahan')
+                ->where('mt_kelurahan.id_kelurahan', $id, false)
                 ->get()
                 ->row();
         return $exec;
@@ -77,7 +77,7 @@ class M_kelurahan extends CI_Model {
 
     public function Save($data) {
         $this->db->trans_begin();
-        $this->db->insert('mt_wil_kelurahan', $data);
+        $this->db->insert('mt_kelurahan', $data);
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url(), $this->session->set_flashdata('err_msg', 'error while inserting new kelurahan'));
@@ -88,9 +88,9 @@ class M_kelurahan extends CI_Model {
     }
 
     public function Detail($id) {
-        $exec = $this->db->select('mt_wil_kelurahan.id_kelurahan, mt_wil_kelurahan.id_kecamatan, mt_wil_kelurahan.nama,mt_wil_kecamatan.nama AS kecamatan, mt_wil_kelurahan.latitude, mt_wil_kelurahan.longitude')
-                ->from('mt_wil_kelurahan')
-                ->join('mt_wil_kecamatan', 'mt_wil_kelurahan.id_kecamatan = mt_wil_kecamatan.id_kecamatan')
+        $exec = $this->db->select('mt_kelurahan.id_kelurahan, mt_kelurahan.id_kecamatan, mt_kelurahan.nama,mt_wil_kecamatan.nama AS kecamatan, mt_kelurahan.latitude, mt_kelurahan.longitude')
+                ->from('mt_kelurahan')
+                ->join('mt_wil_kecamatan', 'mt_kelurahan.id_kecamatan = mt_wil_kecamatan.id_kecamatan')
                 ->where('id_kelurahan', $id, false)
                 ->get()
                 ->row();
@@ -100,8 +100,8 @@ class M_kelurahan extends CI_Model {
     public function Update($data, $id) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('mt_wil_kelurahan.id_kelurahan', $id)
-                ->update('mt_wil_kelurahan');
+                ->where('mt_kelurahan.id_kelurahan', $id)
+                ->update('mt_kelurahan');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url(), $this->session->set_flashdata('err_msg', 'error while update kelurahan'));
@@ -114,8 +114,8 @@ class M_kelurahan extends CI_Model {
     public function Delete($data, $id) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('mt_wil_kelurahan.id_kelurahan', $id)
-                ->update('mt_wil_kelurahan');
+                ->where('mt_kelurahan.id_kelurahan', $id)
+                ->update('mt_kelurahan');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kelurahan/index/'), $this->session->set_flashdata('err_msg', 'error while delete kelurahan'));
@@ -128,8 +128,8 @@ class M_kelurahan extends CI_Model {
     public function Activate($data, $id) {
         $this->db->trans_begin();
         $this->db->set($data)
-                ->where('mt_wil_kelurahan.id_kelurahan', $id)
-                ->update('mt_wil_kelurahan');
+                ->where('mt_kelurahan.id_kelurahan', $id)
+                ->update('mt_kelurahan');
         if ($this->db->trans_status() === false) {
             $this->db->trans_rollback();
             redirect(base_url('Master/Wilayah/Kelurahan/index/'), $this->session->set_flashdata('err_msg', 'error while activate kelurahan'));
