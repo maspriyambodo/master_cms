@@ -65,8 +65,8 @@ class M_kelurahan extends CI_Model {
     public function Get_kec() {
         if (Post_get('q')) {
             $exec = $this->db->select('id_kecamatan AS id, nama AS text')
-                    ->from('mt_wil_kecamatan')
-                    ->like('mt_wil_kecamatan.nama', Post_get('term'))
+                    ->from('mt_kecamatan')
+                    ->like('mt_kecamatan.nama', Post_get('term'))
                     ->get()
                     ->result();
         } else {
@@ -88,9 +88,9 @@ class M_kelurahan extends CI_Model {
     }
 
     public function Detail($id) {
-        $exec = $this->db->select('mt_kelurahan.id_kelurahan, mt_kelurahan.id_kecamatan, mt_kelurahan.nama,mt_wil_kecamatan.nama AS kecamatan, mt_kelurahan.latitude, mt_kelurahan.longitude')
+        $exec = $this->db->select('mt_kelurahan.id_kelurahan, mt_kelurahan.id_kecamatan, mt_kelurahan.nama,mt_kecamatan.nama AS kecamatan, mt_kelurahan.latitude, mt_kelurahan.longitude')
                 ->from('mt_kelurahan')
-                ->join('mt_wil_kecamatan', 'mt_kelurahan.id_kecamatan = mt_wil_kecamatan.id_kecamatan')
+                ->join('mt_kecamatan', 'mt_kelurahan.id_kecamatan = mt_kecamatan.id_kecamatan')
                 ->where('id_kelurahan', $id, false)
                 ->get()
                 ->row();

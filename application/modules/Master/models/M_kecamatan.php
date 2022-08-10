@@ -56,8 +56,8 @@ class M_kecamatan extends CI_Model {
     public function Get_kab() {
         if (Post_get('q')) {
             $exec = $this->db->select('id_kabupaten AS id, nama AS text')
-                    ->from('mt_wil_kabupaten')
-                    ->like('mt_wil_kabupaten.nama', Post_get('term'))
+                    ->from('mt_kabupaten')
+                    ->like('mt_kabupaten.nama', Post_get('term'))
                     ->get()
                     ->result();
         } else {
@@ -88,9 +88,9 @@ class M_kecamatan extends CI_Model {
     }
 
     public function Detail($id) {
-        $exec = $this->db->select('mt_wil_kabupaten.nama AS kabupaten,mt_kecamatan.id_kecamatan, mt_kecamatan.id_kabupaten, mt_kecamatan.nama, mt_kecamatan.latitude, mt_kecamatan.longitude')
+        $exec = $this->db->select('mt_kabupaten.nama AS kabupaten,mt_kecamatan.id_kecamatan, mt_kecamatan.id_kabupaten, mt_kecamatan.nama, mt_kecamatan.latitude, mt_kecamatan.longitude')
                 ->from('mt_kecamatan')
-                ->join('mt_wil_kabupaten', 'mt_kecamatan.id_kabupaten = mt_wil_kabupaten.id_kabupaten')
+                ->join('mt_kabupaten', 'mt_kecamatan.id_kabupaten = mt_kabupaten.id_kabupaten')
                 ->where('mt_kecamatan.id_kecamatan', $id, false)
                 ->get()
                 ->row();

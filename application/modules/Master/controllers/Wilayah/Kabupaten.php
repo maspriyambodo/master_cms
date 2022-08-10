@@ -165,9 +165,9 @@ class Kabupaten extends CI_Controller {
     public function Delete() {
         $id_kab = Dekrip(Post_input('d_id'));
         $data = [
-            '`mt_wil_kabupaten`.`stat`' => 0 + false,
-            '`mt_wil_kabupaten`.`sysdeleteuser`' => $this->user + false,
-            'mt_wil_kabupaten.sysdeletedate' => date("Y-m-d H:i:s")
+            '`mt_kabupaten`.`stat`' => 0 + false,
+            '`mt_kabupaten`.`sysdeleteuser`' => $this->user + false,
+            'mt_kabupaten.sysdeletedate' => date("Y-m-d H:i:s")
         ];
         $this->model->Delete($data, $id_kab);
     }
@@ -175,9 +175,9 @@ class Kabupaten extends CI_Controller {
     public function Active() {
         $id_kab = Dekrip(Post_input('act_id'));
         $data = [
-            '`mt_wil_kabupaten`.`stat`' => 1 + false,
-            '`mt_wil_kabupaten`.`sysupdateuser`' => $this->user + false,
-            'mt_wil_kabupaten.sysupdatedate' => date("Y-m-d H:i:s")
+            '`mt_kabupaten`.`stat`' => 1 + false,
+            '`mt_kabupaten`.`sysupdateuser`' => $this->user + false,
+            'mt_kabupaten.sysupdatedate' => date("Y-m-d H:i:s")
         ];
         $this->model->Active($data, $id_kab);
     }
