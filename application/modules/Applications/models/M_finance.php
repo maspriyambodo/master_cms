@@ -10,6 +10,7 @@ class M_finance extends CI_Model {
                 ->where('MONTH ( dt_finance.tgl ) =', $bulan, false)
                 ->where('YEAR ( dt_finance.tgl ) =', 'YEAR ( NOW( ) )', false)
                 ->where('`dt_finance`.`stat`', 1, false)
+                ->where('`dt_finance`.`syscreateuser`', $this->user, false)
                 ->order_by('DAY ( `dt_finance`.`tgl` )', 'ASC')
                 ->get()
                 ->result();
