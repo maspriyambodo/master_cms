@@ -22,11 +22,11 @@ CREATE TABLE `sys_users` (
   `sysupdatedate` datetime DEFAULT NULL,
   `sysdeleteuser` int DEFAULT NULL,
   `sysdeletedate` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `sys_users`
 --
 
 INSERT INTO `sys_users` (`id`, `uname`, `pwd`, `role_id`, `pict`, `stat`, `last_login`, `ip_address`, `login_attempt`, `syscreateuser`, `syscreatedate`, `sysupdateuser`, `sysupdatedate`, `sysdeleteuser`, `sysdeletedate`) VALUES
-(1, 'bod', '$2y$10$BE6bAPmNz0Hh1g5yL3Tk6Ov4j1HYs55ngBwSH8FHpyUY4Go7zVx6i', 1, 'users12_055933.jpg', 1, '2022-04-07 11:26:49', '127.0.0.1', 0, 1, '2021-03-07 23:06:13', 1, '2021-09-12 05:59:33', 0, '2021-07-08 00:09:25');
+(1, 'bod', '$2y$10$BE6bAPmNz0Hh1g5yL3Tk6Ov4j1HYs55ngBwSH8FHpyUY4Go7zVx6i', 1, 'users12_055933.jpg', 1, '2022-08-10 09:38:35', '127.0.0.1', 0, 1, '2021-03-07 23:06:13', 1, '2021-09-12 05:59:33', 0, '2021-07-08 00:09:25');

@@ -1,6 +1,6 @@
 function Edit(id) {
     $.ajax({
-        url: "Systems/Permissions/Get_permission?id=" + val,
+        url: "Systems/Permissions/Get_permission?id=" + id,
         cache: false,
         contentType: false,
         processData: false,

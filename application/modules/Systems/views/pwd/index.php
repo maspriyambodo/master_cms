@@ -1,5 +1,5 @@
 <div class="card card-custom">
-    <form action="<?php echo base_url('Systems/Update_pwd/'); ?>" method="post">
+    <form id="Update_pwd" action="<?php echo base_url('Systems/Update_pwd/'); ?>" method="post">
         <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
         <div class="card-body">
             <div class="row">
@@ -7,7 +7,7 @@
                     <div class="form-group">
                         <label for="old_pwd">Old Password:</label>
                         <div class="input-group">
-                            <input id="old_pwd" name="old_pwd" type="password" class="form-control" required="" autocomplete="off" onchange="Old_pwd(this.value)"/>
+                            <input id="old_pwd" name="old_pwd" type="password" class="form-control" required="" autocomplete="off" onchange="Old_pwd()"/>
                             <div id="check_pwd" class="input-group-append"></div>
                         </div>
                         <input id="pwd_stat" type="hidden" name="pwd_stat" value="0"/>
@@ -91,16 +91,21 @@ unset($_SESSION['succ_msg']);
             toastr.success(b);
         }
     };
-    function Old_pwd(val) {
+    function Old_pwd() {
         $('#check_pwd').empty();
         $('#pwd_msg').empty();
+        var formData = new FormData($('#Update_pwd')[0]);
         $.ajax({
-            url: "<?php echo base_url('Systems/Old_pwd/'); ?>" + val,
+            url: "Systems/Old_pwd/",
+            type: "POST",
+            data: formData,
             cache: false,
             contentType: false,
             processData: false,
+            dataType: "JSON",
             success: function (data) {
                 if (data.status) {
+                    $('input[name="bodo_csrf_token"]').val(data.csrf);
                     $('input[name="pwd_stat"]').val(1);
                     $('#check_pwd').append(
                             '<span class="input-group-text">'
@@ -109,6 +114,7 @@ unset($_SESSION['succ_msg']);
                             );
                     $('#pwd_msg').append('<small class="text-success">' + data.msg + '</small>');
                 } else {
+                    $('input[name="bodo_csrf_token"]').val(data.csrf);
                     $('input[name="pwd_stat"]').val(0);
                     $('#check_pwd').append(
                             '<span class="input-group-text">'
@@ -120,6 +126,7 @@ unset($_SESSION['succ_msg']);
             },
             error: function () {
                 toastr.warning('error while checking your password!');
+                $('input[name="bodo_csrf_token"]').val(data.csrf);
             }
         });
     }

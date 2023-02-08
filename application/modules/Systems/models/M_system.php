@@ -75,19 +75,19 @@ class M_system extends CI_Model {
     }
 
     public function Provinsi() {
-        $exec = $this->db->select('mt_wil_provinsi.id_provinsi, mt_wil_provinsi.nama')
-                ->from('mt_wil_provinsi')
+        $exec = $this->db->select('mt_provinsi.id_provinsi, mt_provinsi.nama')
+                ->from('mt_provinsi')
                 ->get()
                 ->result();
         return $exec;
     }
 
     public function Getkab($id) {
-        $exec = $this->db->select('`mt_wil_kabupaten`.`id_kabupaten`, `mt_wil_kabupaten`.`id_provinsi`, `mt_wil_kabupaten`.`nama` AS `kabupaten`')
-                ->from('`mt_wil_kabupaten`')
+        $exec = $this->db->select('`mt_kabupaten`.`id_kabupaten`, `mt_kabupaten`.`id_provinsi`, `mt_kabupaten`.`nama` AS `kabupaten`')
+                ->from('`mt_kabupaten`')
                 ->where([
-                    '`mt_wil_kabupaten`.`is_actived`' => 1,
-                    '`mt_wil_kabupaten`.`id_provinsi`' => $id
+                    '`mt_kabupaten`.`stat`' => 1,
+                    '`mt_kabupaten`.`id_provinsi`' => $id
                 ])
                 ->get()
                 ->result();
@@ -97,11 +97,11 @@ class M_system extends CI_Model {
     }
 
     public function Getkec($id) {
-        $exec = $this->db->select('`mt_wil_kecamatan`.`id_kecamatan`, `mt_wil_kecamatan`.`nama` AS `kecamatan`')
-                ->from('`mt_wil_kecamatan`')
+        $exec = $this->db->select('`mt_kecamatan`.`id_kecamatan`, `mt_kecamatan`.`nama` AS `kecamatan`')
+                ->from('`mt_kecamatan`')
                 ->where([
-                    '`mt_wil_kecamatan`.`is_actived`' => 1 + false,
-                    '`mt_wil_kecamatan`.`id_kabupaten`' => $id + false
+                    '`mt_kecamatan`.`stat`' => 1 + false,
+                    '`mt_kecamatan`.`id_kabupaten`' => $id + false
                 ])
                 ->get()
                 ->result();
@@ -111,11 +111,11 @@ class M_system extends CI_Model {
     }
 
     public function Getkel($id) {
-        $exec = $this->db->select('`mt_wil_kelurahan`.`id_kelurahan`, `mt_wil_kelurahan`.`nama` AS `kelurahan`')
-                ->from('`mt_wil_kelurahan`')
+        $exec = $this->db->select('`mt_kelurahan`.`id_kelurahan`, `mt_kelurahan`.`nama` AS `kelurahan`')
+                ->from('`mt_kelurahan`')
                 ->where([
-                    '`mt_wil_kelurahan`.`is_actived`' => 1 + false,
-                    '`mt_wil_kelurahan`.`id_kecamatan`' => $id + false
+                    '`mt_kelurahan`.`stat`' => 1 + false,
+                    '`mt_kelurahan`.`id_kecamatan`' => $id + false
                 ])
                 ->get()
                 ->result();

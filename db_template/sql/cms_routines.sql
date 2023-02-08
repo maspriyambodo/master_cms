@@ -4,12 +4,12 @@ DELIMITER $$
 -- Procedures
 --
 DROP PROCEDURE IF EXISTS `group_menu`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `group_menu` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `group_menu` ()  BEGIN
 SELECT link FROM group_menu;
 END$$
 
 DROP PROCEDURE IF EXISTS `mt_country`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `mt_country` (IN `param` VARCHAR(50), IN `country_id` INT, IN `kode_negara` VARCHAR(2), IN `nama_negara` VARCHAR(45), IN `bendera` VARCHAR(50), IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mt_country` (IN `param` VARCHAR(50), IN `country_id` INT, IN `kode_negara` VARCHAR(2), IN `nama_negara` VARCHAR(45), IN `bendera` VARCHAR(50), IN `user_login` INT)  BEGIN
 IF param = 'select' THEN
 	
 	SELECT  mt_country.id AS id_country, mt_country.`code` AS code_country, mt_country.country AS nama_country, mt_country.stat, mt_country.flags
@@ -70,7 +70,7 @@ END IF;
 END$$
 
 DROP PROCEDURE IF EXISTS `mt_will_kab`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `mt_will_kab` (IN `param` VARCHAR(10), IN `kab_id` CHAR(2), IN `nama_kab` TINYTEXT, IN `lat` DOUBLE, IN `longtitut` DOUBLE, IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mt_will_kab` (IN `param` VARCHAR(10), IN `kab_id` CHAR(2), IN `nama_kab` TINYTEXT, IN `lat` DOUBLE, IN `longtitut` DOUBLE, IN `user_login` INT)  BEGIN
 	IF param = 'select' THEN
 		
 		SELECT mt_wil_kabupaten.id_kabupaten
@@ -82,55 +82,55 @@ CREATE DEFINER=`root`@`%` PROCEDURE `mt_will_kab` (IN `param` VARCHAR(10), IN `k
 END$$
 
 DROP PROCEDURE IF EXISTS `mt_will_prov`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `mt_will_prov` (IN `param` VARCHAR(10), IN `prov_id` CHAR(2), IN `nama_prov` TINYTEXT, IN `lat` DOUBLE, IN `longtitut` DOUBLE, IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `mt_will_prov` (IN `param` VARCHAR(10), IN `prov_id` CHAR(2), IN `nama_prov` TINYTEXT, IN `lat` DOUBLE, IN `longtitut` DOUBLE, IN `user_login` INT)  BEGIN
 
 	IF param = 'select' THEN
 	
-	SELECT mt_wil_provinsi.id_provinsi, 
-	mt_wil_provinsi.nama AS nama_prov, 
-	mt_wil_provinsi.is_actived AS stat_aktif, 
-	mt_wil_provinsi.latitude AS lat, 
-	mt_wil_provinsi.longitude AS ltd
-	FROM mt_wil_provinsi
-	ORDER BY mt_wil_provinsi.id_provinsi;
+	SELECT mt_provinsi.id_provinsi, 
+	mt_provinsi.nama AS nama_prov, 
+	mt_provinsi.stat AS stat_aktif, 
+	mt_provinsi.latitude AS lat, 
+	mt_provinsi.longitude AS ltd
+	FROM mt_provinsi
+	ORDER BY mt_provinsi.id_provinsi;
 	
 	ELSEIF param = 'detail' THEN
 	
-	SELECT mt_wil_provinsi.id_provinsi, 
-	mt_wil_provinsi.nama AS nama_prov, 
-	mt_wil_provinsi.is_actived AS stat_aktif, 
-	mt_wil_provinsi.latitude AS lat, 
-	mt_wil_provinsi.longitude AS ltd
-	FROM mt_wil_provinsi
-	WHERE mt_wil_provinsi.id_provinsi = prov_id;
+	SELECT mt_provinsi.id_provinsi, 
+	mt_provinsi.nama AS nama_prov, 
+	mt_provinsi.stat AS stat_aktif, 
+	mt_provinsi.latitude AS lat, 
+	mt_provinsi.longitude AS ltd
+	FROM mt_provinsi
+	WHERE mt_provinsi.id_provinsi = prov_id;
 	
 	ELSEIF param = 'update' THEN
 	
-	UPDATE mt_wil_provinsi
-	SET mt_wil_provinsi.nama =  nama_prov,
-	mt_wil_provinsi.latitude = lat,
-	mt_wil_provinsi.longitude = longtitut,
-	mt_wil_provinsi.sysupdateuser = user_login,
-	mt_wil_provinsi.sysupdatedate = NOW()
-	WHERE mt_wil_provinsi.id_provinsi = prov_id;
+	UPDATE mt_provinsi
+	SET mt_provinsi.nama =  nama_prov,
+	mt_provinsi.latitude = lat,
+	mt_provinsi.longitude = longtitut,
+	mt_provinsi.sysupdateuser = user_login,
+	mt_provinsi.sysupdatedate = NOW()
+	WHERE mt_provinsi.id_provinsi = prov_id;
 	
 	ELSEIF param = 'Get_id' THEN
 	
-	SELECT COUNT(mt_wil_provinsi.id_provinsi) AS total
-	FROM mt_wil_provinsi
-	WHERE mt_wil_provinsi.id_provinsi = prov_id;
+	SELECT COUNT(mt_provinsi.id_provinsi) AS total
+	FROM mt_provinsi
+	WHERE mt_provinsi.id_provinsi = prov_id;
 	
 	ELSEIF param = 'insert' THEN
 	
-	INSERT INTO mt_wil_provinsi
+	INSERT INTO mt_provinsi
 	(
-		mt_wil_provinsi.id_provinsi,
-		mt_wil_provinsi.nama,
-		mt_wil_provinsi.latitude,
-		mt_wil_provinsi.longitude,
-		mt_wil_provinsi.is_actived,
-		mt_wil_provinsi.syscreateuser,
-		mt_wil_provinsi.syscreatedate
+		mt_provinsi.id_provinsi,
+		mt_provinsi.nama,
+		mt_provinsi.latitude,
+		mt_provinsi.longitude,
+		mt_provinsi.stat,
+		mt_provinsi.syscreateuser,
+		mt_provinsi.syscreatedate
 	)
 	VALUES
 	(
@@ -145,26 +145,26 @@ CREATE DEFINER=`root`@`%` PROCEDURE `mt_will_prov` (IN `param` VARCHAR(10), IN `
 	
 	ELSEIF param = 'Set_active' THEN
 	
-	UPDATE mt_wil_provinsi
-	SET mt_wil_provinsi.is_actived = 1,
-	mt_wil_provinsi.syscreateuser = user_login,
-	mt_wil_provinsi.sysupdatedate = NOW()
-	WHERE mt_wil_provinsi.id_provinsi = prov_id;
+	UPDATE mt_provinsi
+	SET mt_provinsi.stat = 1,
+	mt_provinsi.syscreateuser = user_login,
+	mt_provinsi.sysupdatedate = NOW()
+	WHERE mt_provinsi.id_provinsi = prov_id;
 	
 ELSE
 	
-	UPDATE mt_wil_provinsi
-	SET mt_wil_provinsi.is_actived = 0,
-					mt_wil_provinsi.sysdeleteuser = user_login,
-					mt_wil_provinsi.sysdeletedate = NOW()
-	WHERE mt_wil_provinsi.id_provinsi = prov_id;
+	UPDATE mt_provinsi
+	SET mt_provinsi.stat = 0,
+					mt_provinsi.sysdeleteuser = user_login,
+					mt_provinsi.sysdeletedate = NOW()
+	WHERE mt_provinsi.id_provinsi = prov_id;
 	
 END IF;
 
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_app_select`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_app_select` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_app_select` ()  BEGIN
 	
 	SELECT
 		`sys_app_select`.`favico`,
@@ -177,7 +177,7 @@ CREATE DEFINER=`root`@`%` PROCEDURE `sys_app_select` ()  BEGIN
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_auth`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_auth` (IN `usernama` VARCHAR(100))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_auth` (IN `usernama` VARCHAR(100))  BEGIN
 
 	SELECT
 	`sys_auth`.`id_user`,
@@ -203,7 +203,7 @@ CREATE DEFINER=`root`@`%` PROCEDURE `sys_auth` (IN `usernama` VARCHAR(100))  BEG
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_active`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_active` (IN `id_menu` INT, IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_active` (IN `id_menu` INT, IN `user_login` INT)  BEGIN
 
 DECLARE menu_nama VARCHAR(50);
 SELECT sys_menu.nama INTO menu_nama FROM sys_menu WHERE sys_menu.id = id_menu;
@@ -216,7 +216,7 @@ SELECT menu_nama;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_delete`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_delete` (IN `id_menu` INT, IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_delete` (IN `id_menu` INT, IN `user_login` INT)  BEGIN
 
 DECLARE menu_nama VARCHAR(50);
 SELECT sys_menu.nama INTO menu_nama FROM sys_menu WHERE sys_menu.id = id_menu;
@@ -229,14 +229,14 @@ SELECT menu_nama;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_dir`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_dir` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_dir` ()  BEGIN
 SELECT * FROM sys_menu_select
 GROUP BY sys_menu_select.id_menu
 ORDER BY sys_menu_select.order_no ASC;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_getorder`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_getorder` (IN `user_role` INT, IN `menu_grup` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_getorder` (IN `user_role` INT, IN `menu_grup` INT)  BEGIN
 
 SELECT sys_menu_select.order_no, sys_menu_select.nama_menu
 FROM sys_menu_select
@@ -249,15 +249,7 @@ ORDER BY sys_menu_select.order_no, sys_menu_select.id_group_menu ASC;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_group`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_group`(
-IN `param` VARCHAR(50), 
-IN `id_grup` INT,
-IN `nama_group` VARCHAR(255), 
-IN `deskripsi` VARCHAR(255), 
-IN `no_order` INT, 
-IN `user_login` INT
-)
-BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_group` (IN `param` VARCHAR(50), IN `id_grup` INT, IN `nama_group` VARCHAR(255), IN `deskripsi` VARCHAR(255), IN `no_order` INT, IN `user_login` INT)  BEGIN
 
 DECLARE new_id INT;
 
@@ -339,7 +331,7 @@ END IF;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_group_reorder`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_group_reorder` (IN `old_id` INT, IN `old_order` INT, IN `new_id` INT, IN `new_order` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_group_reorder` (IN `old_id` INT, IN `old_order` INT, IN `new_id` INT, IN `new_order` INT)  BEGIN
 
 	UPDATE sys_menu_group
 	SET order_no = new_order
@@ -352,14 +344,14 @@ CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_group_reorder` (IN `old_id` INT, I
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_group_select`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_group_select` ()  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_group_select` ()  BEGIN
 	SELECT * 
 	FROM sys_menu_group_select
 	ORDER BY sys_menu_group_select.order_no ASC;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_insert`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_insert` (IN `parent` INT, IN `nama_menu` VARCHAR(50), IN `link_menu` VARCHAR(255), IN `no_order` INT, IN `gr_menu` INT, IN `ico_menu` VARCHAR(50), IN `desc_txt` VARCHAR(255), IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_insert` (IN `parent` INT, IN `nama_menu` VARCHAR(50), IN `link_menu` VARCHAR(255), IN `no_order` INT, IN `gr_menu` INT, IN `ico_menu` VARCHAR(50), IN `desc_txt` VARCHAR(255), IN `user_login` INT)  BEGIN
 	DECLARE
 		new_id_menu INT DEFAULT 0;
 	DECLARE
@@ -426,7 +418,7 @@ CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_insert` (IN `parent` INT, IN `nama
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_order`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_order` (IN `old_id` INT, IN `old_order` INT, IN `new_id` INT, IN `new_order` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_order` (IN `old_id` INT, IN `old_order` INT, IN `new_id` INT, IN `new_order` INT)  BEGIN
 	
 	UPDATE sys_menu
 	SET order_no = new_order
@@ -439,7 +431,7 @@ CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_order` (IN `old_id` INT, IN `old_o
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_select`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_select` (IN `user_role` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_select` (IN `user_role` INT)  BEGIN
 
 SELECT * FROM sys_menu_select
 WHERE sys_menu_select.stat_menu = 1 
@@ -451,7 +443,7 @@ sys_menu_select.order_no ASC;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_menu_update`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_menu_update` (IN `parent` INT, IN `menu` VARCHAR(50), IN `location` VARCHAR(255), IN `nomor_order` INT, IN `grup` INT, IN `icon_menu` VARCHAR(50), IN `user_login` INT, IN `id_menu` INT, IN `desc_txt` VARCHAR(255), OUT `menu_nama` VARCHAR(50))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_menu_update` (IN `parent` INT, IN `menu` VARCHAR(50), IN `location` VARCHAR(255), IN `nomor_order` INT, IN `grup` INT, IN `icon_menu` VARCHAR(50), IN `user_login` INT, IN `id_menu` INT, IN `desc_txt` VARCHAR(255), OUT `menu_nama` VARCHAR(50))  BEGIN
 
 SELECT sys_menu.nama INTO menu_nama FROM sys_menu WHERE sys_menu.id = id_menu;
 
@@ -482,7 +474,7 @@ SELECT menu_nama;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_mt_country`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_mt_country` (IN `param` VARCHAR(50), IN `country_id` INT, IN `kode_negara` VARCHAR(2), IN `nama_negara` VARCHAR(45), IN `bendera` VARCHAR(50), IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_mt_country` (IN `param` VARCHAR(50), IN `country_id` INT, IN `kode_negara` VARCHAR(2), IN `nama_negara` VARCHAR(45), IN `bendera` VARCHAR(50), IN `user_login` INT)  BEGIN
 IF param = 'select' THEN
 	
 	SELECT  mt_country.id AS id_country, mt_country.`code` AS code_country, mt_country.country AS nama_country
@@ -501,7 +493,7 @@ END IF;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_permision_update`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_permision_update` (IN `id_role` INT, IN `menu_id` INT, IN `lihat` INT, IN `buat` INT, IN `baca` INT, IN `ubah` INT, IN `hapus` INT, IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_permision_update` (IN `id_role` INT, IN `menu_id` INT, IN `lihat` INT, IN `buat` INT, IN `baca` INT, IN `ubah` INT, IN `hapus` INT, IN `user_login` INT)  BEGIN
 
 UPDATE `sys_permissions`
 SET 
@@ -518,7 +510,7 @@ sys_permissions.role_id = id_role AND sys_permissions.id_menu = menu_id;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_permission_select`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_permission_select` (IN `permisi_id` INT, IN `id_user` INT)  BEGIN 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_permission_select` (IN `permisi_id` INT, IN `id_user` INT)  BEGIN 
 # id_user 1 adalah super user
 IF id_user = 1 THEN
 
@@ -565,7 +557,7 @@ END IF;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_roles_insert`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_roles_insert` (IN `nama` VARCHAR(30), IN `deskripsi` VARCHAR(255), IN `group_parent` INT, IN `user_id` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_roles_insert` (IN `nama` VARCHAR(30), IN `deskripsi` VARCHAR(255), IN `group_parent` INT, IN `user_id` INT)  BEGIN
 	DECLARE role_id_new int DEFAULT 0;
 	DECLARE id_menu int DEFAULT 0;
 	DECLARE i int DEFAULT 0;
@@ -606,10 +598,7 @@ END WHILE;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_roles_select`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_roles_select`(
-IN `grup_id` INT
-)
-BEGIN 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_roles_select` (IN `grup_id` INT)  BEGIN 
 
 IF grup_id = 0 THEN 
 
@@ -619,7 +608,7 @@ IF grup_id = 0 THEN
 		sys_roles_select 
 	WHERE 
 		status_grup = 1
-		AND sys_roles_select.id_grup <> 1;
+		AND sys_roles_select.id_grup <> 1;#lanjutin disini!
 		
 ELSEIF grup_id = 1 THEN
 
@@ -644,8 +633,20 @@ END IF;
 
 END$$
 
+DROP PROCEDURE IF EXISTS `sys_roles_update`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_roles_update` (IN `id_grup` INT, IN `nama_grup` VARCHAR(30), IN `des_grup` VARCHAR(255), IN `user_login` INT, IN `id_parent` INT)  BEGIN
+UPDATE sys_roles 
+SET
+	sys_roles.`name` = nama_grup, 
+	sys_roles.description = des_grup, 
+    sys_roles.parent_id = id_parent, 
+	sys_roles.sysupdateuser = user_login, 
+	sys_roles.sysupdatedate = NOW()
+WHERE sys_roles.id = id_grup;
+END$$
+
 DROP PROCEDURE IF EXISTS `sys_users_insert`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_users_insert` (IN `user_name` VARCHAR(100), IN `pass_word` VARCHAR(100), IN `id_role` INT, IN `avatar` VARCHAR(100), IN `status_active` INT, IN `user_login` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_users_insert` (IN `user_name` VARCHAR(100), IN `pass_word` VARCHAR(100), IN `id_role` INT, IN `avatar` VARCHAR(100), IN `status_active` INT, IN `user_login` INT)  BEGIN
 
 IF pass_word = 'update' THEN
 
@@ -695,7 +696,7 @@ END IF;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_users_select`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_users_select` (IN `param` VARCHAR(50), IN `user_id` INT, IN `panjang` INT, IN `mulai` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_users_select` (IN `param` VARCHAR(50), IN `user_id` INT, IN `panjang` INT, IN `mulai` INT)  BEGIN
 
 IF param = 'get_detail' THEN
 
@@ -722,7 +723,7 @@ END IF;
 END$$
 
 DROP PROCEDURE IF EXISTS `sys_users_stat`$$
-CREATE DEFINER=`root`@`%` PROCEDURE `sys_users_stat` (IN `id_user` INT, IN `user_login` INT, IN `stat_active` INT)  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sys_users_stat` (IN `id_user` INT, IN `user_login` INT, IN `stat_active` INT)  BEGIN
 UPDATE sys_users
 SET sys_users.stat = stat_active, 
 	sys_users.sysdeleteuser = user_login, 

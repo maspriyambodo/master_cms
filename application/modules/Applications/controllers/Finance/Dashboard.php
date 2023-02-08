@@ -7,7 +7,7 @@ class Dashboard extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('M_finance', 'model');
-        $this->user = $this->bodo->Dec($this->session->userdata('id_user'));
+        $this->user = (int) dekrip($this->session->userdata('id_user'));
     }
 
     public function index() {
@@ -56,7 +56,7 @@ class Dashboard extends CI_Controller {
     public function Save() {
         $tgl = date_create(Post_input('tgltxt'));
         $new_tgl = date_format($tgl, 'Y-m-d');
-        $nominal = str_replace(['.',','], '', Post_input('nomtxt'));
+        $nominal = str_replace(['.', ','], '', Post_input('nomtxt'));
         $data = [
             'jenis' => Post_input('jenistxt'),
             'tgl' => $new_tgl,

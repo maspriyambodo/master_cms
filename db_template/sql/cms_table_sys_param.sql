@@ -7,7 +7,7 @@
 
 DROP TABLE IF EXISTS `sys_param`;
 CREATE TABLE `sys_param` (
-  `id` varchar(32) COLLATE utf8mb4_general_ci NOT NULL,
+  `id` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `param_group` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `param_value` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `param_desc` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE `sys_param` (
   `sysupdatedate` datetime DEFAULT NULL,
   `sysdeleteuser` int DEFAULT NULL,
   `sysdeletedate` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `sys_param`

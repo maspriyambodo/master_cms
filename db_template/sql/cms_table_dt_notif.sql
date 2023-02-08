@@ -19,4 +19,4 @@ CREATE TABLE `dt_notif` (
   `sysupdatedate` datetime DEFAULT NULL,
   `sysdeleteuser` int DEFAULT NULL,
   `sysdeletedate` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;

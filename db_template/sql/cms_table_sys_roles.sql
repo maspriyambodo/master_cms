@@ -18,7 +18,7 @@ CREATE TABLE `sys_roles` (
   `sysupdatedate` datetime DEFAULT NULL,
   `sysdeleteuser` int DEFAULT NULL,
   `sysdeletedate` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `sys_roles`

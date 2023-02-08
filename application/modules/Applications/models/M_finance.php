@@ -10,6 +10,7 @@ class M_finance extends CI_Model {
                 ->where('MONTH ( dt_finance.tgl ) =', $bulan, false)
                 ->where('YEAR ( dt_finance.tgl ) =', 'YEAR ( NOW( ) )', false)
                 ->where('`dt_finance`.`stat`', 1, false)
+                ->where('`dt_finance`.`syscreateuser`', $this->user, false)
                 ->order_by('DAY ( `dt_finance`.`tgl` )', 'ASC')
                 ->get()
                 ->result();
@@ -21,6 +22,7 @@ class M_finance extends CI_Model {
             $exec = $this->db->select('MIN( dt_finance.tgl ) AS tgl')
                     ->from('dt_finance')
                     ->where('`dt_finance`.`stat`', 1, false)
+                    ->where('`dt_finance`.`syscreateuser`', $this->user, false)
                     ->where('MONTH ( dt_finance.tgl ) <>', date('m'), false)
                     ->group_by('MONTH(dt_finance.tgl)')
                     ->order_by('dt_finance.tgl', 'ASC')
@@ -30,6 +32,7 @@ class M_finance extends CI_Model {
             $exec = $this->db->select('MIN( dt_finance.tgl ) AS tgl,MONTH(dt_finance.tgl) AS bulan')
                     ->from('dt_finance')
                     ->where('`dt_finance`.`stat`', 1, false)
+                    ->where('`dt_finance`.`syscreateuser`', $this->user, false)
                     ->where('MONTH ( dt_finance.tgl ) <>', $bulan, false)
                     ->group_by('MONTH(dt_finance.tgl)')
                     ->order_by('dt_finance.tgl', 'ASC')

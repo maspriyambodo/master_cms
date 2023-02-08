@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 11, 2022 at 03:02 AM
--- Server version: 8.0.28-0ubuntu0.20.04.3
--- PHP Version: 7.4.3
+-- Generation Time: Aug 10, 2022 at 11:29 AM
+-- Server version: 8.0.30-0ubuntu0.22.04.1
+-- PHP Version: 7.4.30
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";

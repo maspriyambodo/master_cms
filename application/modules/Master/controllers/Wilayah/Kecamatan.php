@@ -6,7 +6,7 @@ class Kecamatan extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->user = Dekrip($this->session->userdata('id_user'));
+        $this->user = dekrip($this->session->userdata('id_user'));
         $this->load->model('M_kecamatan');
     }
 
@@ -36,7 +36,7 @@ class Kecamatan extends CI_Controller {
         $privilege = $this->bodo->Check_previlege('Master/Wilayah/Kecamatan/index/');
         foreach ($list as $users) {
             $id_user = Enkrip($users->id_kecamatan);
-            if ($users->is_actived == 1) {
+            if ($users->stat == 1) {
                 $stat = '<span class="label label-success label-inline font-weight-lighter mr-2">active</span>';
             } else {
                 $stat = '<span class="label label-danger label-inline font-weight-lighter mr-2">nonactive</span>';
@@ -46,10 +46,10 @@ class Kecamatan extends CI_Controller {
             } else {
                 $editbtn = null;
             }
-            if ($privilege['delete'] and $users->is_actived == 1) {
+            if ($privilege['delete'] and $users->stat == 1) {
                 $activebtn = null;
                 $delbtn = '<button type="button" class="btn btn-icon btn-danger btn-xs" title="Delete ' . $users->nama . '" value="' . $id_user . '" onclick="Delete(this.value)"><i class="far fa-trash-alt"></i></button>';
-            } elseif ($privilege['delete'] and $users->is_actived != 1) {
+            } elseif ($privilege['delete'] and $users->stat != 1) {
                 $delbtn = null;
                 $activebtn = '<button type="button" class="btn btn-icon btn-success btn-xs" title="Activate ' . $users->nama . '" value="' . $id_user . '" onclick="Active(this.value)"><i class="fas fa-unlock"></i></button>';
             } else {
@@ -111,11 +111,11 @@ class Kecamatan extends CI_Controller {
 
     public function Add() {
         $data = [
-            'id_kecamatan' => Post_input('a_id'),
-            'id_kabupaten' => Post_input('kabtxt'),
-            'nama' => Post_input('kectxt'),
-            'latitude' => Post_input('txtlat'),
-            'longitude' => Post_input('longtxt'),
+            'id_kecamatan' => post_input('a_id'),
+            'id_kabupaten' => post_input('kabtxt'),
+            'nama' => post_input('kectxt'),
+            'latitude' => post_input('txtlat'),
+            'longitude' => post_input('longtxt'),
             'syscreateuser' => $this->user + false,
             'syscreatedate' => date('Y-m-d')
         ];
@@ -123,7 +123,7 @@ class Kecamatan extends CI_Controller {
     }
 
     public function Detail() {
-        $id_kel = Dekrip(Post_get('id'));
+        $id_kel = dekrip(Post_get('id'));
         $exec = $this->M_kecamatan->Detail($id_kel);
         if ($exec) {
             $response = [
@@ -140,12 +140,12 @@ class Kecamatan extends CI_Controller {
     }
 
     public function Update() {
-        $id_kecamatan = Post_input('e_idkel');
+        $id_kecamatan = post_input('e_idkel');
         $data = [
-            'id_kabupaten' => Post_input('e_kectxt'),
-            'nama' => Post_input('e_keltxt'),
-            'latitude' => Post_input('e_lattxt'),
-            'longitude' => Post_input('e_longtxt'),
+            'id_kabupaten' => post_input('e_kectxt'),
+            'nama' => post_input('e_keltxt'),
+            'latitude' => post_input('e_lattxt'),
+            'longitude' => post_input('e_longtxt'),
             'sysupdateuser' => $this->user + false,
             'sysupdatedate' => date('Y-m-d')
         ];
@@ -153,9 +153,9 @@ class Kecamatan extends CI_Controller {
     }
 
     public function Delete() {
-        $id = Dekrip(Post_input('d_id'));
+        $id = dekrip(post_input('d_id'));
         $data = [
-            'is_actived' => 0 + false,
+            'stat' => 0 + false,
             'sysdeleteuser' => $this->user,
             'sysdeletedate' => date('Y-m-d H:i:s')
         ];
@@ -163,9 +163,9 @@ class Kecamatan extends CI_Controller {
     }
 
     public function Activate() {
-        $id = Dekrip(Post_input('act_id'));
+        $id = dekrip(post_input('act_id'));
         $data = [
-            'is_actived' => 1 + false,
+            'stat' => 1 + false,
             'sysupdateuser' => $this->user + false,
             'sysupdatedate' => date('Y-m-d H:i:s')
         ];
