@@ -6,7 +6,7 @@ class Kelurahan extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->user = dekrip($this->session->userdata('id_user'));
+        $this->user = Dekrip($this->session->userdata('id_user'));
         $this->load->model('M_kelurahan');
     }
 
@@ -96,11 +96,11 @@ class Kelurahan extends CI_Controller {
 
     public function Save() {
         $data = [
-            'kectxt' => post_input('kectxt'),
-            'id_kelurahan' => post_input('a_id'),
-            'keltxt' => post_input('keltxt'),
-            'longtxt' => post_input('longtxt'),
-            'lattxt' => post_input('lattxt'),
+            'kectxt' => Post_input('kectxt'),
+            'id_kelurahan' => Post_input('a_id'),
+            'keltxt' => Post_input('keltxt'),
+            'longtxt' => Post_input('longtxt'),
+            'lattxt' => Post_input('lattxt'),
             'syscreateuser' => $this->user,
             'syscreatedate' => date('Y-m-d H:i:s')
         ];
@@ -108,12 +108,12 @@ class Kelurahan extends CI_Controller {
     }
 
     public function Update() {
-        $id_kelurahan = dekrip(post_input('e_id'));
+        $id_kelurahan = Dekrip(Post_input('e_id'));
         $data = [
-            'id_kecamatan' => post_input('e_kectxt'),
-            'nama' => post_input('e_keltxt'),
-            'longitude' => post_input('e_longtxt'),
-            'latitude' => post_input('e_lattxt'),
+            'id_kecamatan' => Post_input('e_kectxt'),
+            'nama' => Post_input('e_keltxt'),
+            'longitude' => Post_input('e_longtxt'),
+            'latitude' => Post_input('e_lattxt'),
             'syscreateuser' => $this->user + false,
             'syscreatedate' => date('Y-m-d H:i:s')
         ];
@@ -136,7 +136,7 @@ class Kelurahan extends CI_Controller {
     }
 
     public function Detail() {
-        $id_kel = dekrip(Post_get('id'));
+        $id_kel = Dekrip(Post_get('id'));
         $exec = $this->M_kelurahan->Detail($id_kel);
         if ($exec) {
             $response = [
@@ -153,7 +153,7 @@ class Kelurahan extends CI_Controller {
     }
 
     public function Delete() {
-        $id = dekrip(post_input('d_id'));
+        $id = Dekrip(Post_input('d_id'));
         $data = [
             'stat' => 0 + false,
             'sysdeleteuser' => $this->user,
@@ -163,7 +163,7 @@ class Kelurahan extends CI_Controller {
     }
 
     public function Activate() {
-        $id = dekrip(post_input('act_id'));
+        $id = Dekrip(Post_input('act_id'));
         $data = [
             'stat' => 1 + false,
             'sysupdateuser' => $this->user + false,
