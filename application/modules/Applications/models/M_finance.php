@@ -12,9 +12,14 @@ class M_finance extends CI_Model
                 ->where('YEAR ( dt_finance.tgl ) =', 'YEAR ( NOW( ) )', false)
                 ->where('`dt_finance`.`stat`', 1, false)
                 ->where('`dt_finance`.`syscreateuser`', $this->user, false)
+                ->or_where('`dt_finance`.`jenis`', 3, false)
+                ->where('`dt_finance`.`stat`', 1, false)
+                ->where('`dt_finance`.`syscreateuser`', $this->user, false)
                 ->order_by('DAY ( `dt_finance`.`tgl` )', 'ASC')
+                ->order_by('MONTH ( `dt_finance`.`tgl` )', 'ASC')
                 ->get()
                 ->result();
+        log_message('error', $this->db->last_query());
         return $exec;
     }
 
