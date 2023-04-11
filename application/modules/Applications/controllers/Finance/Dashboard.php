@@ -79,6 +79,29 @@ class Dashboard extends CI_Controller
         return $exec;
     }
 
+    public function Update()
+    {
+        $tgl = date_create(post_input('e_tgltxt'));
+        $new_tgl = date_format($tgl, 'Y-m-d');
+        $nominal = str_replace(['.', ','], '', post_input('e_nomtxt'));
+        $id_dt = dekrip(post_input('e_id'));
+        $data = [
+            'jenis' => post_input('e_jenistxt'),
+            'tgl' => $new_tgl,
+            'nominal' => $nominal,
+            'keterangan' => $this->input->post('e_kettxt', false),
+            'sysupdateuser' => $this->user,
+            'sysupdatedate' => date('Y-m-d')
+        ];
+        $exec = $this->model->m_update($data, $id_dt);
+        if ($exec) {
+            $result = redirect(base_url('finance'), $this->session->set_flashdata('succ_msg', 'Berhasil mengubah data!'));
+        } else {
+            $result = redirect(base_url('finance'), $this->session->set_flashdata('err_msg', 'gagal ketika mengubah data!'));
+        }
+        return $exec;
+    }
+
     public function get_data()
     {
         $id = Dekrip(Post_get('token'));

@@ -10,5 +10,6 @@ $route['Signin'] = 'Auth/index/';
 $route['404_override'] = 'Error_404';
 //=====================================finance========================================
 $route['finance'] = 'Applications/Finance/Dashboard/index/';
+$route['finance-update'] = 'Applications/Finance/Dashboard/Update/';
 //=====================================finance========================================
 $route['translate_uri_dashes'] = false;

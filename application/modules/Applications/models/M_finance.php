@@ -1,10 +1,11 @@
 <?php
 
-defined('BASEPATH') OR exit('404 not found');
+defined('BASEPATH') or exit('404 not found');
 
-class M_finance extends CI_Model {
-
-    public function m_mutasi($bulan = "MONTH ( NOW( ) )") {
+class M_finance extends CI_Model
+{
+    public function m_mutasi($bulan = "MONTH ( NOW( ) )")
+    {
         $exec = $this->db->select('dt_finance.id,dt_finance.jenis,dt_finance.tgl,dt_finance.nominal,dt_finance.stat,dt_finance.keterangan')
                 ->from('dt_finance')
                 ->where('MONTH ( dt_finance.tgl ) =', $bulan, false)
@@ -17,7 +18,8 @@ class M_finance extends CI_Model {
         return $exec;
     }
 
-    public function m_bulan($bulan = null) {
+    public function m_bulan($bulan = null)
+    {
         if (empty($bulan)) {
             $exec = $this->db->select('MIN( dt_finance.tgl ) AS tgl')
                     ->from('dt_finance')
@@ -43,7 +45,8 @@ class M_finance extends CI_Model {
         return $exec;
     }
 
-    public function m_save($data) {
+    public function m_save($data)
+    {
         $this->db->trans_begin();
         $this->db->insert('dt_finance', $data);
         if (!$this->db->trans_status()) {
@@ -56,7 +59,31 @@ class M_finance extends CI_Model {
         return $result;
     }
 
-    public function mGetData($id) {
+    public function m_update($data, $id_dt)
+    {
+        $this->db->trans_begin();
+        $this->db->set([
+            'dt_finance.jenis'=>$data['jenis'],
+            'dt_finance.tgl'=>$data['tgl'],
+            'dt_finance.nominal'=>$data['nominal'],
+            'dt_finance.keterangan'=>$data['keterangan'],
+            'dt_finance.sysupdateuser'=>$data['sysupdateuser'],
+            'dt_finance.sysupdatedate'=>$data['sysupdatedate']
+        ])
+                ->where('dt_finance.id', $id_dt, false)
+                ->update('dt_finance');
+        if (!$this->db->trans_status()) {
+            $this->db->trans_rollback();
+            $result = false;
+        } else {
+            $this->db->trans_commit();
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function mGetData($id)
+    {
         $exec = $this->db->select('dt_finance.id,dt_finance.jenis,dt_finance.tgl,dt_finance.nominal,dt_finance.stat,dt_finance.keterangan')
                 ->from('dt_finance')
                 ->where('`dt_finance`.`id`', $id, false)
@@ -64,5 +91,4 @@ class M_finance extends CI_Model {
                 ->result();
         return $exec;
     }
-
 }

@@ -19,6 +19,7 @@
                                     <option value="1">Credit</option>
                                     <option value="2">Debit</option>
                                     <option value="3">Deposito</option>
+                                    <option value="4">Hutang</option>
                                 </select>
                             </div>
                         </div>

@@ -7,7 +7,7 @@
                     <i aria-hidden="true" class="fas fa-times"></i>
                 </button>
             </div>
-            <form action="<?php echo site_url('Applications/Finance/Dashboard/Update/'); ?>" method="post">
+            <form action="<?php echo site_url('finance-update'); ?>" method="post">
                 <input type="hidden" name="<?php echo $csrf['name'] ?>" value="<?php echo $csrf['hash'] ?>"/>
                 <input type="hidden" name="e_id"/>
                 <div class="modal-body">
@@ -19,6 +19,8 @@
                                     <option value="">Pilih Jenis</option>
                                     <option value="1">Credit</option>
                                     <option value="2">Debit</option>
+                                    <option value="3">Deposito</option>
+                                    <option value="4">Hutang</option>
                                 </select>
                             </div>
                         </div>
