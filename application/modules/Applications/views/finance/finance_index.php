@@ -255,4 +255,77 @@ unset($_SESSION['succ_msg']);
                         function Bulan(token) {
                             window.location.href = 'Applications/Finance/Dashboard/filter?token=' + token;
                         }
+                        function Delete(id){
+                            Swal.fire({
+                                html: `Anda yakin ingin menghapus data?`,
+                                icon: "warning",
+                                buttonsStyling: false,
+                                showCancelButton: true,
+                                confirmButtonText: "Ya",
+                                cancelButtonText: 'Batal',
+                                allowOutsideClick: false,
+                                customClass: {
+                                    confirmButton: "btn btn-primary",
+                                    cancelButton: 'btn btn-danger'
+                                }
+                            }).then(function(result){
+                                if (result.isConfirmed) {
+                                    
+                                    var csrf_hash = $('input[name="bodo_csrf_token"]').val();
+                                    var formData = new FormData();
+                                    formData.append('bodo_csrf_token', csrf_hash);
+                                    formData.append('id', id);
+                                    $.ajax({
+                                        url: "finance-delete",
+                                        type: "POST",
+                                        data: formData,
+                                        cache: false,
+                                        contentType: false,
+                                        processData: false,
+                                        dataType: "JSON",
+                                        success: function (data) {
+                                            if(data.stat){
+                                                Swal.fire({
+                                                text: 'berhasil menghapus data',
+                                                icon: "success",
+                                                buttonsStyling: false,
+                                                confirmButtonText: "tutup",
+                                                customClass: {
+                                                    confirmButton: "btn btn-light"
+                                                }
+                                                }).then(function () {
+                                                    location.reload();
+                                                });
+                                            }else {
+                                                Swal.fire({
+                                                text: 'gagal menghapus data',
+                                                icon: "error",
+                                                buttonsStyling: false,
+                                                confirmButtonText: "tutup",
+                                                customClass: {
+                                                    confirmButton: "btn btn-light"
+                                                }
+                                                }).then(function () {
+                                                    location.reload();
+                                                });
+                                            }
+                                        },
+                                        error: function () {
+                                            Swal.fire({
+                                                text: "Maaf, sepertinya ada beberapa kesalahan yang terdeteksi, silakan coba lagi.",
+                                                icon: "error",
+                                                buttonsStyling: false,
+                                                confirmButtonText: "tutup",
+                                                customClass: {
+                                                    confirmButton: "btn btn-light"
+                                                }
+                                            }).then(function () {
+                                                location.reload();
+                                            });
+                                        }
+                                    });
+                                }
+                            });
+                            
+                        }
 </script>

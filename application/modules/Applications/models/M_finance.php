@@ -82,6 +82,26 @@ class M_finance extends CI_Model
         return $result;
     }
 
+    public function m_delete($id)
+    {
+        $this->db->trans_begin();
+        $this->db->set([
+            '`dt_finance`.`stat`'=>0+false,
+            '`dt_finance`.`sysdeleteuser`'=>$this->user+false,
+            'dt_finance.sysupdatedate'=>date('Y-m-d H:i:s')
+        ])
+                ->where('dt_finance.id', $id, false)
+                ->update('dt_finance');
+        if (!$this->db->trans_status()) {
+            $this->db->trans_rollback();
+            $result = false;
+        } else {
+            $this->db->trans_commit();
+            $result = true;
+        }
+        return $result;
+    }
+
     public function mGetData($id)
     {
         $exec = $this->db->select('dt_finance.id,dt_finance.jenis,dt_finance.tgl,dt_finance.nominal,dt_finance.stat,dt_finance.keterangan')

@@ -91,7 +91,7 @@ class Dashboard extends CI_Controller
             'nominal' => $nominal,
             'keterangan' => $this->input->post('e_kettxt', false),
             'sysupdateuser' => $this->user,
-            'sysupdatedate' => date('Y-m-d')
+            'sysupdatedate' => date('Y-m-d H:i:s')
         ];
         $exec = $this->model->m_update($data, $id_dt);
         if ($exec) {
@@ -100,6 +100,22 @@ class Dashboard extends CI_Controller
             $result = redirect(base_url('finance'), $this->session->set_flashdata('err_msg', 'gagal ketika mengubah data!'));
         }
         return $exec;
+    }
+
+    public function Delete()
+    {
+        $id_dt = dekrip(post_input('id'));
+        $exec = $this->model->m_delete($id_dt);
+        if ($exec) {
+            $response = [
+                'stat'=>true
+            ];
+        } else {
+            $response = [
+                'stat'=>false
+            ];
+        }
+        return ToJson($response);
     }
 
     public function get_data()
