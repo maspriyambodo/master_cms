@@ -55,7 +55,7 @@ $debit = 0;
                             $new_tgl = date('F', strtotime($tgl));
                             echo '<option value="' . Enkrip($dt_bulan->tgl) . '">' . $new_tgl . '</option>';
                         }
-                        ?>
+?>
                     </select>
                 </div>
             </div>
@@ -74,7 +74,7 @@ $debit = 0;
                 } else {
                     null;
                 }
-                ?>
+?>
             </div>
         </div>
     </div>
@@ -96,49 +96,51 @@ $debit = 0;
                 </thead>
                 <tbody>
                     <?php
-                    if (!$privilege['read']) { // jika memiliki privilege tambah atau create
-                        $uang_masuk = [];
-                    }
-                    foreach ($uang_masuk as $key => $dt_masuk) {
-                        $id_table = Enkrip($dt_masuk->id);
-                        ?>
+    if (!$privilege['read']) { // jika memiliki privilege tambah atau create
+        $uang_masuk = [];
+    }
+    foreach ($uang_masuk as $key => $dt_masuk) {
+        $id_table = Enkrip($dt_masuk->id);
+        ?>
                         <tr>
                             <td class="text-center">
                                 <?php
-                                static $id = 1;
-                                echo $id++;
-                                ?>
+                static $id = 1;
+        echo $id++;
+        ?>
                             </td>
                             <td class="text-center">
                                 <?php
-                                if ($dt_masuk->jenis == 1) {
-                                    $credit += $dt_masuk->nominal;
-                                    echo '<span class="text-success">CREDIT</span>';
-                                } else {
-                                    $debit += $dt_masuk->nominal;
-                                    echo '<span class="text-danger">DEBIT</span>';
-                                }
-                                ?>
+        if ($dt_masuk->jenis == 1) {
+            $credit += $dt_masuk->nominal;
+            echo '<span class="text-success">CREDIT</span>';
+        } elseif ($dt_masuk->jenis == 2) {
+            echo '<span class="text-danger">DEBIT</span>';
+        } else {
+            $debit += $dt_masuk->nominal;
+            echo '<span class="text-success">DEPOSITO</span>';
+        }
+        ?>
                             </td>
                             <td class="text-center"><?php echo $dt_masuk->tgl; ?></td>
                             <td class="text-right">Rp. <?php echo number_format($dt_masuk->nominal); ?></td>
                             <td><?php echo $dt_masuk->keterangan; ?></td>
                             <td class="text-center">
                                 <?php
-                                $editbtn = '<button id="editbtn" type="button" class="btn btn-icon btn-link btn-xs" title="Edit" value="' . $id_table . '" onclick="Edit(this.value)"><i class="far fa-edit"></i></button>';
-                                $delbtn = '<button id="delbtn" type="button" class="btn btn-icon btn-link btn-xs" title="Delete" value="' . $id_table . '" onclick="Delete(this.value)"><i class="far fa-trash-alt text-danger"></i></button>';
+        $editbtn = '<button id="editbtn" type="button" class="btn btn-icon btn-link btn-xs" title="Edit" value="' . $id_table . '" onclick="Edit(this.value)"><i class="far fa-edit"></i></button>';
+        $delbtn = '<button id="delbtn" type="button" class="btn btn-icon btn-link btn-xs" title="Delete" value="' . $id_table . '" onclick="Delete(this.value)"><i class="far fa-trash-alt text-danger"></i></button>';
 
-                                echo '<div class="btn-group">'; // open div btn-group
+        echo '<div class="btn-group">'; // open div btn-group
 
-                                if ($privilege['update']) { // jika memiliki privilege edit
-                                    echo $editbtn;
-                                }
-                                if ($dt_masuk->stat and $privilege['delete']) { // jika memiliki privilege delete
-                                    echo $delbtn;
-                                }
+        if ($privilege['update']) { // jika memiliki privilege edit
+            echo $editbtn;
+        }
+        if ($dt_masuk->stat and $privilege['delete']) { // jika memiliki privilege delete
+            echo $delbtn;
+        }
 
-                                echo '</div>'; //close div btn-group
-                                ?>
+        echo '</div>'; //close div btn-group
+        ?>
                             </td>
                         </tr>
                     <?php } ?>
@@ -168,72 +170,72 @@ unset($_SESSION['succ_msg']);
 <script src="https://ckeditor.com/docs/vendors/4.14.0/ckeditor/ckeditor.js"></script>
 <script src="<?php echo base_url('assets/plugins/custom/ckeditor/ckeditor-classic.bundle.js?v=7.0.6'); ?>"></script>
 <script>
-    window.onload = function () {
-        var credit = $('input[name="crtxt"]').val();
-        var debit = $('input[name="dbtxt"]').val();
-        var balance = $('input[name="bltxt"]').val();
-        document.getElementById('crtxt').innerHTML = credit;
-        document.getElementById('dbtxt').innerHTML = debit;
-        document.getElementById('bltxt').innerHTML = balance;
-        toastr.options = {
-            closeButton: true,
-            debug: false,
-            newestOnTop: false,
-            progressBar: false,
-            positionClass: "toast-top-right",
-            preventDuplicates: true,
-            onclick: null,
-            showDuration: "300",
-            hideDuration: "2000",
-            timeOut: false,
-            extendedTimeOut: "2000",
-            showEasing: "swing",
-            hideEasing: "linear",
-            showMethod: "fadeIn",
-            hideMethod: "fadeOut"
-        };
-        var a, b;
-        a = $('input[name="err_msg"]').val();
-        b = $('input[name="succ_msg"]').val();
-        if (a) {
-            toastr.error(a);
-        } else if (b) {
-            toastr.success(b);
-        }
-        $('table').dataTable({
-            "ServerSide": true,
-            "order": [[0, "asc"]],
-            "paging": false,
-            "ordering": true,
-            "info": true,
-            "processing": true,
-            "deferRender": true,
-            "scrollCollapse": true,
-            "scrollX": true,
-            "scrollY": "400px",
-            dom: `<'row'<'col-sm-6 text-left'f><'col-sm-6 text-right'B>>
+                        window.onload = function () {
+                            var credit = $('input[name="crtxt"]').val();
+                            var debit = $('input[name="dbtxt"]').val();
+                            var balance = $('input[name="bltxt"]').val();
+                            document.getElementById('crtxt').innerHTML = credit;
+                            document.getElementById('dbtxt').innerHTML = debit;
+                            document.getElementById('bltxt').innerHTML = balance;
+                            toastr.options = {
+                                closeButton: true,
+                                debug: false,
+                                newestOnTop: false,
+                                progressBar: false,
+                                positionClass: "toast-top-right",
+                                preventDuplicates: true,
+                                onclick: null,
+                                showDuration: "300",
+                                hideDuration: "2000",
+                                timeOut: false,
+                                extendedTimeOut: "2000",
+                                showEasing: "swing",
+                                hideEasing: "linear",
+                                showMethod: "fadeIn",
+                                hideMethod: "fadeOut"
+                            };
+                            var a, b;
+                            a = $('input[name="err_msg"]').val();
+                            b = $('input[name="succ_msg"]').val();
+                            if (a) {
+                                toastr.error(a);
+                            } else if (b) {
+                                toastr.success(b);
+                            }
+                            $('table').dataTable({
+                                "ServerSide": true,
+                                "order": [[0, "asc"]],
+                                "paging": false,
+                                "ordering": true,
+                                "info": true,
+                                "processing": true,
+                                "deferRender": true,
+                                "scrollCollapse": true,
+                                "scrollX": true,
+                                "scrollY": "400px",
+                                dom: `<'row'<'col-sm-6 text-left'f><'col-sm-6 text-right'B>>
                 <'row'<'col-sm-12'tr>>
                 <'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7 dataTables_pager'lp>>`,
-            buttons: [
-                {extend: 'print', footer: true},
-                {extend: 'copyHtml5', footer: true},
-                {extend: 'excelHtml5', footer: true},
-                {extend: 'csvHtml5', footer: true},
-                {extend: 'pdfHtml5', footer: true}
-            ]
-        });
-        CKEDITOR.replace('kettxt', {});
-        CKEDITOR.replace('e_kettxt', {});
-    };
-    function isNumber(b) {
-        b = (b) ? b : window.event;
-        var a = (b.which) ? b.which : b.keyCode;
-        if (a > 31 && (a < 48 || a > 57)) {
-            return false;
-        }
-        $('.nomtxt').mask('#.##0', {reverse: true});
-    }
-    function Bulan(token){
-        window.location.href = 'Applications/Finance/Dashboard/filter?token='+token;
-    }
+                                buttons: [
+                                    {extend: 'print', footer: true},
+                                    {extend: 'copyHtml5', footer: true},
+                                    {extend: 'excelHtml5', footer: true},
+                                    {extend: 'csvHtml5', footer: true},
+                                    {extend: 'pdfHtml5', footer: true}
+                                ]
+                            });
+                            CKEDITOR.replace('kettxt', {});
+                            CKEDITOR.replace('e_kettxt', {});
+                        };
+                        function isNumber(b) {
+                            b = (b) ? b : window.event;
+                            var a = (b.which) ? b.which : b.keyCode;
+                            if (a > 31 && (a < 48 || a > 57)) {
+                                return false;
+                            }
+                            $('.nomtxt').mask('#.##0', {reverse: true});
+                        }
+                        function Bulan(token) {
+                            window.location.href = 'Applications/Finance/Dashboard/filter?token=' + token;
+                        }
 </script>

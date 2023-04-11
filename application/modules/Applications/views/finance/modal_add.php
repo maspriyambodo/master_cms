@@ -18,6 +18,7 @@
                                     <option value="">Pilih Jenis</option>
                                     <option value="1">Credit</option>
                                     <option value="2">Debit</option>
+                                    <option value="3">Deposito</option>
                                 </select>
                             </div>
                         </div>
