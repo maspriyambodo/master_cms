@@ -19,7 +19,7 @@ class M_finance extends CI_Model
                 ->order_by('MONTH ( `dt_finance`.`tgl` )', 'ASC')
                 ->get()
                 ->result();
-        log_message('error', $this->db->last_query());
+//        log_message('error', $this->db->last_query());
         return $exec;
     }
 
