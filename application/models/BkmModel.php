@@ -4,8 +4,17 @@ defined('BASEPATH') OR exit('doh!');
 
 class BkmModel extends CI_Model {
 
-    public function Upload($data) {
-        
+    public function Save($data) {
+        $this->db->trans_begin();
+        $this->db->insert('dt_bkm', $data);
+        if ($this->db->trans_status() === false) {
+            $this->db->trans_rollback();
+            $result = false;
+        } else {
+            $this->db->trans_commit();
+            $result = true;
+        }
+        return $result;
     }
 
     public function Prov() {
@@ -16,7 +25,7 @@ class BkmModel extends CI_Model {
                 ->result();
         return $exec;
     }
-    
+
     public function Getkab($id) {
         $exec = $this->db->select('`mt_wil_kabupaten`.`id_kabupaten`, `mt_wil_kabupaten`.`id_provinsi`, `mt_wil_kabupaten`.`nama` AS `kabupaten`')
                 ->from('`mt_wil_kabupaten`')

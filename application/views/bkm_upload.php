@@ -1,59 +1,211 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>.LGLeeN-keyboard-shortcuts-view{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex}.LGLeeN-keyboard-shortcuts-view table,.LGLeeN-keyboard-shortcuts-view tbody,.LGLeeN-keyboard-shortcuts-view td,.LGLeeN-keyboard-shortcuts-view tr{background:inherit;border:0;margin:0;padding:0}.LGLeeN-keyboard-shortcuts-view table{display:table}.LGLeeN-keyboard-shortcuts-view tr{display:table-row}.LGLeeN-keyboard-shortcuts-view td{-moz-box-sizing:border-box;box-sizing:border-box;display:table-cell;color:#000;padding:6px;vertical-align:middle;white-space:nowrap}.LGLeeN-keyboard-shortcuts-view td:first-child{text-align:end}.LGLeeN-keyboard-shortcuts-view td kbd{background-color:#e8eaed;border-radius:2px;border:0;-moz-box-sizing:border-box;box-sizing:border-box;color:inherit;display:inline-block;font-family:Google Sans Text,Roboto,Arial,sans-serif;line-height:16px;margin:0 2px;min-height:20px;min-width:20px;padding:2px 4px;position:relative;text-align:center}</style><style>.gm-control-active>img{-webkit-box-sizing:content-box;box-sizing:content-box;display:none;left:50%;pointer-events:none;position:absolute;top:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);-o-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.gm-control-active>img:nth-child(1){display:block}.gm-control-active:focus>img:nth-child(1),.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1),.gm-control-active:disabled>img:nth-child(1){display:none}.gm-control-active:focus>img:nth-child(2),.gm-control-active:hover>img:nth-child(2){display:block}.gm-control-active:active>img:nth-child(3){display:block}.gm-control-active:disabled>img:nth-child(4){display:block}</style>
-<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400&amp;lang=en"><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text:400&amp;text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&amp;lang=en">
-<style>.gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}.gm-ui-hover-effect>span{background-color:#000}@media(forced-colors:active),(prefers-contrast:more){.gm-ui-hover-effect>span{background-color:ButtonText}}</style>
-<style>.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span,.gm-style .gm-style-mtc div{font-size:10px;-webkit-box-sizing:border-box;box-sizing:border-box}.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span{outline-offset:3px}</style>
-<style>@media print{.gm-style .gmnoprint,.gmnoprint{display:none}}@media screen{.gm-style .gmnoscreen,.gmnoscreen{display:none}}</style>
-<style>.gm-style-moc{background-color:rgba(0,0,0,.45);pointer-events:none;text-align:center;-webkit-transition:opacity ease-in-out;-o-transition:opacity ease-in-out;transition:opacity ease-in-out}.gm-style-mot{color:white;font-family:Roboto,Arial,sans-serif;font-size:22px;margin:0;position:relative;top:50%;-o-transform:translateY(-50%);transform:translateY(-50%);-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%)}</style><style>.gm-style img{max-width:none}.gm-style{font:400 11px Roboto,Arial,sans-serif;text-decoration:none}</style>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="shortcut icon" href="https://simas.kemenag.go.id/favicon.png" type="image/png">
-<link rel="icon" href="https://simas.kemenag.go.id/favicon.png" type="image/png">
-<title>Sistem Informasi Masjid</title>
-<link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/css/bootstrap.css">
-<link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/css/themify-icons.css">
-<link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/vendors/animate-css/animate.css">
-<link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/css/style.css">
-<link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/css/responsive.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.27/sweetalert2.min.css" integrity="sha512-IScV5kvJo+TIPbxENerxZcEpu9VrLUGh1qYWv6Z9aylhxWE4k4Fch3CHl0IYYmN+jrnWQBPlpoTVoWfSMakoKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://simas.kemenag.go.id/assets/front/js/jquery-2.2.4.min.js"></script>
-</head>
+    <head>
+        <style>.LGLeeN-keyboard-shortcuts-view{
+            display:-webkit-box;
+            display:-webkit-flex;
+            display:-moz-box;
+            display:-ms-flexbox;
+            display:flex
+        }
+        .LGLeeN-keyboard-shortcuts-view table,.LGLeeN-keyboard-shortcuts-view tbody,.LGLeeN-keyboard-shortcuts-view td,.LGLeeN-keyboard-shortcuts-view tr{
+            background:inherit;
+            border:0;
+            margin:0;
+            padding:0
+        }
+        .LGLeeN-keyboard-shortcuts-view table{
+            display:table
+        }
+        .LGLeeN-keyboard-shortcuts-view tr{
+            display:table-row
+        }
+        .LGLeeN-keyboard-shortcuts-view td{
+            -moz-box-sizing:border-box;
+            box-sizing:border-box;
+            display:table-cell;
+            color:#000;
+            padding:6px;
+            vertical-align:middle;
+            white-space:nowrap
+        }
+        .LGLeeN-keyboard-shortcuts-view td:first-child{
+            text-align:end
+        }
+        .LGLeeN-keyboard-shortcuts-view td kbd{
+            background-color:#e8eaed;
+            border-radius:2px;
+            border:0;
+            -moz-box-sizing:border-box;
+            box-sizing:border-box;
+            color:inherit;
+            display:inline-block;
+            font-family:Google Sans Text,Roboto,Arial,sans-serif;
+            line-height:16px;
+            margin:0 2px;
+            min-height:20px;
+            min-width:20px;
+            padding:2px 4px;
+            position:relative;
+            text-align:center
+        }</style><style>.gm-control-active>img{
+            -webkit-box-sizing:content-box;
+            box-sizing:content-box;
+            display:none;
+            left:50%;
+            pointer-events:none;
+            position:absolute;
+            top:50%;
+            -webkit-transform:translate(-50%,-50%);
+            -ms-transform:translate(-50%,-50%);
+            -o-transform:translate(-50%,-50%);
+            transform:translate(-50%,-50%)
+        }
+        .gm-control-active>img:nth-child(1){
+            display:block
+        }
+        .gm-control-active:focus>img:nth-child(1),.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1),.gm-control-active:disabled>img:nth-child(1){
+            display:none
+        }
+        .gm-control-active:focus>img:nth-child(2),.gm-control-active:hover>img:nth-child(2){
+            display:block
+        }
+        .gm-control-active:active>img:nth-child(3){
+            display:block
+        }
+        .gm-control-active:disabled>img:nth-child(4){
+            display:block
+        }</style>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400&amp;lang=en"><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text:400&amp;text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&amp;lang=en">
+        <style>.gm-ui-hover-effect{
+            opacity:.6
+        }
+        .gm-ui-hover-effect:hover{
+            opacity:1
+        }
+        .gm-ui-hover-effect>span{
+            background-color:#000
+        }
+        @media(forced-colors:active),(prefers-contrast:more){
+            .gm-ui-hover-effect>span{
+                background-color:ButtonText
+            }
+        }</style>
+        <style>.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span,.gm-style .gm-style-mtc div{
+            font-size:10px;
+            -webkit-box-sizing:border-box;
+            box-sizing:border-box
+        }
+        .gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span{
+            outline-offset:3px
+        }</style>
+        <style>@media print{
+            .gm-style .gmnoprint,.gmnoprint{
+                display:none
+            }
+        }
+        @media screen{
+            .gm-style .gmnoscreen,.gmnoscreen{
+                display:none
+            }
+        }</style>
+        <style>.gm-style-moc{
+            background-color:rgba(0,0,0,.45);
+            pointer-events:none;
+            text-align:center;
+            -webkit-transition:opacity ease-in-out;
+            -o-transition:opacity ease-in-out;
+            transition:opacity ease-in-out
+        }
+        .gm-style-mot{
+            color:white;
+            font-family:Roboto,Arial,sans-serif;
+            font-size:22px;
+            margin:0;
+            position:relative;
+            top:50%;
+            -o-transform:translateY(-50%);
+            transform:translateY(-50%);
+            -webkit-transform:translateY(-50%);
+            -ms-transform:translateY(-50%)
+        }</style><style>.gm-style img{
+            max-width:none
+        }
+        .gm-style{
+            font:400 11px Roboto,Arial,sans-serif;
+            text-decoration:none
+        }</style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="shortcut icon" href="https://simas.kemenag.go.id/favicon.png" type="image/png">
+        <link rel="icon" href="https://simas.kemenag.go.id/favicon.png" type="image/png">
+        <title>Sistem Informasi Masjid</title>
+        <link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/css/bootstrap.css">
+        <link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/css/themify-icons.css">
+        <link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/css/style.css">
+        <link rel="stylesheet" href="https://simas.kemenag.go.id/assets/front/css/responsive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.27/sweetalert2.min.css" integrity="sha512-IScV5kvJo+TIPbxENerxZcEpu9VrLUGh1qYWv6Z9aylhxWE4k4Fch3CHl0IYYmN+jrnWQBPlpoTVoWfSMakoKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://simas.kemenag.go.id/assets/front/js/jquery-2.2.4.min.js"></script>
+    </head>
     <body>
         <!--================Header Menu Area =================-->
-<header class="header_area navbar_fixed">
-<div class="main_menu">
-<nav class="navbar navbar-expand-lg navbar-light">
-<div class="container">
-<a class="navbar-brand logo_h" href="https://simas.kemenag.go.id/"><img src="https://simas.kemenag.go.id/assets/front/img/logo_simas.png" alt=""></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-<ul class="nav navbar-nav menu_nav ml-auto">
-<li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/">Beranda</a></li><li class="nav-item submenu dropdown">
-<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#" aria-haspopup="true" aria-expanded="false">Data Masjid/Mushalla</a>
-<ul class="dropdown-menu"><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/profilmasjid">Profil Masjid</a></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/profilmushalla">Profil Mushalla</a></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/permohonandata">Permohonan Data Masjid/Mushalla</a></li></ul></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/news">Info Terkini</a></li><li class="nav-item submenu dropdown">
-<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#" aria-haspopup="true" aria-expanded="false">Unduh Data</a>
-<ul class="dropdown-menu"><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/download/download_amm">Unduh AMM</a></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/download">Unduh Info Penting</a></li></ul></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/contactus">Kontak Kami</a></li> </ul>
-</div>
-<div class="right-button">
-<ul>
-<li><img class="right-logo" src="https://simas.kemenag.go.id/assets/front/img/logo-kemenag.png"></li>
-</ul>
-</div>
-</div>
-</nav>
-</div>
-</header>
+        <header class="header_area navbar_fixed">
+            <div class="main_menu">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container">
+                        <a class="navbar-brand logo_h" href="https://simas.kemenag.go.id/"><img src="https://simas.kemenag.go.id/assets/front/img/logo_simas.png" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/">Beranda</a></li><li class="nav-item submenu dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#" aria-haspopup="true" aria-expanded="false">Data Masjid/Mushalla</a>
+                                    <ul class="dropdown-menu"><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/profilmasjid">Profil Masjid</a></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/profilmushalla">Profil Mushalla</a></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/permohonandata">Permohonan Data Masjid/Mushalla</a></li></ul></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/news">Info Terkini</a></li><li class="nav-item submenu dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="#" aria-haspopup="true" aria-expanded="false">Unduh Data</a>
+                                    <ul class="dropdown-menu"><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/download/download_amm">Unduh AMM</a></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/download">Unduh Info Penting</a></li></ul></li><li class="nav-item"><a class="nav-link" href="https://simas.kemenag.go.id/page/contactus">Kontak Kami</a></li> </ul>
+                        </div>
+                        <div class="right-button">
+                            <ul>
+                                <li><img class="right-logo" src="https://simas.kemenag.go.id/assets/front/img/logo-kemenag.png"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
         <!--================Header Menu Area =================-->
 
-        <style>.masjid-update-wrapper{height:240px;overflow-x:auto}.marker-info a{color:#fff!important;font-size:12px!important}.marker-info a:hover{text-decoration:none!important;border-bottom:none!important}.marker-info a:after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:90px;background:#edf1f6;visibility:hidden}.marker-info p{margin-bottom:5px!important}</style>
+        <style>.masjid-update-wrapper{
+            height:240px;
+            overflow-x:auto
+        }
+        .marker-info a{
+            color:#fff!important;
+            font-size:12px!important
+        }
+        .marker-info a:hover{
+            text-decoration:none!important;
+            border-bottom:none!important
+        }
+        .marker-info a:after{
+            content:'';
+            position:absolute;
+            left:0;
+            bottom:-6px;
+            height:2px;
+            width:90px;
+            background:#edf1f6;
+            visibility:hidden
+        }
+        .marker-info p{
+            margin-bottom:5px!important
+        }</style>
 
         <!--================Home Banner Area =================-->
         <div class="main-content main-content-page">
@@ -68,7 +220,7 @@
                             </div>
                             <div class="form-group mt-2">
                                 <label  title="tingkat wajib diisi">Tingkat:<span class="text-danger">*</span></label>
-                                <select class="form-control" name="tingkattxt" required="">
+                                <select class="form-control" name="tingkattxt" required="" onchange="Tingkat(this.value)">
                                     <option value="">Pilih Tingkat</option>
                                     <option value="1">Provinsi</option>
                                     <option value="2">Kabupaten</option>
@@ -89,15 +241,15 @@
                             </div>
                             <div class="form-group mt-2">
                                 <label>Kabupaten:</label>
-                                <select id="kabupaten" name="kabtxt" class="form-control custom-select" onchange="Kecamatan(this.value)"></select>
+                                <select id="kabupaten" name="kabtxt" class="form-control custom-select" onchange="Kecamatan(this.value)" disabled=""></select>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Kecamatan:</label>
-                                <select id="kecamatan" name="kectxt" class="form-control custom-select" onchange="Kelurahan(this.value)"></select>
+                                <select id="kecamatan" name="kectxt" class="form-control custom-select" onchange="Kelurahan(this.value)" disabled=""></select>
                             </div>
                             <div class="form-group mt-2">
                                 <label>Kelurahan:</label>
-                                <select id="kelurahan" name="keltxt" class="form-control custom-select"></select>
+                                <select id="kelurahan" name="keltxt" class="form-control custom-select" disabled=""></select>
                             </div>
                             <div class="form-group mt-2">
                                 <label title="alamat wajib diisi">Alamat:<span class="text-danger">*</span></label>
@@ -109,16 +261,37 @@
                                 <i>ukuran maksimal 2mb</i>
                             </div>
                             <div class="text-center mt-5">
-                                <button type="button" class="btn btn-success">Kirim</button>
+                                <button type="submit" class="btn btn-success">Kirim</button>
                             </div>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
+                    <input type="hidden" name="errmsg" value="<?php echo $this->session->flashdata('err_msg'); ?>"/>
+                    <input type="hidden" name="sucmsg" value="<?php echo $this->session->flashdata('suc_msg'); ?>"/>
                 </form>
             </div>
         </div>
         <!--================End Home Banner Area =================-->
         <script type="text/javascript">
+            function Tingkat(val) {
+                if (val == 2) {
+                    $('#kabupaten').removeAttr('disabled');
+                    $('#kecamatan').attr('disabled', '');
+                    $('#kelurahan').attr('disabled', '');
+                } else if (val == 3) {
+                    $('#kabupaten').removeAttr('disabled');
+                    $('#kecamatan').removeAttr('disabled');
+                    $('#kelurahan').attr('disabled', '');
+                } else if (val == 4) {
+                    $('#kabupaten').removeAttr('disabled');
+                    $('#kecamatan').removeAttr('disabled');
+                    $('#kelurahan').removeAttr('disabled');
+                } else {
+                    $('#kabupaten').attr('disabled', '');
+                    $('#kecamatan').attr('disabled', '');
+                    $('#kelurahan').attr('disabled', '');
+                }
+            }
             function Provinsi(id) {
                 $('#kabupaten').children('option').remove();
                 $('#kecamatan').children('option').remove();
@@ -140,10 +313,10 @@
                     },
                     error: function () {
                         Swal.fire(
-                            'Error',
-                            'error ketika mengambil data kabupaten',
-                            'error'
-                          );
+                                'Error',
+                                'error ketika mengambil data kabupaten',
+                                'error'
+                                );
                     }
                 });
             }
@@ -166,15 +339,15 @@
                     },
                     error: function () {
                         Swal.fire(
-                            'Error',
-                            'error ketika mengambil data kecamatan',
-                            'error'
-                          );
+                                'Error',
+                                'error ketika mengambil data kecamatan',
+                                'error'
+                                );
                     }
                 });
             }
             function Kelurahan(id) {
-            $('#kelurahan').children('option').remove();
+                $('#kelurahan').children('option').remove();
                 $.ajax({
                     url: "<?php echo base_url('bkm-getkel?id_kec='); ?>" + id,
                     type: 'get',
@@ -192,10 +365,10 @@
                     },
                     error: function () {
                         Swal.fire(
-                            'Error',
-                            'error ketika mengambil data kelurahan',
-                            'error'
-                          );
+                                'Error',
+                                'error ketika mengambil data kelurahan',
+                                'error'
+                                );
                     }
                 });
             }
@@ -265,9 +438,29 @@
         <script src="https://simas.kemenag.go.id/assets/front/js/underscore-min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.27/sweetalert2.min.js" integrity="sha512-mJQ9oQHzLM2zXe1cwiHmnMddNrmjv1YlaKZe1rM4J7q8JTnNn9UgeJVBV9jyV/lVGdXymVx6odhgwNZjQD8AqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
-        window.onload = function(){
-            $('select').select2();
-        };
+            window.onload = function () {
+                $('select').select2();
+                msg();
+            };
+            function msg() {
+                var err = $('input[name="errmsg"]').val();
+                var suc = $('input[name="sucmsg"]').val();
+                if (err.length != 0) {
+                    Swal.fire(
+                            'Error',
+                            err,
+                            'error'
+                            );
+                } else if (suc.length != 0) {
+                    Swal.fire(
+                            'Success',
+                            suc,
+                            'success'
+                            );
+                } else {
+                    return true;
+                }
+            }
         </script>
     </body>
 </html>

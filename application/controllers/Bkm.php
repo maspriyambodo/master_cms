@@ -32,6 +32,7 @@ class Bkm extends CI_Controller {
             $result = $this->upload->data();
             $result['status'] = true;
         } else {
+            $result = $this->upload->data();
             $result['status'] = false;
         }
         return $result;
@@ -44,34 +45,73 @@ class Bkm extends CI_Controller {
         $kel = $this->input->post('keltxt');
         $tingkat = $this->input->post('tingkattxt');
         $filename = null;
+        $filename2 = md5(round(microtime(true) * 1000));
+        $full_path = null;
         if ($tingkat == 1) {
-            $filename = '/' . $prov;
-            if (!is_dir('assets/bkm' . $filename)) {
-                $this->ftp->mkdir('assets/bkm' . $filename, 0755);
+            $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov;
+            if (!is_dir($filename)) {
+                mkdir($filename, 0755, true);
             }
         } elseif ($tingkat == 2) {
-            $filename = '/' . $prov . '/' . $kab;
-            if (!is_dir('assets/bkm' . $filename)) {
-                $this->ftp->mkdir('assets/bkm' . $filename, 0755);
+            $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab;
+            if (!is_dir($filename)) {
+                mkdir($filename, 0755, true);
             }
         } elseif ($tingkat == 3) {
-            $filename = '/' . $prov . '/' . $kab . '/' . $kec;
-            if (!is_dir('assets/bkm' . $filename)) {
-                $this->ftp->mkdir('assets/bkm' . $filename, 0755);
+            $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab . DIRECTORY_SEPARATOR . $kec;
+            if (!is_dir($filename)) {
+                mkdir($filename, 0755, true);
             }
         } elseif ($tingkat == 4) {
-            $filename = '/' . $prov . '/' . $kab . '/' . $kec . '/' . $kel;
-            if (!is_dir('assets/bkm' . $filename)) {
-                $this->ftp->mkdir('assets/bkm' . $filename, 0755);
+            $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab . DIRECTORY_SEPARATOR . $kec . DIRECTORY_SEPARATOR . $kel;
+            if (!is_dir($filename)) {
+                mkdir($filename, 0755, true);
             }
         } else {
             return false;
         }
         $param = [
-            'upload_path' => 'assets/bkm' . $filename,
-            'file_name' => md5(round(microtime(true) * 1000)),
+            'upload_path' => $filename,
+            'file_name' => $filename2,
             'input_name' => "bkmtxt",
         ];
+        $upload = $this->_Upload($param);
+        if ($upload['status']) {
+            $result = $this->_save($param, $upload);
+        } else {
+            $err_upload = $this->upload->display_errors();
+            $msg = null;
+            if (isset($err_upload)) {
+                $msg = 'ukuran file terlalu besar';
+            } else {
+                $msg = 'error saat menyimpan data';
+            }
+            $result = redirect(base_url('bkm-upload', $this->session->set_flashdata('err_msg', $msg)));
+        }
+        return $result;
+    }
+
+    private function _save($param, $upload) {
+        $data = [
+            'nama' => $this->input->post('namatxt'),
+            'tingkat' => $this->input->post('tingkattxt') + false,
+            'provinsi' => $this->input->post('provtxt') + false,
+            'kabupaten' => $this->input->post('kabtxt') + false,
+            'kecamatan' => $this->input->post('kectxt') + false,
+            'kelurahan' => $this->input->post('keltxt') + false,
+            'upload_sk' => $param['upload_path'] . DIRECTORY_SEPARATOR . $upload['file_name'],
+            'status' => 1 + false,
+            'created_at' => date('Y-m-d H:i:s')
+        ];
+        $exec = $this->model->Save($data);
+        if ($exec) {
+            $msg = 'berhasil menyimpan data';
+            $result = redirect(base_url('bkm-upload', $this->session->set_flashdata('suc_msg', $msg)));
+        } else {
+            $msg = 'kesalahan saat menyimpan data';
+            $result = redirect(base_url('bkm-upload', $this->session->set_flashdata('err_msg', $msg)));
+        }
+        return $result;
     }
 
     public function Getkab() {
