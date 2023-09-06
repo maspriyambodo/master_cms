@@ -35,7 +35,8 @@ class BkmModel extends CI_Model {
                 ])
                 ->get()
                 ->result();
-        $a[0] = array('kabupaten' => 'Pilih Kabupaten');
+        $a[0] = ['kabupaten' => 'Pilih Kabupaten'];
+        $a[1] = ['kabupaten' => 'Lainnya'];
         $b = array_merge($a, $exec);
         return $b;
     }
@@ -49,7 +50,8 @@ class BkmModel extends CI_Model {
                 ])
                 ->get()
                 ->result();
-        $a[0] = array('kecamatan' => 'Pilih Kecamatan');
+        $a[0] = ['kecamatan' => 'Pilih Kecamatan'];
+        $a[1] = ['kecamatan' => 'Lainnya'];
         $b = array_merge($a, $exec);
         return $b;
     }
@@ -63,7 +65,8 @@ class BkmModel extends CI_Model {
                 ])
                 ->get()
                 ->result();
-        $a[0] = array('kelurahan' => 'Pilih Kelurahan');
+        $a[0] = ['kelurahan' => 'Pilih Kelurahan'];
+        $a[1] = ['kelurahan' => 'Lainnya'];
         $b = array_merge($a, $exec);
         return $b;
     }

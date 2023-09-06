@@ -53,17 +53,29 @@ class Bkm extends CI_Controller {
                 mkdir($filename, 0755, true);
             }
         } elseif ($tingkat == 2) {
-            $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab;
+            if(is_int($kab)){
+                $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab;
+            } else {
+                $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . 'kab_lain';
+            }
             if (!is_dir($filename)) {
                 mkdir($filename, 0755, true);
             }
         } elseif ($tingkat == 3) {
-            $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab . DIRECTORY_SEPARATOR . $kec;
+            if(is_int($kec)){
+                $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab . DIRECTORY_SEPARATOR . $kec;
+            } else {
+                $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . 'kab_lain' . DIRECTORY_SEPARATOR . 'kec_lain';
+            }
             if (!is_dir($filename)) {
                 mkdir($filename, 0755, true);
             }
         } elseif ($tingkat == 4) {
-            $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab . DIRECTORY_SEPARATOR . $kec . DIRECTORY_SEPARATOR . $kel;
+            if(is_int($kel)){
+                $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . $kab . DIRECTORY_SEPARATOR . $kec . DIRECTORY_SEPARATOR . $kel;
+            } else {
+                $filename = 'assets' . DIRECTORY_SEPARATOR . 'bkm' . DIRECTORY_SEPARATOR . $prov . DIRECTORY_SEPARATOR . 'kab_lain' . DIRECTORY_SEPARATOR . 'kec_lain' . DIRECTORY_SEPARATOR . 'kel_lain';
+            }
             if (!is_dir($filename)) {
                 mkdir($filename, 0755, true);
             }
@@ -94,11 +106,15 @@ class Bkm extends CI_Controller {
     private function _save($param, $upload) {
         $data = [
             'nama' => $this->input->post('namatxt'),
+            'nomor' => $this->input->post('nomortxt'),
             'tingkat' => $this->input->post('tingkattxt') + false,
             'provinsi' => $this->input->post('provtxt') + false,
             'kabupaten' => $this->input->post('kabtxt') + false,
             'kecamatan' => $this->input->post('kectxt') + false,
             'kelurahan' => $this->input->post('keltxt') + false,
+            'kab_lain' => $this->input->post('kablain'),
+            'kec_lain' => $this->input->post('keclain'),
+            'kel_lain' => $this->input->post('kellain'),
             'upload_sk' => $param['upload_path'] . DIRECTORY_SEPARATOR . $upload['file_name'],
             'status' => 1 + false,
             'created_at' => date('Y-m-d H:i:s')
@@ -108,6 +124,7 @@ class Bkm extends CI_Controller {
             $msg = 'berhasil menyimpan data';
             $result = redirect(base_url('bkm-upload', $this->session->set_flashdata('suc_msg', $msg)));
         } else {
+            unlink($param['upload_path'] . DIRECTORY_SEPARATOR . $upload['file_name']);// untuk menghapus file jika gagal simpan DB
             $msg = 'kesalahan saat menyimpan data';
             $result = redirect(base_url('bkm-upload', $this->session->set_flashdata('err_msg', $msg)));
         }

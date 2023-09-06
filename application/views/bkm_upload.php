@@ -215,17 +215,13 @@
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
                             <div class="form-group mt-2">
-                                <label title="nama wajib diisi">Nama:<span class="text-danger">*</span></label>
-                                <input type="text" name="namatxt" required="" class="form-control" autocomplete="off"/>
-                            </div>
-                            <div class="form-group mt-2">
                                 <label  title="tingkat wajib diisi">Tingkat:<span class="text-danger">*</span></label>
                                 <select class="form-control" name="tingkattxt" required="" onchange="Tingkat(this.value)">
                                     <option value="">Pilih Tingkat</option>
                                     <option value="1">Provinsi</option>
-                                    <option value="2">Kabupaten</option>
+                                    <option value="2">Kabupaten/Kota</option>
                                     <option value="3">Kecamatan</option>
-                                    <option value="4">Kelurahan</option>
+                                    <option value="4">Kelurahan/Desa</option>
                                 </select>
                             </div>
                             <div class="form-group mt-2">
@@ -239,26 +235,30 @@
                                     ?>
                                 </select>
                             </div>
-                            <div class="form-group mt-2">
+                            <div id="grkab" class="form-group mt-2">
                                 <label>Kabupaten:</label>
-                                <select id="kabupaten" name="kabtxt" class="form-control custom-select" onchange="Kecamatan(this.value)" disabled=""></select>
+                                <select id="kabupaten" name="kabtxt" class="form-control custom-select" onchange="Kabupaten(this.value);" disabled=""></select>
                             </div>
-                            <div class="form-group mt-2">
+                            <div id="grkec" class="form-group mt-2">
                                 <label>Kecamatan:</label>
-                                <select id="kecamatan" name="kectxt" class="form-control custom-select" onchange="Kelurahan(this.value)" disabled=""></select>
+                                <select id="kecamatan" name="kectxt" class="form-control custom-select" onchange="Kecamatan(this.value);" disabled=""></select>
                             </div>
-                            <div class="form-group mt-2">
+                            <div id="grkel" class="form-group mt-2">
                                 <label>Kelurahan:</label>
-                                <select id="kelurahan" name="keltxt" class="form-control custom-select" disabled=""></select>
-                            </div>
-                            <div class="form-group mt-2">
-                                <label title="alamat wajib diisi">Alamat:<span class="text-danger">*</span></label>
-                                <textarea class="form-control" name="alamat" required="" rows="4"></textarea>
+                                <select id="kelurahan" name="keltxt" class="form-control custom-select" onchange="Kelurahan(this.value);" disabled=""></select>
                             </div>
                             <div class="form-group mt-2">
                                 <label title="SK wajib diisi">SK BKM:<span class="text-danger">*</span></label>
                                 <input type="file" name="bkmtxt" class="form-control" required="" accept="image/*,.pdf,.docx "/>
                                 <i>ukuran maksimal 2mb</i>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label title="nama wajib diisi">Nama Pengurus BKM:<span class="text-danger">*</span></label>
+                                <input type="text" name="namatxt" required="" class="form-control" autocomplete="off"/>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label title="nomor wajib diisi">Telepon Pengurus BKM:<span class="text-danger">*</span></label>
+                                <input type="text" name="nomortxt" required="" class="form-control" autocomplete="off" maxlength="13" placeholder="081234567890"/>
                             </div>
                             <div class="text-center mt-5">
                                 <button type="submit" class="btn btn-success">Kirim</button>
@@ -320,9 +320,16 @@
                     }
                 });
             }
-            function Kecamatan(id) {
+            function Kabupaten(id) {
                 $('#kelurahan').children('option').remove();
-                $.ajax({
+                var lainya = $('#kabupaten option:selected').text();
+                if(lainya == 'Lainnya'){
+                    $('#grkab').append('<input id="kablain" name="kablain" class="form-control mt-4" required=""/>');
+                } else if(lainya == 'Pilih Kabupaten'){
+                    $('#kablain').remove();
+                } else {
+                    $('#kablain').remove();
+                    $.ajax({
                     url: "<?php echo base_url('bkm-getkec?id_kec='); ?>" + id,
                     type: 'get',
                     dataType: 'json',
@@ -345,10 +352,18 @@
                                 );
                     }
                 });
+                }
             }
-            function Kelurahan(id) {
+            function Kecamatan(id) {
                 $('#kelurahan').children('option').remove();
-                $.ajax({
+                var lainya = $('#kecamatan option:selected').text();
+                if(lainya == 'Lainnya'){
+                    $('#grkec').append('<input id="keclain" name="keclain" class="form-control mt-4" required=""/>');
+                } else if(lainya == 'Pilih Kecamatan'){
+                    $('#keclain').remove();
+                } else {
+                    $('#keclain').remove();
+                    $.ajax({
                     url: "<?php echo base_url('bkm-getkel?id_kec='); ?>" + id,
                     type: 'get',
                     dataType: 'json',
@@ -371,6 +386,17 @@
                                 );
                     }
                 });
+                }
+            }
+            function Kelurahan(val){
+                var lainya = $('#kelurahan option:selected').text();
+                if(lainya == 'Lainnya'){
+                    $('#grkel').append('<input id="kellain" name="kellain" class="form-control mt-4" required=""/>');
+                } else if(lainya == 'Pilih Kecamatan'){
+                    $('#kellain').remove();
+                } else {
+                    $('#kellain').remove();
+                }
             }
         </script>
         <!-- ================ start footer Area ================= -->
