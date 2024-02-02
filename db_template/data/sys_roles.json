@@ -1,0 +1,30 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "parent_id": 0,
+      "name": "Super User",
+      "description": "Super administrators",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-2-25 02:27:34",
+      "sysupdateuser": 1,
+      "sysupdatedate": "2021-3-8 08:29:08",
+      "sysdeleteuser": 1,
+      "sysdeletedate": "2021-6-8 23:51:23"
+    },
+    {
+      "id": 2,
+      "parent_id": 0,
+      "name": "administrator",
+      "description": "administrator",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2022-9-28 20:23:55",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    }
+  ]
+}

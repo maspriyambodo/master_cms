@@ -1,0 +1,30 @@
+{
+  "RECORDS": [
+    {
+      "id": "DEFAULT_PASSWORD",
+      "param_group": "SYSTEM_PARAM",
+      "param_value": "password",
+      "param_desc": "default password system",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-12-8 14:39:44",
+      "sysupdateuser": 1,
+      "sysupdatedate": "2021-12-8 22:18:03",
+      "sysdeleteuser": 1,
+      "sysdeletedate": "2021-12-8 22:37:16"
+    },
+    {
+      "id": "SUPER_USER",
+      "param_group": "GROUP_LEVEL",
+      "param_value": "1",
+      "param_desc": "super user",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-12-8 12:20:36",
+      "sysupdateuser": 1,
+      "sysupdatedate": "2021-12-8 23:14:24",
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    }
+  ]
+}

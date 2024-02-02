@@ -1,0 +1,124 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "nama": "PHOTO PRODUCT",
+      "desc": "Hasil Foto dapat digunakan untuk memperindah Produk, Meningkatkan Penjualan / Omset, dan Memajukan Perusahaan tanpa menambah atau mengurangi keaslian Produk.",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    },
+    {
+      "id": 2,
+      "nama": "PHOTO & VIDEO PRODUCT",
+      "desc": "Hasil Foto dapat digunakan untuk memperindah Produk, Meningkatkan Penjualan / Omset, dan Memajukan Perusahaan tanpa menambah atau mengurangi keaslian Produk.",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    },
+    {
+      "id": 3,
+      "nama": "PHOTO & VIDEO DOKUMENTASI",
+      "desc": "Kami membantu Dokumentasi dalam sebuah Acara berbentuk digital berupa Foto & Video. yang dikemas dengan menarik dan Modern.",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    },
+    {
+      "id": 4,
+      "nama": "PHOTOBOOTH",
+      "desc": "Photobooth bisa juga dijadikan souvenir untuk semua kebutuhan acara anda.",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    },
+    {
+      "id": 5,
+      "nama": "PHOTOBOOTH MATRIX",
+      "desc": "Dengan menggunakan banyak kamera yang mengambil gambar secara bersamaan dari berbagai arah.",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    },
+    {
+      "id": 6,
+      "nama": "PHOTO & VIDEO ENGAGEMENT",
+      "desc": "Dengan menggunakan banyak kamera yang mengambil gambar secara bersamaan dari berbagai arah.",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": 1,
+      "sysupdatedate": "2021-8-20 19:52:34",
+      "sysdeleteuser": 1,
+      "sysdeletedate": "2021-8-20 19:52:15"
+    },
+    {
+      "id": 7,
+      "nama": "PHOTO & VIDEO PREWEDDING",
+      "desc": null,
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    },
+    {
+      "id": 8,
+      "nama": "PHOTO & VIDEO WEDDING",
+      "desc": null,
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    },
+    {
+      "id": 9,
+      "nama": "PHOTO & VIDEO BIRTHDAY",
+      "desc": null,
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 18:48:23",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    },
+    {
+      "id": 10,
+      "nama": "Lorem Ipsum(edit)",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "stat": 0,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-7-19 19:54:49",
+      "sysupdateuser": 1,
+      "sysupdatedate": "2021-7-21 18:26:16",
+      "sysdeleteuser": 1,
+      "sysdeletedate": "2021-7-21 18:26:34"
+    }
+  ]
+}

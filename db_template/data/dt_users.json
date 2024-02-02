@@ -1,0 +1,52 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "sys_user_id": 1,
+      "nama": "XNXX",
+      "jenis_kelamin": 1,
+      "id_number": "3175061303940001",
+      "lahir_1": "JAKARTA",
+      "lahir_2": "1994-3-13",
+      "address_1": "Jl. Raya Penggilingan No. 45",
+      "address_provinsi": "31",
+      "address_kabupaten": "3175",
+      "address_kecamatan": "317506",
+      "address_kelurahan": "3175061003",
+      "negara": 101,
+      "mail": "maspriyambodo@gmail.com",
+      "telp": "081282309100",
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "1970-1-1 00:00:00",
+      "sysupdateuser": 1,
+      "sysupdatedate": "2021-9-12 05:59:33",
+      "sysdeleteuser": 1,
+      "sysdeletedate": "1970-1-1 00:00:00"
+    },
+    {
+      "id": 2,
+      "sys_user_id": 2,
+      "nama": null,
+      "jenis_kelamin": 0,
+      "id_number": null,
+      "lahir_1": null,
+      "lahir_2": null,
+      "address_1": null,
+      "address_provinsi": null,
+      "address_kabupaten": null,
+      "address_kecamatan": null,
+      "address_kelurahan": null,
+      "negara": 101,
+      "mail": null,
+      "telp": null,
+      "stat": 1,
+      "syscreateuser": 1,
+      "syscreatedate": "2022-9-28 20:25:29",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    }
+  ]
+}

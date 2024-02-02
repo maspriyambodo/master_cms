@@ -1,0 +1,25 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "mail": null,
+      "nama": null,
+      "platform": "Linux",
+      "stat": 1
+    },
+    {
+      "id": 2,
+      "mail": null,
+      "nama": null,
+      "platform": "Linux",
+      "stat": 1
+    },
+    {
+      "id": 3,
+      "mail": "maspriyambodo@gmail.com",
+      "nama": "bod",
+      "platform": "Linux",
+      "stat": 1
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "RECORDS": [
+    {
+      "id": 1,
+      "uname": "bod",
+      "pwd": "$2y$10$BE6bAPmNz0Hh1g5yL3Tk6Ov4j1HYs55ngBwSH8FHpyUY4Go7zVx6i",
+      "role_id": 1,
+      "pict": "users12_055933.jpg",
+      "stat": 1,
+      "last_login": "2024-1-30 13:31:14",
+      "ip_address": "162.158.189.235",
+      "login_attempt": 0,
+      "syscreateuser": 1,
+      "syscreatedate": "2021-3-7 23:06:13",
+      "sysupdateuser": 1,
+      "sysupdatedate": "2021-9-12 05:59:33",
+      "sysdeleteuser": 0,
+      "sysdeletedate": "2021-7-8 00:09:25"
+    },
+    {
+      "id": 2,
+      "uname": "anna",
+      "pwd": "$2y$10$WrXxI5J9FIGHKxedNh2opOyxiSaCkjlSaumq.n3EA8hUX4vicA/Ji",
+      "role_id": 2,
+      "pict": "blank.png",
+      "stat": 1,
+      "last_login": "2022-12-7 15:25:52",
+      "ip_address": "10.11.11.1",
+      "login_attempt": 0,
+      "syscreateuser": 1,
+      "syscreatedate": "2022-9-28 20:25:29",
+      "sysupdateuser": null,
+      "sysupdatedate": null,
+      "sysdeleteuser": null,
+      "sysdeletedate": null
+    }
+  ]
+}
