@@ -62,4 +62,51 @@ class C_procie extends CI_Controller {
         $this->db_pc->insert_batch('dt_procie', $data);
         echo 'update success';
     }
+
+    public function Set_procie_amd() {
+        $curl = curl_init();
+        curl_setopt_array($curl, [
+            CURLOPT_URL => base_url('data_enterkomputer/procie/amd/procie_amd.json'),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Cookie: AGS_ROLES="419jqfa+uOZgYod4xPOQ8Q=="'
+            )
+        ]);
+        $response = curl_exec($curl);
+        curl_close($curl);
+        $jso = json_decode($response, true);
+        $data = [];
+        $tot_data = count($jso['PCHLD']);
+        for ($index = 0; $index < $tot_data; $index++) {
+//            $jso['PCHLD'][$index]['PCHLD']
+//            $jso['PCHLD'][$index2]['PLIST'][$index2]['PCODE']
+            for ($index2 = 0; $index2 < count($jso['PCHLD'][$index]['PLIST']); $index2++) {
+                $procie = explode('Socket', $jso['PCHLD'][$index]['PCHLD']);
+                $data[] = [
+                    'pcode' => $jso['PCHLD'][$index]['PLIST'][$index2]['PCODE'],
+                    'nama_core' => trim($procie[0]),
+                    'nama' => $jso['PCHLD'][$index]['PLIST'][$index2]['PNAME'],
+                    'socket' => trim($procie[1]),
+                    'id_procie_category' => 1,
+                    'berat' => $jso['PCHLD'][$index]['PLIST'][$index2]['PWGHT'],
+                    'qty' => $jso['PCHLD'][$index]['PLIST'][$index2]['PQTTY'],
+                    'harga_modal' => $jso['PCHLD'][$index]['PLIST'][$index2]['PPRCZ'][0],
+                    'harga_jual' => ($jso['PCHLD'][$index]['PLIST'][$index2]['PPRCZ'][0] + ($jso['PCHLD'][$index]['PLIST'][$index2]['PPRCZ'][0] * 0.1)),
+                    'link' => 'https://enterkomputer.com/detail/' . $jso['PCHLD'][$index]['PLIST'][$index2]['PCODE'] . '/' . $jso['PCHLD'][$index]['PLIST'][$index2]['PLINK'],
+                    'stat' => $jso['PCHLD'][$index]['PLIST'][$index2]['PSTTS'],
+                    'syscreateuser' => 1,
+                    'syscreatedate' => date('Y-m-d H:i:s')
+                ];
+            }
+        }
+//        print_array($data);
+        $this->db_pc->insert_batch('dt_procie', $data);
+        echo 'update success';
+    }
 }
