@@ -1,0 +1,278 @@
+{
+	"0": {
+		"PPRNT": "Liquid Cooler / Water Cooler",
+		"PCHLD": [
+			{
+				"PCHLD": "Antec",
+				"PLIST": [
+					{
+						"KCODE": 4,
+						"KNAME": "Cooler",
+						"SCODE": 593,
+						"BCODE": 27,
+						"PCODE": 182187,
+						"PNAME": "Antec Vortex 360 ARGB Liquid Cooler - Suspended Spiral Pump Head Design - 3x Fusion 120 PWM ARGB Fan",
+						"PPRCZ": [
+							1950000,
+							0,
+							0,
+							0
+						],
+						"PWGHT": 2500,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "T171522",
+						"PLINK": "Antec-Vortex-360-ARGB-Liquid-Cooler-Suspended-Spiral-Pump-Head-Design-3x-Fusion-120-PWM-ARGB-Fan",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2022/12/6/004549d0-08f0-4629-b292-e1a12e85245c.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Antec%2520Vortex%2520360%2520ARGB%2520Liquid%2520Cooler%2520-%2520Suspended%2520Spiral%2520Pump%2520Head%2520Design%2520-%25203x%2520Fusion%2520120%2520PWM%2520ARGB%2520Fan_%252A%250A%252ASKU%253A%252A%2520182187%250A%252AHarga%253A%252A%2520Rp1.950.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F182187%252FAntec-Vortex-360-ARGB-Liquid-Cooler-Suspended-Spiral-Pump-Head-Design-3x-Fusion-120-PWM-ARGB-Fan",
+							"https://tokopedia.link/5c6NjIrLfCb",
+							"https://www.bukalapak.com/p/komputer/aksesoris-226/cooler-fan/4hj0oyd-jual-antec-vortex-360-argb-liquid-cooler-120-pwm-argb-fan",
+							"https://shopee.co.id/product/43570421/19667079525/",
+							"",
+							"http://blibli.com/product-detail-ENK.70018.00893.html",
+							""
+						]
+					},
+					{
+						"KCODE": 4,
+						"KNAME": "Cooler",
+						"SCODE": 593,
+						"BCODE": 27,
+						"PCODE": 182186,
+						"PNAME": "Antec Vortex 240 ARGB Liquid Cooler - Suspended Spiral Pump Head Design - 2x Fusion 120 PWM ARGB Fan",
+						"PPRCZ": [
+							1650000,
+							0,
+							0,
+							0
+						],
+						"PWGHT": 1500,
+						"PQTTY": 20,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "DY0U622",
+						"PLINK": "Antec-Vortex-240-ARGB-Liquid-Cooler-Suspended-Spiral-Pump-Head-Design-2x-Fusion-120-PWM-ARGB-Fan",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2022/12/6/ba6a66e1-a572-4f5a-b7ff-f44f873449bc.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Antec%2520Vortex%2520240%2520ARGB%2520Liquid%2520Cooler%2520-%2520Suspended%2520Spiral%2520Pump%2520Head%2520Design%2520-%25202x%2520Fusion%2520120%2520PWM%2520ARGB%2520Fan_%252A%250A%252ASKU%253A%252A%2520182186%250A%252AHarga%253A%252A%2520Rp1.650.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F182186%252FAntec-Vortex-240-ARGB-Liquid-Cooler-Suspended-Spiral-Pump-Head-Design-2x-Fusion-120-PWM-ARGB-Fan",
+							"https://tokopedia.link/BcOgafmLfCb",
+							"https://www.bukalapak.com/p/komputer/aksesoris-226/cooler-fan/4hj0oj4-jual-antec-vortex-240-argb-liquid-cooler-120-pwm-argb-fan",
+							"https://shopee.co.id/product/43570421/19067077771/",
+							"",
+							"http://blibli.com/product-detail-ENK.70018.00894.html",
+							""
+						]
+					},
+					{
+						"KCODE": 4,
+						"KNAME": "Cooler",
+						"SCODE": 593,
+						"BCODE": 27,
+						"PCODE": 177517,
+						"PNAME": "Antec Symphony 360 ARGB WHITE Liquid Cooler - Mirror ARGB Lighting Pump Head with ARGB PWM Fan",
+						"PPRCZ": [
+							1650000,
+							1490000,
+							160000,
+							0
+						],
+						"PWGHT": 2800,
+						"PQTTY": 2,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "7CRB222",
+						"PLINK": "Antec-Symphony-360-ARGB-WHITE-Liquid-Cooler-Mirror-ARGB-Lighting-Pump-Head-with-ARGB-PWM-Fan",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/VqbcmM/2022/4/18/2d539981-7bd6-4550-896f-af0d4895b690.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Antec%2520Symphony%2520360%2520ARGB%2520WHITE%2520Liquid%2520Cooler%2520-%2520Mirror%2520ARGB%2520Lighting%2520Pump%2520Head%2520with%2520ARGB%2520PWM%2520Fan_%252A%250A%252ASKU%253A%252A%2520177517%250A%252AHarga%253A%252A%2520Rp1.650.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F177517%252FAntec-Symphony-360-ARGB-WHITE-Liquid-Cooler-Mirror-ARGB-Lighting-Pump-Head-with-ARGB-PWM-Fan",
+							"https://tokopedia.link/BM9AiL5tfCb",
+							"https://www.bukalapak.com/p/komputer/aksesoris-226/cooler-fan/4h7ourd-jual-antec-symphony-360-argb-white-liquid-cooler-mirror-argb-lighting",
+							"https://shopee.co.id/product/43570421/14877935288/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 4,
+						"KNAME": "Cooler",
+						"SCODE": 593,
+						"BCODE": 27,
+						"PCODE": 177518,
+						"PNAME": "Antec Symphony 360 ARGB Liquid Cooler - Mirror ARGB Lighting Pump Head with ARGB PWM Fan",
+						"PPRCZ": [
+							1550000,
+							1450000,
+							100000,
+							0
+						],
+						"PWGHT": 2800,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "6SX6U22",
+						"PLINK": "Antec-Symphony-360-ARGB-Liquid-Cooler-Mirror-ARGB-Lighting-Pump-Head-with-ARGB-PWM-Fan",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/VqbcmM/2022/4/18/9cbad837-f68a-41e9-8806-f82339b2ce1b.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Antec%2520Symphony%2520360%2520ARGB%2520Liquid%2520Cooler%2520-%2520Mirror%2520ARGB%2520Lighting%2520Pump%2520Head%2520with%2520ARGB%2520PWM%2520Fan_%252A%250A%252ASKU%253A%252A%2520177518%250A%252AHarga%253A%252A%2520Rp1.550.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F177518%252FAntec-Symphony-360-ARGB-Liquid-Cooler-Mirror-ARGB-Lighting-Pump-Head-with-ARGB-PWM-Fan",
+							"https://tokopedia.link/y2aRC1PpfCb",
+							"https://www.bukalapak.com/p/komputer/aksesoris-226/cooler-fan/4h7ouhy-jual-antec-symphony-360-argb-liquid-cooler-mirror-argb-lighting-pump-head",
+							"https://shopee.co.id/product/43570421/17054915146/",
+							"",
+							"https://www.blibli.com/p/antec-symphony-360-argb-liquid-cooler-mirror-argb-lighting-pump-head/ps--ENK-70018-01026",
+							""
+						]
+					},
+					{
+						"KCODE": 4,
+						"KNAME": "Cooler",
+						"SCODE": 593,
+						"BCODE": 27,
+						"PCODE": 177519,
+						"PNAME": "Antec Symphony 240 ARGB Liquid Cooler - Mirror ARGB Lighting Pump Head with ARGB PWM Fan",
+						"PPRCZ": [
+							1280000,
+							1180000,
+							100000,
+							0
+						],
+						"PWGHT": 1800,
+						"PQTTY": 3,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "3PA7F22",
+						"PLINK": "Antec-Symphony-240-ARGB-Liquid-Cooler-Mirror-ARGB-Lighting-Pump-Head-with-ARGB-PWM-Fan",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/VqbcmM/2022/4/18/188f3abd-89ad-4599-954d-23fcf422d524.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Antec%2520Symphony%2520240%2520ARGB%2520Liquid%2520Cooler%2520-%2520Mirror%2520ARGB%2520Lighting%2520Pump%2520Head%2520with%2520ARGB%2520PWM%2520Fan_%252A%250A%252ASKU%253A%252A%2520177519%250A%252AHarga%253A%252A%2520Rp1.280.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F177519%252FAntec-Symphony-240-ARGB-Liquid-Cooler-Mirror-ARGB-Lighting-Pump-Head-with-ARGB-PWM-Fan",
+							"https://tokopedia.link/XJ513yNpfCb",
+							"https://www.bukalapak.com/p/komputer/aksesoris-226/cooler-fan/4h7orvy-jual-antec-symphony-240-argb-liquid-cooler-mirror-argb-lighting-pump-head",
+							"https://shopee.co.id/product/43570421/14777942173/",
+							"",
+							"https://www.blibli.com/p/antec-symphony-240-argb-liquid-cooler-mirror-argb-lighting-pump-head/ps--ENK-70018-01025",
+							""
+						]
+					},
+					{
+						"KCODE": 4,
+						"KNAME": "Cooler",
+						"SCODE": 593,
+						"BCODE": 27,
+						"PCODE": 166397,
+						"PNAME": "Antec Neptune 240 ARGB - 240mm AIO ARGB LIQUID CPU COOLER",
+						"PPRCZ": [
+							1363000,
+							1350000,
+							13000,
+							0
+						],
+						"PWGHT": 1500,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "00VR520",
+						"PLINK": "Antec-Neptune-240-ARGB-240mm-AIO-ARGB-LIQUID-CPU-COOLER",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/VqbcmM/2021/9/28/adccfa49-3f2d-42e4-987f-991df30c7fd9.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Antec%2520Neptune%2520240%2520ARGB%2520-%2520240mm%2520AIO%2520ARGB%2520LIQUID%2520CPU%2520COOLER_%252A%250A%252ASKU%253A%252A%2520166397%250A%252AHarga%253A%252A%2520Rp1.363.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F166397%252FAntec-Neptune-240-ARGB-240mm-AIO-ARGB-LIQUID-CPU-COOLER",
+							"https://tokopedia.com/enterkomputer/antec-neptune-240-argb-240mm-aio-argb-liquid-cpu-cooler",
+							"https://www.bukalapak.com/p/komputer/aksesoris-226/aksesoris-lainnya-241/3hjo91n-jual-antec-neptune-240-argb-240mm-aio-argb-liquid-cpu-cooler",
+							"https://shopee.co.id/Antec-Neptune-240-ARGB-240mm-AIO-ARGB-LIQUID-CPU-COOLER-i.43570421.4141227668",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 4,
+						"KNAME": "Cooler",
+						"SCODE": 593,
+						"BCODE": 27,
+						"PCODE": 163777,
+						"PNAME": "Antec Neptune 120 ARGB - 120mm AIO ARGB LIQUID CPU COOLER",
+						"PPRCZ": [
+							1060000,
+							1050000,
+							10000,
+							0
+						],
+						"PWGHT": 2000,
+						"PQTTY": 15,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "XC3X319",
+						"PLINK": "Antec-Neptune-120-ARGB-120mm-AIO-ARGB-LIQUID-CPU-COOLER",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/VqbcmM/2021/9/28/63802cf7-d932-4aea-ad43-ec3e6a9306fa.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Antec%2520Neptune%2520120%2520ARGB%2520-%2520120mm%2520AIO%2520ARGB%2520LIQUID%2520CPU%2520COOLER_%252A%250A%252ASKU%253A%252A%2520163777%250A%252AHarga%253A%252A%2520Rp1.060.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F163777%252FAntec-Neptune-120-ARGB-120mm-AIO-ARGB-LIQUID-CPU-COOLER",
+							"https://tokopedia.link/ZfGVvPXEaCb",
+							"https://www.bukalapak.com/p/komputer/aksesoris-226/cooler-fan/2l87pkh-jual-antec-neptune-120-argb-120mm-aio-argb-liquid-cpu-cooler",
+							"https://shopee.co.id/product/43570421/6711462791",
+							"",
+							"http://blibli.com/product-detail-ENK.70018.00153.html",
+							""
+						]
+					}
+				]
+			}
+		]
+	}
+}

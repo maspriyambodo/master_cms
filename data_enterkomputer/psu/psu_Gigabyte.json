@@ -1,0 +1,276 @@
+{
+	"26": {
+		"PPRNT": "Gigabyte",
+		"PCHLD": [
+			{
+				"PCHLD": "",
+				"PLIST": [
+					{
+						"KCODE": 19,
+						"KNAME": "PSU",
+						"SCODE": 0,
+						"BCODE": 162,
+						"PCODE": 183293,
+						"PNAME": "Gigabyte P450B 450W 80+ Bronze",
+						"PPRCZ": [
+							580000,
+							590000,
+							-10000,
+							1.69
+						],
+						"PWGHT": 3000,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "CSVHF23",
+						"PLINK": "Gigabyte-P450B-450W-80-Bronze",
+						"PIMGZ": null,
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Gigabyte%2520P450B%2520450W%252080%252B%2520Bronze_%252A%250A%252ASKU%253A%252A%2520183293%250A%252AHarga%253A%252A%2520Rp580.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F183293%252FGigabyte-P450B-450W-80-Bronze",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 19,
+						"KNAME": "PSU",
+						"SCODE": 0,
+						"BCODE": 162,
+						"PCODE": 167247,
+						"PNAME": "Gigabyte P550B 550W 80+ Bronze",
+						"PPRCZ": [
+							659000,
+							670000,
+							-11000,
+							1.64
+						],
+						"PWGHT": 3000,
+						"PQTTY": 44,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "AX1NS20",
+						"PLINK": "Gigabyte-P550B-550W-80-Bronze",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/VqbcmM/2021/11/2/8c05a5af-82ce-453f-891b-c656c87e024f.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Gigabyte%2520P550B%2520550W%252080%252B%2520Bronze_%252A%250A%252ASKU%253A%252A%2520167247%250A%252AHarga%253A%252A%2520Rp659.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F167247%252FGigabyte-P550B-550W-80-Bronze",
+							"https://tokopedia.link/LieEmKxocCb",
+							"",
+							"https://shopee.co.id/product/43570421/5755088090/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 19,
+						"KNAME": "PSU",
+						"SCODE": 0,
+						"BCODE": 162,
+						"PCODE": 162431,
+						"PNAME": "Gigabyte P650B 650W 80+ Bronze",
+						"PPRCZ": [
+							820000,
+							825000,
+							-5000,
+							0.61
+						],
+						"PWGHT": 4000,
+						"PQTTY": 29,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "7ND7719",
+						"PLINK": "Gigabyte-P650B-650W-80-Bronze",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/VqbcmM/2021/11/2/5520cb16-2eff-463c-995f-f56005f3b99e.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Gigabyte%2520P650B%2520650W%252080%252B%2520Bronze_%252A%250A%252ASKU%253A%252A%2520162431%250A%252AHarga%253A%252A%2520Rp820.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F162431%252FGigabyte-P650B-650W-80-Bronze",
+							"https://tokopedia.link/vpm1O2DocCb",
+							"",
+							"https://shopee.co.id/product/43570421/3655961543/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 19,
+						"KNAME": "PSU",
+						"SCODE": 0,
+						"BCODE": 162,
+						"PCODE": 177786,
+						"PNAME": "Gigabyte GP-UD750GM 750W 80+ Gold - Fully Modular",
+						"PPRCZ": [
+							1582000,
+							1640000,
+							-58000,
+							3.54
+						],
+						"PWGHT": 4000,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "V205V22",
+						"PLINK": "Gigabyte-GP-UD750GM-750W-80-Gold-Fully-Modular",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/5/9/c2e02021-aedf-457e-85b8-32da7c523ebf.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Gigabyte%2520GP-UD750GM%2520750W%252080%252B%2520Gold%2520-%2520Fully%2520Modular_%252A%250A%252ASKU%253A%252A%2520177786%250A%252AHarga%253A%252A%2520Rp1.582.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F177786%252FGigabyte-GP-UD750GM-750W-80-Gold-Fully-Modular",
+							"https://tokopedia.com/enterkomputer/gigabyte-gp-ud750gm-750w-80-gold-fully-modular-psu-750w",
+							"",
+							"https://shopee.co.id/product/43570421/20179713166/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 19,
+						"KNAME": "PSU",
+						"SCODE": 0,
+						"BCODE": 162,
+						"PCODE": 183292,
+						"PNAME": "Gigabyte GP-UD850GM PG5 850W 80+ Gold - Fully Modular",
+						"PPRCZ": [
+							1789000,
+							1805000,
+							-16000,
+							0.89
+						],
+						"PWGHT": 4500,
+						"PQTTY": 4,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "ZZJC223",
+						"PLINK": "Gigabyte-GP-UD850GM-PG5-850W-80-Gold-Fully-Modular",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/2/9/0730dbd7-7484-47b0-bff3-93fd5dd3ab22.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Gigabyte%2520GP-UD850GM%2520PG5%2520850W%252080%252B%2520Gold%2520-%2520Fully%2520Modular_%252A%250A%252ASKU%253A%252A%2520183292%250A%252AHarga%253A%252A%2520Rp1.789.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F183292%252FGigabyte-GP-UD850GM-PG5-850W-80-Gold-Fully-Modular",
+							"https://tokopedia.com/enterkomputer/gigabyte-gp-ud850gm-pg5-850w-80-gold-fully-modular-psu-850w",
+							"https://www.bukalapak.com/p/komputer/hardware/ups/4hlk8km-jual-gigabyte-gp-ud850gm-pg5-850w-80-gold-fully-modular-psu-850w",
+							"https://shopee.co.id/product/43570421/22723898903/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 19,
+						"KNAME": "PSU",
+						"SCODE": 0,
+						"BCODE": 162,
+						"PCODE": 177787,
+						"PNAME": "Gigabyte GP-UD1000GM PG5 1000W 80+ Gold - Fully Modular",
+						"PPRCZ": [
+							2789000,
+							2805000,
+							-16000,
+							0.57
+						],
+						"PWGHT": 5000,
+						"PQTTY": 4,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "PDMEN22",
+						"PLINK": "Gigabyte-GP-UD1000GM-PG5-1000W-80-Gold-Fully-Modular",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2022/7/28/c85f35eb-9a01-4e03-b633-7c5ef6c48eee.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Gigabyte%2520GP-UD1000GM%2520PG5%25201000W%252080%252B%2520Gold%2520-%2520Fully%2520Modular_%252A%250A%252ASKU%253A%252A%2520177787%250A%252AHarga%253A%252A%2520Rp2.789.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F177787%252FGigabyte-GP-UD1000GM-PG5-1000W-80-Gold-Fully-Modular",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 19,
+						"KNAME": "PSU",
+						"SCODE": 0,
+						"BCODE": 162,
+						"PCODE": 167764,
+						"PNAME": "Gigabyte Aorus GP-AP850GM 850W 80+ Gold - Fully Modular",
+						"PPRCZ": [
+							1992000,
+							2098000,
+							-106000,
+							5.05
+						],
+						"PWGHT": 4000,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "A1Q4C20",
+						"PLINK": "Gigabyte-Aorus-GP-AP850GM-850W-80-Gold-Fully-Modular",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/VqbcmM/2021/11/2/e4aeeaee-bf30-4487-8be2-1b23f4874436.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Gigabyte%2520Aorus%2520GP-AP850GM%2520850W%252080%252B%2520Gold%2520-%2520Fully%2520Modular_%252A%250A%252ASKU%253A%252A%2520167764%250A%252AHarga%253A%252A%2520Rp1.992.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F167764%252FGigabyte-Aorus-GP-AP850GM-850W-80-Gold-Fully-Modular",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,506 @@
+{
+	"9": {
+		"PPRNT": "Sapphire",
+		"PCHLD": [
+			{
+				"PCHLD": "radeon",
+				"PLIST": [
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 182403,
+						"PNAME": "Sapphire NITRO+ Radeon RX 7900 XTX 24GB GDDR6 Gaming OC Vapor-X",
+						"PPRCZ": [
+							20300000,
+							20489000,
+							-189000,
+							0.92
+						],
+						"PWGHT": 4000,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "UD99Y22",
+						"PLINK": "Sapphire-NITRO-Radeon-RX-7900-XTX-24GB-GDDR6-Gaming-OC-Vapor-X",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2024/1/3/884016dd-ae68-4f2e-830c-7f39dc421039.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520NITRO%252B%2520Radeon%2520RX%25207900%2520XTX%252024GB%2520GDDR6%2520Gaming%2520OC%2520Vapor-X_%252A%250A%252ASKU%253A%252A%2520182403%250A%252AHarga%253A%252A%2520Rp20.300.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F182403%252FSapphire-NITRO-Radeon-RX-7900-XTX-24GB-GDDR6-Gaming-OC-Vapor-X",
+							"https://tokopedia.com/enterkomputer/sapphire-nitro-radeon-rx-7900-xtx-24gb-gddr6-gaming-oc-vapor-x",
+							"",
+							"https://shopee.co.id/product/43570421/25406724606/",
+							"",
+							"https://www.blibli.com/p/sapphire-nitro-radeon-rx-7900-xtx-24gb-gddr6-gaming-oc-vapor-x/ps--ENK-70018-01912",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 183317,
+						"PNAME": "Sapphire PULSE Radeon RX 7900 XTX 24GB GDDR6 Gaming OC",
+						"PPRCZ": [
+							17000000,
+							17091000,
+							-91000,
+							0.53
+						],
+						"PWGHT": 4000,
+						"PQTTY": 8,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "W26S023",
+						"PLINK": "Sapphire-PULSE-Radeon-RX-7900-XTX-24GB-GDDR6-Gaming-OC",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2024/1/4/fa1ef0a6-c3ce-43a1-b0ca-6894af93ed72.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520PULSE%2520Radeon%2520RX%25207900%2520XTX%252024GB%2520GDDR6%2520Gaming%2520OC_%252A%250A%252ASKU%253A%252A%2520183317%250A%252AHarga%253A%252A%2520Rp17.000.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F183317%252FSapphire-PULSE-Radeon-RX-7900-XTX-24GB-GDDR6-Gaming-OC",
+							"https://tokopedia.com/enterkomputer/sapphire-pulse-radeon-rx-7900-xtx-24gb-gddr6-gaming-oc",
+							"",
+							"https://shopee.co.id/product/43570421/25556739350/",
+							"",
+							"https://www.blibli.com/p/sapphire-pulse-radeon-rx-7900-xtx-24gb-gddr6-gaming-oc/ps--ENK-70018-01914",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 187481,
+						"PNAME": "Sapphire PULSE Radeon RX 7900 XT 20GB GDDR6 Gaming OC",
+						"PPRCZ": [
+							14000000,
+							0,
+							0,
+							0
+						],
+						"PWGHT": 3300,
+						"PQTTY": 3,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "9XA0S23",
+						"PLINK": "Sapphire-PULSE-Radeon-RX-7900-XT-20GB-GDDR6-Gaming-OC",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2024/1/3/5fa0de6f-809f-47f2-bacc-14c30214bfe4.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520PULSE%2520Radeon%2520RX%25207900%2520XT%252020GB%2520GDDR6%2520Gaming%2520OC_%252A%250A%252ASKU%253A%252A%2520187481%250A%252AHarga%253A%252A%2520Rp14.000.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F187481%252FSapphire-PULSE-Radeon-RX-7900-XT-20GB-GDDR6-Gaming-OC",
+							"https://tokopedia.com/enterkomputer/sapphire-pulse-radeon-rx-7900-xt-20gb-gddr6-gaming-oc",
+							"",
+							"https://shopee.co.id/product/43570421/25756730318/",
+							"",
+							"https://www.blibli.com/p/sapphire-pulse-radeon-rx-7900-xt-20gb-gddr6-gaming-oc/ps--ENK-70018-01913",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 185852,
+						"PNAME": "Sapphire NITRO+ Radeon RX 7800 XT 16GB GDDR6 Gaming OC",
+						"PPRCZ": [
+							9500000,
+							9525000,
+							-25000,
+							0.26
+						],
+						"PWGHT": 4500,
+						"PQTTY": 1,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "968X223",
+						"PLINK": "Sapphire-NITRO-Radeon-RX-7800-XT-16GB-GDDR6-Gaming-OC",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/9/7/28b26cb9-89de-4357-ab00-319860445cf4.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520NITRO%252B%2520Radeon%2520RX%25207800%2520XT%252016GB%2520GDDR6%2520Gaming%2520OC_%252A%250A%252ASKU%253A%252A%2520185852%250A%252AHarga%253A%252A%2520Rp9.500.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F185852%252FSapphire-NITRO-Radeon-RX-7800-XT-16GB-GDDR6-Gaming-OC",
+							"https://www.tokopedia.com/enterkomputer/sapphire-radeon-rx-7800-xt-16gb-gddr6-nitro",
+							"",
+							"https://shopee.co.id/product/43570421/21383899904/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 185983,
+						"PNAME": "Sapphire PURE Radeon RX 7800 XT 16GB GDDR6 Gaming OC",
+						"PPRCZ": [
+							8990000,
+							8940000,
+							50000,
+							0
+						],
+						"PWGHT": 2500,
+						"PQTTY": 19,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "XTPFD23",
+						"PLINK": "Sapphire-PURE-Radeon-RX-7800-XT-16GB-GDDR6-Gaming-OC",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/9/21/ab04a047-3a44-4ab6-bc8e-58e0cfb6cb15.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520PURE%2520Radeon%2520RX%25207800%2520XT%252016GB%2520GDDR6%2520Gaming%2520OC_%252A%250A%252ASKU%253A%252A%2520185983%250A%252AHarga%253A%252A%2520Rp8.990.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F185983%252FSapphire-PURE-Radeon-RX-7800-XT-16GB-GDDR6-Gaming-OC",
+							"https://www.tokopedia.com/enterkomputer/sapphire-radeon-rx-7800-xt-16gb-gddr6-pure",
+							"https://www.bukalapak.com/p/komputer/hardware/vga/4hpd8fp-jual-sapphire-radeon-rx-7800-xt-16gb-gddr6-pure",
+							"https://shopee.co.id/product/43570421/22855438332/",
+							"",
+							"https://www.blibli.com/p/product-detail/ps--ENK-70018-01605",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 185853,
+						"PNAME": "Sapphire PULSE Radeon RX 7800 XT 16GB GDDR6 Gaming",
+						"PPRCZ": [
+							8650000,
+							8649000,
+							1000,
+							0
+						],
+						"PWGHT": 4500,
+						"PQTTY": 14,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "V7R1323",
+						"PLINK": "Sapphire-PULSE-Radeon-RX-7800-XT-16GB-GDDR6-Gaming",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/9/7/9ec2d53a-9c2a-4511-bfad-6ba9639a8c93.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520PULSE%2520Radeon%2520RX%25207800%2520XT%252016GB%2520GDDR6%2520Gaming_%252A%250A%252ASKU%253A%252A%2520185853%250A%252AHarga%253A%252A%2520Rp8.650.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F185853%252FSapphire-PULSE-Radeon-RX-7800-XT-16GB-GDDR6-Gaming",
+							"https://www.tokopedia.com/enterkomputer/sapphire-radeon-rx-7800-xt-16gb-gddr6-pulse",
+							"",
+							"https://shopee.co.id/product/43570421/15098117646/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 185982,
+						"PNAME": "Sapphire NITRO+ Radeon RX 7700 XT 12GB GDDR6 Gaming OC",
+						"PPRCZ": [
+							8669000,
+							8690000,
+							-21000,
+							0.24
+						],
+						"PWGHT": 2300,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "V4AMW23",
+						"PLINK": "Sapphire-NITRO-Radeon-RX-7700-XT-12GB-GDDR6-Gaming-OC",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/9/21/0217b1c3-2362-41b3-83c4-cabbcc99d6a6.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520NITRO%252B%2520Radeon%2520RX%25207700%2520XT%252012GB%2520GDDR6%2520Gaming%2520OC_%252A%250A%252ASKU%253A%252A%2520185982%250A%252AHarga%253A%252A%2520Rp8.669.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F185982%252FSapphire-NITRO-Radeon-RX-7700-XT-12GB-GDDR6-Gaming-OC",
+							"https://www.tokopedia.com/enterkomputer/sapphire-radeon-rx-7700-xt-12gb-gddr6-nitro",
+							"https://www.bukalapak.com/p/komputer/hardware/vga/4hpd8k4-jual-sapphire-radeon-rx-7700-xt-12gb-gddr6-nitro",
+							"https://shopee.co.id/product/43570421/22780932978/",
+							"",
+							"https://www.blibli.com/p/product-detail/ps--ENK-70018-01606",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 185981,
+						"PNAME": "Sapphire PURE Radeon RX 7700 XT 12GB GDDR6 Gaming OC",
+						"PPRCZ": [
+							8069000,
+							8070000,
+							-1000,
+							0.01
+						],
+						"PWGHT": 2000,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "8QCWD23",
+						"PLINK": "Sapphire-PURE-Radeon-RX-7700-XT-12GB-GDDR6-Gaming-OC",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/9/21/9b4e046c-8db8-4eef-8c35-94663a0f995c.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520PURE%2520Radeon%2520RX%25207700%2520XT%252012GB%2520GDDR6%2520Gaming%2520OC_%252A%250A%252ASKU%253A%252A%2520185981%250A%252AHarga%253A%252A%2520Rp8.069.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F185981%252FSapphire-PURE-Radeon-RX-7700-XT-12GB-GDDR6-Gaming-OC",
+							"https://www.tokopedia.com/enterkomputer/sapphire-radeon-rx-7700-xt-12gb-gddr6-pure",
+							"https://www.bukalapak.com/p/komputer/hardware/vga/4hpd8nv-jual-sapphire-radeon-rx-7700-xt-12gb-gddr6-pure",
+							"https://shopee.co.id/product/43570421/23155436962/",
+							"",
+							"https://www.blibli.com/p/product-detail/ps--ENK-70018-01607",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 185854,
+						"PNAME": "Sapphire PULSE Radeon RX 7700 XT 12GB GDDR6 Gaming",
+						"PPRCZ": [
+							7870000,
+							7720000,
+							150000,
+							0
+						],
+						"PWGHT": 4500,
+						"PQTTY": 0,
+						"PTYPE": "standard",
+						"PSTTS": 0,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "WPMF323",
+						"PLINK": "Sapphire-PULSE-Radeon-RX-7700-XT-12GB-GDDR6-Gaming",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/9/7/cf45b386-7df5-464d-8e8c-e459abdf39c0.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520PULSE%2520Radeon%2520RX%25207700%2520XT%252012GB%2520GDDR6%2520Gaming_%252A%250A%252ASKU%253A%252A%2520185854%250A%252AHarga%253A%252A%2520Rp7.870.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F185854%252FSapphire-PULSE-Radeon-RX-7700-XT-12GB-GDDR6-Gaming",
+							"https://tokopedia.link/rAT7jXbfnDb",
+							"",
+							"https://shopee.co.id/product/43570421/22854051142/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 188121,
+						"PNAME": "Sapphire PULSE Radeon RX 7600 XT 16GB GDDR6 Gaming OC",
+						"PPRCZ": [
+							5490000,
+							0,
+							0,
+							0
+						],
+						"PWGHT": 1800,
+						"PQTTY": 25,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "ZAZ4524",
+						"PLINK": "Sapphire-PULSE-Radeon-RX-7600-XT-16GB-GDDR6-Gaming-OC",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2024/2/12/ccf4fca5-c1b6-486d-891f-524ede364c8f.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520PULSE%2520Radeon%2520RX%25207600%2520XT%252016GB%2520GDDR6%2520Gaming%2520OC_%252A%250A%252ASKU%253A%252A%2520188121%250A%252AHarga%253A%252A%2520Rp5.490.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F188121%252FSapphire-PULSE-Radeon-RX-7600-XT-16GB-GDDR6-Gaming-OC",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 184318,
+						"PNAME": "Sapphire PULSE Radeon RX 7600 8GB GDDR6 Gaming OC",
+						"PPRCZ": [
+							4500000,
+							4475000,
+							25000,
+							0
+						],
+						"PWGHT": 2000,
+						"PQTTY": 21,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "0NJSJ23",
+						"PLINK": "Sapphire-PULSE-Radeon-RX-7600-8GB-GDDR6-Gaming-OC",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2023/6/8/e4d061d1-f7c8-4454-baea-34c10a5ccd52.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520PULSE%2520Radeon%2520RX%25207600%25208GB%2520GDDR6%2520Gaming%2520OC_%252A%250A%252ASKU%253A%252A%2520184318%250A%252AHarga%253A%252A%2520Rp4.500.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F184318%252FSapphire-PULSE-Radeon-RX-7600-8GB-GDDR6-Gaming-OC",
+							"https://tokopedia.link/30iZW1dr7Bb",
+							"https://www.bukalapak.com/p/komputer/hardware/vga/4hn7jos-jual-sapphire-radeon-rx-7600-8gb-gddr6-pulse",
+							"https://shopee.co.id/product/43570421/22170343377/",
+							"",
+							"https://www.blibli.com/p/product-detail/ps--ENK-70018-01351",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 173890,
+						"PNAME": "Sapphire Radeon RX 6600 8GB DDR6 Pulse",
+						"PPRCZ": [
+							3425000,
+							3415000,
+							10000,
+							0
+						],
+						"PWGHT": 1500,
+						"PQTTY": 17,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "ZE1JF21",
+						"PLINK": "Sapphire-Radeon-RX-6600-8GB-DDR6-Pulse",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2021/12/2/f8a2b129-5093-404e-bf23-db71555f8ab9.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520Radeon%2520RX%25206600%25208GB%2520DDR6%2520Pulse_%252A%250A%252ASKU%253A%252A%2520173890%250A%252AHarga%253A%252A%2520Rp3.425.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F173890%252FSapphire-Radeon-RX-6600-8GB-DDR6-Pulse",
+							"https://tokopedia.link/3JUsq1Cf7Bb",
+							"https://www.bukalapak.com/p/komputer/hardware/vga/4gvvvlj-jual-sapphire-radeon-rx-6600-8gb-ddr6-pulse",
+							"https://shopee.co.id/product/43570421/14711508075/",
+							"",
+							"",
+							""
+						]
+					},
+					{
+						"KCODE": 24,
+						"KNAME": "VGA",
+						"SCODE": 450,
+						"BCODE": 355,
+						"PCODE": 152775,
+						"PNAME": "Sapphire Radeon RX 550 4GB DDR5 Pulse OC",
+						"PPRCZ": [
+							1245000,
+							1235000,
+							10000,
+							0
+						],
+						"PWGHT": 1300,
+						"PQTTY": 8,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "B47YZ17",
+						"PLINK": "Sapphire-Radeon-RX-550-4GB-DDR5-Pulse-OC",
+						"PIMGZ": [
+							"https://ecs7.tokopedia.net/img/cache/300/product-1/2019/7/12/9651507/9651507_e9d04f19-19ba-4d45-b307-c2bbf1030495_800_800"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_Sapphire%2520Radeon%2520RX%2520550%25204GB%2520DDR5%2520Pulse%2520OC_%252A%250A%252ASKU%253A%252A%2520152775%250A%252AHarga%253A%252A%2520Rp1.245.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F152775%252FSapphire-Radeon-RX-550-4GB-DDR5-Pulse-OC",
+							"https://www.tokopedia.com/enterkomputer/sapphire-rx-550-4gb-ddr5-pulse-oc",
+							"",
+							"https://shopee.co.id/product/43570421/23860969430/",
+							"",
+							"",
+							""
+						]
+					}
+				]
+			}
+		]
+	}
+}

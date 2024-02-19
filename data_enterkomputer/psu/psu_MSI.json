@@ -1,0 +1,50 @@
+{
+	"0": {
+		"PPRNT": "MSI",
+		"PCHLD": [
+			{
+				"PCHLD": "",
+				"PLIST": [
+					{
+						"KCODE": 19,
+						"KNAME": "PSU",
+						"SCODE": 0,
+						"BCODE": 270,
+						"PCODE": 188225,
+						"PNAME": "MSI MAG A1000GL PCIE5 1000W 80 Plus Gold Full Modular",
+						"PPRCZ": [
+							2479000,
+							2480000,
+							-1000,
+							0.04
+						],
+						"PWGHT": 5000,
+						"PQTTY": 3,
+						"PTYPE": "standard",
+						"PSTTS": 1,
+						"PBEST": 0,
+						"PDISP": 1,
+						"PDTLS": "",
+						"MKYWD": "",
+						"MTAGS": "",
+						"PTAGS": "",
+						"PQUOT": "P7TD324",
+						"PLINK": "MSI-MAG-A1000GL-PCIE5-1000W-80-Plus-Gold-Full-Modular",
+						"PIMGZ": [
+							"https://images.tokopedia.net/img/cache/300/VqbcmM/2024/2/17/cec3997a-a9df-406f-abc8-cf8c03b040db.jpg"
+						],
+						"PLOLZ": [
+							"https://www.enterkomputer.com/whatsapp?text=Hallo%2520Marketing%2520EnterKomputer...%2520Saya%2520ingin%2520order%2520produk%2520%252A_MSI%2520MAG%2520A1000GL%2520PCIE5%25201000W%252080%2520Plus%2520Gold%2520Full%2520Modular_%252A%250A%252ASKU%253A%252A%2520188225%250A%252AHarga%253A%252A%2520Rp2.479.000%250A%250Ahttps%253A%252F%252Fwww.enterkomputer.com%252Fdetail%252F188225%252FMSI-MAG-A1000GL-PCIE5-1000W-80-Plus-Gold-Full-Modular",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				]
+			}
+		]
+	}
+}
