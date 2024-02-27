@@ -12,7 +12,7 @@ class C_vga extends CI_Controller {
     public function Set_vga() {
         $curl = curl_init();
         curl_setopt_array($curl, [
-            CURLOPT_URL => base_url('data_enterkomputer/mobo.json'),
+            CURLOPT_URL => base_url('data_enterkomputer/vga.json'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

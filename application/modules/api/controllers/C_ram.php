@@ -12,7 +12,7 @@ class C_ram extends CI_Controller {
     public function Set_ram() {
         $curl = curl_init();
         curl_setopt_array($curl, [
-            CURLOPT_URL => base_url('data_enterkomputer/ram_ddr4.json'),
+            CURLOPT_URL => base_url('data_enterkomputer/ram_sodimm.json'),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -54,6 +54,7 @@ class C_ram extends CI_Controller {
                     'pcode' => $jso['PCHLD'][$index]['PLIST'][$index2]['PCODE'],
                     'merek' => $merek,
                     'nama' => $jso['PCHLD'][$index]['PLIST'][$index2]['PNAME'],
+                    'ram_type' => 2,
                     'ddr_type' => $ddr_type,
                     'size_ram' => $size_ram,
                     'harga_modal' => $jso['PCHLD'][$index]['PLIST'][$index2]['PPRCZ'][0],
