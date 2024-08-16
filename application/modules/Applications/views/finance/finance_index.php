@@ -3,6 +3,7 @@
 $credit = 0;
 $debit = 0;
 $deposit = 0;
+$hutang = 0;
 ?>
 <div class="row">
     <div class="col-md-3">
@@ -41,6 +42,10 @@ $deposit = 0;
             </div>
         </div>
     </div>
+</div>
+<div class="clearfix my-4"></div>
+<div class="row">
+    <div class="col-md-6"></div>
     <div class="col-md-3">
         <div class="card card-custom rounded-xl">
             <div class="card-body">
@@ -50,6 +55,18 @@ $deposit = 0;
                 </div>
                 <div class="clearfix my-4"></div>
                 <b>DEPOSITO</b>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card card-custom rounded-xl">
+            <div class="card-body">
+                <div class="text-xl-left" style="font-size:20px;">
+                    <i class="fas fa-coins"></i>
+                    <span id="httxt"></span>
+                </div>
+                <div class="clearfix my-4"></div>
+                <b>HUTANG</b>
             </div>
         </div>
     </div>
@@ -130,9 +147,12 @@ $deposit = 0;
         } elseif ($dt_masuk->jenis == 2) {
             echo '<span class="text-danger">DEBIT</span>';
             $debit += $dt_masuk->nominal;
-        } else {
-            $deposit += $dt_masuk->nominal;
+        } elseif ($dt_masuk->jenis == 3) {
             echo '<span class="text-success">DEPOSITO</span>';
+            $deposit += $dt_masuk->nominal;
+        } else {
+            $hutang += $dt_masuk->nominal;
+            echo '<span class="text-danger">HUTANG</span>';
         }
         ?>
                             </td>
@@ -166,6 +186,7 @@ $deposit = 0;
 <input type="hidden" name="crtxt" value="<?php echo number_format($credit); ?>"/>
 <input type="hidden" name="dbtxt" value="<?php echo number_format($debit); ?>"/>
 <input type="hidden" name="dptxt" value="<?php echo number_format($deposit); ?>"/>
+<input type="hidden" name="httxt" value="<?php echo number_format($hutang); ?>"/>
 <input type="hidden" name="bltxt" value="<?php echo number_format($credit - $debit); ?>"/>
 <input type="hidden" name="err_msg" value="<?php echo $this->session->flashdata('err_msg'); ?>"/>
 <input type="hidden" name="succ_msg" value="<?php echo $this->session->flashdata('succ_msg'); ?>"/>
@@ -190,10 +211,12 @@ unset($_SESSION['succ_msg']);
                             var debit = $('input[name="dbtxt"]').val();
                             var balance = $('input[name="bltxt"]').val();
                             var deposito = $('input[name="dptxt"]').val();
+                            var hutang = $('input[name="httxt"]').val();
                             document.getElementById('crtxt').innerHTML = credit;
                             document.getElementById('dbtxt').innerHTML = debit;
                             document.getElementById('bltxt').innerHTML = balance;
                             document.getElementById('detxt').innerHTML = deposito;
+                            document.getElementById('httxt').innerHTML = hutang;
                             toastr.options = {
                                 closeButton: true,
                                 debug: false,
